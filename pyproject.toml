@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "git"
+version = "0.1.0"
+description = "Automating the Bechdel test and its variants for feminine representation in movies with AI"
+authors = ["Théo Alves Da Costa <theo.alves.da.costa@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.11"
+jupyter = "^1.0.0"
+pandas = "^1.3.4"
+numpy = "^1.21.3"
+scikit-learn = "^1.0.1"
+matplotlib = "^3.4.3"
+plotly = "^5.3.1"
+opencv-python = "^4.5.4"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
