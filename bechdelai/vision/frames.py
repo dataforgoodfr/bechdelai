@@ -2,8 +2,14 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 from tqdm.auto import tqdm
-from deepface import DeepFace
 
+# Deep Face
+from deepface import DeepFace
+from deepface.basemodels import VGGFace, OpenFace, Facenet, FbDeepFace
+from deepface.commons import functions
+# https://github.com/serengil/deepface/blob/master/tests/face-recognition-how.py
+
+# Custom imports
 from .face_detection import FaceDetector
 from .frame import Frame
 
@@ -62,3 +68,22 @@ class Frames:
                 plt.axis('off')
                 plt.imshow(img)
             plt.show()
+
+
+    def make_faces_tensor(self,input_shape = (224,224),enforce_detection = False):
+        faces_array = []
+        for face in self.faces:
+            face_array = functions.preprocess_face(face.array,input_shape,enforce_detection = False)
+            faces_array.append(face_array)
+        faces_array = np.concatenate(faces_array,axis = 0)
+        return faces_array
+
+    def make_faces_embeddings(self):
+
+        self.model = VGGFace.loadModel()
+        input_shape = model.layers[0].input_shape[0][1:3]
+
+        faces_tensor = self.make_faces_tensor(input_shape = input_shape)
+
+        embeddings = self.model.predict(faces_tensor)
+        return embeddings
