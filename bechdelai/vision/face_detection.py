@@ -5,6 +5,12 @@ import os
  
 from .frame import Frame
 
+"""
+TODO
+Other option would be using RetinaFace python library or directly using DeepFace
+"""
+
+
 FACE_CASCADE_PATH = "haarcascade_frontalface_default.xml"
 
 class FaceDetector:
