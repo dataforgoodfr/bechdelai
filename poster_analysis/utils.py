@@ -1,6 +1,12 @@
-import spacy
+
+from io import BytesIO
+
+import cv2 as cv
+import matplotlib.pyplot as plt
 import pandas as pd
 import requests
+import spacy
+from PIL import Image
 from wikidata.client import Client
 
 wikidata_client = Client()
@@ -8,7 +14,8 @@ nlp = spacy.load("fr_core_news_lg")
 nlp.add_pipe("opentapioca")
 
 
-def analyze(data):
+
+def analyze_text(data, image):
     blocks = data["blocks"]
 
     names = []
@@ -28,9 +35,19 @@ def analyze(data):
                 genders.append(get_gender_info(entity))
                 ids.append(ent.kb_id_)
 
+                image_url = get_picture_url(entity)
+                if image_url:
+                    print(image_url)
+                    actor_image = get_picture(image_url)
+                    
+
     return pd.DataFrame(
         {"Q_id": ids, "Name": names, "gender": genders, "description": descriptions}
     )
+
+
+def analyze_image(image, faces):
+    return
 
 
 def get_gender_info(entity):
@@ -40,6 +57,22 @@ def get_gender_info(entity):
 
 
 def get_picture_url(entity):
-    image_prop = wikidata_client.get("P16")
-    image = entity[image_prop]
-    return image.image_url
+    image_prop = wikidata_client.get("P18")
+    try:
+        image = entity[image_prop]
+        return image.image_url
+    except KeyError:
+        return
+
+
+def get_picture(url):
+    response = requests.get(url)
+    output = BytesIO(response.content)
+    output.seek(0)
+    output.flush()
+    try:
+        return Image.open(output)
+    except:
+        return
+
+
