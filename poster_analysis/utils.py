@@ -1,11 +1,13 @@
 
 from io import BytesIO
+from os import makedirs
 
-import cv2 as cv
-import matplotlib.pyplot as plt
 import pandas as pd
 import requests
 import spacy
+import streamlit as st
+from deepface import DeepFace
+from icrawler.builtin import GoogleImageCrawler
 from PIL import Image
 from wikidata.client import Client
 
@@ -34,45 +36,39 @@ def analyze_text(data, image):
                 descriptions.append(ent._.description)
                 genders.append(get_gender_info(entity))
                 ids.append(ent.kb_id_)
-
-                image_url = get_picture_url(entity)
-                if image_url:
-                    print(image_url)
-                    actor_image = get_picture(image_url)
-                    
+                
+                dir_path = f'images/{ent.kb_id_}'
+                crawl_image_search(ent.text.title(), dir_path)
+                recog_faces(image, dir_path)
 
     return pd.DataFrame(
         {"Q_id": ids, "Name": names, "gender": genders, "description": descriptions}
     )
 
 
-def analyze_image(image, faces):
-    return
-
 
 def get_gender_info(entity):
     gender_prop = wikidata_client.get("P21")
-    gender = entity[gender_prop]
-    return str(gender.label)
-
-
-def get_picture_url(entity):
-    image_prop = wikidata_client.get("P18")
     try:
-        image = entity[image_prop]
-        return image.image_url
+        gender = entity[gender_prop]
+        return str(gender.label)
     except KeyError:
-        return
+        return "unknown"
 
 
-def get_picture(url):
-    response = requests.get(url)
-    output = BytesIO(response.content)
-    output.seek(0)
-    output.flush()
+def crawl_image_search(name, dir_path):
     try:
-        return Image.open(output)
-    except:
+        makedirs(dir_path, exist_ok=False)
+        google_Crawler = GoogleImageCrawler(storage = {'root_dir': dir_path}, downloader_threads=4)
+        google_Crawler.crawl(keyword = name, max_num = 4)
+    except Exception as e:
+        print(e)
         return
-
-
+    
+def recog_faces(image, dir_path):
+    try:
+        best_match = DeepFace.find(image,db_path = dir_path,enforce_detection = True)
+        st.write(best_match)
+    except Exception as e:
+        print(e)
+        return
