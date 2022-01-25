@@ -5,7 +5,7 @@ import streamlit as st
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
 import tensorflow as tf
 
-from utils import analyze_text
+from utils import extract_entities
 
 gpu_devices = tf.config.experimental.list_physical_devices("GPU")
 if any(gpu_devices):
@@ -54,7 +54,7 @@ def main():
             with st.spinner("Analyzing..."):
                 out = predictor([doc[page_idx]])
                 page_export = out.pages[0].export()
-                results = analyze_text(page_export, doc[page_idx])
+                results = extract_entities(page_export)
                 cols[1].subheader("Results")
                 cols[1].table(results)
             with st.expander("For debug purpose"):

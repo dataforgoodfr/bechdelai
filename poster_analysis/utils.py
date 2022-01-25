@@ -17,7 +17,7 @@ nlp.add_pipe("opentapioca")
 
 
 
-def analyze_text(data, image):
+def extract_entities(data):
     blocks = data["blocks"]
 
     names = []
@@ -36,15 +36,16 @@ def analyze_text(data, image):
                 descriptions.append(ent._.description)
                 genders.append(get_gender_info(entity))
                 ids.append(ent.kb_id_)
-                
-                dir_path = f'images/{ent.kb_id_}'
-                crawl_image_search(ent.text.title(), dir_path)
-                recog_faces(image, dir_path)
 
     return pd.DataFrame(
         {"Q_id": ids, "Name": names, "gender": genders, "description": descriptions}
     )
 
+
+def identify_faces(actor_q_id, actor_name, image):
+    dir_path = f'images/{actor_q_id}'
+    crawl_image_search(actor_name, dir_path)
+    recog_faces(image, dir_path)
 
 
 def get_gender_info(entity):
