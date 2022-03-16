@@ -2,6 +2,8 @@ import os
 
 import streamlit as st
 
+from utils import identify_faces
+
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
 import tensorflow as tf
 
@@ -55,6 +57,7 @@ def main():
                 out = predictor([doc[page_idx]])
                 page_export = out.pages[0].export()
                 results = extract_entities(page_export)
+                results.apply(lambda x: identify_faces(x.Q_id, x.Name, doc[page_idx]), axis=1)
                 cols[1].subheader("Results")
                 cols[1].table(results)
             with st.expander("For debug purpose"):

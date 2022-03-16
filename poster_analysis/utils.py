@@ -1,4 +1,3 @@
-
 from io import BytesIO
 from os import makedirs
 
@@ -16,7 +15,6 @@ nlp = spacy.load("fr_core_news_lg")
 nlp.add_pipe("opentapioca")
 
 
-
 def extract_entities(data):
     blocks = data["blocks"]
 
@@ -29,6 +27,7 @@ def extract_entities(data):
         block_text = " ".join(
             [word["value"] for line in block["lines"] for word in line["words"]]
         )
+        print(block_text)
         for ent in nlp(block_text.title()).ents:
             if ent.label_ == "PERSON":
                 entity = wikidata_client.get(ent.kb_id_, load=True)
@@ -43,7 +42,7 @@ def extract_entities(data):
 
 
 def identify_faces(actor_q_id, actor_name, image):
-    dir_path = f'images/{actor_q_id}'
+    dir_path = f"images/{actor_q_id}"
     crawl_image_search(actor_name, dir_path)
     recog_faces(image, dir_path)
 
@@ -60,15 +59,19 @@ def get_gender_info(entity):
 def crawl_image_search(name, dir_path):
     try:
         makedirs(dir_path, exist_ok=False)
-        google_Crawler = GoogleImageCrawler(storage = {'root_dir': dir_path}, downloader_threads=4)
-        google_Crawler.crawl(keyword = name, max_num = 4)
+        google_Crawler = GoogleImageCrawler(
+            storage={"root_dir": dir_path}, downloader_threads=4
+        )
+        filters = dict(type="photo")
+        google_Crawler.crawl(keyword=name, max_num=5, filters=filters)
     except Exception as e:
         print(e)
         return
-    
+
+
 def recog_faces(image, dir_path):
     try:
-        best_match = DeepFace.find(image,db_path = dir_path,enforce_detection = True)
+        best_match = DeepFace.find(image, db_path=dir_path, enforce_detection=True)
         st.write(best_match)
     except Exception as e:
         print(e)
