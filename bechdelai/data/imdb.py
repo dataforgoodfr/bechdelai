@@ -1,86 +1,13 @@
-import pandas as pd
-import requests
+import numpy as np
 from bs4 import BeautifulSoup
 from IPython.display import display
 from IPython.display import HTML
-from numpy import character
+
+from bechdelai.data.scrap import get_data_from_url
+from bechdelai.data.scrap import RequestException
 
 MAIN_URL = "https://www.imdb.com"
 URL_SEARCH = f"{MAIN_URL}/find?s=tt&q={{q}}"
-DEFAULT_HEADER = {
-    "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36",
-    "Accept-Language": "en-GB,en;q=0.5",
-}
-
-
-class RequestException(Exception):
-    pass
-
-
-def create_header(url: str) -> dict:
-    """Create a header dictionnary if it need
-    to be changed (e.g. for an API)
-    Parameters
-    ----------
-    url : str
-        url to request (needed to get the host)
-    Returns
-    -------
-    dict
-        header dictionnary
-    Raises
-    ------
-    TypeError
-        url must be a string
-    ValueError
-        url must start with 'http'
-    """
-    if not isinstance(url, str):
-        raise TypeError("url must be a string")
-    if not (url.startswith("http://") or url.startswith("https://")):
-        raise ValueError("url must start with 'http'")
-
-    header = DEFAULT_HEADER
-
-    url_split = url.split("//")
-    http = url_split[0]
-    host = url_split[1].split("/")[0]
-
-    header["Host"] = host
-    header["Referer"] = http + "//" + host
-    header["Origin"] = http + "//" + host
-
-    return header
-
-
-def get_data_from_url(url: str) -> requests.Response:
-    """Return answer of a request get
-    from a wanted url
-    Parameters
-    ----------
-    url : str
-        url to request
-    Returns
-    -------
-    requests.Response
-        answer from requests.get function
-    Raises
-    ------
-    TypeError
-        url must be a string
-    ValueError
-        url must start with 'http'
-    """
-
-    if not isinstance(url, str):
-        raise TypeError("url must be a string")
-    if not (url.startswith("http://") or url.startswith("https://")):
-        raise ValueError("url must start with 'http'")
-
-    headers = create_header(url)
-    r = requests.get(url, headers=headers)
-
-    return r
 
 
 def preprocess_search_result_list(suggestions):
@@ -162,12 +89,6 @@ def get_movie_casts(url):
     ans = get_data_from_url(url)
     soup = BeautifulSoup(ans.text, "html.parser")
 
-    # credits_tables = soup.find_all("table", {"class": "simpleCreditsTable"})
-
-    # director = credits_tables[0].find("a")
-    # director_url = MAIN_URL + director.get("href")
-    # director = director.text.strip()
-
     cast_list = soup.find("table", {"class": "cast_list"}).find_all("tr")
     cast = []
     for elem in cast_list:
@@ -179,7 +100,13 @@ def get_movie_casts(url):
         name = a[1]
         character = a[2]
         cast_id = name.get("href").split("?")[0].split("/name/")[1][:-1]
-        cur_cast = {"nconst": str(cast_id), "character": character.text.strip()}
+
+        cur_cast = {
+            "nconst": int(
+                str(cast_id)[2:]
+            ),  # convert id to int (from "nm1234567" to int(1234567))
+            "character": character.text.strip(),
+        }
         cast.append(cur_cast)
 
     return cast
@@ -203,20 +130,70 @@ def scrap_movie_from_suggestions(suggestions, idx):
     return data
 
 
-def get_movie_job_details(movie_id, category, principals_df, name_df):
-    """Get detail of a person from a category into a movie"""
+def _postprocess_one_cast(x):
+    """Apply the following
+    - format cast id to IMDB format
+    - add online url
+    - Add gender
+    """
+    formated_id = "nm" + str(x["nconst"]).zfill(7)
+    x["nconst"] = formated_id
+    x["url"] = f"{MAIN_URL}/name/{formated_id}/"
+
+    if "actress" in str(x["primaryProfession"]):
+        x["gender"] = "F"
+    elif "actor" in str(x["primaryProfession"]):
+        x["gender"] = "M"
+    else:
+        x["gender"] = "?"
+
+    return x
+
+
+def postprocess_cast_id(full_cast):
+    """Postprocess Id of casting as IMDB format
+
+    We use integer ID to get a result faster, but
+    IMDB use a string format
+
+    1234567 become "nm1234567"
+    """
+    # apply function for each element
+    for i, cast in enumerate(full_cast):
+        _postprocess_one_cast(cast)
+        cast["ordering"] = i + 1
+
+    return full_cast
+
+
+def get_movie_job_details(movie_principals, category, name_df):
+    """Get detail of a person from a category into a movie
+
+    Requires 3 datasets from IMDB:
+    - name_df : https://datasets.imdbws.com/name.basics.tsv.gz
+
+    Parameters
+    ----------
+    movie_principals: pandas.DataFrame
+        Principals dataframe filtered on the wanted movie
+    category: str
+        Job category (mainly used for "director" and "producer")
+    """
     cols = ["nconst", "primaryName", "birthYear", "deathYear", "primaryProfession"]
 
-    df = principals_df.loc[
-        (principals_df.category.values == category)
-        & (principals_df.tconst.values == movie_id)
-    ]
+    df = movie_principals.loc[movie_principals.category.values == category]
+    if len(df) == 0:
+        return None
+
     df = df.merge(
         name_df.loc[name_df["nconst"].values == df["nconst"].values], on="nconst"
     )
     df = df[cols]
 
-    return df.to_dict(orient="records")
+    res = df.to_dict(orient="records")[0]
+    res = _postprocess_one_cast(res)
+
+    return res
 
 
 def get_movie_data(movie_id, movie_cast_url, name_df, basics_df, principals_df):
@@ -226,26 +203,46 @@ def get_movie_data(movie_id, movie_cast_url, name_df, basics_df, principals_df):
     - 'primaryTitle': title of the movie
     - 'startYear': year of the movie
     - 'runtimeMinutes': duration
-    - 'director': list of dict of the of directors (mostly 1 element)
-    - 'producer': list of dict of the of producers (mostly 1 element)
+    - 'director': director
+    - 'producer': producer
     - 'cast': list of dict of the of actress and actors
+
+    Requires 3 datasets from IMDB:
+    - name_df : https://datasets.imdbws.com/name.basics.tsv.gz
+    - basics_df : https://datasets.imdbws.com/title.basics.tsv.gz
+    - principals_df : https://datasets.imdbws.com/title.principals.tsv.gz
     """
     # get id of the casting
     movie_cast = get_movie_casts(movie_cast_url)
+
+    # Get id as int and as imdb format
+    if str(movie_id).startswith("tt"):
+        movie_id = int(movie_id[2:])
+
+    movie_id_imdb = f"tt{movie_id:07}"
 
     # Get basic informations of the movie
     movie_data = basics_df.loc[basics_df["tconst"].values == movie_id].to_dict(
         orient="records"
     )[0]
+    movie_data["tconst"] = movie_id_imdb
+    movie_data["url"] = f"{MAIN_URL}/name/{movie_id_imdb}/"
+    movie_principals = principals_df.loc[principals_df.tconst.values == movie_id]
+
     movie_data["director"] = get_movie_job_details(
-        movie_id, "director", principals_df, name_df
+        movie_principals, "director", name_df
     )
     movie_data["producer"] = get_movie_job_details(
-        movie_id, "producer", principals_df, name_df
+        movie_principals, "producer", name_df
     )
 
     # Get cast characters details
-    movie_cast_df = pd.DataFrame(movie_cast).merge(name_df, on="nconst", how="left")
-    movie_data["cast"] = movie_cast_df.to_dict(orient="records")
+    full_cast = []
+    for cast in movie_cast:
+        cast_id = cast["nconst"]
+        idx = np.where(name_df.nconst.values == cast_id)[0][0]
+        full_cast.append(name_df.iloc[idx].to_dict())
+
+    movie_data["cast"] = postprocess_cast_id(full_cast)
 
     return movie_data
