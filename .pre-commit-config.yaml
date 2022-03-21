@@ -1,0 +1,38 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+    -   id: check-yaml
+    -   id: end-of-file-fixer
+    -   id: trailing-whitespace
+    -   id: requirements-txt-fixer
+-   repo: https://github.com/asottile/reorder_python_imports
+    rev: v2.6.0
+    hooks:
+    -   id: reorder-python-imports
+        args: [--py3-plus]
+-   repo: https://github.com/econchick/interrogate
+    rev: 1.5.0  # or master if you're bold
+    hooks:
+    -   id: interrogate
+        args: [-vv, -i, --fail-under=50]
+        verbose: true
+-   repo: https://github.com/ambv/black
+    rev: stable
+    hooks:
+    -   id: black
+# Local pre commit hook to only contril
+# code quality and not block commit
+- repo: local
+  hooks:
+   -  id: flake8
+      name: flake8
+      language: system
+      files: .+\.py$
+      entry: bash -c 'flake8 "$@" || true' --
+      verbose: true
+   -  id: radon
+      name: radon
+      language: system
+      entry: bash -c 'radon cc "$@" || true' --
+      verbose: true
