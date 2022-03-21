@@ -4,8 +4,7 @@ from os import environ
 
 from dotenv import load_dotenv
 
-from bechdelai.data.scrap import get_data_from_url
-from bechdelai.data.scrap import RequestException
+from bechdelai.data.scrap import get_json_from_url
 
 
 class APIKeyNotSetInEnv(Exception):
@@ -49,20 +48,11 @@ FORMAT_SUGG_HTML = """
 """
 
 
-def _get_json_from_url(url):
-    """Get json results from an endpoint"""
-    ans = get_data_from_url(url)
-
-    if ans.status_code != 200:
-        raise RequestException(f"Status code different from 200, got {ans.status_code}")
-
-    data = ans.json()
-
-    return data
-
-
 def search_movie_from_query(query: str) -> dict:
     """Get TMDB API result for search movie endpoint given a query
+
+    You can find the website view with this url:
+    https://www.themoviedb.org/search/movie?query=
 
     Parameters
     ----------
@@ -71,11 +61,14 @@ def search_movie_from_query(query: str) -> dict:
     """
     url = SEARCH_API_URL.format(query=query)
 
-    return _get_json_from_url(url)
+    return get_json_from_url(url)
 
 
 def get_movie_details_from_id(movie_id) -> dict:
     """Get TMDB API result for movie details endpoint given an id
+
+    You can find the website view with this url (example for id 81):
+    https://www.themoviedb.org/movie/81
 
     Parameters
     ----------
@@ -84,11 +77,14 @@ def get_movie_details_from_id(movie_id) -> dict:
     """
     url = MOVIE_API_URL.format(movie_id=str(movie_id))
 
-    return _get_json_from_url(url)
+    return get_json_from_url(url)
 
 
 def get_movie_cast_from_id(movie_id) -> dict:
     """Get TMDB API result for movie cast endpoint given an id
+
+    You can find the website view with this url (example for id 81):
+    https://www.themoviedb.org/movie/81/cast
 
     Parameters
     ----------
@@ -97,7 +93,7 @@ def get_movie_cast_from_id(movie_id) -> dict:
     """
     url = CAST_API_URL.format(movie_id=str(movie_id))
 
-    return _get_json_from_url(url)
+    return get_json_from_url(url)
 
 
 def format_results_for_suggestion(search_res: dict) -> list:

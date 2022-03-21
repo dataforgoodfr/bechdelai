@@ -16,10 +16,9 @@ def preprocess_search_result_list(suggestions):
 
         html = str(elem)
         movie_url = MAIN_URL + a.get("href")
-        cast_url = movie_url.split("?")[0] + "fullcredits"
         movie_id = movie_url.split("https://www.imdb.com/title/")[1].split("/")[0]
 
-        format_res.append((html, movie_id, cast_url))
+        format_res.append((html, movie_id))
 
     return format_res
 
@@ -171,7 +170,7 @@ def get_movie_job_details(movie_principals, category, name_df):
     return res
 
 
-def get_movie_data(movie_id, movie_cast_url, name_df, basics_df, principals_df):
+def get_movie_data(movie_id, name_df, basics_df, principals_df):
     """Returns movie informations:
 
     - 'tconst': id of the movie
@@ -187,14 +186,17 @@ def get_movie_data(movie_id, movie_cast_url, name_df, basics_df, principals_df):
     - basics_df : https://datasets.imdbws.com/title.basics.tsv.gz
     - principals_df : https://datasets.imdbws.com/title.principals.tsv.gz
     """
-    # get id of the casting
-    movie_cast = get_movie_casts(movie_cast_url)
-
     # Get id as int and as imdb format
     if str(movie_id).startswith("tt"):
         movie_id = int(movie_id[2:])
 
     movie_id_imdb = f"tt{movie_id:07}"
+
+    # Get cast url
+    movie_cast_url = f"{MAIN_URL}/title/{movie_id_imdb}/fullcredits"
+
+    # get id of the casting
+    movie_cast = get_movie_casts(movie_cast_url)
 
     # Get basic informations of the movie
     movie_data = basics_df.loc[basics_df["tconst"].values == movie_id].to_dict(
