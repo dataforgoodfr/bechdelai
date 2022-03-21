@@ -19,6 +19,7 @@ tensorflow = "^2.7.0"
 deepface = "^0.0.68"
 umap-learn = "^0.5.2"
 retina-face = "^0.0.5"
+python-dotenv = ">=0.19.2"
 
 [tool.poetry.dev-dependencies]
 

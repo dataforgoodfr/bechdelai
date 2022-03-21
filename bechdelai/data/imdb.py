@@ -1,7 +1,5 @@
 import numpy as np
 from bs4 import BeautifulSoup
-from IPython.display import display
-from IPython.display import HTML
 
 from bechdelai.data.scrap import get_data_from_url
 from bechdelai.data.scrap import RequestException
@@ -18,10 +16,10 @@ def preprocess_search_result_list(suggestions):
 
         html = str(elem)
         movie_url = MAIN_URL + a.get("href")
-        movie_url = movie_url.split("?")[0] + "fullcredits"
+        cast_url = movie_url.split("?")[0] + "fullcredits"
         movie_id = movie_url.split("https://www.imdb.com/title/")[1].split("/")[0]
 
-        format_res.append((html, movie_url, movie_id))
+        format_res.append((html, movie_id, cast_url))
 
     return format_res
 
@@ -45,29 +43,6 @@ def find_movie_from_kerword(q):
     res = preprocess_search_result_list(res)
 
     return res
-
-
-def show_movie_suggestions(suggestions, top=None):
-    """Show suggestions"""
-    if top is not None:
-        suggestions = suggestions[:top]
-
-    for i, elem in enumerate(suggestions):
-        display(HTML(f"{i} " + elem[0]))
-
-
-def show_movie_suggestions_get_id(suggestions, top=None, verbose=True):
-    """Show suggestions and returns wanted ID"""
-    show_movie_suggestions(suggestions, top)
-
-    print()
-    idx = int(input("Select wanted index:"))
-
-    if verbose:
-        print("ID of the movie:", str(suggestions[idx][2]))
-        print("URL of the casting:", suggestions[idx][1])
-
-    return suggestions[idx][2], suggestions[idx][1]
 
 
 def get_movie_details(url):
