@@ -160,12 +160,12 @@ def get_movie_job_details(movie_principals, category, name_df):
         return None
 
     df = df.merge(
-        name_df.loc[name_df["nconst"].values == df["nconst"].values], on="nconst"
+        name_df.loc[np.isin(name_df["nconst"].values, df["nconst"].values)], on="nconst"
     )
     df = df[cols]
 
-    res = df.to_dict(orient="records")[0]
-    res = _postprocess_one_cast(res)
+    res = df.to_dict(orient="records")
+    res = [_postprocess_one_cast(r) for r in res]
 
     return res
 
