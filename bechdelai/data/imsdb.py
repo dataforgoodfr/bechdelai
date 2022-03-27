@@ -44,6 +44,23 @@ def get_all_scripts():
 
 
 def get_script_from_url(url):
+    """Retrieve script from url
+
+    Parameters
+    ----------
+    url : str
+        Valid url to get the script
+
+    Returns
+    -------
+    list
+        List of lines of the script
+    """
 
     ans = get_data_from_url(url)
     soup = BeautifulSoup(ans.text, "html.parser")
+
+    # Get script and split it as a array by line
+    script = soup.find("pre").find("pre").text.split("\n")
+
+    return script
