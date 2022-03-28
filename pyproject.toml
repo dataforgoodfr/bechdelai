@@ -20,6 +20,8 @@ deepface = "^0.0.68"
 umap-learn = "^0.5.2"
 retina-face = "^0.0.5"
 python-dotenv = ">=0.19.2"
+lxml = "^4.8.0"
+PyMuPDF = "^1.19.6"
 
 [tool.poetry.dev-dependencies]
 
