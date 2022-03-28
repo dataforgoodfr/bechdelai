@@ -61,6 +61,11 @@ def get_script_from_url(url):
     soup = BeautifulSoup(ans.text, "html.parser")
 
     # Get script and split it as a array by line
-    script = soup.find("pre").find("pre").text.split("\n")
+    html = soup.find("pre")
+
+    if html.pre is not None:
+        html = html.find("pre")
+
+    script = html.text.split("\n")
 
     return script
