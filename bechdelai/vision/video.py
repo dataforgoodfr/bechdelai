@@ -2,6 +2,8 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 from tqdm.auto import tqdm
+import re 
+from ipywidgets import widgets, interact
 
 # Deep Face
 from deepface import DeepFace
@@ -9,15 +11,21 @@ from deepface.basemodels import VGGFace, OpenFace, Facenet, FbDeepFace
 from deepface.commons import functions
 # https://github.com/serengil/deepface/blob/master/tests/face-recognition-how.py
 
+
+def natural_sort(l): 
+    convert = lambda text: int(text) if text.isdigit() else text.lower()
+    alphanum_key = lambda key: [convert(c) for c in re.split('([0-9]+)', key)]
+    return sorted(l, key=alphanum_key)
+
 # Custom imports
 from .face_detection import FaceDetector
 from .frame import Frame
 
-class Frames:
+class Video:
     def __init__(self,frames = None,path = None):
         
         if path is not None:
-            paths = os.listdir(path)
+            paths = natural_sort(os.listdir(path))
             self.frames = [Frame(os.path.join(path,x)) for x in paths]
         else:
             self.frames = frames
@@ -70,6 +78,22 @@ class Frames:
             plt.show()
 
 
+    def show_frames(self,columns = 6,figsize_row = (15,1)):
+
+        rows = (len(self.frames) // columns) + 1
+
+        for row in range(rows):
+            fig = plt.figure(figsize=figsize_row)
+            remaining_columns = len(self.frames) - (row * columns)
+            row_columns = columns if remaining_columns > columns else remaining_columns
+            for column in range(row_columns):
+                img = self.frames[row * columns + column].array
+                fig.add_subplot(1, columns, column+1)
+                plt.axis('off')
+                plt.imshow(img)
+            plt.show()
+
+
     def make_faces_tensor(self,input_shape = (224,224),enforce_detection = False):
         faces_array = []
         for face in self.faces:
@@ -87,3 +111,27 @@ class Frames:
 
         embeddings = self.model.predict(faces_tensor)
         return embeddings
+
+
+    def replay(self,interval=0.5):
+
+        # Prepare widgets
+        play = widgets.Play(
+            value=0,
+            min=0,
+            max=len(self.frames) - 1,
+            step=1,
+            interval=interval * 1000,
+            description="Press play",
+            disabled=False,
+        )
+
+        slider = widgets.IntSlider(min=0, value=0, max=len(self.frames) - 1, step=1)
+        widgets.jslink((play, "value"), (slider, "value"))
+
+        # Visualize frames and widgets
+        @interact(i=play)
+        def show(i):
+            return self.frames[i]
+
+        display(slider)

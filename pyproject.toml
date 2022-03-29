@@ -19,6 +19,11 @@ tensorflow = "^2.7.0"
 deepface = "^0.0.68"
 umap-learn = "^0.5.2"
 retina-face = "^0.0.5"
+transformers = "^4.17.0"
+torch = "^1.11.0"
+torchvision = "^0.12.0"
+torchaudio = "^0.11.0"
+ftfy = "^6.1.1"
 
 [tool.poetry.dev-dependencies]
 
