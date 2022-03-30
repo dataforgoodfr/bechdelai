@@ -1,4 +1,6 @@
+import fitz
 import pandas as pd
+import requests
 from bechdelai.data.scrap import RequestException, get_data_from_url
 from bs4 import BeautifulSoup
 
@@ -39,5 +41,13 @@ def read_pdf_from_stream(stream):
     text = ""
     with fitz.open(stream=stream, filetype="pdf") as doc:
         for page in doc:
-            text += page.getText()
+            text += page.get_text()
     return text
+
+def get_file_content(url):
+    r = requests.get(url)
+    if r.status_code != 200:
+        raise RequestException(
+            "Request response is not valid (status code %s)" % r.status_code
+        )
+    return read_pdf_from_stream(r.content)
