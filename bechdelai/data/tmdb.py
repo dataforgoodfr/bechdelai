@@ -121,7 +121,7 @@ def format_results_for_suggestion(search_res: dict) -> list:
         movie_id = movie["id"]
 
         href = f"{MAIN_URL}/movie/{movie_id}"
-        poster_url = f"{IMG_URL}/" + movie["poster_path"]
+        poster_url = f"{IMG_URL}/" + str(movie["poster_path"])
         title = movie["original_title"]
         year = movie["release_date"][:4]
 
