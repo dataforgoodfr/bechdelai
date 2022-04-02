@@ -1,7 +1,16 @@
+"""Function to scrap allociné data
+"""
+import math
+
 from bs4 import BeautifulSoup
 
+from bechdelai.data.scrap import get_data_from_url
+from bechdelai.data.scrap import RequestException
+from bechdelai.data.src import load_allocine_filters
+from bechdelai.data.tmdb import search_movie_from_query
+
 BASE_URL = "https://www.allocine.fr/"
-QUERY_URL = f"{BASE_URL}films/{{genre_filter}}{{pays_filter}}{{decennie_filter}}{{annee_filter}}?page={{page_num}}"
+QUERY_URL = f"{BASE_URL}films/{{sort_by}}{{genre_filter}}{{pays_filter}}{{decennie_filter}}{{annee_filter}}?page={{page_num}}"
 
 DEFAULT_FILTERS = {
     "genre_filter": "",
@@ -10,6 +19,21 @@ DEFAULT_FILTERS = {
     "annee_filter": "",
     "page_num": "1",
 }
+
+VALID_SORT_BY = {
+    "popularity": "",
+    "alphabetic": "alphabetique/",
+    "press_note": "presse/",
+    "public_note": "notes/",
+}
+
+ALLOCINE_FILTERS = load_allocine_filters()
+GENRE_FILTER = "genres"
+DECADE_FILTER = "décénnies"
+YEAR_FILTER = "années"
+COUNTRY_FILTER = "pays"
+
+N_MAX_MOVIES_PAGE = 15
 
 
 def get_file_content(fpath: str, **kwargs) -> str:
@@ -30,6 +54,20 @@ def get_file_content(fpath: str, **kwargs) -> str:
         txt = f.read()
 
     return txt
+
+
+def get_year_filter(decade_filters):
+    year_filters = []
+
+    for decade in decade_filters:
+        min_, max_ = decade["name"].split(" - ")
+
+        for year in range(int(min_), int(max_) + 1):
+            year_filters.append(
+                {"filter": decade["filter"] + f"/annee-{str(year)}", "name": str(year)}
+            )
+
+    return year_filters
 
 
 def get_allocine_filters(filters_path: str) -> dict:
@@ -73,17 +111,152 @@ def get_allocine_filters(filters_path: str) -> dict:
 
         filters_allocine[filter_name] = item_details
 
+    filters_allocine["Année"] = get_year_filter(
+        filters_allocine["Par années de production"]
+    )
+
     return filters_allocine
 
 
-def get_allocine_movies_from_one_page(filters: dict):
-    filters = {**DEFAULT_FILTERS, **filters}
+def format_movies(movies_html):
+
+    formated_movies = []
+    for html in movies_html:
+        img = html.find("img").get("src")
+
+        if not (img.endswith(".jpg") or img.endswith(".png")):
+            img = html.find("img").get("data-src")
+
+        title = html.find("a", {"class": "meta-title-link"}).text
+        url = html.find("a", {"class": "meta-title-link"}).get("href")
+        url = f"{BASE_URL}{url}"
+
+        date = html.find("span", {"class": "date"})
+        year = None
+        if date is not None:
+            date = date.text
+            year = date.split(" ")[-1]
+
+        director = html.find("div", {"class", "meta-body-direction"})
+        if director is not None:
+            director = director.text.replace("\n", "").replace("De", "").strip()
+
+        formated_movies.append(
+            {
+                "title": title,
+                "img_path": img,
+                "url": url,
+                "year": year,
+                "director": director,
+            }
+        )
+
+    return formated_movies
+
+
+def get_allocine_movies_from_one_page(
+    filters: dict, sort_by="popularity", verbose=False
+):
+
+    if sort_by not in VALID_SORT_BY:
+        raise ValueError(
+            f"`sort_by` is not valid. It must be one of the following: %s"
+            % (list(VALID_SORT_BY.keys()))
+        )
+
+    if "annee_filter" in filters:
+        filters["decennie_filter"] = ""
+
+    filters = {**DEFAULT_FILTERS, **filters, "sort_by": VALID_SORT_BY[sort_by]}
 
     for f, v in filters.items():
         if ("filter" in f) and (not v.endswith("/")) and (v != ""):
             filters[f] = f"{v}/"
-    print(filters)
-    print(filters)
+
     url = QUERY_URL.format(**filters)
 
-    print(url)
+    if verbose:
+        print(f"Scrap url: {url}")
+
+    ans = get_data_from_url(url)
+
+    if ans.status_code != 200:
+        raise RequestException(
+            "Request response is not valid (status code %s)" % ans.status_code
+        )
+
+    html = BeautifulSoup(ans.text, "html.parser")
+
+    movies_html = html.find_all("li", {"class": "mdl"})
+
+    movies = format_movies(movies_html)
+
+    return movies
+
+
+def _check_filter_validity(val, key):
+    """Checks that the filter value is available in the filter dictionnary"""
+    elements = ALLOCINE_FILTERS[key]
+    valid_values = list(elements.keys())
+    val = str(val)
+
+    if val not in [""] + valid_values:
+        raise ValueError(
+            f"For `{key}` the value is not valid, please choose one of the following: {valid_values}"
+        )
+
+    if val == "":
+        return ""
+
+    return elements[val]
+
+
+def get_movies(
+    n_movies=10,
+    genre="",
+    decade="",
+    year="",
+    country="",
+    sort_by="popularity",
+    verbose=True,
+):
+
+    filters = {}
+    filters["genre_filter"] = _check_filter_validity(genre, key=GENRE_FILTER)
+    filters["decennie_filter"] = _check_filter_validity(decade, key=DECADE_FILTER)
+    filters["annee_filter"] = _check_filter_validity(year, key=YEAR_FILTER)
+    filters["pays_filter"] = _check_filter_validity(country, key=COUNTRY_FILTER)
+
+    n_pages = math.ceil(n_movies / N_MAX_MOVIES_PAGE)
+
+    movies = []
+    for num_page in range(1, n_pages + 1):
+        _filters = {**filters, "page_num": str(num_page)}
+
+        page_movies = get_allocine_movies_from_one_page(_filters, sort_by, verbose)
+
+        if len(page_movies) + len(movies) > n_movies:
+            _max = n_movies - len(movies)
+            movies.extend(page_movies[:_max])
+        else:
+            movies.extend(page_movies)
+        print(len(movies))
+
+        if len(page_movies) < N_MAX_MOVIES_PAGE:
+            break
+
+    return movies
+
+
+def get_tmdb_id(movie_dict: dict):
+
+    title = movie_dict["title"]
+    year = movie_dict["year"]
+
+    data = search_movie_from_query(title)
+
+    for res in data["results"]:
+        if res["release_date"][:4] == str(year):
+            return res["id"]
+
+    return None
