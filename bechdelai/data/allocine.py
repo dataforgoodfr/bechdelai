@@ -2,16 +2,20 @@
 """
 import math
 
+import pandas as pd
 from bs4 import BeautifulSoup
 
 from bechdelai.data.scrap import get_data_from_url
 from bechdelai.data.scrap import RequestException
 from bechdelai.data.src import load_allocine_filters
+from bechdelai.data.tmdb import get_movie_cast_from_id
 from bechdelai.data.tmdb import search_movie_from_query
 
+# Url to scrap Allociné website
 BASE_URL = "https://www.allocine.fr/"
 QUERY_URL = f"{BASE_URL}films/{{sort_by}}{{genre_filter}}{{pays_filter}}{{decennie_filter}}{{annee_filter}}?page={{page_num}}"
 
+# Default filters applies in QUERY_URL
 DEFAULT_FILTERS = {
     "genre_filter": "",
     "pays_filter": "",
@@ -20,6 +24,7 @@ DEFAULT_FILTERS = {
     "page_num": "1",
 }
 
+# Map sorting names with url
 VALID_SORT_BY = {
     "popularity": "",
     "alphabetic": "alphabetique/",
@@ -27,12 +32,14 @@ VALID_SORT_BY = {
     "public_note": "notes/",
 }
 
+# Get all available filters
 ALLOCINE_FILTERS = load_allocine_filters()
 GENRE_FILTER = "genres"
 DECADE_FILTER = "décénnies"
 YEAR_FILTER = "années"
 COUNTRY_FILTER = "pays"
 
+# Maximum movies in a Allociné page
 N_MAX_MOVIES_PAGE = 15
 
 
@@ -57,6 +64,10 @@ def get_file_content(fpath: str, **kwargs) -> str:
 
 
 def get_year_filter(decade_filters):
+    """Returns year filters given the decade filters
+
+    Example: for year 2015 -> "decennie-2010/annee-2015"
+    """
     year_filters = []
 
     for decade in decade_filters:
@@ -119,6 +130,19 @@ def get_allocine_filters(filters_path: str) -> dict:
 
 
 def format_movies(movies_html):
+    """Given html for each movie get from the film allociné page
+    retrieve all information such as the title, img, url, director
+
+    Parameters
+    ----------
+    movies_html : list
+        Movie elements (parsed with bs4) from allociné page
+
+    Returns
+    -------
+    list(dict)
+        formated movie as dictionnaries
+    """
 
     formated_movies = []
     for html in movies_html:
@@ -157,6 +181,32 @@ def format_movies(movies_html):
 def get_allocine_movies_from_one_page(
     filters: dict, sort_by="popularity", verbose=False
 ):
+    """Returns all available movies in an Allociné film page
+    that is scraped with wanted filters
+
+    Parameters
+    ----------
+    filters : dict
+        List of filters for the wanted search
+        Available keys for filter are:
+        "genre_filter", "pays_filter", "decennie_filter", "annee_filter", "page_num"
+    sort_by : str, optional
+        How to sort results, by default "popularity"
+    verbose : bool, optional
+        Whether to show verbosity or not, by default False
+
+    Returns
+    -------
+    list(dict)
+        formated movie as dictionnaries with title, url, img, director and date
+
+    Raises
+    ------
+    ValueError
+        `sort_by` is not valid
+    RequestException
+        Request response is not valid
+    """
 
     if sort_by not in VALID_SORT_BY:
         raise ValueError(
@@ -220,6 +270,30 @@ def get_movies(
     sort_by="popularity",
     verbose=True,
 ):
+    """Returns `n_movies` for wanted filters sorted by `sort_by`
+
+    Parameters
+    ----------
+    n_movies : int, optional
+        number of movies wanted, by default 10
+    genre : str, optional
+        Filter for genre if "" then no filter, by default ""
+    decade : str, optional
+        Filter for decade if "" then no filter, by default ""
+    year : str, optional
+        Filter for year if "" then no filter, by default ""
+    country : str, optional
+        Filter for country if "" then no filter, by default ""
+    sort_by : str, optional
+        How to sort results, by default "popularity"
+    verbose : bool, optional
+        Whether to show verbosity or not, by default True
+
+    Returns
+    -------
+    list(dict)
+        formated movie as dictionnaries with title, url, img, director and date
+    """
 
     filters = {}
     filters["genre_filter"] = _check_filter_validity(genre, key=GENRE_FILTER)
@@ -240,7 +314,6 @@ def get_movies(
             movies.extend(page_movies[:_max])
         else:
             movies.extend(page_movies)
-        print(len(movies))
 
         if len(page_movies) < N_MAX_MOVIES_PAGE:
             break
@@ -249,9 +322,25 @@ def get_movies(
 
 
 def get_tmdb_id(movie_dict: dict):
+    """Retrieves TMDB id from a formated allociné result
+
+    Query by title, if year is the same then take this movie
+    else if the director are the same then take this movie
+
+    Parameters
+    ----------
+    movie_dict : dict
+        formated movie from Allociné page
+
+    Returns
+    -------
+    int
+        TMDB id (or None if nothing found)
+    """
 
     title = movie_dict["title"]
     year = movie_dict["year"]
+    director = movie_dict["director"].split(",")[0]
 
     data = search_movie_from_query(title)
 
@@ -259,4 +348,38 @@ def get_tmdb_id(movie_dict: dict):
         if res["release_date"][:4] == str(year):
             return res["id"]
 
+        if director is None:
+            continue
+
+        details = get_movie_cast_from_id(res["id"])
+        crew_df = pd.DataFrame(details["crew"])
+        dir_name = "".join(crew_df.loc[crew_df["job"] == "Director"]["name"])
+
+        if director in dir_name:
+            return res["id"]
+
     return None
+
+
+def get_tmdb_ids(movies: list) -> list:
+    """Returns list of TMDB ids given a list of
+    movies returned by `get_movies()`
+
+    Parameters
+    ----------
+    movies : list
+        list of dictionnary returned by `get_movies()`
+
+    Returns
+    -------
+    list
+        List of TMDB ids for each movie
+    """
+    ids = []
+    for movie_dict in movies:
+        try:
+            ids.append(get_tmdb_id(movie_dict))
+        except:
+            print("Error when try to get TMDB ID for '%s'" % movie_dict["title"])
+
+    return ids
