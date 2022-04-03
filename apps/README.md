@@ -13,7 +13,7 @@ Goal of the app:
 
 ```bash
 cd ..
-pip install .
+pip install -e .
 pip install streamlit
 streamlit run apps/get_movies_allocine_tmdb/app.py
 ```

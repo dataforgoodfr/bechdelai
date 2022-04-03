@@ -30,7 +30,7 @@ Measurement and automation of the Bechdel test, female (under)representation and
 ### Install
 
 ```bash
-pip install .
+pip install -e .
 ```
 
 ### Run with cli
