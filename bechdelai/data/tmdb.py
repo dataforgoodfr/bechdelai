@@ -14,13 +14,15 @@ class APIKeyNotSetInEnv(Exception):
     pass
 
 
+import os
+
 try:
     # load .env file
-    load_dotenv()
+    load_dotenv(f"{os.getcwd()}/.env", verbose=True)
     API_KEY = environ["TMDB_API_KEY"]
 except:
     raise APIKeyNotSetInEnv(
-        "You need to set your TMDB API key into a .env file. `TMDB_API_KEY=<API_KEY>` "
+        "You need to set your TMDB API key into a .env file in your current working directory.\n`TMDB_API_KEY=<API_KEY>`\n"
         + "To get a key please check directly on the website https://developers.themoviedb.org/3/getting-started/introduction"
     )
 
