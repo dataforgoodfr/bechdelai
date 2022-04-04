@@ -1,9 +1,9 @@
 """Streamlit app to scrap allociné Data and get
 TMDB details
 """
-from os import abspath
-from os import dirname
+import base64
 from time import time
+from zipfile import ZipFile
 
 import streamlit as st
 
@@ -12,6 +12,14 @@ from bechdelai.data.allocine import get_movies
 from bechdelai.data.allocine import get_tmdb_ids
 from bechdelai.data.allocine import VALID_SORT_BY
 from bechdelai.data.tmdb import get_movies_from_ids
+
+
+@st.cache
+def convert_df(df):
+    """Convert df to csv string"""
+    # IMPORTANT: Cache the conversion to prevent computation on every rerun
+    return df.to_csv(index=False).encode("utf-8")
+
 
 # Write title
 st.title("Allociné / TMDB Scraper")
@@ -37,16 +45,9 @@ year = init_filters_selectbox(col2, "années")
 country = init_filters_selectbox(col3, "pays")
 
 # Get path where to save results
-dir_path = dirname(abspath(__file__))
-details_csv_name = "movies_details"
-crew_csv_name = "movies_crew"
-cast_csv_name = "movies_cast"
-
-st.text_input("Directory to save results", value=dir_path)
-
-details_df_path = f"{dir_path}/{details_csv_name}.csv"
-crew_df_path = f"{dir_path}/{crew_csv_name}.csv"
-cast_df_path = f"{dir_path}/{cast_csv_name}.csv"
+details_csv_name = "movies_details.csv"
+crew_csv_name = "movies_crew.csv"
+cast_csv_name = "movies_cast.csv"
 
 # Section to show scraping results
 st.markdown("## `Scraping`")
@@ -78,14 +79,25 @@ if st.button("Get movies..."):
         st.markdown(
             "movie detail, cast and crew retrieved after `%.1fsec`" % (time() - t0)
         )
-        st.markdown("`#4` Save dataframes")
+        st.markdown("`#4` Ready to download dataframes")
 
-        movies_df.to_csv(details_df_path, index=False)
-        cast_df.to_csv(cast_df_path, index=False)
-        crew_df.to_csv(crew_df_path, index=False)
+        movies_csv = convert_df(movies_df)
+        cast_csv = convert_df(cast_df)
+        crew_csv = convert_df(crew_df)
 
-        st.markdown(f"- movies_df save at `{details_df_path}`")
-        st.markdown(f"- cast_df save at `{cast_df_path}`")
-        st.markdown(f"- crew_df save at `{crew_df_path}`")
+    zip_name = "movies_datasets.zip"
+    zip_file = ZipFile(zip_name, "w")
+    zip_file.writestr(details_csv_name, movies_csv)
+    zip_file.writestr(cast_csv_name, cast_csv)
+    zip_file.writestr(crew_csv_name, crew_csv)
+    zip_file.close()
+
+    with open(zip_name, "rb") as f:
+        bytes = f.read()
+        b64 = base64.b64encode(bytes).decode()
+        href = f"<a href=\"data:file/zip;base64,{b64}\" download='{zip_name}'>\
+            Download movies datasets\
+        </a>"
+    st.sidebar.markdown(href, unsafe_allow_html=True)
 
     st.success("Done!")
