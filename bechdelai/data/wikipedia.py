@@ -234,3 +234,38 @@ def get_links(query, lang="en", verbose=False):
             print("%d titles found." % len(page_titles))
 
     return page_titles
+
+def get_categories(query, lang="en"):
+    """
+    Get a list of all categories of query
+
+    Parameters
+    ----------
+    query : str
+        Movie query to research
+    lang : str
+        Language of Wikipedia to research
+
+    Returns
+    -------
+    list
+        list of str of the categories
+
+    """
+    URL = "https://"+lang+".wikipedia.org/w/api.php"
+    PARAMS = {
+                'action': 'query',
+                'prop': 'categories',
+                'titles': query,
+                'format':'json',
+                'redirects': 1
+            }
+
+    R =  requests.get(url=URL, params=PARAMS)
+    pages = R.json()["query"]["pages"]
+
+    categories = []
+    for key, val in pages.items():
+        for link in val["categories"]:
+            categories.append(link["title"])
+    return categories
