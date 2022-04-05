@@ -4,6 +4,8 @@ Functions to get data from wikipedia
 import requests
 from bs4 import BeautifulSoup
 import re
+import outputformat as ouf
+import wikipediaapi
 from bechdelai.data.scrap import get_json_from_url
 
 def get_sections(query, lang="en"):
@@ -23,25 +25,27 @@ def get_sections(query, lang="en"):
         sections and subsections are keys. corresponding indexes are values.
     """
 
-    S = requests.Session()
     URL = "https://"+lang+".wikipedia.org/w/api.php"
     PARAMS = {
         "action": "parse",
         "page": query,
         "format": "json",
-        "prop":"sections"
+        "prop":"sections",
+        'redirects': 1
     }
 
-    R = S.get(url=URL, params=PARAMS)
+    R = requests.get(url=URL, params=PARAMS)
     try:
         DATA = R.json()["parse"]['sections']
     except KeyError:
         return None
 
+    if not len(DATA):
+        return None
+
     dict_sections = {}
     for d in DATA:
         dict_sections[d['anchor']]=d['index']
-
     return dict_sections
 
 def get_section(query, section_index, lang="en"):
@@ -62,17 +66,17 @@ def get_section(query, section_index, lang="en"):
         html resulted from request
     """
 
-    S = requests.Session()
     URL = "https://"+lang+".wikipedia.org/w/api.php"
     PARAMS = {
         "action": "parse",
         "page": query,
         "format": "json",
         "section": section_index,
-        "contentmodel":"wikitext"
+        "contentmodel":"wikitext",
+        'redirects': 1
     }
 
-    R =  S.get(url=URL, params=PARAMS)
+    R =  requests.get(url=URL, params=PARAMS)
     return R.json()["parse"]["text"]["*"]
 
 
@@ -150,6 +154,9 @@ def get_section_text(query,section_list:list,lang="en",verbose=False):
         if verbose:
             print('Page not found.')
         return {}
+    else:
+        if verbose:
+            ouf.showdict(sections,title="Page sections")
 
     # get text from each section in section_name
     contents = {}
@@ -161,3 +168,69 @@ def get_section_text(query,section_list:list,lang="en",verbose=False):
         section_content = get_section(query,sections[section_name],lang=lang)
         contents[section_name] =parse_section_content(section_content).replace(section_name+'[edit]\n','')
     return contents
+
+def get_links(query, lang="en", verbose=False):
+    """
+    Get a list of all links in wikipedia page
+
+    Parameters
+    ----------
+    query : str
+        Movie query to research
+    lang : str
+        Language of Wikipedia to research
+
+    Returns
+    -------
+    list
+        list of str of the pages' titles linked in researched page
+
+    """
+
+    URL = "https://"+lang+".wikipedia.org/w/api.php"
+    PARAMS = {
+                'action': 'query',
+                'prop': 'links',
+                'titles': query,
+                'pllimit': 'max',
+                'format':'json',
+                'redirects': 1
+    }
+
+    response = requests.get(url=URL, params=PARAMS)
+    data = response.json()
+    print(data)
+    pages = data["query"]["pages"]
+
+    pg_count = 1
+    page_titles = []
+
+    if verbose:
+        print("Page %d" % pg_count)
+    for key, val in pages.items():
+        for link in val["links"]:
+            if verbose:
+                print(link["title"])
+            page_titles.append(link["title"])
+
+        while "continue" in data:
+            plcontinue = data["continue"]["plcontinue"]
+            PARAMS["plcontinue"] = plcontinue
+
+            response = requests.get(url=URL, params=PARAMS)
+            data = response.json()
+            pages = data["query"]["pages"]
+
+            pg_count += 1
+
+            if verbose:
+                print("\nPage %d" % pg_count)
+            for key, val in pages.items():
+                for link in val["links"]:
+                    print(link["title"])
+                    page_titles.append(link["title"])
+
+        if verbose:
+            print("%d titles found." % len(page_titles))
+
+    return page_titles
