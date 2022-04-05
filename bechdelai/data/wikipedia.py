@@ -35,18 +35,12 @@ def get_sections(query, lang="en"):
     }
 
     R = requests.get(url=URL, params=PARAMS)
-    try:
+    if page_exists(R.json()):
         DATA = R.json()["parse"]['sections']
-    except KeyError:
-        return None
-
-    if not len(DATA):
-        return None
-
-    dict_sections = {}
-    for d in DATA:
-        dict_sections[d['anchor']]=d['index']
-    return dict_sections
+        dict_sections = {}
+        for d in DATA:
+            dict_sections[d['anchor']]=d['index']
+        return dict_sections
 
 def get_section(query, section_index, lang="en"):
     """Return the section of index section_index
@@ -77,7 +71,8 @@ def get_section(query, section_index, lang="en"):
     }
 
     R =  requests.get(url=URL, params=PARAMS)
-    return R.json()["parse"]["text"]["*"]
+    if page_exists(R.json()):
+        return R.json()["parse"]["text"]["*"]
 
 
 def drop_references(soup):
@@ -197,43 +192,44 @@ def get_links(query, lang="en", verbose=False):
                 'redirects': 1
     }
 
-    response = requests.get(url=URL, params=PARAMS)
-    data = response.json()
-    print(data)
-    pages = data["query"]["pages"]
+    R = requests.get(url=URL, params=PARAMS)
+    data = R.json()
 
-    pg_count = 1
-    page_titles = []
-
-    if verbose:
-        print("Page %d" % pg_count)
-    for key, val in pages.items():
-        for link in val["links"]:
-            if verbose:
-                print(link["title"])
-            page_titles.append(link["title"])
-
-        while "continue" in data:
-            plcontinue = data["continue"]["plcontinue"]
-            PARAMS["plcontinue"] = plcontinue
-
-            response = requests.get(url=URL, params=PARAMS)
-            data = response.json()
-            pages = data["query"]["pages"]
-
-            pg_count += 1
-
-            if verbose:
-                print("\nPage %d" % pg_count)
-            for key, val in pages.items():
-                for link in val["links"]:
-                    print(link["title"])
-                    page_titles.append(link["title"])
+    if page_exists(data):
+        pages = data["query"]["pages"]
+        pg_count = 1
+        page_links = []
 
         if verbose:
-            print("%d titles found." % len(page_titles))
+            print("Page %d" % pg_count)
+        for key, val in pages.items():
+            for link in val["links"]:
+                if verbose:
+                    print(link["title"])
+                page_links.append(link["title"])
 
-    return page_titles
+            while "continue" in data:
+                plcontinue = data["continue"]["plcontinue"]
+                PARAMS["plcontinue"] = plcontinue
+
+                R = requests.get(url=URL, params=PARAMS)
+                data = R.json()
+                pages = data["query"]["pages"]
+
+                pg_count += 1
+
+                if verbose:
+                    print("\nPage %d" % pg_count)
+                for key, val in pages.items():
+                    for link in val["links"]:
+                        print(link["title"])
+                        page_links.append(link["title"])
+
+            if verbose:
+                print("%d titles found." % len(page_links))
+        return page_links
+    else:
+        return None
 
 def get_categories(query, lang="en"):
     """
@@ -262,10 +258,39 @@ def get_categories(query, lang="en"):
             }
 
     R =  requests.get(url=URL, params=PARAMS)
-    pages = R.json()["query"]["pages"]
 
-    categories = []
-    for key, val in pages.items():
-        for link in val["categories"]:
-            categories.append(link["title"])
-    return categories
+    if page_exists(R.json()):
+        pages = R.json()["query"]["pages"]
+        categories = []
+        for key, val in pages.items():
+            for link in val["categories"]:
+                categories.append(link["title"])
+        return categories
+    else:
+        return None
+
+def page_exists(request_dict):
+    """
+    Checks if page exists given the parsed request body
+
+    Parameters
+    ----------
+    request_dict : dict
+        request output after parsing
+
+    Returns
+    -------
+    bool
+        if the page exists
+
+    """
+    if 'error' in request_dict: # when using parse
+        raise ValueError("This query does not correspond to a Wikipedia page.")
+        return False
+    elif 'query' in request_dict: # when using query
+        page =  request_dict["query"]["pages"]
+        pageid = list(page.keys())[0]
+        if 'missing' in page[pageid]:
+            raise ValueError("This query does not correspond to a Wikipedia page.")
+            return False
+    return True
