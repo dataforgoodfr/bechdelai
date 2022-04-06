@@ -2,6 +2,7 @@
 """
 from os import environ
 
+import pandas as pd
 from dotenv import load_dotenv
 
 from bechdelai.data.scrap import get_json_from_url
@@ -13,13 +14,15 @@ class APIKeyNotSetInEnv(Exception):
     pass
 
 
+import os
+
 try:
     # load .env file
-    load_dotenv()
+    load_dotenv(f"{os.getcwd()}/.env", verbose=True)
     API_KEY = environ["TMDB_API_KEY"]
 except:
     raise APIKeyNotSetInEnv(
-        "You need to set your TMDB API key into a .env file. `TMDB_API_KEY=<API_KEY>` "
+        "You need to set your TMDB API key into a .env file in your current working directory.\n`TMDB_API_KEY=<API_KEY>`\n"
         + "To get a key please check directly on the website https://developers.themoviedb.org/3/getting-started/introduction"
     )
 
@@ -131,3 +134,57 @@ def format_results_for_suggestion(search_res: dict) -> list:
         format_res.append((html, movie_id))
 
     return format_res
+
+
+def get_movies_from_ids(movie_ids: list) -> tuple:
+    """Returns TMDB API return for all movie ID
+    set in the input
+
+    Get metadata from `get_movie_details_from_id()` function
+    and cast and crew from `get_movie_cast_from_id()` function
+
+    Parameters
+    ----------
+    movie_ids : list
+        List of TMDB ids
+
+    Returns
+    -------
+    tuple
+        3 dataframes: movie details, crew and cast
+    """
+    metadata_df = []
+    crew_df = []
+    cast_df = []
+
+    for movie_id in movie_ids:
+        if movie_id is None:
+            continue
+
+        try:
+            data = get_movie_details_from_id(movie_id)
+        except:
+            print(f"Error when try to get details for id:'{movie_id}'")
+            continue
+
+        metadata_df.append(data)
+
+        try:
+            data = get_movie_cast_from_id(movie_id)
+        except:
+            print(f"Error when try to get cast and crew for id:'{movie_id}'")
+            continue
+
+        _crew_df = pd.DataFrame(data["crew"])
+        _crew_df["id"] = movie_id
+        _cast_df = pd.DataFrame(data["cast"])
+        _cast_df["id"] = movie_id
+
+        crew_df.append(_crew_df)
+        cast_df.append(_cast_df)
+
+    movies_df = pd.DataFrame(metadata_df)
+    crew_df = pd.concat(crew_df)
+    cast_df = pd.concat(cast_df)
+
+    return movies_df, crew_df, cast_df

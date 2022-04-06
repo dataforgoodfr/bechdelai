@@ -27,9 +27,15 @@ ftfy = "^6.1.1"
 python-dotenv = ">=0.19.2"
 lxml = "^4.8.0"
 PyMuPDF = "^1.19.6"
+Click = ">=8.0.4"
+requests = ">=2.26.0"
+beautifulsoup4 = ">=4.10.0"
 
 [tool.poetry.dev-dependencies]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+scrap-movies = 'bechdelai.scripts.scrap_movies:cli'
