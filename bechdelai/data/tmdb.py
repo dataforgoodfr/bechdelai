@@ -19,6 +19,7 @@ import os
 try:
     # load .env file
     load_dotenv(f"{os.getcwd()}/.env", verbose=True)
+    load_dotenv()
     API_KEY = environ["TMDB_API_KEY"]
 except:
     raise APIKeyNotSetInEnv(
@@ -35,6 +36,9 @@ API_URL = "https://api.themoviedb.org/3"
 SEARCH_API_URL = f"{API_URL}/search/movie?api_key={API_KEY}&query={{query}}"
 MOVIE_API_URL = f"{API_URL}/movie/{{movie_id}}?api_key={API_KEY}"
 CAST_API_URL = f"{API_URL}/movie/{{movie_id}}/credits?api_key={API_KEY}"
+SEARCH_IMDB_URL = (
+    f"{API_URL}//find/tt{{imdb_id}}?api_key={API_KEY}&external_source=imdb_id"
+)
 
 # Html for suggestion diplays
 FORMAT_SUGG_HTML = """
@@ -97,6 +101,23 @@ def get_movie_cast_from_id(movie_id) -> dict:
     url = CAST_API_URL.format(movie_id=str(movie_id))
 
     return get_json_from_url(url)
+
+
+def get_id_from_imdb_id(imdb_id) -> int:
+    """Get TMDB API result for movie cast endpoint given an id
+
+    Parameters
+    ----------
+    imdb_id : str or int
+        Movie id to get cast from
+    """
+    url = SEARCH_IMDB_URL.format(imdb_id=str(imdb_id))
+
+    res = get_json_from_url(url)
+    if len(res["movie_results"]) == 0:
+        return None
+
+    return res["movie_results"][0]["id"]
 
 
 def format_results_for_suggestion(search_res: dict) -> list:
