@@ -254,7 +254,8 @@ def get_categories(query, lang="en"):
                 'prop': 'categories',
                 'titles': query,
                 'format':'json',
-                'redirects': 1
+                'redirects': 1,
+                'cllimit':'max'
             }
 
     R =  requests.get(url=URL, params=PARAMS)
