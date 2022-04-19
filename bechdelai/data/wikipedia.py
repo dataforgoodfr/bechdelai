@@ -446,9 +446,16 @@ def dataframe_from_json(json, properties):
     for prop in properties:
         key = get_label_of_entity(prop)
         values_list = []
-        for dataval in claims[prop]: # a property can contain multiple values
+
+        try:
+            values_json = claims[prop]
+        except KeyError:
+            print('The property {} was not found in the given json'.format(prop))
+            continue
+
+        for dataval in values_json: # a property can contain multiple values
             val = dataval['mainsnak']['datavalue']['value']
-            if type(val)==dict: # if its a dict, the value is represented by the id. 
+            if type(val)==dict: # if its a dict, the value is represented by the id.
                 val_id = val['id']
                 val = get_label_of_entity(val_id)
             values_list.append(val)
