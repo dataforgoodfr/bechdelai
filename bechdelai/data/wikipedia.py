@@ -295,3 +295,40 @@ def page_exists(request_dict):
             raise ValueError("This query does not correspond to a Wikipedia page.")
             return False
     return True
+
+def get_qid_from_query(query,language="en",verbose=False):
+    """
+    QID is the unique identifier of a data item on Wikidata, comprising the letter "Q" followed by one or more digits.
+    For a given query, find the list of QID that might correspond to it.
+
+    Parameters
+    ----------
+    query : str
+        query to research on wikidata
+    language : str
+        Language of Wikidata to research
+
+
+    Returns
+    -------
+    list
+        list of str containing the QID that may be related to the query
+
+    """
+    URL = "https://www.wikidata.org/w/api.php"
+    PARAMS = {
+                'action': 'wbsearchentities',
+                'search': query,
+                'format':'json',
+                'language':language
+    }
+
+    R = requests.get(url=URL, params=PARAMS)
+    data = R.json()
+
+    qid = []
+    for entity in data['search']:
+        if verbose:
+            print('{} ({}): {}'.format(entity['label'], entity['id'], entity['description']))
+        qid.append(entity['id'])
+    return qid
