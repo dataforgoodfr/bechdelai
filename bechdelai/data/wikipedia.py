@@ -421,7 +421,7 @@ def get_label_of_entity(qid,language="en"):
     return label
 
 
-def dataframe_from_json(json, properties):
+def dataframe_from_json(json, properties,language="en"):
     """
     Transform raw json in human-readable dataframe
 
@@ -444,7 +444,7 @@ def dataframe_from_json(json, properties):
     claims = json['entities'][json_key[0]]['claims']
 
     for prop in properties:
-        key = get_label_of_entity(prop)
+        key = get_label_of_entity(prop,language=language)
         values_list = []
 
         try:
@@ -457,7 +457,7 @@ def dataframe_from_json(json, properties):
             val = dataval['mainsnak']['datavalue']['value']
             if type(val)==dict: # if its a dict, the value is represented by the id.
                 val_id = val['id']
-                val = get_label_of_entity(val_id)
+                val = get_label_of_entity(val_id,language=language)
             values_list.append(val)
         df = df.append({'property':key,'value':values_list},ignore_index=True)
     return df
