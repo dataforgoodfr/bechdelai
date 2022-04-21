@@ -36,6 +36,7 @@ API_URL = "https://api.themoviedb.org/3"
 SEARCH_API_URL = f"{API_URL}/search/movie?api_key={API_KEY}&query={{query}}"
 MOVIE_API_URL = f"{API_URL}/movie/{{movie_id}}?api_key={API_KEY}"
 CAST_API_URL = f"{API_URL}/movie/{{movie_id}}/credits?api_key={API_KEY}"
+PERSON_API_URL = f"{API_URL}/person/{{person_id}}?api_key={API_KEY}"
 SEARCH_IMDB_URL = (
     f"{API_URL}//find/tt{{imdb_id}}?api_key={API_KEY}&external_source=imdb_id"
 )
@@ -119,6 +120,20 @@ def get_id_from_imdb_id(imdb_id) -> int:
 
     return res["movie_results"][0]["id"]
 
+def get_person_details_from_id(person_id) -> dict:
+    """Get TMDB API result for person details by id
+
+    You can find the website view with this url (example for id 81):
+    https://www.themoviedb.org/person/81
+
+    Parameters
+    ----------
+    person_id : str or int
+        Person id to get details from
+    """
+    url = PERSON_API_URL.format(person_id=str(person_id))
+
+    return get_json_from_url(url)
 
 def format_results_for_suggestion(search_res: dict) -> list:
     """Format search movie results for `show_movie_suggestions()`
