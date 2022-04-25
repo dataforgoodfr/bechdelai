@@ -1,6 +1,8 @@
+import tempfile
 import zipfile
-from io import BytesIO, TextIOWrapper
+from io import BytesIO, StringIO, TextIOWrapper
 
+import pysrt
 import requests
 from bs4 import BeautifulSoup
 
@@ -98,19 +100,26 @@ def get_subtitles_from_movie(
     return download_subtitle_from_url(subtitle_url)
 
 
-def _extract_zip(input_zip: BytesIO) -> list[str]:
+def _extract_zip(input_zip: BytesIO) -> pysrt.SubRipFile:
     """extract content from zip file
 
     Args:
         input_zip (BytesIO): the zip file to extract content from
 
     Returns:
-        list[str]: the extracted content
+        pysrt.SubRipFile: the extracted content as a pysrt SubRipFile
     """
-    subtitles = []
-    with zipfile.ZipFile(input_zip) as zfile:
-        for name in zfile.namelist():
-            with zfile.open(name) as readfile:
-                for line in TextIOWrapper(readfile, "ISO-8859-1"):
-                    subtitles.append(line)
-    return subtitles
+    fp = tempfile.TemporaryFile()
+    try:
+        with zipfile.ZipFile(input_zip) as zfile:
+            for name in zfile.namelist():
+                with zfile.open(name) as readfile:
+                    fp.write(readfile.read())
+                    fp.seek(0)
+    except Exception as e:
+        print("Error during unzipping:", e)
+    try:
+        return pysrt.open(fp.name, encoding="iso-8859-1")
+    except Exception as e:
+        print("Error during pysrt parsing:", e)
+        return pysrt.SubRipFile()
