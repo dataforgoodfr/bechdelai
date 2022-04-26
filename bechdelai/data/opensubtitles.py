@@ -1,6 +1,7 @@
 import tempfile
 import zipfile
-from io import BytesIO, StringIO, TextIOWrapper
+from io import BytesIO
+from typing import Dict, List
 
 import pysrt
 import requests
@@ -14,34 +15,39 @@ QUERY_URL = (
 DEFAULT_LANGUAGE_CODE = "fre"
 
 
-def search(movie_name: str, language_code: str = DEFAULT_LANGUAGE_CODE) -> str:
-    """Search for a movie by name and language and return the first search url result
+def search(
+    movie_name: str, language_code: str = DEFAULT_LANGUAGE_CODE
+) -> Dict[str, str]:
+    """Search for a movie by name and language and return the url results
 
     Args:
         movie_name (str): the name of the movie to search for
         language_code (str, optional): the language code to search for. Defaults to DEFAULT_LANGUAGE_CODE.
 
     Returns:
-        str: first search url result
+        Dict[str, str]: dict with movie name and search url
     """
     query_url = QUERY_URL.format(language_code=language_code, movie_name=movie_name)
     try:
         response = requests.get(query_url)
         response.raise_for_status()
     except requests.exceptions.HTTPError as errh:
-        print("Http Error:", errh)
+        raise Exception("Http Error:", errh)
     except requests.exceptions.ConnectionError as errc:
-        print("Error Connecting:", errc)
+        raise Exception("Error Connecting:", errc)
     except requests.exceptions.Timeout as errt:
-        print("Timeout Error:", errt)
+        raise Exception("Timeout Error:", errt)
     except requests.exceptions.RequestException as err:
-        print("OOps: Something Else", err)
+        raise Exception("OOps: Something Else", err)
 
     soup = BeautifulSoup(response.text, "html.parser")
     results = soup.find_all("a", {"class": "bnone"})
     if not results:
-        return ""
-    return f"{BASE_URL}{results[0].get('href')}"
+        return {}
+    return {
+        result.get_text().replace("\n", " "): f"{BASE_URL}{result.get('href')}"
+        for result in results
+    }
 
 
 def get_subtitle_link(search_url: str) -> str:
@@ -57,13 +63,13 @@ def get_subtitle_link(search_url: str) -> str:
         response = requests.get(search_url)
         response.raise_for_status()
     except requests.exceptions.HTTPError as errh:
-        print("Http Error:", errh)
+        raise Exception("Http Error:", errh)
     except requests.exceptions.ConnectionError as errc:
-        print("Error Connecting:", errc)
+        raise Exception("Error Connecting:", errc)
     except requests.exceptions.Timeout as errt:
-        print("Timeout Error:", errt)
+        raise Exception("Timeout Error:", errt)
     except requests.exceptions.RequestException as err:
-        print("OOps: Something Else", err)
+        raise Exception("OOps: Something Else", err)
 
     soup = BeautifulSoup(response.text, "html.parser")
     download_link = soup.select_one("a[href*=subtitleserve]")
@@ -72,7 +78,7 @@ def get_subtitle_link(search_url: str) -> str:
     return f"{BASE_URL}{download_link.get('href')}"
 
 
-def download_subtitle_from_url(url: str) -> list[str]:
+def download_subtitle_from_url(url: str) -> List[str]:
     response = requests.get(url)
     f = BytesIO()
     f.write(response.content)
@@ -80,21 +86,26 @@ def download_subtitle_from_url(url: str) -> list[str]:
 
 
 def get_subtitles_from_movie(
-    movie_name: str, language_code: str = DEFAULT_LANGUAGE_CODE
-) -> list[str]:
+    movie_name: str,
+    language_code: str = DEFAULT_LANGUAGE_CODE,
+    search_result_index: int = 0,
+) -> List[str]:
     """Pipeline to download subtitles with a movie name as input
 
     Args:
         movie_name (str): the name of the movie to search for
         language_code (str, optional): the language code to search for. Defaults to DEFAULT_LANGUAGE_CODE.
+        search_result_index (int, optional): the index of the search result to use. Defaults to 0.
 
     Returns:
-        list[str]: the subtitles from the movie
+        List[str]: the subtitles from the movie
     """
     search_url = search(movie_name, language_code)
     if not search_url:
         return []
-    subtitle_url = get_subtitle_link(search_url)
+    subtitle_url = get_subtitle_link(
+        search_url[list(search_url.keys())[search_result_index]]
+    )
     if not subtitle_url:
         return []
     return download_subtitle_from_url(subtitle_url)
