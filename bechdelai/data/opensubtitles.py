@@ -1,7 +1,8 @@
 import tempfile
 import zipfile
 from io import BytesIO
-from typing import Dict, List
+from typing import Dict
+from typing import List
 
 import pysrt
 import requests
@@ -88,14 +89,16 @@ def download_subtitle_from_url(url: str) -> List[str]:
 def get_subtitles_from_movie(
     movie_name: str,
     language_code: str = DEFAULT_LANGUAGE_CODE,
-    search_result_index: int = 0,
+    search_result_index: int = None,
 ) -> List[str]:
     """Pipeline to download subtitles with a movie name as input
 
     Args:
         movie_name (str): the name of the movie to search for
         language_code (str, optional): the language code to search for. Defaults to DEFAULT_LANGUAGE_CODE.
-        search_result_index (int, optional): the index of the search result to use. Defaults to 0.
+        search_result_index (int, optional):
+            the index of the search result to use. Defaults to None.
+            if None then suggest result one by one with input
 
     Returns:
         List[str]: the subtitles from the movie
@@ -103,9 +106,32 @@ def get_subtitles_from_movie(
     search_url = search(movie_name, language_code)
     if not search_url:
         return []
-    subtitle_url = get_subtitle_link(
-        search_url[list(search_url.keys())[search_result_index]]
-    )
+
+    movie_names = list(search_url.keys())
+
+    # If user want to choose then display movie name one by one
+    if search_result_index is None:
+        ans = ""
+        i = -1
+        while ans.lower() != "y":
+            i += 1
+            if len(movie_names) == i:
+                print("No more movies")
+                return []
+
+            print(f"Suggestion num {i}: '{movie_names[i]}'")
+            print(f"url: {search_url[movie_names[i]]}")
+            ans = input("Do you want to get subtitles from this movie ?")
+            print()
+
+        movie = movie_names[i]
+
+    else:
+        movie = movie_names[search_result_index]
+
+    print(f"Retrieve subtitles for '{movie}'")
+
+    subtitle_url = get_subtitle_link(search_url[movie])
     if not subtitle_url:
         return []
     return download_subtitle_from_url(subtitle_url)
@@ -120,7 +146,7 @@ def _extract_zip(input_zip: BytesIO) -> pysrt.SubRipFile:
     Returns:
         pysrt.SubRipFile: the extracted content as a pysrt SubRipFile
     """
-    fp = tempfile.TemporaryFile()
+    fp = tempfile.TemporaryFile(delete=False)
     try:
         with zipfile.ZipFile(input_zip) as zfile:
             for name in zfile.namelist():
