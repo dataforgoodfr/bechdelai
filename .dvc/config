@@ -1,0 +1,4 @@
+[core]
+    remote = gdrive
+['remote "gdrive"']
+    url = gdrive://1kTXqhR1z8_wYn1H15vYxzChQ_Acq1aex/data_registry
