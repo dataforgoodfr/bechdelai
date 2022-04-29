@@ -24,6 +24,9 @@ Measurement and automation of the Bechdel test, female (under)representation and
 - Official website for the project is here (French) - https://dataforgood.fr/projects/bechdelai
 - Project documentation is [here](https://dataforgood.slite.com/app/docs/~8IRrgyKYR) (French)
 
+## Data registry
+
+The repository uses [DVC](https://www.dvc.org) as data registry. You can find a tutorial on how to use it [here](dvc-tutorial.md)
 
 ## Get movies from Allociné / TMDB
 
