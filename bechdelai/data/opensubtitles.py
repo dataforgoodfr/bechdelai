@@ -164,7 +164,7 @@ def _extract_zip(input_zip: BytesIO) -> pysrt.SubRipFile:
         print("Error during unzipping:", e)
 
     try:
-        return pysrt.SubRipFile.from_string(srt, eol="\r\n")
+        return pysrt.SubRipFile.from_string(srt)
     except Exception as e:
         print("Error during pysrt parsing:", e)
 
