@@ -1,4 +1,5 @@
 import json
+import os
 import re
 from collections import Counter
 
@@ -8,15 +9,16 @@ from booknlp.booknlp import BookNLP
 
 
 class TextAnalyzer:
-    def __init__(self):
+    def __init__(self, input_file: str = "subs.txt", output_directory: str = "predictions/"):
         model_params = {
             "model": "small",
             "pipeline": "entity,quote,event,coref",
+            "spacy_model": "en_core_web_sm"
         }
         self.model = BookNLP("en", model_params)
 
-        self.input_file = "data/sub.txt"
-        self.output_directory = "data/predictions/"
+        self.input_file = input_file
+        self.output_directory = output_directory
         self.quotes = pd.DataFrame()
         self.entities = pd.DataFrame()
         self.agent = pd.DataFrame()
@@ -24,8 +26,13 @@ class TextAnalyzer:
         self.possess = pd.DataFrame()
         self.modifiers = pd.DataFrame()
 
-    def analyze(self, book_id: str, srt_file_path: str):
+    def analyze_file(self, book_id: str, srt_file_path: str):
         subs = self._read_data(srt_file_path)
+        self._process_srt(subs)
+        self.model.process(self.input_file, self.output_directory, book_id)
+        self._read_predictions(book_id)
+        
+    def analyze(self, book_id: str, subs):
         self._process_srt(subs)
         self.model.process(self.input_file, self.output_directory, book_id)
         self._read_predictions(book_id)
@@ -49,6 +56,8 @@ class TextAnalyzer:
         )
 
     def _read_character_file(self, book_id: str) -> None:
+        if not os.path.isfile(f"{self.output_directory}{book_id}.characters"):
+            return
         with open(
             f"{self.output_directory}{book_id}.book", "r", encoding="utf8"
         ) as file:
@@ -151,10 +160,10 @@ class TextAnalyzer:
                 )
 
     def _read_predictions(self, book_id: str):
-        self.quotes = pd.read_csv(f"{self.output_directory}{book_id}.quotes", sep="\t")
+        self.quotes = pd.read_csv(f"{self.output_directory}{book_id}.quotes", sep="\t") if os.path.isfile(f"{self.output_directory}{book_id}.quotes") else pd.DataFrame()
         self.entities = pd.read_csv(
             f"{self.output_directory}{book_id}.entities", sep="\t"
-        )
+        ) if os.path.isfile(f"{self.output_directory}{book_id}.entities") else pd.DataFrame()
         self._read_character_file(book_id)
 
     def _get_counter_from_dependency_list(self, dep_list: list):
@@ -164,17 +173,3 @@ class TextAnalyzer:
             tokenGlobalIndex = token["i"]
             counter[term] += 1
         return counter
-
-
-if __name__ == "__main__":
-    analyzer = TextAnalyzer()
-    analyzer.analyze(
-        "encanto",
-        "./data/raw/open-subtitles/Encanto.2021.1080p.WEB-DL.H264.DDP5.1-EVO.srt",
-    )
-    analyzer.quotes.to_csv("quotes.csv")
-    analyzer.entities.to_csv("entities.csv")
-    analyzer.agent.to_csv("agent.csv")
-    analyzer.patient.to_csv("patient.csv")
-    analyzer.possess.to_csv("poss.csv")
-    analyzer.modifiers.to_csv("mod.csv")
