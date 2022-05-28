@@ -18,7 +18,7 @@ def natural_sort(l):
     return sorted(l, key=alphanum_key)
 
 # Custom imports
-from .face_detection import FaceDetector
+# from .face_detection import FaceDetector
 from .image import Image
 from ..utils.video import extract_frames_from_videos
 
