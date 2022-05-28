@@ -20,13 +20,19 @@ def natural_sort(l):
 # Custom imports
 from .face_detection import FaceDetector
 from .frame import Frame
+from ..utils.video import extract_frames_from_videos
 
 class Video:
-    def __init__(self,frames = None,path = None):
+    def __init__(self,frames = None,path = None,frame_rate = 5,max_seconds = None):
         
         if path is not None:
-            paths = natural_sort(os.listdir(path))
-            self.frames = [Frame(os.path.join(path,x)) for x in paths]
+            if os.path.isdir(path):
+                paths = natural_sort(os.listdir(path))
+                self.frames = [Frame(os.path.join(path,x)) for x in paths]
+            else:
+                frames = extract_frames_from_videos(path,frame_rate = frame_rate,save = False,max_seconds = max_seconds)
+                self.frames = [Frame(img = x) for x in frames]
+
         else:
             self.frames = frames
 
