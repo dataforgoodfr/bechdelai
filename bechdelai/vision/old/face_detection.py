@@ -33,7 +33,7 @@ class FaceDetector:
 
         for (x,y,w,h) in faces:
             roi = img[y:y+h, x:x+w]
-            roi = Frame(array = roi)
+            roi = Image(array = roi)
             rois.append(roi)
 
         return rois

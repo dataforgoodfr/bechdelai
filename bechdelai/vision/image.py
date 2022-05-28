@@ -1,16 +1,16 @@
 
 import numpy as np
-from PIL import Image
+from PIL import Image as PILImage
 from IPython.display import Image as JupyterImage
 from deepface import DeepFace
 
-class Frame:
+class Image:
     def __init__(self,path = None,array = None,img = None):
 
         if path is not None:
-            self.img = Image.open(path)
+            self.img = PILImage.open(path)
         elif array is not None:
-            self.img = Image.fromarray(array)
+            self.img = PILImage.fromarray(array)
         elif img is not None:
             self.img = img
         else:
