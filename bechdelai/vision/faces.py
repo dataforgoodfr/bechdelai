@@ -9,7 +9,7 @@ from PIL import Image
 
 from retinaface import RetinaFace
 from deepface import DeepFace
-
+from deepface.commons import functions
 
 class FacesDetector:
     def __init__(self):
@@ -18,6 +18,8 @@ class FacesDetector:
     def detect(self,img:np.array,padding = 0):
 
         rois = RetinaFace.detect_faces(img)
+        if not isinstance(rois,dict):
+            return {},[]
 
         if padding == 0:
             faces = RetinaFace.extract_faces(img,align = True)
@@ -47,9 +49,10 @@ class FacesDetector:
 
         new_img = np.copy(img)
 
-        for _,values in rois.items():
-            (x1,y1,x2,y2) = values["facial_area"]
-            cv2.rectangle(new_img,(x1,y1),(x2,y2),color,width)
+        if rois is not None:
+            for _,values in rois.items():
+                (x1,y1,x2,y2) = values["facial_area"]
+                cv2.rectangle(new_img,(x1,y1),(x2,y2),color,width)
 
         new_img = Image.fromarray(new_img)
         return new_img
@@ -75,18 +78,33 @@ class FacesDetector:
             plt.show()
 
 
-    def analyze(self,face,enforce_detection = False):
+    def predict_gender(self,face):
+        model = DeepFace.build_model('Gender')
+        img_224, region = functions.preprocess_face(img = face, target_size = (224, 224), grayscale = False, enforce_detection = False, detector_backend = "opencv", return_region = True)
+        gender_prediction = model.predict(img_224)[0,:]
+        woman_proba,man_proba = gender_prediction
+        if np.argmax(gender_prediction) == 0:
+            gender = "Woman"
+        elif np.argmax(gender_prediction) == 1:
+            gender = "Man"
+        data = {"gender":gender,"gender_proba_man":man_proba,"gender_proba_woman":woman_proba}
+        return data
+
+    def analyze(self,face,enforce_detection = False,only_gender = True,progress_streamlit = None):
 
         if isinstance(face,list):
 
             faces_data = []
 
-            for f in tqdm(face):
+            for i,f in enumerate(tqdm(face)):
                 face_data = self.analyze(f,enforce_detection = enforce_detection)
                 faces_data.append(face_data)
 
+                if progress_streamlit is not None:
+                    progress_streamlit.progress((i+1)/len(face))
+
             faces_data = pd.DataFrame(faces_data)
-            faces_data["title"] = faces_data.apply(lambda x : ", ".join([x['gender'],str(x["age"])]),axis = 1)
+            faces_data["title"] = faces_data.apply(lambda x : ", ".join([x['gender']]),axis = 1)
 
             return faces_data
 
@@ -97,10 +115,17 @@ class FacesDetector:
 
             with warnings.catch_warnings():
                 warnings.simplefilter('ignore')
-                face_data = DeepFace.analyze(face,enforce_detection=enforce_detection)
-            face_data.pop("emotion")
-            face_data.pop("region")
-            face_data.pop("race")
+                if only_gender:
+                    face_data = self.predict_gender(face)
+                else:
+                    face_data = DeepFace.analyze(face,enforce_detection=enforce_detection,prog_bar = False)
+
+            try:
+                face_data.pop("emotion")
+                face_data.pop("region")
+                face_data.pop("race")
+            except:
+                pass
 
             face_data["width"] = face.shape[0]
             face_data["height"] = face.shape[1]
@@ -109,14 +134,16 @@ class FacesDetector:
             return face_data
 
 
-    def analyze_gender_representation(self,img,padding = 0):
+    def analyze_gender_representation(self,img,padding = 0,progress_streamlit = None):
 
         rois,faces = self.detect(img,padding = padding)
-        faces_data = self.analyze(faces)
-        faces_data["percentage"] = faces_data["area"] / (img.shape[0]*img.shape[1])
-        representation = faces_data.groupby("gender")["percentage"].sum()
-
-        return faces,faces_data,rois,representation
+        if len(faces) == 0:
+            return None,None,None,None
+        else:
+            faces_data = self.analyze(faces,progress_streamlit = progress_streamlit)
+            faces_data["percentage"] = faces_data["area"] / (img.shape[0]*img.shape[1])
+            representation = faces_data.groupby("gender")["percentage"].sum()
+            return faces,faces_data,rois,representation
 
         
 

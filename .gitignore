@@ -130,3 +130,5 @@ dmypy.json
 .vscode
 .DS_Store
 *.csv
+
+notebooks/poster_analysis/test
