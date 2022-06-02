@@ -35,7 +35,17 @@ def main():
     data = raw_data.copy()
     data["Is_hetero"] = data["Actor 2 Gender"] != data["Actor 1 Gender"]
     data["Gender of the oldest"] = define_the_oldest(data)
-    fig = px.histogram(data, x="Age Difference", color="Gender of the oldest", marginal="box", hover_data=data.columns)
+    fig = px.histogram(data, x="Age Difference",
+                       color="Gender of the oldest",
+                       marginal="box",
+                       hover_data=data.columns,
+                       color_discrete_map={
+                           "woman": "#f9ac23",
+                           "man": "#2fd3D3",
+                           "same": "#000000"
+                       },
+                       template="simple_white"
+                       )
     st.plotly_chart(fig, use_container_width=True)
 
 
