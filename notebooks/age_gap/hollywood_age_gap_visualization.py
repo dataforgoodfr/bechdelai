@@ -44,7 +44,7 @@ def main():
                            "man": "#2fd3D3",
                            "same": "#000000"
                        },
-                       template="simple_white"
+                       template="seaborn"
                        )
     st.plotly_chart(fig, use_container_width=True)
 
