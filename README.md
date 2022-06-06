@@ -23,7 +23,7 @@ Measurement and automation of the Bechdel test, female (under)representation and
 
 - Official website for the project is here (French) - https://dataforgood.fr/projects/bechdelai
 - Project documentation is [here](https://dataforgood.slite.com/app/docs/~8IRrgyKYR) (French)
-
+- For audio projects, details are [here](notebooks/audio/README.md)
 
 ## Get movies from Allociné / TMDB
 
