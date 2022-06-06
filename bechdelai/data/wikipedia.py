@@ -5,8 +5,8 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import outputformat as ouf
-import wikipediaapi
-from bechdelai.data.scrap import get_json_from_url
+# import wikipediaapi
+# from bechdelai.data.scrap import get_json_from_url
 
 def get_sections(query, lang="en"):
     """Return all sections and subsections in the page and their corresponding indexes
