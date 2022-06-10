@@ -1,17 +1,17 @@
 import os
 from dotenv import load_dotenv
 from inaSpeechSegmenter import Segmenter
-# import streamlit as st
 import pandas as pd
-# from inaSpeechSegmenter.export_funcs import seg2csv, seg2textgrid
+import speech_recognition as sr
 
 
 class Movie:
-    def __init__(self, path_to_file):
+    def __init__(self, path_to_file, path_to_audio):
         self.title = path_to_file.split(sep='\\')[-1].split(sep='.')[0]
         self.media = path_to_file
+        self.audio = path_to_audio
         self.gendered_audio_seg = self.segment()  # Dataframe
-        self.dialogues = None
+        self.dialogues = self.run_speech_to_text()
         self.speaking_time = self.compute_speaking_time_allocation()
 
     def __str__(self):
@@ -40,7 +40,7 @@ class Movie:
         return gender
 
     def compute_speaking_time_allocation(self):
-        speaking_time = {'male':0, 'female':0}
+        speaking_time = {'male': 0, 'female': 0}
         dif = pd.Series(self.gendered_audio_seg['end']-self.gendered_audio_seg['start'], name='time_frame')
         totaldf = pd.concat([self.gendered_audio_seg['gender'], dif], axis=1)
         for i in totaldf.index:
@@ -50,12 +50,45 @@ class Movie:
                 speaking_time['female'] += float(totaldf['time_frame'][i])
         return speaking_time
 
+    def decode_speech(self, start_time=None, end_time=None, language="en-US"):
+        r = sr.Recognizer()
+        # r.pause_threshold = 3
+        # r.dynamic_energy_adjustment_damping = 0.5
+        # language can be "fr-FR"
+
+        with sr.WavFile(self.audio) as source:
+            if start_time is None and end_time is None:
+                audio_text = r.record(source)
+            else:
+                audio_text = r.record(source, duration=end_time - start_time, offset=start_time)
+
+            # recognize_() method will throw a request error if the API is unreachable, hence using exception handling
+            try:
+                # using google speech recognition
+                text = r.recognize_google(audio_text, language=language)
+                print('Converting audio transcripts into text ...')
+                return text
+
+            except:
+                print('Sorry.. run again...')
+
+    def run_speech_to_text(self):
+        transcript = []
+        for i in self.gendered_audio_seg.index:
+            transcript.append(self.decode_speech(start_time=self.gendered_audio_seg['start'][i],
+                                                 end_time=self.gendered_audio_seg['end'][i],
+                                                 language='fr-FR'))
+        transcription = pd.concat([self.gendered_audio_seg['gender'], pd.Series(transcript, name="transcription")],
+                                  axis=1)
+        return transcription
 
 
 if __name__ == '__main__':
     load_dotenv()
-    path_to_video = os.getenv("path_to_voice", "./")
-    movie = Movie(path_to_video)
+    path_to_video = os.getenv("path_to_extract", "./")
+    audio = os.getenv("path_to_audio", "./")
+    movie = Movie(path_to_video, audio)
+    print(movie.dialogues)
     # """Pour convertir en tests :"""
     # gender_of_time_45 = movie.search_gender_tag(45)  # None
     # gender_of_time_60 = movie.search_gender_tag(60)  # Male

@@ -2,7 +2,6 @@ import os
 from moviepy.video.io.ffmpeg_tools import ffmpeg_extract_subclip
 import moviepy.editor as mp
 from dotenv import load_dotenv
-import speech_recognition as sr
 
 
 def cut_and_save(movie_path, start, end, target_name):
@@ -17,26 +16,9 @@ def separate_voice_and_music(file):
     os.system('spleeter separate -o ../../../ -f "{instrument}/{filename}.{codec}" ' + file)
 
 
-def decode_speech(wave_file, start_time=None, end_time=None, language="en-US"):
-    r = sr.Recognizer()
-    # r.pause_threshold = 3
-    # r.dynamic_energy_adjustment_damping = 0.5
-
-    with sr.WavFile(wave_file) as source:
-        if start_time is None and end_time is None:
-            audio_text = r.record(source)
-        else:
-            audio_text = r.record(source, duration=end_time - start_time, offset=start_time)
-
-        # recognize_() method will throw a request error if the API is unreachable, hence using exception handling
-        try:
-            # using google speech recognition
-            text = r.recognize_google(audio_text, language=language)
-            print('Converting audio transcripts into text ...')
-            return text
-
-        except:
-            print('Sorry.. run again...')
+def extract_audio_from_movie(file, extension='.wav'):
+    clip = import_as_clip(file)
+    clip.audio.write_audiofile(file.split(sep='.')[0] + extension)
 
 
 if __name__ == '__main__':
@@ -46,7 +28,8 @@ if __name__ == '__main__':
     path_to_extract = os.getenv("path_to_extract", "./")
     path_to_trailer = os.getenv("path_to_trailer", "./")
 
-    separate_voice_and_music(path_to_extract)
+    extract_audio_from_movie(path_to_extract)
+    # separate_voice_and_music(path_to_extract)
 
     # cut_and_save(path_to_full_movie, 2115, 2491, path_to_extract)
 
