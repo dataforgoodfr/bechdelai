@@ -12,6 +12,7 @@ class Movie:
         self.media = path_to_file
         self.gendered_audio_seg = self.segment()  # Dataframe
         self.dialogues = None
+        self.speaking_time = self.compute_speaking_time_allocation()
 
     def __str__(self):
         return "Film : {}".format(self.title)
@@ -38,25 +39,33 @@ class Movie:
                     pass
         return gender
 
+    def compute_speaking_time_allocation(self):
+        speaking_time = {'male':0, 'female':0}
+        dif = pd.Series(self.gendered_audio_seg['end']-self.gendered_audio_seg['start'], name='time_frame')
+        totaldf = pd.concat([self.gendered_audio_seg['gender'], dif], axis=1)
+        for i in totaldf.index:
+            if totaldf['gender'][i] == 'male':
+                speaking_time['male'] += float(totaldf['time_frame'][i])
+            if totaldf['gender'][i] == 'female':
+                speaking_time['female'] += float(totaldf['time_frame'][i])
+        return speaking_time
+
+
 
 if __name__ == '__main__':
     load_dotenv()
-    path_to_video = os.getenv("path_to_extract", "./")
+    path_to_video = os.getenv("path_to_voice", "./")
     movie = Movie(path_to_video)
-    gender_of_time_45 = movie.search_gender_tag(45)  # None
-    gender_of_time_60 = movie.search_gender_tag(60)  # Male
-    gender_of_time_93 = movie.search_gender_tag(93)  # Female
-    gender_of_time_399 = movie.search_gender_tag(399)  # None
-    print(
-        " Second 45 : " + str(gender_of_time_45),
-        " Second 60 : " + str(gender_of_time_60),
-        " Second 93 : " + str(gender_of_time_93),
-        " Second 399 : " + str(gender_of_time_399)
-    )
-    # # print(*r, sep = '\n')
-    # print(len(r))
-    # time = st.slider(
-    #     "Sélectionner un temps",
-    #     0, 400, 1)
-
-    # print('\n'.join(map(str, gendered_segmentation)))
+    # """Pour convertir en tests :"""
+    # gender_of_time_45 = movie.search_gender_tag(45)  # None
+    # gender_of_time_60 = movie.search_gender_tag(60)  # Male
+    # gender_of_time_93 = movie.search_gender_tag(93)  # Female
+    # gender_of_time_399 = movie.search_gender_tag(399)  # None
+    # print(
+    #     " Second 45 : " + str(gender_of_time_45),
+    #     " Second 60 : " + str(gender_of_time_60),
+    #     " Second 93 : " + str(gender_of_time_93),
+    #     " Second 399 : " + str(gender_of_time_399)
+    # )
+    # print(movie.gendered_audio_seg)
+    # print(movie.speaking_time)
