@@ -1,56 +1,62 @@
 import os
-import moviepy.editor as mp
 from dotenv import load_dotenv
-import speech_recognition as sr
 from inaSpeechSegmenter import Segmenter
-from inaSpeechSegmenter.export_funcs import seg2csv, seg2textgrid
+# import streamlit as st
+import pandas as pd
+# from inaSpeechSegmenter.export_funcs import seg2csv, seg2textgrid
 
 
-load_dotenv()
+class Movie:
+    def __init__(self, path_to_file):
+        self.title = path_to_file.split(sep='\\')[-1].split(sep='.')[0]
+        self.media = path_to_file
+        self.gendered_audio_seg = self.segment()  # Dataframe
+        self.dialogues = None
 
-path_to_video = os.getenv("path_to_video", "./")
-my_clip = mp.VideoFileClip(path_to_video)
+    def __str__(self):
+        return "Film : {}".format(self.title)
 
+    def __repr__(self):
+        return self.title
 
-def decodeSpeech(wavefile, start_time=None, end_time=None, language=None):
-    r = sr.Recognizer()
-    # r.pause_threshold = 3
-    # r.dynamic_energy_adjustment_damping = 0.5
+    def segment(self):
+        seg = Segmenter(vad_engine='sm', energy_ratio=0.05)
+        # energy ratio : the higher, the more selective ; vad_engine : works better with sm than smn
+        segment = seg(self.media)
+        return pd.DataFrame(list(filter(lambda x: x[0] == 'male' or x[0] == 'female', segment)),
+                            columns=['gender', 'start', 'end'])
 
-    with sr.WavFile(wavefile) as source:
-        if start_time == None and end_time == None:
-            audio_text = r.record(source)
-        else:
-            audio_text = r.record(source, duration=end_time - start_time, offset=start_time)
-
-    if language == None:  # default language is American English
-        lg = "en-US"
-    else:
-        lg = language
-
-        # recoginize_() method will throw a request error if the API is unreachable, hence using exception handling
-        try:
-
-            # using google speech recognition
-            text = r.recognize_google(audio_text, language=lg)
-            print('Converting audio transcripts into text ...')
-            return text
-
-        except:
-            print('Sorry.. run again...')
-
-seg = Segmenter()
-# segmentation = seg(my_clip.audio)
-# print(segmentation)
+    def search_gender_tag(self, time):  # Give a time in seconds
+        gender = None
+        if time > self.gendered_audio_seg['end'].tail(1).item():
+            return None
+        for i in self.gendered_audio_seg.index:
+            if time > self.gendered_audio_seg['start'][i]:
+                if time < self.gendered_audio_seg['end'][i]:
+                    gender = self.gendered_audio_seg['gender'][i]
+                if time > self.gendered_audio_seg['end'][i]:
+                    pass
+        return gender
 
 
-# cap = cv2.VideoCapture(path_to_video)
-# while(cap.isOpened()):
-#     ret, frame = cap.read()
-#     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-#     cv2.imshow('frame', gray)
-#     if cv2.waitKey(1) & 0xFF == ord('q'):
-#         break
-# cap.release()
-# cv2.destroyAllWindows()
+if __name__ == '__main__':
+    load_dotenv()
+    path_to_video = os.getenv("path_to_extract", "./")
+    movie = Movie(path_to_video)
+    gender_of_time_45 = movie.search_gender_tag(45)  # None
+    gender_of_time_60 = movie.search_gender_tag(60)  # Male
+    gender_of_time_93 = movie.search_gender_tag(93)  # Female
+    gender_of_time_399 = movie.search_gender_tag(399)  # None
+    print(
+        " Second 45 : " + str(gender_of_time_45),
+        " Second 60 : " + str(gender_of_time_60),
+        " Second 93 : " + str(gender_of_time_93),
+        " Second 399 : " + str(gender_of_time_399)
+    )
+    # # print(*r, sep = '\n')
+    # print(len(r))
+    # time = st.slider(
+    #     "Sélectionner un temps",
+    #     0, 400, 1)
 
+    # print('\n'.join(map(str, gendered_segmentation)))
