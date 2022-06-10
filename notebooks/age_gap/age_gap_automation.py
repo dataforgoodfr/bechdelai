@@ -1,5 +1,5 @@
 import sys
-sys.path.append("..\..")
+sys.path.append("../..")
 import bechdelai.data.wikipedia as wiki
 import bechdelai.data.tmdb as tmdb
 import process_couples as pc
@@ -21,7 +21,8 @@ class Movie:
         self.title = title
         self.release_year = release_year
         self.plot = self.get_plot()
-        self.cast = self.get_cast()
+        self.cast_wiki = self.get_cast_wiki()
+        self.cast = self.get_cast_tmdb()
 
     def __repr__(self):
         return self.__str__()
@@ -37,13 +38,16 @@ class Movie:
                 continue
         return None
 
-    def get_cast(self):
+    def get_cast_wiki(self):
+        return  pc.get_cast_from_wikipedia(self.title,self.release_year)
+
+    def get_cast_tmdb(self):
         movie_id = tmdb.get_best_tmdb_id(self.title,self.release_year)
 
         # get casting data
         data = tmdb.get_movie_cast_from_id(movie_id)
         tmdb_cast = pd.DataFrame(data["cast"])
-        wiki_cast = pc.get_cast_from_wikipedia(self.title,self.release_year)
+        wiki_cast = self.cast_wiki
         cast_df = pc.correct_cast_with_wikipedia(tmdb_cast,wiki_cast)
 
         # only use simple quotation marks'
@@ -62,10 +66,10 @@ class Movie:
         return cast_df
 
 def main():
-    verbs = ['kisses', 'sleeps with', 'goes on a date with', 'has sex with', 'marries', 'is in love with','is in couple with', 'is the father of', 'is the mother of']
-
+    verbs = ['kisses', 'sleeps with', 'goes on a date with', 'has sex with', 'marries', 'is in love with','is in couple with',
+            'is the father of', 'is the mother of','is a friend of', 'is in the family of', 'is the enemy of']
     hp4 = Movie("Harry Potter and the Goblet of Fire",2005)
-    ans = pc.compute_relationships_in_movie(hp4.cast,hp4.plot, verbs)
+    ans = pc.compute_relationships_in_movie(hp4, verbs)
     ans.to_csv('hp4.csv')
 
     call_me = Movie("Call Me by Your Name",2017)

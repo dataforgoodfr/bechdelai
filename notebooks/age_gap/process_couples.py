@@ -325,7 +325,7 @@ def fill_scores(df, new_entry, column_to_update):
     return df
 
 
-def compute_relationships_in_movie(cast_data,document_string, verbs):
+def compute_relationships_in_movie(movie, verbs):
 
     # Load model
     nlp = spacy.load('en_core_web_lg')
@@ -334,10 +334,12 @@ def compute_relationships_in_movie(cast_data,document_string, verbs):
     qa = pipeline('question-answering', model=model_name, tokenizer=model_name, top_k=1)
 
     ans = pd.DataFrame(columns = ['character1','star1','star_id1','character2','star2','star_id2','age_gap','genders','question','score'])
-    people = [get_character_nickname(name) for name in cast_data.character]
+    people = [get_character_nickname(name) for name in movie.cast.character]
+
+    document_string = movie.plot.split('\n') + movie.cast_wiki.split('\n')
 
     # Prediction -> Combine characters and questions
-    for context in document_string.split('\n'):
+    for context in document_string:
         if not len(context):
             continue
         for v in verbs:
@@ -348,10 +350,10 @@ def compute_relationships_in_movie(cast_data,document_string, verbs):
                     continue
 
                 # create new entry in ans dataframe
-                star1,star_id1 = get_actor_from_character(cast_data,person1)
-                star2,star_id2 = get_actor_from_character(cast_data,person2)
+                star1,star_id1 = get_actor_from_character(movie.cast,person1)
+                star2,star_id2 = get_actor_from_character(movie.cast,person2)
                 # compute age gap
-                age_gap,genders = get_age_gap(cast_data,[star1,star2])
+                age_gap,genders = get_age_gap(movie.cast,[star1,star2])
                 # ignore entry if age gap not computed
                 if age_gap==None:
                     continue
