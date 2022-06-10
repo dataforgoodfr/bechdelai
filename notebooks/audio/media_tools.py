@@ -28,7 +28,7 @@ if __name__ == '__main__':
     path_to_extract = os.getenv("path_to_extract", "./")
     path_to_trailer = os.getenv("path_to_trailer", "./")
 
-    extract_audio_from_movie(path_to_extract)
+    extract_audio_from_movie(path_to_full_movie)
     # separate_voice_and_music(path_to_extract)
 
     # cut_and_save(path_to_full_movie, 2115, 2491, path_to_extract)

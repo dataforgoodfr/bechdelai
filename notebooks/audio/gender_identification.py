@@ -41,7 +41,7 @@ class Movie:
 
     def compute_speaking_time_allocation(self):
         speaking_time = {'male': 0, 'female': 0}
-        dif = pd.Series(self.gendered_audio_seg['end']-self.gendered_audio_seg['start'], name='time_frame')
+        dif = pd.Series(self.gendered_audio_seg['end'] - self.gendered_audio_seg['start'], name='time_frame')
         totaldf = pd.concat([self.gendered_audio_seg['gender'], dif], axis=1)
         for i in totaldf.index:
             if totaldf['gender'][i] == 'male':
@@ -82,6 +82,10 @@ class Movie:
                                   axis=1)
         return transcription
 
+    def export_to_csv(self, file_path):
+        result = pd.concat([self.gendered_audio_seg, self.dialogues['transcription']], axis=1)
+        result.to_csv(path_or_buf=file_path, sep=";", header=True, index=False)
+
 
 if __name__ == '__main__':
     load_dotenv()
@@ -89,6 +93,7 @@ if __name__ == '__main__':
     audio = os.getenv("path_to_audio", "./")
     movie = Movie(path_to_video, audio)
     print(movie.dialogues)
+    movie.export_to_csv('./HP4_results.csv')
     # """Pour convertir en tests :"""
     # gender_of_time_45 = movie.search_gender_tag(45)  # None
     # gender_of_time_60 = movie.search_gender_tag(60)  # Male
