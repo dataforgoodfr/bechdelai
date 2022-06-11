@@ -89,10 +89,10 @@ class Movie:
 
 if __name__ == '__main__':
     load_dotenv()
-    path_to_video = os.getenv("path_to_extract", "./")
-    audio = os.getenv("path_to_audio", "./")
+    path_to_video = os.getenv("path_to_full_movie", "./")
+    audio = os.getenv("path_to_full_audio", "./")
     movie = Movie(path_to_video, audio)
-    print(movie.dialogues)
+    # print(movie.dialogues)
     movie.export_to_csv('./HP4_results.csv')
     # """Pour convertir en tests :"""
     # gender_of_time_45 = movie.search_gender_tag(45)  # None
