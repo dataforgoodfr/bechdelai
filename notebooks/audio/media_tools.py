@@ -12,8 +12,8 @@ def import_as_clip(path_to_video):
     return mp.VideoFileClip(path_to_video)
 
 
-def separate_voice_and_music(file):
-    os.system('spleeter separate -o ../../../ -f "{instrument}/{filename}.{codec}" ' + file)
+def separate_voice_and_music(file):  # Do not work above 700 seconds
+    os.system('spleeter separate -d 700.0 -o ../../../ -f "{instrument}/{filename}.{codec}" ' + file)
 
 
 def extract_audio_from_movie(file, extension='.wav'):
@@ -27,9 +27,10 @@ if __name__ == '__main__':
     path_to_full_movie = os.getenv("path_to_full_movie", "./")
     path_to_extract = os.getenv("path_to_extract", "./")
     path_to_trailer = os.getenv("path_to_trailer", "./")
+    path_to_full_audio = os.getenv("path_to_full_audio", "./")
 
-    extract_audio_from_movie(path_to_full_movie)
-    # separate_voice_and_music(path_to_extract)
+    # extract_audio_from_movie(path_to_full_movie)
+    # separate_voice_and_music(path_to_full_audio)
 
     # cut_and_save(path_to_full_movie, 2115, 2491, path_to_extract)
 
