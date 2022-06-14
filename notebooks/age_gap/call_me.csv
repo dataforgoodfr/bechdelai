@@ -1,0 +1,120 @@
+,character1,star1,star_id1,character2,star2,star_id2,age_gap,genders,question,score
+0,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",kisses,0.02236003242433071
+1,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",kisses,0.0007649442995898426
+2,Marzia,Esther Garrel,935096,Oliver,Armie Hammer,53807,5,"[1, 2]",kisses,1.4268149243434891e-05
+3,Chiara,Victoire Du Bois,1592949,Oliver,Armie Hammer,53807,2,"[1, 2]",kisses,0.002751606749370694
+4,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",sleeps with,0.04277012497186661
+5,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",sleeps with,0.0009387790923938155
+6,Marzia,Esther Garrel,935096,Chiara,Victoire Du Bois,1592949,3,"[1, 1]",sleeps with,0.00011967406317126006
+7,Chiara,Victoire Du Bois,1592949,Oliver,Armie Hammer,53807,2,"[1, 2]",sleeps with,0.00028898753225803375
+8,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",goes on a date with,0.3888755440711975
+9,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",goes on a date with,0.0607670433819294
+10,Marzia,Esther Garrel,935096,Chiara,Victoire Du Bois,1592949,3,"[1, 1]",goes on a date with,0.0006294557242654264
+11,Chiara,Victoire Du Bois,1592949,Oliver,Armie Hammer,53807,2,"[1, 2]",goes on a date with,0.015255258418619633
+12,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",has sex with,0.09270702302455902
+13,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",has sex with,0.008619340136647224
+14,Marzia,Esther Garrel,935096,Chiara,Victoire Du Bois,1592949,3,"[1, 1]",has sex with,0.0005330116837285459
+15,Chiara,Victoire Du Bois,1592949,Oliver,Armie Hammer,53807,2,"[1, 2]",has sex with,0.012631401419639587
+16,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",marries,0.03229735419154167
+17,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",marries,7.398950401693583e-05
+18,Marzia,Esther Garrel,935096,Chiara,Victoire Du Bois,1592949,3,"[1, 1]",marries,4.124765382584883e-06
+19,Chiara,Victoire Du Bois,1592949,Oliver,Armie Hammer,53807,2,"[1, 2]",marries,0.0007251027273014188
+20,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",is in love with,0.2001882791519165
+21,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",is in love with,0.023129703477025032
+22,Marzia,Esther Garrel,935096,Chiara,Victoire Du Bois,1592949,3,"[1, 1]",is in love with,0.00010153980838367715
+23,Chiara,Victoire Du Bois,1592949,Oliver,Armie Hammer,53807,2,"[1, 2]",is in love with,0.007702960632741451
+24,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",is in couple with,0.43657150864601135
+25,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",is in couple with,0.020631933584809303
+26,Marzia,Esther Garrel,935096,Chiara,Victoire Du Bois,1592949,3,"[1, 1]",is in couple with,0.008215224370360374
+27,Chiara,Victoire Du Bois,1592949,Marzia,Esther Garrel,935096,3,"[1, 1]",is in couple with,0.003509797155857086
+28,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",is the father of,0.5259777903556824
+29,Marzia,Esther Garrel,935096,Oliver,Armie Hammer,53807,5,"[1, 2]",is the father of,2.5519224436720833e-05
+30,Chiara,Victoire Du Bois,1592949,Oliver,Armie Hammer,53807,2,"[1, 2]",is the father of,0.03233768418431282
+31,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",is the mother of,0.12548860907554626
+32,Oliver,Armie Hammer,53807,Chiara,Victoire Du Bois,1592949,2,"[2, 1]",is the mother of,0.11599305272102356
+33,Marzia,Esther Garrel,935096,Chiara,Victoire Du Bois,1592949,3,"[1, 1]",is the mother of,0.04947645589709282
+34,Chiara,Victoire Du Bois,1592949,Marzia,Esther Garrel,935096,3,"[1, 1]",is the mother of,0.027551816776394844
+35,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",kisses,0.10076455771923065
+36,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",kisses,0.19742852449417114
+37,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",sleeps with,0.07505451887845993
+38,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",sleeps with,0.13907377421855927
+39,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",goes on a date with,0.29502007365226746
+40,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",goes on a date with,0.6160463690757751
+41,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",has sex with,0.17865267395973206
+42,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",has sex with,0.5076314806938171
+43,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",marries,0.09146878868341446
+44,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",marries,0.16978126764297485
+45,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",is in love with,0.2670007646083832
+46,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",is in love with,0.3343277871608734
+47,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",is in couple with,0.28952470421791077
+48,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",is in couple with,0.8307359218597412
+49,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",is the father of,0.21022772789001465
+50,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",is the father of,0.25225821137428284
+51,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",is the mother of,0.06736142933368683
+52,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",is the mother of,0.013932377099990845
+53,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",kisses,0.13455313444137573
+54,Oliver,Armie Hammer,53807,Marzia,Esther Garrel,935096,5,"[2, 1]",kisses,0.00045860803220421076
+55,Marzia,Esther Garrel,935096,Oliver,Armie Hammer,53807,5,"[1, 2]",kisses,0.02125117927789688
+56,Elio Perlman,Timothee Chalamet,1190668,Marzia,Esther Garrel,935096,5,"[2, 1]",sleeps with,0.10003423690795898
+57,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",sleeps with,0.03252045437693596
+58,Marzia,Esther Garrel,935096,Elio,Timothee Chalamet,1190668,5,"[1, 2]",sleeps with,0.12104752659797668
+59,Elio Perlman,Timothee Chalamet,1190668,Marzia,Esther Garrel,935096,5,"[2, 1]",goes on a date with,0.4257059395313263
+60,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",goes on a date with,0.000293028075248003
+61,Marzia,Esther Garrel,935096,Elio,Timothee Chalamet,1190668,5,"[1, 2]",goes on a date with,0.9579336047172546
+62,Elio Perlman,Timothee Chalamet,1190668,Marzia,Esther Garrel,935096,5,"[2, 1]",has sex with,0.7748692035675049
+63,Oliver,Armie Hammer,53807,Marzia,Esther Garrel,935096,5,"[2, 1]",has sex with,0.10227644443511963
+64,Marzia,Esther Garrel,935096,Elio,Timothee Chalamet,1190668,5,"[1, 2]",has sex with,0.7969797849655151
+65,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",marries,0.14931027591228485
+66,Oliver,Armie Hammer,53807,Marzia,Esther Garrel,935096,5,"[2, 1]",marries,0.0013900812482461333
+67,Marzia,Esther Garrel,935096,Oliver,Armie Hammer,53807,5,"[1, 2]",marries,0.02367883361876011
+68,Elio Perlman,Timothee Chalamet,1190668,Marzia,Esther Garrel,935096,5,"[2, 1]",is in love with,0.43704742193222046
+69,Oliver,Armie Hammer,53807,Marzia,Esther Garrel,935096,5,"[2, 1]",is in love with,0.0055237398482859135
+70,Marzia,Esther Garrel,935096,Elio,Timothee Chalamet,1190668,5,"[1, 2]",is in love with,0.37938961386680603
+71,Elio Perlman,Timothee Chalamet,1190668,Marzia,Esther Garrel,935096,5,"[2, 1]",is in couple with,0.557980477809906
+72,Oliver,Armie Hammer,53807,Marzia,Esther Garrel,935096,5,"[2, 1]",is in couple with,0.03585173189640045
+73,Marzia,Esther Garrel,935096,Elio,Timothee Chalamet,1190668,5,"[1, 2]",is in couple with,0.6791297197341919
+74,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",is the father of,0.2202511578798294
+75,Marzia,Esther Garrel,935096,Oliver,Armie Hammer,53807,5,"[1, 2]",is the father of,0.17457473278045654
+76,Elio Perlman,Timothee Chalamet,1190668,Marzia,Esther Garrel,935096,5,"[2, 1]",is the mother of,0.5952123403549194
+77,Oliver,Armie Hammer,53807,Marzia,Esther Garrel,935096,5,"[2, 1]",is the mother of,0.41029781103134155
+78,Marzia,Esther Garrel,935096,Oliver,Armie Hammer,53807,5,"[1, 2]",is the mother of,0.02427743934094906
+79,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",kisses,0.0020706665236502886
+80,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",kisses,0.004697057418525219
+81,Marzia,Esther Garrel,935096,Elio,Timothee Chalamet,1190668,5,"[1, 2]",kisses,3.321611359297094e-07
+82,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",sleeps with,0.002790112281218171
+83,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",sleeps with,0.0135112963616848
+84,Marzia,Esther Garrel,935096,Elio,Timothee Chalamet,1190668,5,"[1, 2]",sleeps with,2.945882215499296e-06
+85,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",goes on a date with,0.03919660300016403
+86,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",goes on a date with,0.3215752840042114
+87,Marzia,Esther Garrel,935096,Elio,Timothee Chalamet,1190668,5,"[1, 2]",goes on a date with,0.0003413085069041699
+88,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",has sex with,0.026333075016736984
+89,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",has sex with,0.08562426269054413
+90,Marzia,Esther Garrel,935096,Elio,Timothee Chalamet,1190668,5,"[1, 2]",has sex with,1.2786406841769349e-05
+91,Elio Perlman,Timothee Chalamet,1190668,Marzia,Esther Garrel,935096,5,"[2, 1]",marries,0.0010200577089563012
+92,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",marries,0.0007732471567578614
+93,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",is in love with,0.0161771010607481
+94,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",is in love with,0.5447942018508911
+95,Marzia,Esther Garrel,935096,Elio,Timothee Chalamet,1190668,5,"[1, 2]",is in love with,6.03783228143584e-05
+96,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",is in couple with,0.030560018494725227
+97,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",is in couple with,0.5960243940353394
+98,Marzia,Esther Garrel,935096,Elio,Timothee Chalamet,1190668,5,"[1, 2]",is in couple with,0.00011836746853077784
+99,Elio Perlman,Timothee Chalamet,1190668,Marzia,Esther Garrel,935096,5,"[2, 1]",is the mother of,0.559446394443512
+100,Oliver,Armie Hammer,53807,Marzia,Esther Garrel,935096,5,"[2, 1]",is the mother of,0.552978515625
+101,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",kisses,0.016442585736513138
+102,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",kisses,0.0003071910177823156
+103,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",sleeps with,0.01946844905614853
+104,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",sleeps with,0.0007810596143826842
+105,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",goes on a date with,0.2931804955005646
+106,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",goes on a date with,0.03769794479012489
+107,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",has sex with,0.11095784604549408
+108,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",has sex with,0.013328115455806255
+109,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",marries,0.2801448702812195
+110,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",marries,0.052401352673769
+111,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",is in love with,0.1375037133693695
+112,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",is in love with,0.1022619754076004
+113,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",is in couple with,0.4212566316127777
+114,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",is in couple with,0.3477884531021118
+115,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",is the father of,0.38226503133773804
+116,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",is the father of,0.04459923505783081
+117,Elio Perlman,Timothee Chalamet,1190668,Oliver,Armie Hammer,53807,10,"[2, 2]",is the mother of,0.047591473907232285
+118,Oliver,Armie Hammer,53807,Elio,Timothee Chalamet,1190668,10,"[2, 2]",is the mother of,0.2847294211387634

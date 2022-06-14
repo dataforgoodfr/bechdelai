@@ -1,0 +1,533 @@
+,character1,star1,star_id1,character2,star2,star_id2,age_gap,genders,question,score
+0,The Dude,Jeff Bridges,1229,Jackie Treehorn,Ben Gazzara,856,19,"[2, 2]",kisses,1.4812725567026064e-05
+1,Maude Lebowski,Julianne Moore,1231,Jackie Treehorn,Ben Gazzara,856,30,"[1, 2]",kisses,4.553976395982318e-06
+2,The Big,David Huddleston,1232,Jackie Treehorn,Ben Gazzara,856,0,"[2, 2]",kisses,2.187761856475845e-05
+3,Bunny Lebowski,Tara Reid,1234,Jackie Treehorn,Ben Gazzara,856,45,"[1, 2]",kisses,5.324226549419109e-06
+4,The Stranger,Sam Elliott,16431,Jackie Treehorn,Ben Gazzara,856,14,"[2, 2]",kisses,3.1918191325530643e-06
+5,the Malibu Police Chief,Leon Russom,169920,"Jeffrey ""The Dude"" Lebowski",Jeff Bridges,1229,8,"[2, 2]",kisses,7.804849389003721e-08
+6,The Dude,Jeff Bridges,1229,Jackie Treehorn,Ben Gazzara,856,19,"[2, 2]",sleeps with,0.01739129051566124
+7,Maude Lebowski,Julianne Moore,1231,Jackie Treehorn,Ben Gazzara,856,30,"[1, 2]",sleeps with,3.346806261106394e-05
+8,The Big,David Huddleston,1232,Jackie Treehorn,Ben Gazzara,856,0,"[2, 2]",sleeps with,0.001513503142632544
+9,Bunny Lebowski,Tara Reid,1234,Jackie Treehorn,Ben Gazzara,856,45,"[1, 2]",sleeps with,4.2343726818216965e-05
+10,The Stranger,Sam Elliott,16431,Jackie Treehorn,Ben Gazzara,856,14,"[2, 2]",sleeps with,0.0003131652483716607
+11,Jackie Treehorn,Ben Gazzara,856,"Jeffrey ""The Dude"" Lebowski",Jeff Bridges,1229,19,"[2, 2]",sleeps with,0.010788513347506523
+12,the Malibu Police Chief,Leon Russom,169920,"Jeffrey ""The Dude"" Lebowski",Jeff Bridges,1229,8,"[2, 2]",sleeps with,4.283888756617671e-06
+13,The Dude,Jeff Bridges,1229,Jackie Treehorn,Ben Gazzara,856,19,"[2, 2]",goes on a date with,0.08055385202169418
+14,Maude Lebowski,Julianne Moore,1231,Jackie Treehorn,Ben Gazzara,856,30,"[1, 2]",goes on a date with,0.00037111793062649667
+15,The Big,David Huddleston,1232,Jackie Treehorn,Ben Gazzara,856,0,"[2, 2]",goes on a date with,0.0014137764228507876
+16,Bunny Lebowski,Tara Reid,1234,Jackie Treehorn,Ben Gazzara,856,45,"[1, 2]",goes on a date with,6.17938712821342e-05
+17,The Stranger,Sam Elliott,16431,Jackie Treehorn,Ben Gazzara,856,14,"[2, 2]",goes on a date with,0.00028983416268602014
+18,Jackie Treehorn,Ben Gazzara,856,"Jeffrey ""The Dude"" Lebowski",Jeff Bridges,1229,19,"[2, 2]",goes on a date with,0.03793257474899292
+19,the Malibu Police Chief,Leon Russom,169920,"Jeffrey ""The Dude"" Lebowski",Jeff Bridges,1229,8,"[2, 2]",goes on a date with,1.0569834557827562e-05
+20,The Dude,Jeff Bridges,1229,Jackie Treehorn,Ben Gazzara,856,19,"[2, 2]",has sex with,0.2509578466415405
+21,Maude Lebowski,Julianne Moore,1231,Jackie Treehorn,Ben Gazzara,856,30,"[1, 2]",has sex with,0.00023197483096737415
+22,The Big,David Huddleston,1232,Jackie Treehorn,Ben Gazzara,856,0,"[2, 2]",has sex with,0.013219126500189304
+23,Bunny Lebowski,Tara Reid,1234,Jackie Treehorn,Ben Gazzara,856,45,"[1, 2]",has sex with,3.1499264878220856e-05
+24,The Stranger,Sam Elliott,16431,Jackie Treehorn,Ben Gazzara,856,14,"[2, 2]",has sex with,0.0010329431388527155
+25,Jackie Treehorn,Ben Gazzara,856,"Jeffrey ""The Dude"" Lebowski",Jeff Bridges,1229,19,"[2, 2]",has sex with,0.01298939622938633
+26,the Malibu Police Chief,Leon Russom,169920,Jackie Treehorn,Ben Gazzara,856,11,"[2, 2]",has sex with,2.7914480597246438e-05
+27,The Dude,Jeff Bridges,1229,Jackie Treehorn,Ben Gazzara,856,19,"[2, 2]",marries,0.0007131330203264952
+28,Maude Lebowski,Julianne Moore,1231,Jackie Treehorn,Ben Gazzara,856,30,"[1, 2]",marries,0.000250463024713099
+29,The Big,David Huddleston,1232,Jackie Treehorn,Ben Gazzara,856,0,"[2, 2]",marries,0.0006603061920031905
+30,Bunny Lebowski,Tara Reid,1234,Jackie Treehorn,Ben Gazzara,856,45,"[1, 2]",marries,4.037189864902757e-05
+31,The Stranger,Sam Elliott,16431,Jackie Treehorn,Ben Gazzara,856,14,"[2, 2]",marries,4.456674651009962e-05
+32,the Malibu Police Chief,Leon Russom,169920,Jackie Treehorn,Ben Gazzara,856,11,"[2, 2]",marries,1.3145420325599844e-06
+33,The Dude,Jeff Bridges,1229,Jackie Treehorn,Ben Gazzara,856,19,"[2, 2]",is in love with,0.000889794435352087
+34,Maude Lebowski,Julianne Moore,1231,Jackie Treehorn,Ben Gazzara,856,30,"[1, 2]",is in love with,7.514948811149225e-05
+35,The Big,David Huddleston,1232,Jackie Treehorn,Ben Gazzara,856,0,"[2, 2]",is in love with,0.0006121081532910466
+36,Bunny Lebowski,Tara Reid,1234,Jackie Treehorn,Ben Gazzara,856,45,"[1, 2]",is in love with,1.1877734323206823e-05
+37,The Stranger,Sam Elliott,16431,Jackie Treehorn,Ben Gazzara,856,14,"[2, 2]",is in love with,2.799547291942872e-05
+38,Jackie Treehorn,Ben Gazzara,856,"Jeffrey ""The Dude"" Lebowski",Jeff Bridges,1229,19,"[2, 2]",is in love with,0.004048026166856289
+39,the Malibu Police Chief,Leon Russom,169920,"Jeffrey ""The Dude"" Lebowski",Jeff Bridges,1229,8,"[2, 2]",is in love with,1.1291993359918706e-05
+40,The Dude,Jeff Bridges,1229,Jackie Treehorn,Ben Gazzara,856,19,"[2, 2]",is in couple with,0.19587291777133942
+41,Maude Lebowski,Julianne Moore,1231,Jackie Treehorn,Ben Gazzara,856,30,"[1, 2]",is in couple with,0.0025932099670171738
+42,The Big,David Huddleston,1232,Jackie Treehorn,Ben Gazzara,856,0,"[2, 2]",is in couple with,0.025069650262594223
+43,Bunny Lebowski,Tara Reid,1234,Jackie Treehorn,Ben Gazzara,856,45,"[1, 2]",is in couple with,0.0002104796003550291
+44,The Stranger,Sam Elliott,16431,Jackie Treehorn,Ben Gazzara,856,14,"[2, 2]",is in couple with,0.0005580766592174768
+45,the Malibu Police Chief,Leon Russom,169920,Jackie Treehorn,Ben Gazzara,856,11,"[2, 2]",is in couple with,2.291598320880439e-05
+46,The Dude,Jeff Bridges,1229,Jackie Treehorn,Ben Gazzara,856,19,"[2, 2]",is the father of,0.13830925524234772
+47,Maude Lebowski,Julianne Moore,1231,Jackie Treehorn,Ben Gazzara,856,30,"[1, 2]",is the father of,0.01480341237038374
+48,The Big,David Huddleston,1232,"Jeffrey ""The Dude"" Lebowski",Jeff Bridges,1229,19,"[2, 2]",is the father of,0.04618799686431885
+49,Bunny Lebowski,Tara Reid,1234,"Jeffrey ""The Dude",Jeff Bridges,1229,26,"[1, 2]",is the father of,0.011473972350358963
+50,The Stranger,Sam Elliott,16431,Jackie Treehorn,Ben Gazzara,856,14,"[2, 2]",is the father of,0.000619790400378406
+51,Jackie Treehorn,Ben Gazzara,856,"Jeffrey ""The Dude"" Lebowski",Jeff Bridges,1229,19,"[2, 2]",is the father of,0.12568193674087524
+52,the Malibu Police Chief,Leon Russom,169920,"Jeffrey ""The Dude"" Lebowski",Jeff Bridges,1229,8,"[2, 2]",is the father of,4.912930671707727e-05
+53,The Dude,Jeff Bridges,1229,Jackie Treehorn,Ben Gazzara,856,19,"[2, 2]",is the mother of,0.0843605175614357
+54,Maude Lebowski,Julianne Moore,1231,Jackie Treehorn,Ben Gazzara,856,30,"[1, 2]",is the mother of,0.00014701401232741773
+55,The Big,David Huddleston,1232,Jackie Treehorn,Ben Gazzara,856,0,"[2, 2]",is the mother of,0.005983238108456135
+56,Bunny Lebowski,Tara Reid,1234,Jackie Treehorn,Ben Gazzara,856,45,"[1, 2]",is the mother of,0.00018329473095946014
+57,The Stranger,Sam Elliott,16431,Jackie Treehorn,Ben Gazzara,856,14,"[2, 2]",is the mother of,0.0002387009735684842
+58,the Malibu Police Chief,Leon Russom,169920,Jackie Treehorn,Ben Gazzara,856,11,"[2, 2]",is the mother of,1.6805133782327175e-05
+59,The Dude,Jeff Bridges,1229,Bunny,Tara Reid,1234,26,"[2, 1]",kisses,0.005193002056330442
+60,Walter Sobchak,John Goodman,1230,Donny Kerabatsos,Steve Buscemi,884,5,"[2, 2]",kisses,3.7635112676071e-05
+61,Maude Lebowski,Julianne Moore,1231,The Dude,Jeff Bridges,1229,11,"[1, 2]",kisses,1.1257803635089658e-05
+62,Donny Kerabatsos,Steve Buscemi,884,Walter Sobchak,John Goodman,1230,5,"[2, 2]",kisses,7.528782589361072e-05
+63,The Big,David Huddleston,1232,Bunny,Tara Reid,1234,45,"[2, 1]",kisses,0.0005288832471705973
+64,The Stranger,Sam Elliott,16431,Bunny,Tara Reid,1234,31,"[2, 1]",kisses,0.00017378314805682749
+65,Uli Kunkel/Karl Hungus,Flea,1237,Bunny,Tara Reid,1234,13,"[2, 1]",kisses,0.0007562469691038132
+66,Treehorn's thugs,Mark Pellegrino,1236,Bunny,Tara Reid,1234,10,"[2, 1]",kisses,1.0346696399210487e-05
+67,the Malibu Police Chief,Leon Russom,169920,Bunny,Tara Reid,1234,34,"[2, 1]",kisses,1.0259117289024289e-06
+68,The Dude,Jeff Bridges,1229,Bunny,Tara Reid,1234,26,"[2, 1]",sleeps with,0.03772883862257004
+69,Walter Sobchak,John Goodman,1230,Donny Kerabatsos,Steve Buscemi,884,5,"[2, 2]",sleeps with,0.0007884657243266702
+70,Maude Lebowski,Julianne Moore,1231,Bunny,Tara Reid,1234,15,"[1, 1]",sleeps with,0.0002512288047000766
+71,Donny Kerabatsos,Steve Buscemi,884,Walter Sobchak,John Goodman,1230,5,"[2, 2]",sleeps with,0.006769146770238876
+72,Brandt,Philip Seymour Hoffman,1233,Bunny,Tara Reid,1234,8,"[2, 1]",sleeps with,4.356239514891058e-06
+73,The Big,David Huddleston,1232,Bunny,Tara Reid,1234,45,"[2, 1]",sleeps with,0.007752189412713051
+74,The Stranger,Sam Elliott,16431,Bunny,Tara Reid,1234,31,"[2, 1]",sleeps with,0.001032311120070517
+75,Uli Kunkel/Karl Hungus,Flea,1237,Bunny,Tara Reid,1234,13,"[2, 1]",sleeps with,0.015195077285170555
+76,Treehorn's thugs,Mark Pellegrino,1236,Bunny,Tara Reid,1234,10,"[2, 1]",sleeps with,0.00013632660557050258
+77,the Malibu Police Chief,Leon Russom,169920,Bunny,Tara Reid,1234,34,"[2, 1]",sleeps with,1.5893361705821007e-05
+78,The Dude,Jeff Bridges,1229,Bunny,Tara Reid,1234,26,"[2, 1]",goes on a date with,0.377450168132782
+79,Donny Kerabatsos,Steve Buscemi,884,Walter Sobchak,John Goodman,1230,5,"[2, 2]",goes on a date with,0.05867386609315872
+80,Brandt,Philip Seymour Hoffman,1233,Bunny,Tara Reid,1234,8,"[2, 1]",goes on a date with,0.0002741265925578773
+81,The Big,David Huddleston,1232,Bunny,Tara Reid,1234,45,"[2, 1]",goes on a date with,0.351595014333725
+82,The Stranger,Sam Elliott,16431,Bunny,Tara Reid,1234,31,"[2, 1]",goes on a date with,0.025959165766835213
+83,Uli Kunkel/Karl Hungus,Flea,1237,Bunny,Tara Reid,1234,13,"[2, 1]",goes on a date with,0.166961207985878
+84,Treehorn's thugs,Mark Pellegrino,1236,Dude,Jeff Bridges,1229,16,"[2, 2]",goes on a date with,0.001701359637081623
+85,the Malibu Police Chief,Leon Russom,169920,Bunny,Tara Reid,1234,34,"[2, 1]",goes on a date with,0.003151367185637355
+86,The Dude,Jeff Bridges,1229,Bunny,Tara Reid,1234,26,"[2, 1]",has sex with,0.18246714770793915
+87,Walter Sobchak,John Goodman,1230,Donny Kerabatsos,Steve Buscemi,884,5,"[2, 2]",has sex with,0.001056963694281876
+88,Maude Lebowski,Julianne Moore,1231,Bunny,Tara Reid,1234,15,"[1, 1]",has sex with,0.00022489242837764323
+89,Donny Kerabatsos,Steve Buscemi,884,Walter Sobchak,John Goodman,1230,5,"[2, 2]",has sex with,0.01330857165157795
+90,Brandt,Philip Seymour Hoffman,1233,Dude,Jeff Bridges,1229,18,"[2, 2]",has sex with,7.742261004750617e-06
+91,The Big,David Huddleston,1232,Bunny,Tara Reid,1234,45,"[2, 1]",has sex with,0.025396671146154404
+92,The Stranger,Sam Elliott,16431,Bunny,Tara Reid,1234,31,"[2, 1]",has sex with,0.0018126660725101829
+93,Uli Kunkel/Karl Hungus,Flea,1237,Bunny,Tara Reid,1234,13,"[2, 1]",has sex with,0.014712189324200153
+94,Treehorn's thugs,Mark Pellegrino,1236,Bunny,Tara Reid,1234,10,"[2, 1]",has sex with,9.594920265953988e-05
+95,the Malibu Police Chief,Leon Russom,169920,Bunny,Tara Reid,1234,34,"[2, 1]",has sex with,9.904137550620362e-05
+96,The Dude,Jeff Bridges,1229,Bunny,Tara Reid,1234,26,"[2, 1]",marries,0.09065522998571396
+97,Walter Sobchak,John Goodman,1230,Donny Kerabatsos,Steve Buscemi,884,5,"[2, 2]",marries,0.0002330657298443839
+98,Maude Lebowski,Julianne Moore,1231,Bunny,Tara Reid,1234,15,"[1, 1]",marries,0.0002634892298374325
+99,Donny Kerabatsos,Steve Buscemi,884,Walter Sobchak,John Goodman,1230,5,"[2, 2]",marries,0.00172249018214643
+100,Brandt,Philip Seymour Hoffman,1233,Dude,Jeff Bridges,1229,18,"[2, 2]",marries,5.408514311966428e-07
+101,The Big,David Huddleston,1232,Bunny,Tara Reid,1234,45,"[2, 1]",marries,0.003275779541581869
+102,Bunny Lebowski,Tara Reid,1234,The Dude,Jeff Bridges,1229,26,"[1, 2]",marries,0.0015247873961925507
+103,The Stranger,Sam Elliott,16431,Bunny,Tara Reid,1234,31,"[2, 1]",marries,0.0006964606000110507
+104,Uli Kunkel/Karl Hungus,Flea,1237,Bunny,Tara Reid,1234,13,"[2, 1]",marries,0.007348864804953337
+105,Treehorn's thugs,Mark Pellegrino,1236,Bunny,Tara Reid,1234,10,"[2, 1]",marries,0.0002228773373644799
+106,the Malibu Police Chief,Leon Russom,169920,Bunny,Tara Reid,1234,34,"[2, 1]",marries,3.914467743015848e-05
+107,The Dude,Jeff Bridges,1229,Bunny,Tara Reid,1234,26,"[2, 1]",is in love with,0.15468235313892365
+108,Walter Sobchak,John Goodman,1230,Donny Kerabatsos,Steve Buscemi,884,5,"[2, 2]",is in love with,6.247730925679207e-05
+109,Maude Lebowski,Julianne Moore,1231,Bunny,Tara Reid,1234,15,"[1, 1]",is in love with,0.0008234689012169838
+110,Donny Kerabatsos,Steve Buscemi,884,Walter Sobchak,John Goodman,1230,5,"[2, 2]",is in love with,0.0004399031458888203
+111,Brandt,Philip Seymour Hoffman,1233,Bunny,Tara Reid,1234,8,"[2, 1]",is in love with,3.2119557999976678e-06
+112,The Big,David Huddleston,1232,Bunny,Tara Reid,1234,45,"[2, 1]",is in love with,0.00987281370908022
+113,The Stranger,Sam Elliott,16431,Bunny,Tara Reid,1234,31,"[2, 1]",is in love with,0.0034112809225916862
+114,Uli Kunkel/Karl Hungus,Flea,1237,Bunny,Tara Reid,1234,13,"[2, 1]",is in love with,0.050171736627817154
+115,Treehorn's thugs,Mark Pellegrino,1236,Maude,Julianne Moore,1231,5,"[2, 1]",is in love with,0.0003852371301036328
+116,the Malibu Police Chief,Leon Russom,169920,Bunny,Tara Reid,1234,34,"[2, 1]",is in love with,0.0009232991724275053
+117,The Dude,Jeff Bridges,1229,Bunny,Tara Reid,1234,26,"[2, 1]",is in couple with,0.5566124320030212
+118,Walter Sobchak,John Goodman,1230,Donny Kerabatsos,Steve Buscemi,884,5,"[2, 2]",is in couple with,0.5156876444816589
+119,Maude Lebowski,Julianne Moore,1231,Bunny,Tara Reid,1234,15,"[1, 1]",is in couple with,0.05855179578065872
+120,Donny Kerabatsos,Steve Buscemi,884,Walter Sobchak,John Goodman,1230,5,"[2, 2]",is in couple with,0.3632311224937439
+121,Brandt,Philip Seymour Hoffman,1233,Bunny,Tara Reid,1234,8,"[2, 1]",is in couple with,0.0012712294701486826
+122,The Big,David Huddleston,1232,Bunny,Tara Reid,1234,45,"[2, 1]",is in couple with,0.2456556260585785
+123,The Stranger,Sam Elliott,16431,Bunny,Tara Reid,1234,31,"[2, 1]",is in couple with,0.021196063607931137
+124,Uli Kunkel/Karl Hungus,Flea,1237,Bunny,Tara Reid,1234,13,"[2, 1]",is in couple with,0.2134191244840622
+125,Treehorn's thugs,Mark Pellegrino,1236,Bunny,Tara Reid,1234,10,"[2, 1]",is in couple with,0.0036462624557316303
+126,the Malibu Police Chief,Leon Russom,169920,Bunny,Tara Reid,1234,34,"[2, 1]",is in couple with,0.0013800839660689235
+127,Walter Sobchak,John Goodman,1230,Donny Kerabatsos,Steve Buscemi,884,5,"[2, 2]",is the father of,0.26199039816856384
+128,Donny Kerabatsos,Steve Buscemi,884,Walter Sobchak,John Goodman,1230,5,"[2, 2]",is the father of,0.16951194405555725
+129,The Dude,Jeff Bridges,1229,Bunny,Tara Reid,1234,26,"[2, 1]",is the mother of,0.23121881484985352
+130,Walter Sobchak,John Goodman,1230,Donny Kerabatsos,Steve Buscemi,884,5,"[2, 2]",is the mother of,0.008033312857151031
+131,Maude Lebowski,Julianne Moore,1231,Bunny,Tara Reid,1234,15,"[1, 1]",is the mother of,0.11417538672685623
+132,Donny Kerabatsos,Steve Buscemi,884,Bunny,Tara Reid,1234,18,"[2, 1]",is the mother of,0.006955097895115614
+133,Brandt,Philip Seymour Hoffman,1233,Bunny,Tara Reid,1234,8,"[2, 1]",is the mother of,0.003969315905123949
+134,The Big,David Huddleston,1232,Bunny,Tara Reid,1234,45,"[2, 1]",is the mother of,0.13078555464744568
+135,The Stranger,Sam Elliott,16431,Bunny,Tara Reid,1234,31,"[2, 1]",is the mother of,0.015592058189213276
+136,Uli Kunkel/Karl Hungus,Flea,1237,Bunny,Tara Reid,1234,13,"[2, 1]",is the mother of,0.3080085813999176
+137,Treehorn's thugs,Mark Pellegrino,1236,Bunny,Tara Reid,1234,10,"[2, 1]",is the mother of,0.00459298025816679
+138,the Malibu Police Chief,Leon Russom,169920,Bunny,Tara Reid,1234,34,"[2, 1]",is the mother of,0.02957209013402462
+139,The Dude,Jeff Bridges,1229,Walter,John Goodman,1230,3,"[2, 2]",kisses,0.000625342596322298
+140,Walter Sobchak,John Goodman,1230,The Dude,Jeff Bridges,1229,3,"[2, 2]",kisses,0.038306139409542084
+141,Maude Lebowski,Julianne Moore,1231,The Dude,Jeff Bridges,1229,11,"[1, 2]",kisses,5.4911170082050376e-06
+142,The Big,David Huddleston,1232,Walter,John Goodman,1230,22,"[2, 2]",kisses,0.0010339015861973166
+143,Bunny Lebowski,Tara Reid,1234,The Dude,Jeff Bridges,1229,26,"[1, 2]",kisses,1.9291315766167827e-05
+144,The Stranger,Sam Elliott,16431,Walter,John Goodman,1230,8,"[2, 2]",kisses,0.00011549380724318326
+145,the Malibu Police Chief,Leon Russom,169920,The Dude,Jeff Bridges,1229,8,"[2, 2]",kisses,8.603607420809567e-05
+146,The Dude,Jeff Bridges,1229,Walter,John Goodman,1230,3,"[2, 2]",sleeps with,0.001772899879142642
+147,Walter Sobchak,John Goodman,1230,The Dude,Jeff Bridges,1229,3,"[2, 2]",sleeps with,0.11454718559980392
+148,Maude Lebowski,Julianne Moore,1231,The Dude,Jeff Bridges,1229,11,"[1, 2]",sleeps with,2.4886821847758256e-05
+149,The Big,David Huddleston,1232,The Dude,Jeff Bridges,1229,19,"[2, 2]",sleeps with,0.0015153740532696247
+150,Bunny Lebowski,Tara Reid,1234,The Dude,Jeff Bridges,1229,26,"[1, 2]",sleeps with,0.00017960320110432804
+151,The Stranger,Sam Elliott,16431,"Bunny ""kidnapped herself"", Walter",Tara Reid,1234,31,"[2, 1]",sleeps with,0.00032246491173282266
+152,the Malibu Police Chief,Leon Russom,169920,The Dude,Jeff Bridges,1229,8,"[2, 2]",sleeps with,0.00026417424669489264
+153,The Dude,Jeff Bridges,1229,Walter,John Goodman,1230,3,"[2, 2]",goes on a date with,0.04288312420248985
+154,Walter Sobchak,John Goodman,1230,The Dude,Jeff Bridges,1229,3,"[2, 2]",goes on a date with,0.6351117491722107
+155,Maude Lebowski,Julianne Moore,1231,The Dude,Jeff Bridges,1229,11,"[1, 2]",goes on a date with,0.000585694273468107
+156,The Stranger,Sam Elliott,16431,The Dude,Jeff Bridges,1229,5,"[2, 2]",goes on a date with,0.005793997086584568
+157,the Malibu Police Chief,Leon Russom,169920,The Dude,Jeff Bridges,1229,8,"[2, 2]",goes on a date with,0.0026932330802083015
+158,The Dude,Jeff Bridges,1229,Walter,John Goodman,1230,3,"[2, 2]",has sex with,0.01336701214313507
+159,Walter Sobchak,John Goodman,1230,The Dude,Jeff Bridges,1229,3,"[2, 2]",has sex with,0.22679319977760315
+160,Maude Lebowski,Julianne Moore,1231,The Dude,Jeff Bridges,1229,11,"[1, 2]",has sex with,3.28302412526682e-05
+161,Bunny Lebowski,Tara Reid,1234,The Dude,Jeff Bridges,1229,26,"[1, 2]",has sex with,0.00034028381924144924
+162,the Malibu Police Chief,Leon Russom,169920,The Dude,Jeff Bridges,1229,8,"[2, 2]",has sex with,0.0011595682008191943
+163,The Dude,Jeff Bridges,1229,Walter,John Goodman,1230,3,"[2, 2]",marries,0.03207670897245407
+164,Walter Sobchak,John Goodman,1230,The Dude,Jeff Bridges,1229,3,"[2, 2]",marries,0.02826990745961666
+165,Maude Lebowski,Julianne Moore,1231,Walter,John Goodman,1230,8,"[1, 2]",marries,1.0825004210346378e-05
+166,The Big,David Huddleston,1232,Walter,John Goodman,1230,22,"[2, 2]",marries,0.004097107797861099
+167,Bunny Lebowski,Tara Reid,1234,Walter,John Goodman,1230,23,"[1, 2]",marries,9.789684554561973e-05
+168,The Stranger,Sam Elliott,16431,Walter,John Goodman,1230,8,"[2, 2]",marries,0.0008569071651436388
+169,the Malibu Police Chief,Leon Russom,169920,Walter,John Goodman,1230,11,"[2, 2]",marries,0.00021949036454316229
+170,Walter Sobchak,John Goodman,1230,The Dude,Jeff Bridges,1229,3,"[2, 2]",is in love with,0.2469227910041809
+171,Maude Lebowski,Julianne Moore,1231,The Dude,Jeff Bridges,1229,11,"[1, 2]",is in love with,4.804097261512652e-05
+172,Bunny Lebowski,Tara Reid,1234,The Dude,Jeff Bridges,1229,26,"[1, 2]",is in love with,0.00031019916059449315
+173,The Stranger,Sam Elliott,16431,The Dude,Jeff Bridges,1229,5,"[2, 2]",is in love with,0.0020486004650592804
+174,the Malibu Police Chief,Leon Russom,169920,The Dude,Jeff Bridges,1229,8,"[2, 2]",is in love with,0.005278223659843206
+175,The Dude,Jeff Bridges,1229,Walter,John Goodman,1230,3,"[2, 2]",is in couple with,0.051843807101249695
+176,Walter Sobchak,John Goodman,1230,The Dude,Jeff Bridges,1229,3,"[2, 2]",is in couple with,0.332060307264328
+177,Maude Lebowski,Julianne Moore,1231,The Dude,Jeff Bridges,1229,11,"[1, 2]",is in couple with,0.0001905204844661057
+178,The Big,David Huddleston,1232,Walter,John Goodman,1230,22,"[2, 2]",is in couple with,0.01246738899499178
+179,Bunny Lebowski,Tara Reid,1234,The Dude,Jeff Bridges,1229,26,"[1, 2]",is in couple with,0.00046890939120203257
+180,The Stranger,Sam Elliott,16431,Walter,John Goodman,1230,8,"[2, 2]",is in couple with,0.0029041364323347807
+181,the Malibu Police Chief,Leon Russom,169920,The Dude,Jeff Bridges,1229,8,"[2, 2]",is in couple with,0.0007411057013086975
+182,The Dude,Jeff Bridges,1229,Walter,John Goodman,1230,3,"[2, 2]",is the father of,0.02654062770307064
+183,Maude Lebowski,Julianne Moore,1231,Walter,John Goodman,1230,8,"[1, 2]",is the father of,8.643942419439554e-05
+184,The Big,David Huddleston,1232,Walter,John Goodman,1230,22,"[2, 2]",is the father of,0.038522057235240936
+185,Bunny Lebowski,Tara Reid,1234,Walter,John Goodman,1230,23,"[1, 2]",is the father of,0.0003203683882020414
+186,The Stranger,Sam Elliott,16431,Walter,John Goodman,1230,8,"[2, 2]",is the father of,0.021237200126051903
+187,the Malibu Police Chief,Leon Russom,169920,Walter,John Goodman,1230,11,"[2, 2]",is the father of,0.008570262230932713
+188,The Dude,Jeff Bridges,1229,Bunny,Tara Reid,1234,26,"[2, 1]",is the mother of,0.0237351655960083
+189,Walter Sobchak,John Goodman,1230,Bunny,Tara Reid,1234,23,"[2, 1]",is the mother of,0.05982740968465805
+190,Maude Lebowski,Julianne Moore,1231,Bunny,Tara Reid,1234,15,"[1, 1]",is the mother of,4.982725840818603e-06
+191,The Big,David Huddleston,1232,Bunny,Tara Reid,1234,45,"[2, 1]",is the mother of,0.055752310901880264
+192,Bunny Lebowski,Tara Reid,1234,Walter,John Goodman,1230,23,"[1, 2]",is the mother of,4.623675704351626e-05
+193,The Stranger,Sam Elliott,16431,Bunny,Tara Reid,1234,31,"[2, 1]",is the mother of,0.029941922053694725
+194,the Malibu Police Chief,Leon Russom,169920,Bunny,Tara Reid,1234,34,"[2, 1]",is the mother of,0.013654991053044796
+195,Maude Lebowski,Julianne Moore,1231,Bunny,Tara Reid,1234,15,"[1, 1]",kisses,0.0003680817608255893
+196,Bunny Lebowski,Tara Reid,1234,Maude,Julianne Moore,1231,15,"[1, 1]",kisses,0.0004198739770799875
+197,Jackie Treehorn,Ben Gazzara,856,Bunny,Tara Reid,1234,45,"[2, 1]",kisses,0.0033822173718363047
+198,Treehorn's thugs,Mark Pellegrino,1236,Bunny,Tara Reid,1234,10,"[2, 1]",kisses,0.00037584532401524484
+199,the Malibu Police Chief,Leon Russom,169920,Dude,Jeff Bridges,1229,8,"[2, 2]",kisses,3.216474215150811e-05
+200,The Dude,Jeff Bridges,1229,Bunny,Tara Reid,1234,26,"[2, 1]",sleeps with,0.005471952259540558
+201,Maude Lebowski,Julianne Moore,1231,Bunny,Tara Reid,1234,15,"[1, 1]",sleeps with,0.0001350763050140813
+202,Bunny Lebowski,Tara Reid,1234,Dude,Jeff Bridges,1229,26,"[1, 2]",sleeps with,0.0006474694237112999
+203,Jackie Treehorn,Ben Gazzara,856,Bunny,Tara Reid,1234,45,"[2, 1]",sleeps with,0.010717058554291725
+204,Treehorn's thugs,Mark Pellegrino,1236,Bunny,Tara Reid,1234,10,"[2, 1]",sleeps with,7.331426604650915e-05
+205,the Malibu Police Chief,Leon Russom,169920,Dude,Jeff Bridges,1229,8,"[2, 2]",sleeps with,9.876835974864662e-05
+206,The Dude,Jeff Bridges,1229,Maude,Julianne Moore,1231,11,"[2, 1]",goes on a date with,0.07095643877983093
+207,Maude Lebowski,Julianne Moore,1231,Bunny,Tara Reid,1234,15,"[1, 1]",goes on a date with,0.005168350413441658
+208,Bunny Lebowski,Tara Reid,1234,Maude,Julianne Moore,1231,15,"[1, 1]",goes on a date with,0.04504648968577385
+209,Jackie Treehorn,Ben Gazzara,856,Maude,Julianne Moore,1231,30,"[2, 1]",goes on a date with,0.11807365715503693
+210,Treehorn's thugs,Mark Pellegrino,1236,Maude,Julianne Moore,1231,5,"[2, 1]",goes on a date with,0.0015588324749842286
+211,the Malibu Police Chief,Leon Russom,169920,Maude,Julianne Moore,1231,19,"[2, 1]",goes on a date with,0.004899142310023308
+212,The Dude,Jeff Bridges,1229,Bunny,Tara Reid,1234,26,"[2, 1]",has sex with,0.05110330879688263
+213,Maude Lebowski,Julianne Moore,1231,Bunny,Tara Reid,1234,15,"[1, 1]",has sex with,0.0018582561751827598
+214,Bunny Lebowski,Tara Reid,1234,Maude,Julianne Moore,1231,15,"[1, 1]",has sex with,0.006226059049367905
+215,Jackie Treehorn,Ben Gazzara,856,Bunny,Tara Reid,1234,45,"[2, 1]",has sex with,0.16092580556869507
+216,Treehorn's thugs,Mark Pellegrino,1236,Bunny,Tara Reid,1234,10,"[2, 1]",has sex with,0.0005760084022767842
+217,the Malibu Police Chief,Leon Russom,169920,Bunny,Tara Reid,1234,34,"[2, 1]",has sex with,0.0006606573588214815
+218,The Dude,Jeff Bridges,1229,Maude,Julianne Moore,1231,11,"[2, 1]",marries,0.00722461985424161
+219,Maude Lebowski,Julianne Moore,1231,Dude,Jeff Bridges,1229,11,"[1, 2]",marries,0.0002478086098562926
+220,Bunny Lebowski,Tara Reid,1234,Maude,Julianne Moore,1231,15,"[1, 1]",marries,0.001216435106471181
+221,Jackie Treehorn,Ben Gazzara,856,Maude,Julianne Moore,1231,30,"[2, 1]",marries,0.0035011209547519684
+222,the Malibu Police Chief,Leon Russom,169920,Dude,Jeff Bridges,1229,8,"[2, 2]",marries,9.930266242008656e-05
+223,Maude Lebowski,Julianne Moore,1231,Bunny,Tara Reid,1234,15,"[1, 1]",is in love with,0.0015256425831466913
+224,Bunny Lebowski,Tara Reid,1234,Maude,Julianne Moore,1231,15,"[1, 1]",is in love with,0.004456820897758007
+225,Jackie Treehorn,Ben Gazzara,856,Bunny,Tara Reid,1234,45,"[2, 1]",is in love with,0.2400757521390915
+226,Treehorn's thugs,Mark Pellegrino,1236,Bunny,Tara Reid,1234,10,"[2, 1]",is in love with,0.002247333526611328
+227,the Malibu Police Chief,Leon Russom,169920,Bunny,Tara Reid,1234,34,"[2, 1]",is in love with,0.0018355845240876079
+228,The Dude,Jeff Bridges,1229,Bunny,Tara Reid,1234,26,"[2, 1]",is in couple with,0.13661693036556244
+229,Maude Lebowski,Julianne Moore,1231,Bunny,Tara Reid,1234,15,"[1, 1]",is in couple with,0.013644821010529995
+230,Bunny Lebowski,Tara Reid,1234,Maude,Julianne Moore,1231,15,"[1, 1]",is in couple with,0.02633291482925415
+231,Jackie Treehorn,Ben Gazzara,856,Bunny,Tara Reid,1234,45,"[2, 1]",is in couple with,0.3738318085670471
+232,Treehorn's thugs,Mark Pellegrino,1236,Bunny,Tara Reid,1234,10,"[2, 1]",is in couple with,0.001694715698249638
+233,The Dude,Jeff Bridges,1229,Bunny,Tara Reid,1234,26,"[2, 1]",is the father of,0.008827119134366512
+234,Maude Lebowski,Julianne Moore,1231,Dude,Jeff Bridges,1229,11,"[1, 2]",is the father of,0.033663369715213776
+235,Bunny Lebowski,Tara Reid,1234,Dude,Jeff Bridges,1229,26,"[1, 2]",is the father of,0.04062870144844055
+236,Jackie Treehorn,Ben Gazzara,856,Dude,Jeff Bridges,1229,19,"[2, 2]",is the father of,0.10877373814582825
+237,the Malibu Police Chief,Leon Russom,169920,Dude,Jeff Bridges,1229,8,"[2, 2]",is the father of,0.02142530307173729
+238,The Dude,Jeff Bridges,1229,Bunny,Tara Reid,1234,26,"[2, 1]",is the mother of,0.14537109434604645
+239,Maude Lebowski,Julianne Moore,1231,Bunny,Tara Reid,1234,15,"[1, 1]",is the mother of,0.004319641273468733
+240,Bunny Lebowski,Tara Reid,1234,Maude,Julianne Moore,1231,15,"[1, 1]",is the mother of,0.016087371855974197
+241,Jackie Treehorn,Ben Gazzara,856,Bunny,Tara Reid,1234,45,"[2, 1]",is the mother of,0.22381287813186646
+242,Treehorn's thugs,Mark Pellegrino,1236,Bunny,Tara Reid,1234,10,"[2, 1]",is the mother of,0.0017550034681335092
+243,The Dude,Jeff Bridges,1229,Walter,John Goodman,1230,3,"[2, 2]",kisses,0.0013229266041889787
+244,Walter Sobchak,John Goodman,1230,Larry Sellers,Jesse Flanagan,1667649,30,"[2, 2]",kisses,5.857751148141688e-06
+245,Maude Lebowski,Julianne Moore,1231,Walter,John Goodman,1230,8,"[1, 2]",kisses,1.6380268789362162e-05
+246,The Big,David Huddleston,1232,Walter,John Goodman,1230,22,"[2, 2]",kisses,0.0029485258273780346
+247,The Stranger,Sam Elliott,16431,Walter,John Goodman,1230,8,"[2, 2]",kisses,0.0002886983857024461
+248,Arthur Digby Sellers,Harry Bugin,4510,Walter,John Goodman,1230,23,"[0, 2]",kisses,0.0001097095591831021
+249,the Malibu Police Chief,Leon Russom,169920,Walter,John Goodman,1230,11,"[2, 2]",kisses,6.502123142126948e-05
+250,Larry Sellers,Jesse Flanagan,1667649,Walter,John Goodman,1230,30,"[2, 2]",kisses,0.0001612849155208096
+251,The Dude,Jeff Bridges,1229,Walter,John Goodman,1230,3,"[2, 2]",sleeps with,0.012144980952143669
+252,Walter Sobchak,John Goodman,1230,Maude,Julianne Moore,1231,8,"[2, 1]",sleeps with,6.546849181177095e-05
+253,Maude Lebowski,Julianne Moore,1231,The Dude,Jeff Bridges,1229,11,"[1, 2]",sleeps with,9.677992784418166e-05
+254,The Big,David Huddleston,1232,Walter,John Goodman,1230,22,"[2, 2]",sleeps with,0.017256665974855423
+255,The Stranger,Sam Elliott,16431,Walter,John Goodman,1230,8,"[2, 2]",sleeps with,0.0027589399833232164
+256,Arthur Digby Sellers,Harry Bugin,4510,Walter,John Goodman,1230,23,"[0, 2]",sleeps with,3.05671856040135e-05
+257,the Malibu Police Chief,Leon Russom,169920,Walter,John Goodman,1230,11,"[2, 2]",sleeps with,0.00010782455501612276
+258,Larry Sellers,Jesse Flanagan,1667649,Walter,John Goodman,1230,30,"[2, 2]",sleeps with,0.00033178896410390735
+259,The Dude,Jeff Bridges,1229,Maude,Julianne Moore,1231,11,"[2, 1]",goes on a date with,0.4505068063735962
+260,Walter Sobchak,John Goodman,1230,Maude,Julianne Moore,1231,8,"[2, 1]",goes on a date with,0.011682843789458275
+261,Maude Lebowski,Julianne Moore,1231,The Dude,Jeff Bridges,1229,11,"[1, 2]",goes on a date with,0.020570050925016403
+262,The Big,David Huddleston,1232,Maude,Julianne Moore,1231,30,"[2, 1]",goes on a date with,0.1522330790758133
+263,The Stranger,Sam Elliott,16431,Maude,Julianne Moore,1231,16,"[2, 1]",goes on a date with,0.006148149725049734
+264,Arthur Digby Sellers,Harry Bugin,4510,Walter,John Goodman,1230,23,"[0, 2]",goes on a date with,0.0004939131904393435
+265,the Malibu Police Chief,Leon Russom,169920,Maude,Julianne Moore,1231,19,"[2, 1]",goes on a date with,0.00295417383313179
+266,Larry Sellers,Jesse Flanagan,1667649,Walter,John Goodman,1230,30,"[2, 2]",goes on a date with,0.0037225147243589163
+267,The Dude,Jeff Bridges,1229,Walter,John Goodman,1230,3,"[2, 2]",has sex with,0.031172014772892
+268,Walter Sobchak,John Goodman,1230,Maude,Julianne Moore,1231,8,"[2, 1]",has sex with,6.665904948022217e-05
+269,Maude Lebowski,Julianne Moore,1231,The Dude,Jeff Bridges,1229,11,"[1, 2]",has sex with,0.00029544770950451493
+270,The Big,David Huddleston,1232,Walter,John Goodman,1230,22,"[2, 2]",has sex with,0.027581719681620598
+271,The Stranger,Sam Elliott,16431,Walter,John Goodman,1230,8,"[2, 2]",has sex with,0.003863648045808077
+272,Arthur Digby Sellers,Harry Bugin,4510,Walter,John Goodman,1230,23,"[0, 2]",has sex with,0.0001960212830454111
+273,the Malibu Police Chief,Leon Russom,169920,Walter,John Goodman,1230,11,"[2, 2]",has sex with,0.00026726233772933483
+274,Larry Sellers,Jesse Flanagan,1667649,Walter,John Goodman,1230,30,"[2, 2]",has sex with,0.0015084802871569991
+275,The Dude,Jeff Bridges,1229,Walter,John Goodman,1230,3,"[2, 2]",marries,0.011196711100637913
+276,Walter Sobchak,John Goodman,1230,Larry Sellers,Jesse Flanagan,1667649,30,"[2, 2]",marries,1.4281968105933629e-05
+277,Maude Lebowski,Julianne Moore,1231,Walter,John Goodman,1230,8,"[1, 2]",marries,2.1783172996947542e-05
+278,The Big,David Huddleston,1232,Walter,John Goodman,1230,22,"[2, 2]",marries,0.01464433316141367
+279,The Stranger,Sam Elliott,16431,Walter,John Goodman,1230,8,"[2, 2]",marries,0.0027073596138507128
+280,Arthur Digby Sellers,Harry Bugin,4510,Walter,John Goodman,1230,23,"[0, 2]",marries,2.2680354959447868e-05
+281,the Malibu Police Chief,Leon Russom,169920,Walter,John Goodman,1230,11,"[2, 2]",marries,0.0001007027312880382
+282,Larry Sellers,Jesse Flanagan,1667649,Walter,John Goodman,1230,30,"[2, 2]",marries,0.0006618508487008512
+283,The Dude,Jeff Bridges,1229,Walter,John Goodman,1230,3,"[2, 2]",is in love with,0.03465671464800835
+284,Walter Sobchak,John Goodman,1230,Maude,Julianne Moore,1231,8,"[2, 1]",is in love with,0.0003526071668602526
+285,Maude Lebowski,Julianne Moore,1231,Dude,Jeff Bridges,1229,11,"[1, 2]",is in love with,0.00014337037282530218
+286,The Big,David Huddleston,1232,Walter,John Goodman,1230,22,"[2, 2]",is in love with,0.04197164997458458
+287,The Stranger,Sam Elliott,16431,Walter,John Goodman,1230,8,"[2, 2]",is in love with,0.010069803334772587
+288,Arthur Digby Sellers,Harry Bugin,4510,Walter,John Goodman,1230,23,"[0, 2]",is in love with,0.00046484783524647355
+289,the Malibu Police Chief,Leon Russom,169920,Walter,John Goodman,1230,11,"[2, 2]",is in love with,0.0005439755623228848
+290,Larry Sellers,Jesse Flanagan,1667649,Walter,John Goodman,1230,30,"[2, 2]",is in love with,0.0015715938061475754
+291,The Dude,Jeff Bridges,1229,Maude,Julianne Moore,1231,11,"[2, 1]",is in couple with,0.046179819852113724
+292,Walter Sobchak,John Goodman,1230,Maude,Julianne Moore,1231,8,"[2, 1]",is in couple with,0.0010177093790844083
+293,Maude Lebowski,Julianne Moore,1231,Walter,John Goodman,1230,8,"[1, 2]",is in couple with,0.00033898584661073983
+294,The Big,David Huddleston,1232,Walter,John Goodman,1230,22,"[2, 2]",is in couple with,0.04143211618065834
+295,The Stranger,Sam Elliott,16431,Walter,John Goodman,1230,8,"[2, 2]",is in couple with,0.0038471685256808996
+296,Arthur Digby Sellers,Harry Bugin,4510,Walter,John Goodman,1230,23,"[0, 2]",is in couple with,0.00033256105962209404
+297,the Malibu Police Chief,Leon Russom,169920,Maude,Julianne Moore,1231,19,"[2, 1]",is in couple with,0.00028884553466923535
+298,Larry Sellers,Jesse Flanagan,1667649,Walter,John Goodman,1230,30,"[2, 2]",is in couple with,0.0006922981119714677
+299,The Dude,Jeff Bridges,1229,Larry Sellers,Jesse Flanagan,1667649,33,"[2, 2]",is the father of,0.40373340249061584
+300,Walter Sobchak,John Goodman,1230,Larry Sellers,Jesse Flanagan,1667649,30,"[2, 2]",is the father of,0.20223765075206757
+301,Maude Lebowski,Julianne Moore,1231,Larry Sellers,Jesse Flanagan,1667649,22,"[1, 2]",is the father of,0.04490293189883232
+302,The Big,David Huddleston,1232,Larry Sellers,Jesse Flanagan,1667649,52,"[2, 2]",is the father of,0.3454550504684448
+303,The Stranger,Sam Elliott,16431,Larry Sellers,Jesse Flanagan,1667649,38,"[2, 2]",is the father of,0.12672299146652222
+304,Arthur Digby Sellers,Harry Bugin,4510,Larry Sellers,Jesse Flanagan,1667649,53,"[0, 2]",is the father of,0.011552182026207447
+305,the Malibu Police Chief,Leon Russom,169920,Larry Sellers,Jesse Flanagan,1667649,41,"[2, 2]",is the father of,0.04051940143108368
+306,Larry Sellers,Jesse Flanagan,1667649,Walter,John Goodman,1230,30,"[2, 2]",is the father of,0.22396321594715118
+307,The Dude,Jeff Bridges,1229,Maude,Julianne Moore,1231,11,"[2, 1]",is the mother of,0.6473472118377686
+308,Walter Sobchak,John Goodman,1230,Maude,Julianne Moore,1231,8,"[2, 1]",is the mother of,0.01760719157755375
+309,Maude Lebowski,Julianne Moore,1231,Larry Sellers,Jesse Flanagan,1667649,22,"[1, 2]",is the mother of,0.0013478373875841498
+310,The Big,David Huddleston,1232,Maude,Julianne Moore,1231,30,"[2, 1]",is the mother of,0.4488241672515869
+311,The Stranger,Sam Elliott,16431,Maude,Julianne Moore,1231,16,"[2, 1]",is the mother of,0.014527421444654465
+312,Arthur Digby Sellers,Harry Bugin,4510,Maude,Julianne Moore,1231,31,"[0, 1]",is the mother of,0.011267931200563908
+313,the Malibu Police Chief,Leon Russom,169920,Maude,Julianne Moore,1231,19,"[2, 1]",is the mother of,0.025349918752908707
+314,Larry Sellers,Jesse Flanagan,1667649,Maude,Julianne Moore,1231,22,"[2, 1]",is the mother of,0.06499523669481277
+315,The Dude,Jeff Bridges,1229,Bunny,Tara Reid,1234,26,"[2, 1]",kisses,0.0014867838472127914
+316,Maude Lebowski,Julianne Moore,1231,Bunny,Tara Reid,1234,15,"[1, 1]",kisses,3.761069820029661e-06
+317,The Big,David Huddleston,1232,Bunny,Tara Reid,1234,45,"[2, 1]",kisses,0.000501931004691869
+318,Bunny Lebowski,Tara Reid,1234,Dude,Jeff Bridges,1229,26,"[1, 2]",kisses,0.0001252198708243668
+319,The Stranger,Sam Elliott,16431,Bunny,Tara Reid,1234,31,"[2, 1]",kisses,2.732438406383153e-05
+320,Jackie Treehorn,Ben Gazzara,856,Dude,Jeff Bridges,1229,19,"[2, 2]",kisses,3.4370079902146244e-06
+321,Treehorn's thugs,Mark Pellegrino,1236,Dude,Jeff Bridges,1229,16,"[2, 2]",kisses,1.0367355116613908e-06
+322,Arthur Digby Sellers,Harry Bugin,4510,Bunny,Tara Reid,1234,46,"[0, 1]",kisses,1.0896960702666547e-06
+323,the Malibu Police Chief,Leon Russom,169920,Dude,Jeff Bridges,1229,8,"[2, 2]",kisses,2.9949344337865114e-08
+324,Larry Sellers,Jesse Flanagan,1667649,Bunny,Tara Reid,1234,7,"[2, 1]",kisses,1.6022366253309883e-05
+325,The Dude,Jeff Bridges,1229,Bunny,Tara Reid,1234,26,"[2, 1]",sleeps with,0.006292277947068214
+326,Maude Lebowski,Julianne Moore,1231,Dude,Jeff Bridges,1229,11,"[1, 2]",sleeps with,8.980516213341616e-06
+327,The Big,David Huddleston,1232,Bunny,Tara Reid,1234,45,"[2, 1]",sleeps with,0.001241647987626493
+328,Bunny Lebowski,Tara Reid,1234,Dude,Jeff Bridges,1229,26,"[1, 2]",sleeps with,0.0025391995441168547
+329,The Stranger,Sam Elliott,16431,Larry Sellers,Jesse Flanagan,1667649,38,"[2, 2]",sleeps with,3.779561666306108e-05
+330,Jackie Treehorn,Ben Gazzara,856,Dude,Jeff Bridges,1229,19,"[2, 2]",sleeps with,0.00032959322561509907
+331,Treehorn's thugs,Mark Pellegrino,1236,Dude,Jeff Bridges,1229,16,"[2, 2]",sleeps with,0.0007483806693926454
+332,Arthur Digby Sellers,Harry Bugin,4510,Bunny,Tara Reid,1234,46,"[0, 1]",sleeps with,3.296086788395769e-06
+333,the Malibu Police Chief,Leon Russom,169920,Dude,Jeff Bridges,1229,8,"[2, 2]",sleeps with,3.393954102648422e-06
+334,Larry Sellers,Jesse Flanagan,1667649,Bunny,Tara Reid,1234,7,"[2, 1]",sleeps with,0.0006374910590238869
+335,The Dude,Jeff Bridges,1229,Maude,Julianne Moore,1231,11,"[2, 1]",goes on a date with,0.03665613383054733
+336,Maude Lebowski,Julianne Moore,1231,Dude,Jeff Bridges,1229,11,"[1, 2]",goes on a date with,0.00027458928525447845
+337,The Big,David Huddleston,1232,Dude,Jeff Bridges,1229,19,"[2, 2]",goes on a date with,0.021135056391358376
+338,Bunny Lebowski,Tara Reid,1234,Dude,Jeff Bridges,1229,26,"[1, 2]",goes on a date with,0.04180474951863289
+339,The Stranger,Sam Elliott,16431,Dude,Jeff Bridges,1229,5,"[2, 2]",goes on a date with,3.943540286854841e-05
+340,Jackie Treehorn,Ben Gazzara,856,Dude,Jeff Bridges,1229,19,"[2, 2]",goes on a date with,0.026476768776774406
+341,Arthur Digby Sellers,Harry Bugin,4510,Dude,Jeff Bridges,1229,20,"[0, 2]",goes on a date with,8.963863365352154e-05
+342,the Malibu Police Chief,Leon Russom,169920,Dude,Jeff Bridges,1229,8,"[2, 2]",goes on a date with,0.00011088549945270643
+343,Larry Sellers,Jesse Flanagan,1667649,Dude,Jeff Bridges,1229,33,"[2, 2]",goes on a date with,0.0011210395023226738
+344,The Dude,Jeff Bridges,1229,Bunny,Tara Reid,1234,26,"[2, 1]",has sex with,0.010500808246433735
+345,Maude Lebowski,Julianne Moore,1231,Bunny,Tara Reid,1234,15,"[1, 1]",has sex with,2.1133979316800833e-05
+346,The Big,David Huddleston,1232,Bunny,Tara Reid,1234,45,"[2, 1]",has sex with,0.0017660761950537562
+347,Bunny Lebowski,Tara Reid,1234,Dude,Jeff Bridges,1229,26,"[1, 2]",has sex with,0.0045906309969723225
+348,The Stranger,Sam Elliott,16431,Larry Sellers,Jesse Flanagan,1667649,38,"[2, 2]",has sex with,6.630652933381498e-05
+349,Jackie Treehorn,Ben Gazzara,856,Dude,Jeff Bridges,1229,19,"[2, 2]",has sex with,0.0005845179548487067
+350,Treehorn's thugs,Mark Pellegrino,1236,Dude,Jeff Bridges,1229,16,"[2, 2]",has sex with,0.0014251378597691655
+351,Arthur Digby Sellers,Harry Bugin,4510,Bunny,Tara Reid,1234,46,"[0, 1]",has sex with,1.7597969417693093e-05
+352,the Malibu Police Chief,Leon Russom,169920,Dude,Jeff Bridges,1229,8,"[2, 2]",has sex with,2.394944658590248e-06
+353,Larry Sellers,Jesse Flanagan,1667649,Bunny,Tara Reid,1234,7,"[2, 1]",has sex with,0.0015921398298814893
+354,The Dude,Jeff Bridges,1229,Bunny,Tara Reid,1234,26,"[2, 1]",marries,0.0009138363529928029
+355,Maude Lebowski,Julianne Moore,1231,Bunny,Tara Reid,1234,15,"[1, 1]",marries,2.6796369638759643e-06
+356,The Big,David Huddleston,1232,Larry Sellers,Jesse Flanagan,1667649,52,"[2, 2]",marries,0.0003231269074603915
+357,Bunny Lebowski,Tara Reid,1234,Larry Sellers,Jesse Flanagan,1667649,7,"[1, 2]",marries,0.000125139529700391
+358,The Stranger,Sam Elliott,16431,Larry Sellers,Jesse Flanagan,1667649,38,"[2, 2]",marries,9.359069736092351e-06
+359,Jackie Treehorn,Ben Gazzara,856,Dude,Jeff Bridges,1229,19,"[2, 2]",marries,1.6198564480873756e-05
+360,Treehorn's thugs,Mark Pellegrino,1236,Dude,Jeff Bridges,1229,16,"[2, 2]",marries,1.059718124452047e-05
+361,Arthur Digby Sellers,Harry Bugin,4510,Larry Sellers,Jesse Flanagan,1667649,53,"[0, 2]",marries,5.408922788774362e-06
+362,the Malibu Police Chief,Leon Russom,169920,Bunny,Tara Reid,1234,34,"[2, 1]",marries,2.939960808134856e-08
+363,Larry Sellers,Jesse Flanagan,1667649,Bunny,Tara Reid,1234,7,"[2, 1]",marries,3.7059128317196155e-06
+364,The Dude,Jeff Bridges,1229,Bunny,Tara Reid,1234,26,"[2, 1]",is in love with,0.011397444643080235
+365,Maude Lebowski,Julianne Moore,1231,Dude,Jeff Bridges,1229,11,"[1, 2]",is in love with,7.373563857981935e-05
+366,The Big,David Huddleston,1232,Dude,Jeff Bridges,1229,19,"[2, 2]",is in love with,0.00355386920273304
+367,Bunny Lebowski,Tara Reid,1234,Dude,Jeff Bridges,1229,26,"[1, 2]",is in love with,0.011050540022552013
+368,The Stranger,Sam Elliott,16431,Bunny,Tara Reid,1234,31,"[2, 1]",is in love with,6.46483531454578e-05
+369,Jackie Treehorn,Ben Gazzara,856,Dude,Jeff Bridges,1229,19,"[2, 2]",is in love with,0.00047176401130855083
+370,Treehorn's thugs,Mark Pellegrino,1236,Dude,Jeff Bridges,1229,16,"[2, 2]",is in love with,0.0015679451171308756
+371,Arthur Digby Sellers,Harry Bugin,4510,Dude,Jeff Bridges,1229,20,"[0, 2]",is in love with,3.6407138850336196e-06
+372,the Malibu Police Chief,Leon Russom,169920,Dude,Jeff Bridges,1229,8,"[2, 2]",is in love with,2.2475028345070314e-06
+373,Larry Sellers,Jesse Flanagan,1667649,Bunny,Tara Reid,1234,7,"[2, 1]",is in love with,0.0002522904542274773
+374,The Dude,Jeff Bridges,1229,Maude,Julianne Moore,1231,11,"[2, 1]",is in couple with,0.06847703456878662
+375,Maude Lebowski,Julianne Moore,1231,Bunny,Tara Reid,1234,15,"[1, 1]",is in couple with,0.00017266659415327013
+376,The Big,David Huddleston,1232,Larry Sellers,Jesse Flanagan,1667649,52,"[2, 2]",is in couple with,0.009352602995932102
+377,Bunny Lebowski,Tara Reid,1234,Larry Sellers,Jesse Flanagan,1667649,7,"[1, 2]",is in couple with,0.0013705517631024122
+378,The Stranger,Sam Elliott,16431,Larry Sellers,Jesse Flanagan,1667649,38,"[2, 2]",is in couple with,0.00029470756999216974
+379,Jackie Treehorn,Ben Gazzara,856,Bunny,Tara Reid,1234,45,"[2, 1]",is in couple with,0.00047006874228827655
+380,Treehorn's thugs,Mark Pellegrino,1236,Dude,Jeff Bridges,1229,16,"[2, 2]",is in couple with,0.015574036166071892
+381,Arthur Digby Sellers,Harry Bugin,4510,Bunny,Tara Reid,1234,46,"[0, 1]",is in couple with,0.00022891255503054708
+382,the Malibu Police Chief,Leon Russom,169920,Bunny,Tara Reid,1234,34,"[2, 1]",is in couple with,2.7300655347062275e-05
+383,Larry Sellers,Jesse Flanagan,1667649,Bunny,Tara Reid,1234,7,"[2, 1]",is in couple with,0.008331166580319405
+384,The Dude,Jeff Bridges,1229,Larry Sellers,Jesse Flanagan,1667649,33,"[2, 2]",is the father of,0.07382218539714813
+385,Maude Lebowski,Julianne Moore,1231,Larry Sellers,Jesse Flanagan,1667649,22,"[1, 2]",is the father of,0.0018392078345641494
+386,The Big,David Huddleston,1232,Larry Sellers,Jesse Flanagan,1667649,52,"[2, 2]",is the father of,0.04249422624707222
+387,Bunny Lebowski,Tara Reid,1234,Larry Sellers,Jesse Flanagan,1667649,7,"[1, 2]",is the father of,0.015143037773668766
+388,The Stranger,Sam Elliott,16431,Larry Sellers,Jesse Flanagan,1667649,38,"[2, 2]",is the father of,0.0045669968239963055
+389,Jackie Treehorn,Ben Gazzara,856,Larry Sellers,Jesse Flanagan,1667649,52,"[2, 2]",is the father of,0.0007336176931858063
+390,Treehorn's thugs,Mark Pellegrino,1236,Jackie,Ben Gazzara,856,35,"[2, 2]",is the father of,3.283388650743291e-05
+391,Arthur Digby Sellers,Harry Bugin,4510,Larry,Jesse Flanagan,1667649,53,"[0, 2]",is the father of,0.005069655366241932
+392,Larry Sellers,Jesse Flanagan,1667649,Jackie Treehorn,Ben Gazzara,856,52,"[2, 2]",is the father of,2.6270006856066175e-05
+393,The Dude,Jeff Bridges,1229,Bunny,Tara Reid,1234,26,"[2, 1]",is the mother of,0.05927528068423271
+394,Maude Lebowski,Julianne Moore,1231,Bunny,Tara Reid,1234,15,"[1, 1]",is the mother of,0.0006854631938040257
+395,The Big,David Huddleston,1232,Bunny,Tara Reid,1234,45,"[2, 1]",is the mother of,0.017535919323563576
+396,Bunny Lebowski,Tara Reid,1234,Jackie Treehorn,Ben Gazzara,856,45,"[1, 2]",is the mother of,0.0005857066134922206
+397,The Stranger,Sam Elliott,16431,Bunny,Tara Reid,1234,31,"[2, 1]",is the mother of,0.0006059209699742496
+398,Jackie Treehorn,Ben Gazzara,856,Bunny,Tara Reid,1234,45,"[2, 1]",is the mother of,0.0026102468837052584
+399,Treehorn's thugs,Mark Pellegrino,1236,Jackie,Ben Gazzara,856,35,"[2, 2]",is the mother of,0.00199985783547163
+400,Arthur Digby Sellers,Harry Bugin,4510,Bunny,Tara Reid,1234,46,"[0, 1]",is the mother of,0.0014110130723565817
+401,the Malibu Police Chief,Leon Russom,169920,Bunny,Tara Reid,1234,34,"[2, 1]",is the mother of,2.9139114303688984e-06
+402,Larry Sellers,Jesse Flanagan,1667649,Bunny,Tara Reid,1234,7,"[2, 1]",is the mother of,0.006036759354174137
+403,The Dude,Jeff Bridges,1229,Maude,Julianne Moore,1231,11,"[2, 1]",kisses,0.058477867394685745
+404,Walter Sobchak,John Goodman,1230,Maude,Julianne Moore,1231,8,"[2, 1]",kisses,0.00018587979138828814
+405,Maude Lebowski,Julianne Moore,1231,The Dude,Jeff Bridges,1229,11,"[1, 2]",kisses,0.0060991402715444565
+406,The Big,David Huddleston,1232,Maude,Julianne Moore,1231,30,"[2, 1]",kisses,0.012384758330881596
+407,Bunny Lebowski,Tara Reid,1234,Walter,John Goodman,1230,23,"[1, 2]",kisses,0.0007285719620995224
+408,The Stranger,Sam Elliott,16431,Maude,Julianne Moore,1231,16,"[2, 1]",kisses,0.0022806418128311634
+409,the Malibu Police Chief,Leon Russom,169920,Maude,Julianne Moore,1231,19,"[2, 1]",kisses,7.784987974446267e-05
+410,The Dude,Jeff Bridges,1229,Maude,Julianne Moore,1231,11,"[2, 1]",sleeps with,0.09441851079463959
+411,Walter Sobchak,John Goodman,1230,Maude,Julianne Moore,1231,8,"[2, 1]",sleeps with,0.00016820215387269855
+412,Maude Lebowski,Julianne Moore,1231,Bunny,Tara Reid,1234,15,"[1, 1]",sleeps with,0.001896498491987586
+413,The Big,David Huddleston,1232,Maude,Julianne Moore,1231,30,"[2, 1]",sleeps with,0.03012475185096264
+414,Bunny Lebowski,Tara Reid,1234,Maude,Julianne Moore,1231,15,"[1, 1]",sleeps with,0.0002003477275138721
+415,The Stranger,Sam Elliott,16431,Maude,Julianne Moore,1231,16,"[2, 1]",sleeps with,0.007769650314003229
+416,the Malibu Police Chief,Leon Russom,169920,Maude,Julianne Moore,1231,19,"[2, 1]",sleeps with,0.00039696769090369344
+417,The Dude,Jeff Bridges,1229,Maude,Julianne Moore,1231,11,"[2, 1]",goes on a date with,0.6424052715301514
+418,Walter Sobchak,John Goodman,1230,Maude,Julianne Moore,1231,8,"[2, 1]",goes on a date with,0.0020320385228842497
+419,Maude Lebowski,Julianne Moore,1231,The Dude,Jeff Bridges,1229,11,"[1, 2]",goes on a date with,0.07058342546224594
+420,The Big,David Huddleston,1232,Maude,Julianne Moore,1231,30,"[2, 1]",goes on a date with,0.11996275931596756
+421,Bunny Lebowski,Tara Reid,1234,Walter,John Goodman,1230,23,"[1, 2]",goes on a date with,0.00976446270942688
+422,The Stranger,Sam Elliott,16431,Maude,Julianne Moore,1231,16,"[2, 1]",goes on a date with,0.015798339620232582
+423,the Malibu Police Chief,Leon Russom,169920,The Dude,Jeff Bridges,1229,8,"[2, 2]",goes on a date with,0.0024752458557486534
+424,The Dude,Jeff Bridges,1229,Maude,Julianne Moore,1231,11,"[2, 1]",has sex with,0.9641138315200806
+425,Walter Sobchak,John Goodman,1230,Maude,Julianne Moore,1231,8,"[2, 1]",has sex with,0.00019744515884667635
+426,Maude Lebowski,Julianne Moore,1231,The Dude,Jeff Bridges,1229,11,"[1, 2]",has sex with,0.05787060409784317
+427,The Big,David Huddleston,1232,Maude,Julianne Moore,1231,30,"[2, 1]",has sex with,0.4251385033130646
+428,Bunny Lebowski,Tara Reid,1234,Maude,Julianne Moore,1231,15,"[1, 1]",has sex with,0.002291213721036911
+429,The Stranger,Sam Elliott,16431,Maude,Julianne Moore,1231,16,"[2, 1]",has sex with,0.017368437722325325
+430,the Malibu Police Chief,Leon Russom,169920,Maude,Julianne Moore,1231,19,"[2, 1]",has sex with,0.006860268767923117
+431,The Dude,Jeff Bridges,1229,Walter,John Goodman,1230,3,"[2, 2]",marries,0.014002756215631962
+432,Walter Sobchak,John Goodman,1230,Dude,Jeff Bridges,1229,3,"[2, 2]",marries,5.854765549884178e-05
+433,Maude Lebowski,Julianne Moore,1231,The Dude,Jeff Bridges,1229,11,"[1, 2]",marries,0.004895808175206184
+434,The Big,David Huddleston,1232,Dude,Jeff Bridges,1229,19,"[2, 2]",marries,0.00115890521556139
+435,Bunny Lebowski,Tara Reid,1234,Walter,John Goodman,1230,23,"[1, 2]",marries,0.0014381668297573924
+436,The Stranger,Sam Elliott,16431,Maude,Julianne Moore,1231,16,"[2, 1]",marries,0.00025764922611415386
+437,the Malibu Police Chief,Leon Russom,169920,Dude,Jeff Bridges,1229,8,"[2, 2]",marries,5.425812923931517e-05
+438,The Dude,Jeff Bridges,1229,Maude,Julianne Moore,1231,11,"[2, 1]",is in love with,0.6085063815116882
+439,Walter Sobchak,John Goodman,1230,Maude,Julianne Moore,1231,8,"[2, 1]",is in love with,0.000572714488953352
+440,Maude Lebowski,Julianne Moore,1231,The Dude,Jeff Bridges,1229,11,"[1, 2]",is in love with,0.049358069896698
+441,The Big,David Huddleston,1232,Maude,Julianne Moore,1231,30,"[2, 1]",is in love with,0.06776194274425507
+442,Bunny Lebowski,Tara Reid,1234,Walter,John Goodman,1230,23,"[1, 2]",is in love with,0.00244642305187881
+443,The Stranger,Sam Elliott,16431,Maude,Julianne Moore,1231,16,"[2, 1]",is in love with,0.026072999462485313
+444,the Malibu Police Chief,Leon Russom,169920,Maude,Julianne Moore,1231,19,"[2, 1]",is in love with,0.0012824415462091565
+445,The Dude,Jeff Bridges,1229,Maude,Julianne Moore,1231,11,"[2, 1]",is in couple with,0.6205911040306091
+446,Walter Sobchak,John Goodman,1230,Bunny,Tara Reid,1234,23,"[2, 1]",is in couple with,0.002089024754241109
+447,Maude Lebowski,Julianne Moore,1231,The Dude,Jeff Bridges,1229,11,"[1, 2]",is in couple with,0.03674733638763428
+448,The Big,David Huddleston,1232,Maude,Julianne Moore,1231,30,"[2, 1]",is in couple with,0.09345649927854538
+449,Bunny Lebowski,Tara Reid,1234,Walter,John Goodman,1230,23,"[1, 2]",is in couple with,0.005939587019383907
+450,The Stranger,Sam Elliott,16431,Maude,Julianne Moore,1231,16,"[2, 1]",is in couple with,0.01833498291671276
+451,the Malibu Police Chief,Leon Russom,169920,Maude,Julianne Moore,1231,19,"[2, 1]",is in couple with,0.000307406357023865
+452,Maude Lebowski,Julianne Moore,1231,Bunny,Tara Reid,1234,15,"[1, 1]",is the father of,0.2292165607213974
+453,Bunny Lebowski,Tara Reid,1234,Walter,John Goodman,1230,23,"[1, 2]",is the father of,0.010555580258369446
+454,The Dude,Jeff Bridges,1229,Maude,Julianne Moore,1231,11,"[2, 1]",is the mother of,0.4858996272087097
+455,Walter Sobchak,John Goodman,1230,Maude,Julianne Moore,1231,8,"[2, 1]",is the mother of,0.02966710366308689
+456,Maude Lebowski,Julianne Moore,1231,Bunny,Tara Reid,1234,15,"[1, 1]",is the mother of,0.16394899785518646
+457,The Big,David Huddleston,1232,Maude,Julianne Moore,1231,30,"[2, 1]",is the mother of,0.2304718941450119
+458,Bunny Lebowski,Tara Reid,1234,Maude,Julianne Moore,1231,15,"[1, 1]",is the mother of,0.09349412471055984
+459,The Stranger,Sam Elliott,16431,Maude,Julianne Moore,1231,16,"[2, 1]",is the mother of,0.0562460757791996
+460,the Malibu Police Chief,Leon Russom,169920,Maude,Julianne Moore,1231,19,"[2, 1]",is the mother of,0.08049950003623962
+461,The Dude,Jeff Bridges,1229,Walter,John Goodman,1230,3,"[2, 2]",kisses,0.0003012291854247451
+462,Walter Sobchak,John Goodman,1230,The Dude,Jeff Bridges,1229,3,"[2, 2]",kisses,0.0001698215928627178
+463,Maude Lebowski,Julianne Moore,1231,Walter,John Goodman,1230,8,"[1, 2]",kisses,1.4693076082039624e-05
+464,Donny Kerabatsos,Steve Buscemi,884,Walter,John Goodman,1230,5,"[2, 2]",kisses,0.0012789894826710224
+465,The Big,David Huddleston,1232,Walter,John Goodman,1230,22,"[2, 2]",kisses,0.00037810750654898584
+466,Bunny Lebowski,Tara Reid,1234,Maude,Julianne Moore,1231,15,"[1, 1]",kisses,8.939963299781084e-05
+467,The Stranger,Sam Elliott,16431,Dude,Jeff Bridges,1229,5,"[2, 2]",kisses,0.0014353550504893064
+468,the Malibu Police Chief,Leon Russom,169920,Walter,John Goodman,1230,11,"[2, 2]",kisses,3.002794437634293e-05
+469,The Dude,Jeff Bridges,1229,Walter,John Goodman,1230,3,"[2, 2]",sleeps with,0.0005941772251389921
+470,Walter Sobchak,John Goodman,1230,Dude,Jeff Bridges,1229,3,"[2, 2]",sleeps with,0.0013726491015404463
+471,Maude Lebowski,Julianne Moore,1231,Donny,Steve Buscemi,884,3,"[1, 2]",sleeps with,1.6850235624588095e-05
+472,Donny Kerabatsos,Steve Buscemi,884,Dude,Jeff Bridges,1229,8,"[2, 2]",sleeps with,0.0014861010713502765
+473,The Big,David Huddleston,1232,Dude,Jeff Bridges,1229,19,"[2, 2]",sleeps with,0.0009153473656624556
+474,Bunny Lebowski,Tara Reid,1234,Maude,Julianne Moore,1231,15,"[1, 1]",sleeps with,0.001852026442065835
+475,The Stranger,Sam Elliott,16431,Dude,Jeff Bridges,1229,5,"[2, 2]",sleeps with,0.000722740136552602
+476,the Malibu Police Chief,Leon Russom,169920,Walter,John Goodman,1230,11,"[2, 2]",sleeps with,3.0206269002519548e-05
+477,The Dude,Jeff Bridges,1229,Stranger,Sam Elliott,16431,5,"[2, 2]",goes on a date with,0.022082945331931114
+478,Walter Sobchak,John Goodman,1230,The Dude,Jeff Bridges,1229,3,"[2, 2]",goes on a date with,0.013534913770854473
+479,Maude Lebowski,Julianne Moore,1231,Donny,Steve Buscemi,884,3,"[1, 2]",goes on a date with,0.00015718111535534263
+480,Donny Kerabatsos,Steve Buscemi,884,Walter,John Goodman,1230,5,"[2, 2]",goes on a date with,0.005918591283261776
+481,The Big,David Huddleston,1232,Walter,John Goodman,1230,22,"[2, 2]",goes on a date with,0.005922708194702864
+482,Bunny Lebowski,Tara Reid,1234,Maude,Julianne Moore,1231,15,"[1, 1]",goes on a date with,0.0012897796696051955
+483,the Malibu Police Chief,Leon Russom,169920,Walter,John Goodman,1230,11,"[2, 2]",goes on a date with,0.0002654354611877352
+484,The Dude,Jeff Bridges,1229,Stranger,Sam Elliott,16431,5,"[2, 2]",has sex with,0.004519522190093994
+485,Walter Sobchak,John Goodman,1230,Dude,Jeff Bridges,1229,3,"[2, 2]",has sex with,0.0017909449525177479
+486,Maude Lebowski,Julianne Moore,1231,Donny,Steve Buscemi,884,3,"[1, 2]",has sex with,0.0002750623389147222
+487,Donny Kerabatsos,Steve Buscemi,884,Walter,John Goodman,1230,5,"[2, 2]",has sex with,0.00282853189855814
+488,The Big,David Huddleston,1232,Dude,Jeff Bridges,1229,19,"[2, 2]",has sex with,0.002589937997981906
+489,Bunny Lebowski,Tara Reid,1234,Maude,Julianne Moore,1231,15,"[1, 1]",has sex with,0.003076332388445735
+490,The Stranger,Sam Elliott,16431,Dude,Jeff Bridges,1229,5,"[2, 2]",has sex with,0.036401618272066116
+491,the Malibu Police Chief,Leon Russom,169920,Walter,John Goodman,1230,11,"[2, 2]",has sex with,8.515125227859244e-05
+492,The Dude,Jeff Bridges,1229,Walter,John Goodman,1230,3,"[2, 2]",marries,0.0011397734051570296
+493,Walter Sobchak,John Goodman,1230,Dude,Jeff Bridges,1229,3,"[2, 2]",marries,4.036407335661352e-05
+494,Maude Lebowski,Julianne Moore,1231,Walter,John Goodman,1230,8,"[1, 2]",marries,9.186840179609135e-05
+495,Donny Kerabatsos,Steve Buscemi,884,Walter,John Goodman,1230,5,"[2, 2]",marries,0.0009466069168411195
+496,The Big,David Huddleston,1232,Walter,John Goodman,1230,22,"[2, 2]",marries,0.0010058957850560546
+497,Bunny Lebowski,Tara Reid,1234,Maude,Julianne Moore,1231,15,"[1, 1]",marries,0.019527273252606392
+498,The Stranger,Sam Elliott,16431,Dude,Jeff Bridges,1229,5,"[2, 2]",marries,0.00231488817371428
+499,the Malibu Police Chief,Leon Russom,169920,Walter,John Goodman,1230,11,"[2, 2]",marries,7.174225902417675e-05
+500,The Dude,Jeff Bridges,1229,Walter,John Goodman,1230,3,"[2, 2]",is in love with,0.0017599324928596616
+501,Walter Sobchak,John Goodman,1230,Dude,Jeff Bridges,1229,3,"[2, 2]",is in love with,0.0020835164468735456
+502,Maude Lebowski,Julianne Moore,1231,Stranger,Sam Elliott,16431,16,"[1, 2]",is in love with,0.0004447051614988595
+503,Donny Kerabatsos,Steve Buscemi,884,Walter,John Goodman,1230,5,"[2, 2]",is in love with,0.0012010973878204823
+504,The Big,David Huddleston,1232,Dude,Jeff Bridges,1229,19,"[2, 2]",is in love with,0.0033981858287006617
+505,Bunny Lebowski,Tara Reid,1234,Maude,Julianne Moore,1231,15,"[1, 1]",is in love with,0.011829538270831108
+506,The Stranger,Sam Elliott,16431,Dude,Jeff Bridges,1229,5,"[2, 2]",is in love with,0.00462081516161561
+507,the Malibu Police Chief,Leon Russom,169920,Walter,John Goodman,1230,11,"[2, 2]",is in love with,0.00024494261015206575
+508,The Dude,Jeff Bridges,1229,Walter,John Goodman,1230,3,"[2, 2]",is in couple with,0.008395267650485039
+509,Walter Sobchak,John Goodman,1230,Dude,Jeff Bridges,1229,3,"[2, 2]",is in couple with,0.004001726862043142
+510,Maude Lebowski,Julianne Moore,1231,Donny,Steve Buscemi,884,3,"[1, 2]",is in couple with,0.00029726169304922223
+511,Donny Kerabatsos,Steve Buscemi,884,Dude,Jeff Bridges,1229,8,"[2, 2]",is in couple with,0.0022405683994293213
+512,The Big,David Huddleston,1232,The Dude,Jeff Bridges,1229,19,"[2, 2]",is in couple with,0.00322951702401042
+513,Bunny Lebowski,Tara Reid,1234,Maude,Julianne Moore,1231,15,"[1, 1]",is in couple with,0.00593913160264492
+514,The Stranger,Sam Elliott,16431,Dude,Jeff Bridges,1229,5,"[2, 2]",is in couple with,0.004393735434859991
+515,the Malibu Police Chief,Leon Russom,169920,Walter,John Goodman,1230,11,"[2, 2]",is in couple with,0.00029190455097705126
+516,The Dude,Jeff Bridges,1229,"Walter violently fends them off, but during the scuffle, Donny",John Goodman,1230,3,"[2, 2]",is the father of,0.04149060696363449
+517,Walter Sobchak,John Goodman,1230,Donny,Steve Buscemi,884,5,"[2, 2]",is the father of,0.01175767369568348
+518,Maude Lebowski,Julianne Moore,1231,Donny,Steve Buscemi,884,3,"[1, 2]",is the father of,0.02824445255100727
+519,Donny Kerabatsos,Steve Buscemi,884,Walter,John Goodman,1230,5,"[2, 2]",is the father of,0.07867587357759476
+520,The Big,David Huddleston,1232,Walter,John Goodman,1230,22,"[2, 2]",is the father of,0.02749609760940075
+521,Bunny Lebowski,Tara Reid,1234,Maude,Julianne Moore,1231,15,"[1, 1]",is the father of,0.00887025985866785
+522,The Stranger,Sam Elliott,16431,Walter,John Goodman,1230,8,"[2, 2]",is the father of,0.008065703324973583
+523,the Malibu Police Chief,Leon Russom,169920,Walter,John Goodman,1230,11,"[2, 2]",is the father of,0.006277182605117559
+524,The Dude,Jeff Bridges,1229,Maude,Julianne Moore,1231,11,"[2, 1]",is the mother of,0.17646676301956177
+525,Walter Sobchak,John Goodman,1230,Maude,Julianne Moore,1231,8,"[2, 1]",is the mother of,0.08199296146631241
+526,Maude Lebowski,Julianne Moore,1231,Stranger,Sam Elliott,16431,16,"[1, 2]",is the mother of,0.00559441652148962
+527,Donny Kerabatsos,Steve Buscemi,884,Maude,Julianne Moore,1231,3,"[2, 1]",is the mother of,0.2266591638326645
+528,The Big,David Huddleston,1232,Maude,Julianne Moore,1231,30,"[2, 1]",is the mother of,0.15737628936767578
+529,Bunny Lebowski,Tara Reid,1234,Maude,Julianne Moore,1231,15,"[1, 1]",is the mother of,0.6819509863853455
+530,The Stranger,Sam Elliott,16431,Maude,Julianne Moore,1231,16,"[2, 1]",is the mother of,0.32321953773498535
+531,the Malibu Police Chief,Leon Russom,169920,Maude,Julianne Moore,1231,19,"[2, 1]",is the mother of,0.0006215673638507724
