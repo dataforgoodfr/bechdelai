@@ -2,8 +2,11 @@ from typing import Dict, List
 
 import pandas as pd
 import spacy
-from bechdelai.nlp.utils import (clean_text, compute_gender_spoken_time,
-                                 find_entity_groups)
+from bechdelai.nlp.entities import find_entity_groups
+from bechdelai.nlp.graph import (coocurrence_graph, pagerank_algorithm,
+                                 regrouped_entites_graph, visualize_graph)
+from bechdelai.nlp.processing import clean_text, compute_gender_spoken_time
+from bechdelai.nlp.topics import tfidf_topic_modeling
 from pysrt import SubRipFile
 from spacy.matcher import DependencyMatcher
 
@@ -19,7 +22,7 @@ class SubtitleAnalyzer:
             raise Exception("Language not supported")
         self.nlp.add_pipe("merge_entities")
 
-    def get_modifiers(self, doc, entities: List[str]) -> Dict[str, List[str]]:
+    def get_modifiers(self, doc, entities: List[str], entity_mapping: Dict[str, str]) -> Dict[str, int]:
         """Get the modifiers of the given entities
 
         Args:
@@ -46,14 +49,17 @@ class SubtitleAnalyzer:
             matcher = DependencyMatcher(self.nlp.vocab)
             matcher.add(f"Passive_{ent}", [pattern])
 
-            words = []
             for match_id, (target, modifier) in matcher(doc):
-                words.append(doc[modifier].text)
-            if len(words) > 0:
-                modifiers[ent] = words
+                if doc[target].text in entities:
+                    ent = entity_mapping.get(doc[target].text, doc[target].text)
+                    k = (ent, doc[modifier].lemma_)
+                    if modifiers.get(k) is None:
+                        modifiers[k] = 1
+                    else:
+                        modifiers[k] = modifiers[k] + 1
         return modifiers
 
-    def get_actions(self, doc, entities: List[str]) -> Dict[str, List[str]]:
+    def get_actions(self, doc, entities: List[str], entity_mapping: Dict[str, str]) -> Dict[str, int]:
         """Get the actions of the given entities
 
         Args:
@@ -83,14 +89,17 @@ class SubtitleAnalyzer:
             matcher = DependencyMatcher(self.nlp.vocab)
             matcher.add(f"Passive_{ent}", [pattern])
 
-            words = []
             for match_id, (action, target) in matcher(doc):
-                words.append(doc[action].lemma_)
-            if len(words) > 0:
-                actions[ent] = words
+                if doc[target].text in entities:
+                    ent = entity_mapping.get(doc[target].text, doc[target].text)
+                    k = (ent, doc[action].lemma_)
+                    if actions.get(k) is None:
+                        actions[k] = 1
+                    else:
+                        actions[k] = actions[k] + 1
         return actions
 
-    def get_passives(self, doc, entities: List[str]) -> Dict[str, List[str]]:
+    def get_passives(self, doc, entities: List[str], entity_mapping: Dict[str, str]) -> Dict[str, int]:
         """Get the passives of the given entities
 
         Args:
@@ -117,12 +126,16 @@ class SubtitleAnalyzer:
             matcher = DependencyMatcher(self.nlp.vocab)
             matcher.add(f"Passive_{ent}", [pattern])
 
-            words = []
             for match_id, (action, target) in matcher(doc):
-                words.append(doc[action].lemma_)
-            if len(words) > 0:
-                passives[ent] = words
+                if doc[target].text in entities:
+                    ent = entity_mapping.get(doc[target].text, doc[target].text)
+                    k = (ent, doc[action].lemma_)
+                    if passives.get(k) is None:
+                        passives[k] = 1
+                    else:
+                        passives[k] = passives[k] + 1
         return passives
+    
 
     def segment_dialogs_by_gender(
         self, segments: pd.DataFrame, subtitles: SubRipFile, delta: int = 0
@@ -153,32 +166,35 @@ class SubtitleAnalyzer:
         entities = [
             e.text for e in doc.ents if e.label_ in ["PERSON", "ORG", "GPE", "LOC"]
         ]
-        
-        modifiers = self.get_modifiers(doc, entities)
-        actions = self.get_actions(doc, entities)
-        passives = self.get_passives(doc, entities)
-        
+        pd.Series(entities).value_counts().nlargest(15).rename('count').to_frame().plot(kind='bar')
+        top_entities = pd.Series(entities).value_counts().nlargest(15).index.tolist()
         entity_mapping = find_entity_groups(entities)
         
-        regrouped_modifiers = {}
-        for k, v in modifiers.items():
-            regrouped_modifiers.setdefault(entity_mapping.get(k,k),[]).append(modifiers.get(entity_mapping.get(k,k)))
-        print("modifiers", regrouped_modifiers)   
+        modifiers = self.get_modifiers(doc, top_entities, entity_mapping)
+        actions = self.get_actions(doc, top_entities, entity_mapping)
+        passives = self.get_passives(doc, top_entities, entity_mapping)
+        
+        coocurrence_G = coocurrence_graph(doc, entity_mapping)
+        pagerank_algorithm(coocurrence_G)
+        
+        modifiers_G = regrouped_entites_graph(modifiers, entity_mapping)
+        visualize_graph(modifiers_G, "Modifiers")
          
-        regrouped_actions = {}
-        for k, v in actions.items():
-            regrouped_actions.setdefault(entity_mapping.get(k,k),[]).append(actions.get(entity_mapping.get(k,k)))
-        print("actions", regrouped_actions)  
+        actions_G = regrouped_entites_graph(actions, entity_mapping)
+        visualize_graph(actions_G, "Actions")
             
-        regrouped_passives = {}
-        for k, v in passives.items():
-            regrouped_passives.setdefault(entity_mapping.get(k,k),[]).append(passives.get(entity_mapping.get(k,k)))
-        print("passives", regrouped_passives)
-
+        passives_G = regrouped_entites_graph(passives, entity_mapping)
+        visualize_graph(passives_G, "Passives")
+        
         if segments is not None:
             delta = subtitles[0].start.ordinal / 1000 - segments.loc[0, "start"]
             gender_dialogs = self.segment_dialogs_by_gender(segments, subtitles, delta)
-            print(f"{len(gender_dialogs['female'])} dialogs by women i.e {round(100 * len(gender_dialogs['female']) / (len(gender_dialogs['female']) + len(gender_dialogs['male'])))}% of the total")
+            print(f"{len(gender_dialogs['female'])} lines by women i.e {round(100 * len(gender_dialogs['female']) / (len(gender_dialogs['female']) + len(gender_dialogs['male'])))}% of the total")
             
             gender_spoken_time = compute_gender_spoken_time(segments)
-            print(f"{round(gender_spoken_time['female'])}s of women talking i.e {round(100 * gender_spoken_time['female'] / (gender_spoken_time['female'] + gender_spoken_time['male']))}% of the total")
+            print(f"{round(gender_spoken_time['female'])} seconds of women talking i.e {round(100 * gender_spoken_time['female'] / (gender_spoken_time['female'] + gender_spoken_time['male']))}% of the total")
+
+            female_tfidf = tfidf_topic_modeling(gender_dialogs["female"])
+            male_tfidf = tfidf_topic_modeling(gender_dialogs["male"])
+            print("female vocabulary: ", set(female_tfidf).difference(set(male_tfidf)))
+            print("male vocabulary: ", set(male_tfidf).difference(set(female_tfidf)))

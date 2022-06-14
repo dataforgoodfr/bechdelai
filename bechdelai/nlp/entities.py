@@ -1,22 +1,19 @@
 import itertools
-import re
 from typing import Dict, List
 
 import pandas as pd
 import textdistance
 
 
-def clean_text(t: str) -> str:
-    cleaned = t.replace("\n", " ").replace("  ", " ").replace(" -", " ").replace("♪", "").replace("...", " ").replace("-", "")
-    wo_html = re.sub("<[^<]+?>", "", cleaned)
-    wo_parentheses = re.sub(r"\([^()]*\)", "", wo_html)
-    return (
-        wo_parentheses
-        if ":" not in wo_parentheses
-        else wo_parentheses.split(":")[1]
-    )
-
 def _group_entities(entities: List[str]) -> Dict[str, int]:
+    """Group entities by their similarity to each other.
+
+    Args:
+        entities (List[str]): The entities to group
+
+    Returns:
+        Dict[str, int]: The grouped entities
+    """
     regrouped_entities = {}
     i = 0
     for ent_a, ent_b in itertools.combinations(entities, 2):
@@ -32,6 +29,14 @@ def _group_entities(entities: List[str]) -> Dict[str, int]:
     return regrouped_entities
 
 def _reverse_entity_mapping(regrouped_entities: Dict[str, int]) -> Dict[int, List[str]]:
+    """Reverse the entity mapping.
+
+    Args:
+        regrouped_entities (Dict[str, int]): 
+
+    Returns:
+        Dict[int, List[str]]: _description_
+    """
     inverse_entities = {}
     for k, v in regrouped_entities.items():
         inverse_entities.setdefault(v,[]).append(k)
@@ -47,11 +52,3 @@ def find_entity_groups(entities: List[str]) -> Dict[str, str]:
         for ent in v:
             mapping[ent] = most_used_entity
     return mapping
-
-def compute_gender_spoken_time(segments: pd.DataFrame) -> Dict[str, int]:
-    spoken_time = {"male": 0, "female": 0}
-    for i, seg in enumerate(segments.itertuples()):
-        current = spoken_time[seg.gender]
-        spoken_time[seg.gender] = current + (seg.end - seg.start)
-    return spoken_time
-
