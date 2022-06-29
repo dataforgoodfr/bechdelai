@@ -15,12 +15,13 @@ class Bechdelizer:
     
     def __init__(self):
         self.video_path = '../../data/sample_videos/Andy Samberg dances on Megatron Man.mp4'
-        self.result_dir = 'output'
+        self.result_dir = 'tempDir'
         self.frame_path = self.result_dir + '/frames'
     
     def create_output_directory(self,folder):
         if not os.path.exists(folder):
-            os.mkdir(folder)
+            mode = 0o666
+            os.mkdir(folder, mode)
             print('folder {} created'.format(folder))
 
         files_list = os.listdir(folder)
@@ -47,37 +48,44 @@ class Bechdelizer:
             List of object containing frames and attribute such as faces
         """
         detector = FaceDetector()
-        frames = Video(frames = [Frame(frame_path)])
+        frames = Frame(frame_path)
         frames.resize(width = 600)
-        frames.extract_faces(
+        faces = frames.extract_faces(
             detector = detector,
-            deepface_check = True,
+            #deepface_check = True,
             scale_factor = 1.3,
             min_neighbors = 3,
-            face_size = (200,200),
-            deepface_backend = "ssd"
+            #face_size = (200,200),
+            #deepface_backend = "ssd"
         )
-        list_gender = []
-        if len(frames.faces)>1:
-            for face in frames.faces:
-                prediction = face.analyze(actions = ['gender'])
-                gender_pred = prediction['gender']
-                list_gender.append(gender_pred)
-        else:
-            list_gender.append(None)
-        return list_gender, frames
+        return faces
+        #list_gender = []
+        #faceid = 0
+        #if faces is not None:
+        #    print('len faces : {}'.format(len(faces)))
+        #    for face in faces:
+        #        print(type(face))
+        #        faceid =+ 1
+        #        prediction = face.analyze(actions = ['gender'])
+        #        gender_pred = prediction['gender']
+        #        list_gender.append(gender_pred)
+        #        filename = os.path.join('frames_w_faces', f"face{faceid}.jpg")
+        #        cv2.imwrite(filename, face)
+        #else:
+        #    list_gender.append(None)
+        #return list_gender
 
 
-    def women_detection_deepface(self, video_path, time_rate=1, folder):
-        """From a video and given frame rate, this function will check the presence of women on
-        some specific frames with DeepFace Model
+    def women_detection_deepface(self, video_path,image_dir=None, time_rate=1):
+        """From a video and given frame raate, this function will check the presence of women on
+            some specific frames with DeepFace Model
         Parameters
         ---------
         video_path: Str
             Path to the video
         time_rate: Int
             Number of second between each frames that are processed (eg : if 2, one frame will be processed every 2 sec)
-        folder : Str
+        image_dir : Str
             Path to the output directory to store all processed frames 
         Return
         ------------
@@ -86,16 +94,18 @@ class Bechdelizer:
         face_list : List
             List of images of all faces 
         """
-        image_dir = os.path.join(folder, 'frames')
+        if image_dir is None:
+            image_dir = 'tempDir/frames'
+            
         self.create_output_directory(image_dir)
 
         file_list = []
         pred_list = []
         list_nb_woman = []
         timestamps = []
-        face_list = []
         cap = cv2.VideoCapture(video_path)
         fps = cap.get(cv2.CAP_PROP_FPS)
+        print(fps)
         frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
         framerate = fps * time_rate
         frame_processed = round(frame_count/framerate)
@@ -114,8 +124,7 @@ class Bechdelizer:
                 filename = os.path.join(image_dir, f"frame{frameId}.jpg")
                 cv2.imwrite(filename, curr_frame)
                 file_list.append(filename)
-                gender_list, frames = self.predict_gender_deepface(filename)
-                face_list.append(frames.faces)
+                gender_list = self.predict_gender_deepface(filename)
                 pred_list.append(gender_list)
                 
                 nb_woman =  gender_list.count('Woman')
@@ -131,16 +140,15 @@ class Bechdelizer:
  
         print('At least 2 womens speaking together have been detected {} times'.format(count_frame_woman))
 
-        return df, face_list
+        return df
 
 
 if __name__ == '__main__':
 
     Bechdelizer = Bechdelizer()
     #Analysing if women are in a frame with DeepFace
-    df, face_list = Bechdelizer.women_detection_deepface(video_path = Bechdelizer.video_path,
-                                                         time_rate=2,    
-                                                         folder=Bechdelizer.video_path)^
+    df = Bechdelizer.women_detection_deepface(video_path = Bechdelizer.video_path,
+                                                        time_rate=2)
     #Analysing if women are in a frame with CLIP
     clip = CLIP()
     video = Video(Bechdelizer.frame_path)

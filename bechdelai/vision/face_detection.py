@@ -49,6 +49,6 @@ class FaceDetector:
 
         for (x,y,w,h) in faces:
             cv2.rectangle(img_copy,(x,y),(x+w,y+h),(255,0,0),2)
-
+        
         plt.imshow(img_copy)
         plt.show()
