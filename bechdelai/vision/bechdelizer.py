@@ -58,22 +58,22 @@ class Bechdelizer:
             #face_size = (200,200),
             #deepface_backend = "ssd"
         )
-        return faces
-        #list_gender = []
-        #faceid = 0
-        #if faces is not None:
-        #    print('len faces : {}'.format(len(faces)))
-        #    for face in faces:
-        #        print(type(face))
-        #        faceid =+ 1
-        #        prediction = face.analyze(actions = ['gender'])
-        #        gender_pred = prediction['gender']
-        #        list_gender.append(gender_pred)
-        #        filename = os.path.join('frames_w_faces', f"face{faceid}.jpg")
-        #        cv2.imwrite(filename, face)
-        #else:
-        #    list_gender.append(None)
-        #return list_gender
+
+        list_gender = []
+        faceid = 0
+        if faces is not None:
+            print('len faces : {}'.format(len(faces)))
+            for face in faces:
+                print(type(face))
+                faceid =+ 1
+                prediction = face.analyze(actions = ['gender'])
+                gender_pred = prediction['gender']
+                list_gender.append(gender_pred)
+                filename = os.path.join('frames_w_faces', f"face{faceid}.jpg")
+                cv2.imwrite(filename, face)
+        else:
+            list_gender.append(None)
+        return list_gender
 
 
     def women_detection_deepface(self, video_path,image_dir=None, time_rate=1):
