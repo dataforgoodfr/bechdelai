@@ -7,6 +7,7 @@ import numpy as np
 
 BATCH_SIZE = 5
 AUTOTUNE = tf.data.AUTOTUNE
+BUFFER_SIZE = 2048
 
 
 def lecture_img(example):
@@ -39,7 +40,7 @@ def cvt(image):
 
 def tf_cv2_func(image):
     image = tf.py_function(cvt, [image], [tf.int32])
-    return image
+    return image[0]
 
 def load_dataset(dir:str):
     """
@@ -64,8 +65,7 @@ def load_dataset(dir:str):
         partial(tf_cv2_func), num_parallel_calls=AUTOTUNE
     )
 
-    # returns a dataset of (image, label) pairs if labeled=True or just images if labeled=False
-    return dataset
+    return dataset.shuffle(BUFFER_SIZE).batch(BATCH_SIZE)
 
 
 def show_img(dataset, num_batch=1):
@@ -74,5 +74,6 @@ def show_img(dataset, num_batch=1):
     """
 
     for elem in dataset.take(num_batch):
-        plt.imshow(elem[0])
-        plt.show()
+        for im in elem:
+            plt.imshow(im)
+            plt.show()
