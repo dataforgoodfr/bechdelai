@@ -7,6 +7,9 @@ from tqdm import trange
 
 
 def create_tfrecord(frame, name):
+    """
+    Pour le moment on a juste l'image en entrée mais on pourrait ajouter plusieurs information dans le même fichier
+    """
 
     byte_list = tf.train.BytesList(value=[tf.io.encode_jpeg(frame).numpy()])
     person_example = Example(
@@ -21,7 +24,10 @@ def create_tfrecord(frame, name):
     with tf.io.TFRecordWriter(name, option) as f:
         f.write(person_example.SerializeToString())
 
-def extract_frames_from_videos(path,folder = ".",frame_rate = 5, optim=True):
+def extract_frames_from_videos(path, folder = ".", frame_rate = 5, optim=True):
+    """
+    Cette fonction permet de lire la vidéo et construire un dossier avec les enregistrements.
+    """
 
     #Create folder if doesn't exist
     if not os.path.exists(folder):

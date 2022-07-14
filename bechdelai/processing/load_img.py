@@ -5,11 +5,14 @@ import matplotlib.pyplot as plt
 from functools import partial
 import numpy as np
 
-
 BATCH_SIZE = 5
 AUTOTUNE = tf.data.AUTOTUNE
 
+
 def lecture_img(example):
+    """
+    Permet de lire une image et la décoder pour passer de bytes à jpeg
+    """
 
     image_feature_description = {  
         'image': tf.io.FixedLenFeature([], tf.string),  
@@ -19,7 +22,10 @@ def lecture_img(example):
 
     return tf.io.decode_jpeg(img, channels=3)
 
-def preprocessing(dataset, dir:str):
+def preprocessing_minimal(dataset, dir:str):
+    """
+    Nettoie les images en vu d'une tâche
+    """
 
     li = []
     dataset_iter = iter(dataset)
@@ -27,7 +33,18 @@ def preprocessing(dataset, dir:str):
         li.append(np.array(cv2.cvtColor(next(dataset_iter).numpy(), cv2.COLOR_BGR2RGB)))
     return np.array(li)
 
+
+def cvt(image):
+    return cv2.cvtColor(image.numpy(), cv2.COLOR_BGR2RGB)
+
+def tf_cv2_func(image):
+    image = tf.py_function(cvt, [image], [tf.int32])
+    return image
+
 def load_dataset(dir:str):
+    """
+    Charger les données
+    """
 
     filenames = [dir + "/" + i for i in os.listdir(dir)]
 
@@ -43,14 +60,19 @@ def load_dataset(dir:str):
         partial(lecture_img), num_parallel_calls=AUTOTUNE
     )
 
-    images_cvt = preprocessing(dataset, dir)
+    dataset = dataset.map(
+        partial(tf_cv2_func), num_parallel_calls=AUTOTUNE
+    )
 
     # returns a dataset of (image, label) pairs if labeled=True or just images if labeled=False
-    return tf.data.Dataset.from_tensor_slices(images_cvt).batch(BATCH_SIZE)
+    return dataset
 
 
 def show_img(dataset, num_batch=1):
+    """
+    Montre un batch
+    """
+
     for elem in dataset.take(num_batch):
-        for im in elem:
-            plt.imshow(im)
-            plt.show()
+        plt.imshow(elem[0])
+        plt.show()
