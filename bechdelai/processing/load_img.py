@@ -3,37 +3,13 @@ import cv2
 import os
 import matplotlib.pyplot as plt
 from functools import partial
-import numpy as np
 
 BATCH_SIZE = 5
 AUTOTUNE = tf.data.AUTOTUNE
 BUFFER_SIZE = 2048
-
-
-def lecture_img(example):
-    """
-    Permet de lire une image et la décoder pour passer de bytes à jpeg
-    """
-
-    image_feature_description = {  
+IMAGE_DESC = {
         'image': tf.io.FixedLenFeature([], tf.string),  
     }
-    example = tf.io.parse_single_example(example, image_feature_description)
-    img = tf.cast(example["image"], tf.string)
-
-    return tf.io.decode_jpeg(img, channels=3)
-
-def preprocessing_minimal(dataset, dir:str):
-    """
-    Nettoie les images en vu d'une tâche
-    """
-
-    li = []
-    dataset_iter = iter(dataset)
-    for _ in range(len(os.listdir(dir))):
-        li.append(np.array(cv2.cvtColor(next(dataset_iter).numpy(), cv2.COLOR_BGR2RGB)))
-    return np.array(li)
-
 
 def cvt(image):
     return cv2.cvtColor(image.numpy(), cv2.COLOR_BGR2RGB)
@@ -41,6 +17,19 @@ def cvt(image):
 def tf_cv2_func(image):
     image = tf.py_function(cvt, [image], [tf.int32])
     return image[0]
+
+def lecture_img(example):
+    """
+    Permet de lire une image et la décoder pour passer de bytes à jpeg
+    """
+
+    example = tf.io.parse_single_example(example, IMAGE_DESC)
+    img = tf.cast(example["image"], tf.string)
+
+    img_decoded = tf.io.decode_jpeg(img, channels=3)
+    img_cvt = tf_cv2_func(img_decoded)
+
+    return img_cvt
 
 def load_dataset(dir:str):
     """
@@ -61,12 +50,17 @@ def load_dataset(dir:str):
         partial(lecture_img), num_parallel_calls=AUTOTUNE
     )
 
-    dataset = dataset.map(
-        partial(tf_cv2_func), num_parallel_calls=AUTOTUNE
-    )
+    return dataset.batch(BATCH_SIZE)
 
-    return dataset.shuffle(BUFFER_SIZE).batch(BATCH_SIZE)
+def load_classique(dir:str):
+    """
+    Load dataset original way
+    """
 
+    df=[]
+    for file in os.listdir(dir):
+        df.append(cv2.imread(dir + "/" + file))
+    return df
 
 def show_img(dataset, num_batch=1):
     """
