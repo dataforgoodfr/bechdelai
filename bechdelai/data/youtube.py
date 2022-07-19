@@ -1,4 +1,6 @@
 import os
+from pytube import YouTube
+from pytube import Channel
 
 class Extract_Video_YT:
 
@@ -11,10 +13,18 @@ class Extract_Video_YT:
             os.mkdir(self.output_dir)
 
     def download_video(self):
+        yt = YouTube(self.youtube_link)
         self._create_archi()
-        os.system("yt-dlp -f mp4 " + self.yl + " -o " + self.output_dir + "/ma_vid.mp4")
+        yt.streams.filter(progressive=True, file_extension='mp4').first().download(self.output_dir)
 
+    def download_channel(self):
+        ch = Channel(self.yl)
+        for video in ch.videos:
+            print(video.length)
+            print(video.keywords)
+            print(video.vid_info)
+            #video.streams.filter(progressive=True, file_extension='mp4').first().download(self.output_dir)
 
 if __name__=="__main__":
-    extractor = Extract_Video_YT("https://www.youtube.com/watch?v=INwb2Avrdqo")
-    extractor.download_video()
+    extractor = Extract_Video_YT("https://www.youtube.com/c/LesDuosImpossiblesdeJ%C3%A9r%C3%A9myFerrari")
+    extractor.download_channel()
