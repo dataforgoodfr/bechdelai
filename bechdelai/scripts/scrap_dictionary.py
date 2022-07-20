@@ -1,13 +1,12 @@
 """script to scrap words with synonym of person in definition"""
 import json
-import re
 import time
 
 import requests
-from bs4 import BeautifulSoup
 
 from bechdelai.data.dictionary import find_words_url
 from bechdelai.data.dictionary import get_definition_from_word_url
+from bechdelai.processing.dictionary import process_syn_dict
 
 BASE_URL = "https://www.dictionary.com"
 LIST_URL = f"{BASE_URL}/list/{{letter}}/{{num}}"
@@ -18,15 +17,16 @@ def main():
     """Main script to scrap all definition for person synonym"""
     t0 = time.time()
     print("start")
+    # all letters to check out
     letters = "abcdefghijklmnopqrstuvwxyz"
-    letters = "nopqrstuvwxyz"
+    # Url to start scraping (if script returns an error for instance)
+    start_url = "https://www.dictionary.com/list/a/1"
 
     dictionary = {}
 
     with open("dict.json", "r", encoding="utf-8") as f:
         dictionary = json.load(f)
 
-    start_url = "https://www.dictionary.com/list/n/9"
     url_reached = False
 
     for letter in letters:
@@ -67,6 +67,11 @@ def main():
                 json.dump(dictionary, f, indent=2)
 
             num += 1
+
+    dictionary_processed = process_syn_dict(dictionary)
+
+    with open("syn_person.json", "w", encoding="utf-8") as f:
+        json.dump(dictionary_processed, f, indent=2)
 
 
 if __name__ == "__main__":
