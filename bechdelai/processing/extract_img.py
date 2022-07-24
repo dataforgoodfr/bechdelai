@@ -1,6 +1,7 @@
 import os
 import math
 import cv2
+import json
 import tensorflow as tf
 from tensorflow.train import Features, Example, Feature
 from tqdm import trange
@@ -38,7 +39,7 @@ class Extract_One_Video:
                 
         cap.release()
 
-    def extract_info_from_videos(self, tf_records=True):
+    def extract_info_from_videos(self, tf_records=True, detail=None):
         """
         Cette fonction permet de lire la vidéo et construire un dossier avec les enregistrements.
         """
@@ -48,6 +49,8 @@ class Extract_One_Video:
                 
         else:
             self._read_video_classic(self.create_tfrecord_video)
+            if detail:
+                self.create_tfrecord_detail(detail)
 
 
 
@@ -76,5 +79,43 @@ class Extract_One_Video:
         with tf.io.TFRecordWriter(output_name, option) as f:
             f.write(person_example.SerializeToString())
     
-    def create_tfrecord_detail(self, detail_json, output_name):
-        pass
+
+    def _lecteur_json(self, filename):
+        with open(filename) as json_data:
+            data_dict = json.load(filename)
+
+        return data_dict
+
+    def create_tfrecord_detail(self, detail_json_path):
+
+        dict_json = self._lecteur_json(detail_json_path)
+
+        author = tf.train.BytesList(value=[dict_json["author"]])
+        lenght = tf.train.Int64List(value=[dict_json["lenght"]])
+        title = tf.train.BytesList(value=[dict_json["title"]])
+        description = tf.train.BytesList(value=[dict_json["description"]])
+        date = tf.train.BytesList(value=[dict_json["description"]])
+        views = tf.train.Int64List(value=[dict_json["views"]])
+
+        """
+        "keywords": video.keywords,
+        "image_desc": img.tolist()
+        """
+
+        person_example = Example(
+            features = Features(
+                feature = {
+                    "author": Feature(bytes_list = author),
+                    "lenght": Feature(int64_list = lenght),
+                    "title": Feature(bytes_list = title),
+                    "description": Feature(bytes_list = description),
+                    "date": Feature(bytes_list = date),
+                    "views": Feature(int64_list = views),
+                }
+            )
+        )
+
+        #Ecrit les fichier tfrecords
+        option = tf.io.TFRecordOptions(compression_type="GZIP")
+        with tf.io.TFRecordWriter(self.outputs + "/" + "detail.record", option) as f:
+            f.write(person_example.SerializeToString())

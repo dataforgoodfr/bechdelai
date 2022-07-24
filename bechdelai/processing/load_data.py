@@ -72,6 +72,9 @@ class LoaderData:
         return df
 
 class Displayer:
+    """
+    Permet de mieux voir l'intérieur du Dataset
+    """
 
     def __init__(self, dataset) -> None:
         self.dataset = dataset
