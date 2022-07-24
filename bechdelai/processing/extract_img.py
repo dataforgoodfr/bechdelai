@@ -12,9 +12,13 @@ class Extract_One_Video:
         self.frame_rate = frame_rate
         self.video_path = video_path
         self.outputs = os.path.join(folder_outputs, self.video_path.replace('.mp4', ''))
+        self.outputs_details = os.path.join(folder_outputs, "detail")
         self.details = details
 
     def _creat_archi(self):
+        os.makedirs(self.outputs, exist_ok=True)
+
+    def _creat_archi_detail(self):
         os.makedirs(self.outputs, exist_ok=True)
 
     def _read_video_classic(self, treatment_fun):
@@ -39,7 +43,7 @@ class Extract_One_Video:
                 
         cap.release()
 
-    def extract_info_from_videos(self, tf_records=True, detail=None):
+    def extract_info_from_videos(self, tf_records=True, detail=''):
         """
         Cette fonction permet de lire la vidéo et construire un dossier avec les enregistrements.
         """
@@ -49,16 +53,13 @@ class Extract_One_Video:
                 
         else:
             self._read_video_classic(self.create_tfrecord_video)
-            if detail:
+            if detail!="":
+                self._creat_archi_detail()
                 self.create_tfrecord_detail(detail)
-
-
 
     def create_jpeg(self, frame, output_name):
         filename = os.path.join(output_name + ".jpg")
         cv2.imwrite(filename, frame)
-
-
 
     def create_tfrecord_video(self, frame, output_name):
         """
@@ -79,10 +80,9 @@ class Extract_One_Video:
         with tf.io.TFRecordWriter(output_name, option) as f:
             f.write(person_example.SerializeToString())
     
-
     def _lecteur_json(self, filename):
         with open(filename) as json_data:
-            data_dict = json.load(filename)
+            data_dict = json.load(json_data)
 
         return data_dict
 
@@ -90,11 +90,11 @@ class Extract_One_Video:
 
         dict_json = self._lecteur_json(detail_json_path)
 
-        author = tf.train.BytesList(value=[dict_json["author"]])
+        author = tf.train.BytesList(value=[dict_json["author"].encode("utf-8")])
         lenght = tf.train.Int64List(value=[dict_json["lenght"]])
-        title = tf.train.BytesList(value=[dict_json["title"]])
-        description = tf.train.BytesList(value=[dict_json["description"]])
-        date = tf.train.BytesList(value=[dict_json["description"]])
+        title = tf.train.BytesList(value=[dict_json["title"].encode("utf-8")])
+        description = tf.train.BytesList(value=[dict_json["description"].encode("utf-8")])
+        date = tf.train.BytesList(value=[dict_json["description"].encode("utf-8")])
         views = tf.train.Int64List(value=[dict_json["views"]])
 
         """
@@ -117,5 +117,5 @@ class Extract_One_Video:
 
         #Ecrit les fichier tfrecords
         option = tf.io.TFRecordOptions(compression_type="GZIP")
-        with tf.io.TFRecordWriter(self.outputs + "/" + "detail.record", option) as f:
+        with tf.io.TFRecordWriter(os.path.join(self.outputs_details, self.video_path.replace('.mp4', '.record')), option) as f:
             f.write(person_example.SerializeToString())

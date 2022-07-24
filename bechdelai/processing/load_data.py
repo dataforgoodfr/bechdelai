@@ -9,8 +9,17 @@ AUTOTUNE = tf.data.AUTOTUNE
 BUFFER_SIZE = 2048
 
 IMAGE_DESC = {
-        'image': tf.io.FixedLenFeature([], tf.string),  
+    'image': tf.io.FixedLenFeature([], tf.string),
     }
+
+DETAIL_DESC = {
+    "author": tf.io.FixedLenFeature([], tf.string),
+    "lenght": tf.io.FixedLenFeature([], tf.int64),
+    "title": tf.io.FixedLenFeature([], tf.string),
+    "description": tf.io.FixedLenFeature([], tf.string),
+    "date": tf.io.FixedLenFeature([], tf.string),
+    "views": tf.io.FixedLenFeature([], tf.int64),
+}
 
 class LoaderData:
     """
@@ -39,13 +48,23 @@ class LoaderData:
         img_cvt = self._tf_cv2_func(img_decoded)
 
         return img_cvt
+    
+    def lecture_detail(self, example):
+        example = tf.io.parse_single_example(example, IMAGE_DESC)
+        
+        author = tf.cast(example["author"], tf.string)
+        lenght = tf.cast(example["lenght"], tf.int64)
+        title = tf.cast(example["title"], tf.string)
+        description = tf.cast(example["description"], tf.string)
+        date = tf.cast(example["date"], tf.string)
+        views = tf.cast(example["views"], tf.int64)
 
     def load_dataset(self):
         """
         Charger les données
         """
 
-        filenames = [self.dir + "/" + i for i in os.listdir(self.dir)]
+        filenames = [self.dir + "/" + i for i in os.listdir(self.dir) if i!="detail.record"]
 
         ignore_order = tf.data.Options()
         ignore_order.experimental_deterministic = False  # disable order, increase speed
@@ -67,7 +86,7 @@ class LoaderData:
         """
 
         df=[]
-        for file in os.listdir(dir):
+        for file in [i for i in os.listdir(dir) if i!="detail.record"]:
             df.append(cv2.imread(dir + "/" + file))
         return df
 
