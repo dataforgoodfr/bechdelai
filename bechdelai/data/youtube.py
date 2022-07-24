@@ -5,6 +5,7 @@ import numpy as np
 import json
 from pytube import YouTube
 from pytube import Channel
+from pytube.cli import on_progress
 
 class Extract_Video_YT:
 
@@ -43,7 +44,7 @@ class Extract_Video_YT:
             json.dump(detail, f, ensure_ascii=False, indent=4)
 
     def download_video(self, video_dl = True, with_detail=True):
-        video = YouTube(self.yl)
+        video = YouTube(self.yl, on_progress_callback=on_progress)
         self._create_archi()
         if video_dl:
             video.streams.filter(progressive=True, file_extension='mp4').first().download(self.output_dir)
