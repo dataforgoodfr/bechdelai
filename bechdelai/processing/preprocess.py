@@ -1,6 +1,3 @@
-from ctypes import resize
-
-
 import numpy as np
 
 class Preprocessor:

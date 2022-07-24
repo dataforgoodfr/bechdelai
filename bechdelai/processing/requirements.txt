@@ -1,4 +1,4 @@
-opencv-python
-tensorflow
-matplotlib
-pytube
+opencv-python==4.6.0.66 #Voir pour compiler une version GPU
+tensorflow==2.9.1
+matplotlib==3.5.2
+tqdm==4.64.0
