@@ -1,0 +1,28 @@
+'on':
+  github:
+    branches:
+      only: main
+jobs:
+
+  CloneRepo:
+    resources:
+      instance-type: P5000
+    outputs:
+      repo:
+        type: volume
+    uses: git-checkout@v1
+    with:
+      url: https://github.com/dataforgoodfr/bechdelai.git
+
+  NudeTest:
+    resources:
+      instance-type: P5000
+    needs:
+      - CloneRepo
+    inputs:
+      repo: CloneRepo.outputs.repo
+    uses: script@v1
+    with:
+      script: git checkout testing
+        
+      image: tensorflow/tensorflow:1.15.0-gpu
