@@ -8,18 +8,18 @@ from tqdm import trange
 
 class Extract_One_Video:
 
-    def __init__(self, video_path:str, folder_outputs = "outputs", frame_rate = 5, details=True) -> None:
+    def __init__(self, video_path:str, frame_rate = 5, details=True) -> None:
         self.frame_rate = frame_rate
         self.video_path = video_path
-        self.outputs = os.path.join(folder_outputs, self.video_path.replace('.mp4', ''))
-        self.outputs_details = os.path.join(folder_outputs, "detail")
+        self.outputs = os.path.join(self.video_path.replace('.mp4', ''))
+        self.outputs_details = os.path.join("/".join(video_path.split("/")[:-1]), "details")
         self.details = details
 
     def _creat_archi(self):
         os.makedirs(self.outputs, exist_ok=True)
 
     def _creat_archi_detail(self):
-        os.makedirs(self.outputs, exist_ok=True)
+        os.makedirs(self.outputs_details, exist_ok=True)
 
     def _read_video_classic(self, treatment_fun):
         self._creat_archi()
@@ -43,16 +43,17 @@ class Extract_One_Video:
                 
         cap.release()
 
-    def extract_info_from_videos(self, tf_records=True, detail=''):
+    def extract_info_from_videos(self, tf_records=True, video = True, detail=''):
         """
         Cette fonction permet de lire la vidéo et construire un dossier avec les enregistrements.
         """
 
-        if not tf_records:
+        if not tf_records and video:
             self._read_video_classic(self.create_jpeg)
                 
         else:
-            self._read_video_classic(self.create_tfrecord_video)
+            if video:
+                self._read_video_classic(self.create_tfrecord_video)
             if detail!="":
                 self._creat_archi_detail()
                 self.create_tfrecord_detail(detail)
@@ -117,5 +118,5 @@ class Extract_One_Video:
 
         #Ecrit les fichier tfrecords
         option = tf.io.TFRecordOptions(compression_type="GZIP")
-        with tf.io.TFRecordWriter(os.path.join(self.outputs_details, self.video_path.replace('.mp4', '.record')), option) as f:
+        with tf.io.TFRecordWriter(os.path.join(self.outputs_details, self.video_path.split("/")[-1].replace('.mp4', '.record')), option) as f:
             f.write(person_example.SerializeToString())
