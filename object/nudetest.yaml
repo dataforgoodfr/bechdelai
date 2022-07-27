@@ -31,7 +31,7 @@ jobs:
         cd bechdelai
         git checkout feature/pierre/objectification
         cd object
-        ls /inputs/nudeModel/
+        ls /inputs/nudeModel/model/
         pip install -r requirements.txt
         python3 image_analyser.py
         
