@@ -6,19 +6,13 @@ Ce fichier permet l'analyse d'une scène, le but est de l'appliquer à chaque fr
 from nudenet import NudeClassifier
 from nudenet import NudeDetector
 
-BATCH_SIZE = 1
+BATCH_SIZE = 4
 
 # initialize detector (downloads the checkpoint file automatically the first time)
 classifier = NudeClassifier(model_path = "/inputs/nudeModel/model/classifier_model.onnx") # detector = NudeDetector('base') for the "base" version of detector.
 detector = NudeDetector(checkpoint_path="/inputs/nudeModel/model/detector_v2_default_checkpoint.onnx", classes_path="/inputs/nudeModel/model/detector_v2_default_classes")
 
-print(classifier.classify('/inputs/bechdelia/exemple.jpg'))
-print(detector.detect('/inputs/bechdelia/exemple.jpg'))
 
-"""
-detector.censor(
-    'examples/normal/normal.jpg', 
-    out_path='examples/normal/censored_normal.jpg', 
-    visualize=True
-)
-"""
+
+print(classifier.classify('/inputs/bechdelia/exemple.jpg'))
+print(detector.detect(['/inputs/bechdelia/exemple.jpg', '/inputs/bechdelia/exemple_2.jpeg']))
