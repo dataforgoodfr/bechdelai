@@ -9,8 +9,8 @@ from nudenet import NudeDetector
 BATCH_SIZE = 1
 
 # initialize detector (downloads the checkpoint file automatically the first time)
-classifier = NudeClassifier() # detector = NudeDetector('base') for the "base" version of detector.
-detector = NudeDetector()
+classifier = NudeClassifier(model = "classifier_model.onnx") # detector = NudeDetector('base') for the "base" version of detector.
+detector = NudeDetector(checkpoint_path="model/detector_v2_default_checkpoint.onnx", classes_path="model/detector_v2_default_classes")
 
 #print(classifier.classify('examples/sexy/sexy.jpeg'))
 #print(detector.detect('examples/normal/normal.jpg'))

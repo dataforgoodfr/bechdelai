@@ -17,12 +17,12 @@ class Detector:
     detection_model = None
     classes = None
 
-    def __init__(self, model_name="default", checkpoint_path = "model/detector_v2_default_checkpoint.onnx", classes_path = "model/detector_v2_default_classes", ):
+    def __init__(self, checkpoint_path, classes_path, model_name="default"):
         """
         model = Detector()
         """
 
-        self.detection_model = onnxruntime.InferenceSession(checkpoint_path)
+        self.detection_model = onnxruntime.InferenceSession(checkpoint_path, providers=['CUDAExecutionProvider'])
         self.classes = [c.strip() for c in open(classes_path).readlines() if c.strip()]
 
     def detect_video(self, video_path, mode="default", min_prob=0.6, batch_size=2, show_progress=True):

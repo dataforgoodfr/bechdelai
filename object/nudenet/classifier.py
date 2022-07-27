@@ -13,12 +13,12 @@ class Classifier:
 
     nsfw_model = None
 
-    def __init__(self, model_path = "model/classifier_model.onnx"):
+    def __init__(self, model_path):
         """
         model = Classifier()
         """
         
-        self.nsfw_model = onnxruntime.InferenceSession(model_path)
+        self.nsfw_model = onnxruntime.InferenceSession(model_path, providers=['CUDAExecutionProvider'])
 
     def classify_video(
         self,
