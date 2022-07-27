@@ -12,8 +12,8 @@ BATCH_SIZE = 1
 classifier = NudeClassifier(model_path = "/inputs/nudeModel/model/classifier_model.onnx") # detector = NudeDetector('base') for the "base" version of detector.
 detector = NudeDetector(checkpoint_path="/inputs/nudeModel/model/detector_v2_default_checkpoint.onnx", classes_path="/inputs/nudeModel/model/detector_v2_default_classes")
 
-#print(classifier.classify('examples/sexy/sexy.jpeg'))
-#print(detector.detect('examples/normal/normal.jpg'))
+print(classifier.classify('/inputs/bechdelia/exemple.jpeg'))
+print(detector.detect('/inputs/bechdelia/exemple.jpeg'))
 
 """
 detector.censor(

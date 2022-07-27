@@ -24,6 +24,10 @@ jobs:
       - GetModel
     inputs:
       nudeModel: GetModel.outputs.nudeModel
+      my-dataset:
+        type: bechdelia
+        with:
+          ref: dsdxi4bevva34wb
     uses: script@v1
     with:
       script: |-
