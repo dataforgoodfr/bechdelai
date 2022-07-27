@@ -14,5 +14,5 @@ detector = NudeDetector(checkpoint_path="/inputs/nudeModel/model/detector_v2_def
 
 
 
-print(classifier.classify('/inputs/bechdelia/exemple.jpg'))
-print(detector.detect(['/inputs/bechdelia/exemple.jpg', '/inputs/bechdelia/exemple_2.jpeg'],  batch_size=2))
+print(classifier.classify(['/inputs/bechdelia/exemple.jpg', '/inputs/bechdelia/exemple_2.jpeg'],  batch_size=2))
+print(detector.detect('/inputs/bechdelia/exemple_2.jpeg'))
