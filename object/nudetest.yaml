@@ -30,8 +30,8 @@ jobs:
         git clone https://github.com/dataforgoodfr/bechdelai.git
         cd bechdelai
         git checkout feature/pierre/objectification
-        
         cd object
+        ls /inputs/nudeModel/
         pip install -r requirements.txt
         python3 image_analyser.py
         
