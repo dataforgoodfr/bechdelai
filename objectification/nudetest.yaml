@@ -24,8 +24,8 @@ jobs:
       - GetModel
     inputs:
       nudeModel: GetModel.outputs.nudeModel
-      my-dataset:
-        type: bechdelia
+      bechdelia:
+        type: dataset
         with:
           ref: dsdxi4bevva34wb
     uses: script@v1
@@ -37,6 +37,7 @@ jobs:
         cd objectification
         ls /inputs/nudeModel/model/
         pip install -r requirements.txt
+        ls /inputs/bechdelia/
         python3 image_analyser.py
         
       image: paperspace/gradient-base:tf29-pt112-py39-2022-06-29
