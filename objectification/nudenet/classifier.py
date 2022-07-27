@@ -135,15 +135,3 @@ class Classifier:
                 images_preds[loaded_image_path][preds[i][_]] = float(probs[i][_])
 
         return images_preds
-
-
-if __name__ == "__main__":
-    m = Classifier()
-
-    while 1:
-        print(
-            "\n Enter single image path or multiple images seperated by || (2 pipes) \n"
-        )
-        images = input().split("||")
-        images = [image.strip() for image in images]
-        print(m.predict(images), "\n")
