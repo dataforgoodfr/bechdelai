@@ -3,7 +3,6 @@
     branches:
       only: main
 jobs:
-
   CloneRepo:
     resources:
       instance-type: P5000
@@ -14,15 +13,36 @@ jobs:
     with:
       url: https://github.com/dataforgoodfr/bechdelai.git
 
+  GetModel:
+    resources:
+      instance-type: P5000
+    outputs:
+      nudeModel:
+        type: volume
+    uses: script@v1
+    with:
+      script: |-
+        wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1X4hautXixoVqBo5bq6QXwTc6r4UIBf_q' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1X4hautXixoVqBo5bq6QXwTc6r4UIBf_q" -O modelNudenet.tar.xz && rm -rf /tmp/cookies.txt
+        tar xf modelNudenet.tar.xz
+        cp -R model /outputs/nudeModel
+      image: paperspace/gradient-base:tf29-pt112-py39-2022-06-29
+
   NudeTest:
     resources:
       instance-type: P5000
     needs:
+      - GetModel
       - CloneRepo
     inputs:
+      nudeModel: GetModel.outputs.nudeModel
       repo: CloneRepo.outputs.repo
     uses: script@v1
     with:
-      script: git checkout testing
+      script: |-
+        cd /inputs/repo/bechdelai
+        git checkout feature/pierre/objectification
+        cd object
+        pip install -r requirements.txt
+        python3 image_analyser.py
         
-      image: tensorflow/tensorflow:1.15.0-gpu
+      image: paperspace/gradient-base:tf29-pt112-py39-2022-06-29
