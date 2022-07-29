@@ -39,8 +39,9 @@ jobs:
     uses: script@v1
     with:
       script: |-
-        cd /inputs/repo/bechdelai
+        cd /inputs/repo/
         git checkout feature/pierre/objectification
+        ls
         cd object
         pip install -r requirements.txt
         python3 image_analyser.py

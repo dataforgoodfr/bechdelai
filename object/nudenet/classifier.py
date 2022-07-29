@@ -18,7 +18,7 @@ class Classifier:
         model = Classifier()
         """
         
-        self.nsfw_model = onnxruntime.InferenceSession(model_path)
+        self.nsfw_model = onnxruntime.InferenceSession(model_path, providers=['CUDAExecutionProvider'])
 
     def classify_video(
         self,
