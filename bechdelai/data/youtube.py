@@ -3,6 +3,7 @@ import urllib
 import cv2
 import numpy as np
 import json
+import time
 from pytube import YouTube
 from pytube import Channel
 from pytube.cli import on_progress
@@ -18,9 +19,6 @@ class Extract_Video_YT:
             os.mkdir(self.output_dir)
 
     def _get_detail(self, video)->dict:
-        """
-        
-        """
 
         req = urllib.request.urlopen(video.thumbnail_url)
         arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
@@ -63,3 +61,36 @@ class Extract_Video_YT:
             if with_detail:
                 detail = self._get_detail(video)
                 self._writer_detail(detail)
+
+    
+class Extract_Video_Stream():
+
+    def __init__(self, url_channel:str) -> None:
+
+        self.stream = os.popen("streamlink --stream-url "+  url_channel + " worst").read().replace('\n', '')
+        print(self.stream)
+
+    
+    def read_video(self):
+    
+        vcap = cv2.VideoCapture(self.stream)
+        
+        while(True):
+            # Capture frame-by-frame
+            ret, frame = vcap.read()
+            #print cap.isOpened(), ret
+            if frame is not None:
+                # Display the resulting frame
+                cv2.imshow('frame',frame)
+                # Press q to close the video windows before it ends if you want
+                time.sleep(0.006)
+                if cv2.waitKey(22) & 0xFF == ord('q'):
+                    break
+            else:
+                print("Frame is None")
+                break
+
+        # When everything done, release the capture
+        vcap.release()
+        cv2.destroyAllWindows()
+    
