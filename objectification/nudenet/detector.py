@@ -17,7 +17,7 @@ class Detector:
     detection_model = None
     classes = None
 
-    def __init__(self, model_name="default", checkpoint_path = "model/detector_v2_default_checkpoint.onnx", classes_path = "model/detector_v2_default_classes", ):
+    def __init__(self, checkpoint_path, classes_path, model_name="default"):
         """
         model = Detector()
         """
