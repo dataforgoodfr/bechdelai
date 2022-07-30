@@ -2,7 +2,8 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 from tqdm.auto import tqdm
-import re 
+import re
+import numpy as np
 from ipywidgets import widgets, interact
 
 # Deep Face

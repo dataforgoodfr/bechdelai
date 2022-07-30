@@ -59,6 +59,15 @@ class LoaderData:
         date = tf.cast(example["date"], tf.string)
         views = tf.cast(example["views"], tf.int64)
 
+        return {
+            "Author": author,
+            "Lenght": lenght,
+            "Title": title,
+            "Description": description,
+            "Date": date,
+            "Views": views
+        }
+
     def load_dataset(self):
         """
         Charger les données

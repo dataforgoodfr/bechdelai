@@ -7,6 +7,7 @@ import time
 from pytube import YouTube
 from pytube import Channel
 from pytube.cli import on_progress
+from retinaface import RetinaFace
 
 class Extract_Video_YT:
 
@@ -81,9 +82,18 @@ class Extract_Video_Stream():
             #print cap.isOpened(), ret
             if frame is not None:
                 # Display the resulting frame
-                cv2.imshow('frame',frame)
-                # Press q to close the video windows before it ends if you want
-                time.sleep(0.006)
+                faces = RetinaFace.detect_faces(frame)
+
+                if type(faces) is dict:
+                    
+                    for face in faces:
+                        identity = faces[face]
+                        facial_area = identity["facial_area"]
+                        frame = cv2.rectangle(frame, (facial_area[2], facial_area[3]), (facial_area[0], facial_area[1]), (255, 255, 255), 1)
+                    cv2.imshow("Stream", frame)
+                else:
+                    cv2.imshow("Stream", frame)
+
                 if cv2.waitKey(22) & 0xFF == ord('q'):
                     break
             else:
