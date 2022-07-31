@@ -1,0 +1,12 @@
+'on':
+  github:
+    branches:
+      only: main
+jobs:
+  GetModel:
+    resources:
+      instance-type: P5000
+    uses: script@v1
+    with:
+      script: echo Hello
+      image: paperspace/gradient-base:tf29-pt112-py39-2022-06-29

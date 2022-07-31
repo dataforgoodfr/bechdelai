@@ -17,6 +17,17 @@ jobs:
         cp -R model /outputs/nudeModel
       image: paperspace/gradient-base:tf29-pt112-py39-2022-06-29
 
+  GetVideo:
+    resources:
+      instance-type: P5000
+    uses: script@v1
+    with:
+      script: |-
+        git clone https://github.com/dataforgoodfr/bechdelai.git
+        cd bechdelai
+        git checkout feature/pierre/objectification
+
+        
   NudeTest:
     resources:
       instance-type: P5000
@@ -40,8 +51,8 @@ jobs:
         git clone https://github.com/dataforgoodfr/bechdelai.git
         cd bechdelai
         git checkout feature/pierre/objectification
-        cd objectification
-        ls /inputs/nudeModel/model/
+        cd notebook/objectification
+
         pip install --upgrade pip
         pip install -r requirements.txt
         python3 image_analyser.py

@@ -1,7 +1,5 @@
-
 import numpy as np
 from PIL import Image
-from IPython.display import Image as JupyterImage
 from deepface import DeepFace
 
 class Frame:

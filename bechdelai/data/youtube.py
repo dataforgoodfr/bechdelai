@@ -7,7 +7,7 @@ import time
 from pytube import YouTube
 from pytube import Channel
 from pytube.cli import on_progress
-from retinaface import RetinaFace
+
 
 class Extract_Video_YT:
 
@@ -62,45 +62,3 @@ class Extract_Video_YT:
             if with_detail:
                 detail = self._get_detail(video)
                 self._writer_detail(detail)
-
-    
-class Extract_Video_Stream():
-
-    def __init__(self, url_channel:str) -> None:
-
-        self.stream = os.popen("streamlink --stream-url "+  url_channel + " worst").read().replace('\n', '')
-        print(self.stream)
-
-    
-    def read_video(self):
-    
-        vcap = cv2.VideoCapture(self.stream)
-        
-        while(True):
-            # Capture frame-by-frame
-            ret, frame = vcap.read()
-            #print cap.isOpened(), ret
-            if frame is not None:
-                # Display the resulting frame
-                faces = RetinaFace.detect_faces(frame)
-
-                if type(faces) is dict:
-                    
-                    for face in faces:
-                        identity = faces[face]
-                        facial_area = identity["facial_area"]
-                        frame = cv2.rectangle(frame, (facial_area[2], facial_area[3]), (facial_area[0], facial_area[1]), (255, 255, 255), 1)
-                    cv2.imshow("Stream", frame)
-                else:
-                    cv2.imshow("Stream", frame)
-
-                if cv2.waitKey(22) & 0xFF == ord('q'):
-                    break
-            else:
-                print("Frame is None")
-                break
-
-        # When everything done, release the capture
-        vcap.release()
-        cv2.destroyAllWindows()
-    

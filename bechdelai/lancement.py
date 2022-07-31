@@ -1,5 +1,6 @@
-from data.youtube import Extract_Video_Stream
-from deepface import DeepFace
+from data.stream import Extract_Video_Stream
+from model.face_detector_v2 import OpenCV_Detector, DeepRetina_Detector
 
 
-Extract_Video_Stream("https://www.tf1.fr/tf1/direct").read_video()
+detector = OpenCV_Detector()
+Extract_Video_Stream("https://www.tf1.fr/tf1/direct", quality="worst").read_video(detector.deep_recognition)
