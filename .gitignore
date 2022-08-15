@@ -130,10 +130,3 @@ dmypy.json
 .vscode
 .DS_Store
 *.csv
-
-<<<<<<< HEAD
-video
-sample_video_yt
-=======
-video
->>>>>>> feature/poster-analysis
