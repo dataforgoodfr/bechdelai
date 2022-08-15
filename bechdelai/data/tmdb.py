@@ -3,6 +3,7 @@
 from os import environ
 
 import pandas as pd
+import numpy as np
 from dotenv import load_dotenv
 
 from bechdelai.data.scrap import get_json_from_url
@@ -37,6 +38,7 @@ SEARCH_API_URL = f"{API_URL}/search/movie?api_key={API_KEY}&query={{query}}"
 MOVIE_API_URL = f"{API_URL}/movie/{{movie_id}}?api_key={API_KEY}"
 CAST_API_URL = f"{API_URL}/movie/{{movie_id}}/credits?api_key={API_KEY}"
 PERSON_API_URL = f"{API_URL}/person/{{person_id}}?api_key={API_KEY}"
+PERSON_IMG_API_URL = f"{API_URL}/person/{{person_id}}/images?api_key={API_KEY}"
 SEARCH_IMDB_URL = (
     f"{API_URL}//find/tt{{imdb_id}}?api_key={API_KEY}&external_source=imdb_id"
 )
@@ -135,6 +137,18 @@ def get_person_details_from_id(person_id) -> dict:
 
     return get_json_from_url(url)
 
+def get_person_image_from_id(person_id) -> dict:
+    """Get TMDB API images for person by id
+
+    Parameters
+    ----------
+    person_id : str or int
+        Person id to get details from
+    """
+    url = PERSON_IMG_API_URL.format(person_id=str(person_id))
+
+    return get_json_from_url(url)
+
 def format_results_for_suggestion(search_res: dict) -> list:
     """Format search movie results for `show_movie_suggestions()`
 
@@ -224,3 +238,49 @@ def get_movies_from_ids(movie_ids: list) -> tuple:
     cast_df = pd.concat(cast_df)
 
     return movies_df, crew_df, cast_df
+
+def get_best_tmdb_id(title,release_year):
+    """
+    Get most probable TMDB id for movie title released in release year.
+    The release_date in TMDB may be different from the release_year given, but we look for the closest date.
+
+    Parameters
+    ----------
+    title : str
+                movie title
+    release_year : int
+                year the movie was release
+
+
+    Returns
+    -------
+    int
+        TMDB id
+
+    """
+    movie_candidates = search_movie_from_query(title)
+    if movie_candidates['total_results']==0:
+        # Movie not found in TMDB with query
+        return None
+
+    if  release_year==None:
+        return res[0]['id']
+    else:
+        # find most probable id -> same (or closest) release year
+        movie_id = ''
+        release_year_error = np.Inf # should be min
+        # look at the 5 first matches to choose the one that was release closer to release_year
+        for res in movie_candidates["results"][:5]:
+            if ('release_date' not in res.keys()):
+                continue
+            try:
+                res_release_year = int(res['release_date'][:4])
+            except ValueError:
+                continue
+            if res_release_year==release_year:
+                movie_id = res['id']
+                break
+            elif abs(res_release_year-release_year)<release_year_error:
+                movie_id = res['id']
+                release_year_error = abs(res_release_year-release_year)
+    return movie_id

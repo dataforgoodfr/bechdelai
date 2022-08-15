@@ -1,0 +1,920 @@
+,character1,star1,star_id1,character2,star2,star_id2,age_gap,genders,question,score
+0,Harry Potter,Daniel Radcliffe,10980,Peter Pettigrew,Timothy Spall,9191,32,"[2, 2]",kisses,4.47561342298286e-06
+1,Lord Voldemort,Ralph Fiennes,5469,Peter Pettigrew,Timothy Spall,9191,6,"[2, 2]",kisses,1.455400251870742e-05
+2,Peter Pettigrew,Timothy Spall,9191,Harry Potter,Daniel Radcliffe,10980,32,"[2, 2]",kisses,2.174403164190153e-07
+3,Cedric Diggory,Robert Pattinson,11288,Hermione,Emma Watson,10990,4,"[2, 1]",kisses,1.908249032567255e-06
+4,Amos Diggory,Jeff Rawle,81022,Cedric,Robert Pattinson,11288,35,"[2, 2]",kisses,9.339233656646684e-05
+5,James Potter,Adrian Rawlins,1643,Peter Pettigrew,Timothy Spall,9191,1,"[2, 2]",kisses,3.153905083763675e-07
+6,Lily Potter,Geraldine Somerville,10988,Peter Pettigrew,Timothy Spall,9191,10,"[1, 2]",kisses,2.1712864395340148e-08
+7,Harry Potter,Daniel Radcliffe,10980,Peter Pettigrew,Timothy Spall,9191,32,"[2, 2]",sleeps with,1.6545182006666437e-06
+8,Lord Voldemort,Ralph Fiennes,5469,Peter Pettigrew,Timothy Spall,9191,6,"[2, 2]",sleeps with,0.0001544667175039649
+9,Peter Pettigrew,Timothy Spall,9191,Lord Voldemort,Ralph Fiennes,5469,6,"[2, 2]",sleeps with,3.040828744360624e-07
+10,Cedric Diggory,Robert Pattinson,11288,Hermione,Emma Watson,10990,4,"[2, 1]",sleeps with,2.1088592347950907e-06
+11,Amos Diggory,Jeff Rawle,81022,Cedric,Robert Pattinson,11288,35,"[2, 2]",sleeps with,0.00011511822958709672
+12,James Potter,Adrian Rawlins,1643,Peter Pettigrew,Timothy Spall,9191,1,"[2, 2]",sleeps with,1.3898761608288623e-07
+13,Lord Voldemort,Ralph Fiennes,5469,Peter Pettigrew,Timothy Spall,9191,6,"[2, 2]",goes on a date with,0.0027546698693186045
+14,Peter Pettigrew,Timothy Spall,9191,Harry Potter,Daniel Radcliffe,10980,32,"[2, 2]",goes on a date with,2.033945929724723e-05
+15,Cedric Diggory,Robert Pattinson,11288,Hermione,Emma Watson,10990,4,"[2, 1]",goes on a date with,9.631505236029625e-05
+16,Amos Diggory,Jeff Rawle,81022,Cedric,Robert Pattinson,11288,35,"[2, 2]",goes on a date with,0.023754741996526718
+17,James Potter,Adrian Rawlins,1643,Peter Pettigrew,Timothy Spall,9191,1,"[2, 2]",goes on a date with,1.1118241900476278e-06
+18,Lily Potter,Geraldine Somerville,10988,Hermione,Emma Watson,10990,23,"[1, 1]",goes on a date with,2.1909525571572885e-07
+19,Harry Potter,Daniel Radcliffe,10980,Peter Pettigrew,Timothy Spall,9191,32,"[2, 2]",has sex with,6.220355317054782e-06
+20,Lord Voldemort,Ralph Fiennes,5469,Peter Pettigrew,Timothy Spall,9191,6,"[2, 2]",has sex with,0.0002409464359516278
+21,Peter Pettigrew,Timothy Spall,9191,Harry Potter,Daniel Radcliffe,10980,32,"[2, 2]",has sex with,3.167422164551681e-06
+22,Cedric Diggory,Robert Pattinson,11288,Hermione,Emma Watson,10990,4,"[2, 1]",has sex with,4.370045644463971e-06
+23,Amos Diggory,Jeff Rawle,81022,Cedric,Robert Pattinson,11288,35,"[2, 2]",has sex with,0.0005312315770424902
+24,James Potter,Adrian Rawlins,1643,Peter Pettigrew,Timothy Spall,9191,1,"[2, 2]",has sex with,1.6284937487398565e-07
+25,Lily Potter,Geraldine Somerville,10988,Harry Potter,Daniel Radcliffe,10980,22,"[1, 2]",has sex with,2.1642920344788763e-08
+26,Lord Voldemort,Ralph Fiennes,5469,Peter Pettigrew,Timothy Spall,9191,6,"[2, 2]",marries,7.759672735119238e-05
+27,Peter Pettigrew,Timothy Spall,9191,Harry Potter,Daniel Radcliffe,10980,32,"[2, 2]",marries,1.1002644129121109e-07
+28,Cedric Diggory,Robert Pattinson,11288,Hermione,Emma Watson,10990,4,"[2, 1]",marries,1.1045082146665663e-06
+29,Amos Diggory,Jeff Rawle,81022,Cedric,Robert Pattinson,11288,35,"[2, 2]",marries,0.0001101656089304015
+30,James Potter,Adrian Rawlins,1643,Peter Pettigrew,Timothy Spall,9191,1,"[2, 2]",marries,4.867262504149039e-08
+31,Harry Potter,Daniel Radcliffe,10980,Hermione,Emma Watson,10990,1,"[2, 1]",is in love with,7.768129762553144e-06
+32,Lord Voldemort,Ralph Fiennes,5469,Peter Pettigrew,Timothy Spall,9191,6,"[2, 2]",is in love with,6.378209218382835e-05
+33,Peter Pettigrew,Timothy Spall,9191,Harry Potter,Daniel Radcliffe,10980,32,"[2, 2]",is in love with,2.5453684884269023e-06
+34,Cedric Diggory,Robert Pattinson,11288,Hermione,Emma Watson,10990,4,"[2, 1]",is in love with,2.0059180315001868e-05
+35,Amos Diggory,Jeff Rawle,81022,Cedric,Robert Pattinson,11288,35,"[2, 2]",is in love with,0.0007070263382047415
+36,James Potter,Adrian Rawlins,1643,Peter Pettigrew,Timothy Spall,9191,1,"[2, 2]",is in love with,1.2496870738232246e-07
+37,Lily Potter,Geraldine Somerville,10988,Harry Potter,Daniel Radcliffe,10980,22,"[1, 2]",is in love with,5.621307153091948e-08
+38,Lord Voldemort,Ralph Fiennes,5469,Peter Pettigrew,Timothy Spall,9191,6,"[2, 2]",is in couple with,0.002135380171239376
+39,Peter Pettigrew,Timothy Spall,9191,Harry Potter,Daniel Radcliffe,10980,32,"[2, 2]",is in couple with,2.30296664085472e-05
+40,Cedric Diggory,Robert Pattinson,11288,Amos,Jeff Rawle,81022,35,"[2, 2]",is in couple with,4.723341771750711e-05
+41,Amos Diggory,Jeff Rawle,81022,Cedric,Robert Pattinson,11288,35,"[2, 2]",is in couple with,0.05119556188583374
+42,James Potter,Adrian Rawlins,1643,Peter Pettigrew,Timothy Spall,9191,1,"[2, 2]",is in couple with,4.493775577429915e-06
+43,Lily Potter,Geraldine Somerville,10988,Hermione,Emma Watson,10990,23,"[1, 1]",is in couple with,3.560064953944675e-07
+44,Harry Potter,Daniel Radcliffe,10980,Peter Pettigrew,Timothy Spall,9191,32,"[2, 2]",is the father of,0.011384121142327785
+45,Lord Voldemort,Ralph Fiennes,5469,Peter Pettigrew,Timothy Spall,9191,6,"[2, 2]",is the father of,0.009184175170958042
+46,Peter Pettigrew,Timothy Spall,9191,Harry Potter,Daniel Radcliffe,10980,32,"[2, 2]",is the father of,0.00010716285032685846
+47,Cedric Diggory,Robert Pattinson,11288,Amos,Jeff Rawle,81022,35,"[2, 2]",is the father of,0.012060464359819889
+48,Amos Diggory,Jeff Rawle,81022,Cedric,Robert Pattinson,11288,35,"[2, 2]",is the father of,0.6319891214370728
+49,James Potter,Adrian Rawlins,1643,Peter Pettigrew,Timothy Spall,9191,1,"[2, 2]",is the father of,9.215589670930058e-05
+50,Lily Potter,Geraldine Somerville,10988,Harry Potter,Daniel Radcliffe,10980,22,"[1, 2]",is the father of,0.0004176498332526535
+51,Harry Potter,Daniel Radcliffe,10980,Hermione,Emma Watson,10990,1,"[2, 1]",is the mother of,0.0026925201527774334
+52,Lord Voldemort,Ralph Fiennes,5469,Peter Pettigrew,Timothy Spall,9191,6,"[2, 2]",is the mother of,0.000136193644721061
+53,Peter Pettigrew,Timothy Spall,9191,Harry Potter,Daniel Radcliffe,10980,32,"[2, 2]",is the mother of,4.239382178639062e-08
+54,Cedric Diggory,Robert Pattinson,11288,Hermione,Emma Watson,10990,4,"[2, 1]",is the mother of,0.0006089386879466474
+55,Amos Diggory,Jeff Rawle,81022,Hermione,Emma Watson,10990,39,"[2, 1]",is the mother of,0.0005026301369071007
+56,James Potter,Adrian Rawlins,1643,Hermione,Emma Watson,10990,32,"[2, 1]",is the mother of,5.515257726074196e-06
+57,Lily Potter,Geraldine Somerville,10988,Hermione,Emma Watson,10990,23,"[1, 1]",is the mother of,4.521578205185506e-07
+58,Harry Potter,Daniel Radcliffe,10980,Peter Pettigrew,Timothy Spall,9191,32,"[2, 2]",is a friend of,0.00099365774076432
+59,Lord Voldemort,Ralph Fiennes,5469,Peter Pettigrew,Timothy Spall,9191,6,"[2, 2]",is a friend of,0.012720410712063313
+60,Peter Pettigrew,Timothy Spall,9191,Harry Potter,Daniel Radcliffe,10980,32,"[2, 2]",is a friend of,1.1025021962041137e-07
+61,Cedric Diggory,Robert Pattinson,11288,Amos,Jeff Rawle,81022,35,"[2, 2]",is a friend of,0.004546609707176685
+62,Amos Diggory,Jeff Rawle,81022,Cedric,Robert Pattinson,11288,35,"[2, 2]",is a friend of,0.05876646935939789
+63,James Potter,Adrian Rawlins,1643,Peter Pettigrew,Timothy Spall,9191,1,"[2, 2]",is a friend of,2.0433175450307317e-05
+64,Lily Potter,Geraldine Somerville,10988,Peter Pettigrew,Timothy Spall,9191,10,"[1, 2]",is a friend of,6.573093855877232e-07
+65,Lord Voldemort,Ralph Fiennes,5469,Peter Pettigrew,Timothy Spall,9191,6,"[2, 2]",is in the family of,0.0019050290575250983
+66,Peter Pettigrew,Timothy Spall,9191,Lord Voldemort,Ralph Fiennes,5469,6,"[2, 2]",is in the family of,4.2595394916133955e-05
+67,Cedric Diggory,Robert Pattinson,11288,Amos,Jeff Rawle,81022,35,"[2, 2]",is in the family of,2.2684878786094487e-05
+68,Amos Diggory,Jeff Rawle,81022,Cedric,Robert Pattinson,11288,35,"[2, 2]",is in the family of,0.06659944355487823
+69,James Potter,Adrian Rawlins,1643,Peter Pettigrew,Timothy Spall,9191,1,"[2, 2]",is in the family of,6.563222996192053e-07
+70,Harry Potter,Daniel Radcliffe,10980,Lord Voldemort,Ralph Fiennes,5469,26,"[2, 2]",is the enemy of,0.16649380326271057
+71,Hermione Granger,Emma Watson,10990,Lord Voldemort,Ralph Fiennes,5469,27,"[1, 2]",is the enemy of,2.015203244809527e-05
+72,Lord Voldemort,Ralph Fiennes,5469,Peter Pettigrew,Timothy Spall,9191,6,"[2, 2]",is the enemy of,0.012186867184937
+73,Peter Pettigrew,Timothy Spall,9191,Lord Voldemort,Ralph Fiennes,5469,6,"[2, 2]",is the enemy of,0.008456787094473839
+74,James Potter,Adrian Rawlins,1643,Lord Voldemort,Ralph Fiennes,5469,5,"[2, 2]",is the enemy of,5.3465875680558383e-05
+75,Lily Potter,Geraldine Somerville,10988,Lord Voldemort,Ralph Fiennes,5469,4,"[1, 2]",is the enemy of,3.93550135413534e-06
+76,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",kisses,0.0003820952260866761
+77,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",kisses,4.6995151933515444e-05
+78,Albus Dumbledore,Michael Gambon,5658,Harry,Daniel Radcliffe,10980,49,"[2, 2]",kisses,1.9412846086197533e-05
+79,Viktor Krum,Stanislav Yanevski,11290,Cedric Diggory,Robert Pattinson,11288,1,"[2, 2]",kisses,1.922367482620757e-05
+80,Cedric Diggory,Robert Pattinson,11288,Viktor Krum,Stanislav Yanevski,11290,1,"[2, 2]",kisses,1.2638426596822683e-05
+81,Fleur Delacour,Clemence Poesy,11291,Harry,Daniel Radcliffe,10980,7,"[1, 2]",kisses,5.090504600957502e-06
+82,Amos Diggory,Jeff Rawle,81022,Viktor Krum,Stanislav Yanevski,11290,34,"[2, 2]",kisses,6.051621994629386e-07
+83,Gabrielle Delacour,Angelica Mandy,1090780,Cedric Diggory,Robert Pattinson,11288,6,"[1, 2]",kisses,1.7450338418711908e-05
+84,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",sleeps with,0.003093206789344549
+85,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",sleeps with,0.0002447192382533103
+86,Albus Dumbledore,Michael Gambon,5658,Harry,Daniel Radcliffe,10980,49,"[2, 2]",sleeps with,6.957091045478592e-06
+87,Viktor Krum,Stanislav Yanevski,11290,Cedric Diggory,Robert Pattinson,11288,1,"[2, 2]",sleeps with,1.2331899597484153e-05
+88,Cedric Diggory,Robert Pattinson,11288,Viktor Krum,Stanislav Yanevski,11290,1,"[2, 2]",sleeps with,1.5826431990717538e-05
+89,Fleur Delacour,Clemence Poesy,11291,Viktor Krum,Stanislav Yanevski,11290,3,"[1, 2]",sleeps with,3.3499475193821127e-06
+90,Amos Diggory,Jeff Rawle,81022,Viktor Krum,Stanislav Yanevski,11290,34,"[2, 2]",sleeps with,4.4812270516558783e-07
+91,Gabrielle Delacour,Angelica Mandy,1090780,Cedric Diggory,Robert Pattinson,11288,6,"[1, 2]",sleeps with,3.170012860209681e-06
+92,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",goes on a date with,0.04613868519663811
+93,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",goes on a date with,0.001500520738773048
+94,Albus Dumbledore,Michael Gambon,5658,Harry,Daniel Radcliffe,10980,49,"[2, 2]",goes on a date with,0.00014096013910602778
+95,Viktor Krum,Stanislav Yanevski,11290,Cedric Diggory,Robert Pattinson,11288,1,"[2, 2]",goes on a date with,0.00021479562565218657
+96,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",goes on a date with,0.003800950711593032
+97,Fleur Delacour,Clemence Poesy,11291,Cedric Diggory,Robert Pattinson,11288,4,"[1, 2]",goes on a date with,0.00016649102326482534
+98,Amos Diggory,Jeff Rawle,81022,Cedric Diggory,Robert Pattinson,11288,35,"[2, 2]",goes on a date with,2.0052808395121247e-05
+99,Gabrielle Delacour,Angelica Mandy,1090780,Cedric Diggory,Robert Pattinson,11288,6,"[1, 2]",goes on a date with,0.00011024035484297201
+100,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",has sex with,0.01898111402988434
+101,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",has sex with,0.0017102410783991218
+102,Albus Dumbledore,Michael Gambon,5658,Harry,Daniel Radcliffe,10980,49,"[2, 2]",has sex with,0.0002591892844066024
+103,Viktor Krum,Stanislav Yanevski,11290,Cedric Diggory,Robert Pattinson,11288,1,"[2, 2]",has sex with,0.00013958342606201768
+104,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",has sex with,0.0017782755894586444
+105,Fleur Delacour,Clemence Poesy,11291,Cedric Diggory,Robert Pattinson,11288,4,"[1, 2]",has sex with,8.702478226041421e-05
+106,Amos Diggory,Jeff Rawle,81022,Harry,Daniel Radcliffe,10980,38,"[2, 2]",has sex with,2.021978798438795e-05
+107,Gabrielle Delacour,Angelica Mandy,1090780,Cedric Diggory,Robert Pattinson,11288,6,"[1, 2]",has sex with,0.00011067571904277429
+108,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",marries,0.00040150689892470837
+109,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",marries,2.330706047359854e-05
+110,Albus Dumbledore,Michael Gambon,5658,Harry,Daniel Radcliffe,10980,49,"[2, 2]",marries,4.806376523447398e-07
+111,Viktor Krum,Stanislav Yanevski,11290,Cedric Diggory,Robert Pattinson,11288,1,"[2, 2]",marries,3.5776340610027546e-06
+112,Cedric Diggory,Robert Pattinson,11288,Viktor Krum,Stanislav Yanevski,11290,1,"[2, 2]",marries,0.00011002185055986047
+113,Fleur Delacour,Clemence Poesy,11291,Viktor Krum,Stanislav Yanevski,11290,3,"[1, 2]",marries,1.0194842161581619e-06
+114,Amos Diggory,Jeff Rawle,81022,Viktor Krum,Stanislav Yanevski,11290,34,"[2, 2]",marries,3.3099286156357266e-06
+115,Gabrielle Delacour,Angelica Mandy,1090780,Viktor Krum,Stanislav Yanevski,11290,7,"[1, 2]",marries,6.194730985953356e-07
+116,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",is in love with,0.009393984451889992
+117,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",is in love with,0.00035212887451052666
+118,Albus Dumbledore,Michael Gambon,5658,Harry,Daniel Radcliffe,10980,49,"[2, 2]",is in love with,7.813492265995592e-05
+119,Viktor Krum,Stanislav Yanevski,11290,Cedric Diggory,Robert Pattinson,11288,1,"[2, 2]",is in love with,9.407724974153098e-06
+120,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",is in love with,0.0010366033529862761
+121,Fleur Delacour,Clemence Poesy,11291,Harry,Daniel Radcliffe,10980,7,"[1, 2]",is in love with,5.173892532184254e-06
+122,Amos Diggory,Jeff Rawle,81022,Harry,Daniel Radcliffe,10980,38,"[2, 2]",is in love with,6.417303666239604e-06
+123,Gabrielle Delacour,Angelica Mandy,1090780,Cedric Diggory,Robert Pattinson,11288,6,"[1, 2]",is in love with,3.239689704059856e-06
+124,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",is in couple with,0.013528996147215366
+125,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",is in couple with,0.002264125272631645
+126,Albus Dumbledore,Michael Gambon,5658,Harry,Daniel Radcliffe,10980,49,"[2, 2]",is in couple with,0.00017984486476052552
+127,Viktor Krum,Stanislav Yanevski,11290,Cedric Diggory,Robert Pattinson,11288,1,"[2, 2]",is in couple with,5.022379627916962e-05
+128,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",is in couple with,0.0016700292471796274
+129,Fleur Delacour,Clemence Poesy,11291,Harry,Daniel Radcliffe,10980,7,"[1, 2]",is in couple with,3.1634888728149235e-05
+130,Amos Diggory,Jeff Rawle,81022,Cedric Diggory,Robert Pattinson,11288,35,"[2, 2]",is in couple with,2.1303712856024504e-05
+131,Gabrielle Delacour,Angelica Mandy,1090780,Cedric Diggory,Robert Pattinson,11288,6,"[1, 2]",is in couple with,1.5992451153579168e-05
+132,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",is the father of,0.013133944943547249
+133,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",is the father of,0.00823886413127184
+134,Viktor Krum,Stanislav Yanevski,11290,Cedric Diggory,Robert Pattinson,11288,1,"[2, 2]",is the father of,0.0012590712867677212
+135,Cedric Diggory,Robert Pattinson,11288,Viktor Krum,Stanislav Yanevski,11290,1,"[2, 2]",is the father of,0.27382904291152954
+136,Fleur Delacour,Clemence Poesy,11291,Viktor Krum,Stanislav Yanevski,11290,3,"[1, 2]",is the father of,0.004854883532971144
+137,Amos Diggory,Jeff Rawle,81022,Cedric,Robert Pattinson,11288,35,"[2, 2]",is the father of,0.032532915472984314
+138,Gabrielle Delacour,Angelica Mandy,1090780,Viktor Krum,Stanislav Yanevski,11290,7,"[1, 2]",is the father of,0.004438083618879318
+139,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",is the mother of,0.003264789469540119
+140,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",is the mother of,0.001361371949315071
+141,Viktor Krum,Stanislav Yanevski,11290,Fleur Delacour,Clemence Poesy,11291,3,"[2, 1]",is the mother of,9.117067747865804e-06
+142,Cedric Diggory,Robert Pattinson,11288,Viktor Krum,Stanislav Yanevski,11290,1,"[2, 2]",is the mother of,0.0061165401712059975
+143,Fleur Delacour,Clemence Poesy,11291,Viktor Krum,Stanislav Yanevski,11290,3,"[1, 2]",is the mother of,7.575440395157784e-05
+144,Amos Diggory,Jeff Rawle,81022,Viktor Krum,Stanislav Yanevski,11290,34,"[2, 2]",is the mother of,1.6827239960548468e-05
+145,Gabrielle Delacour,Angelica Mandy,1090780,Viktor Krum,Stanislav Yanevski,11290,7,"[1, 2]",is the mother of,4.58624454040546e-05
+146,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",is a friend of,0.007053390610963106
+147,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",is a friend of,0.00022264706785790622
+148,Albus Dumbledore,Michael Gambon,5658,Ron,Rupert Grint,10989,48,"[2, 2]",is a friend of,0.00011906315921805799
+149,Viktor Krum,Stanislav Yanevski,11290,Cedric Diggory,Robert Pattinson,11288,1,"[2, 2]",is a friend of,1.764713306329213e-05
+150,Cedric Diggory,Robert Pattinson,11288,Viktor Krum,Stanislav Yanevski,11290,1,"[2, 2]",is a friend of,0.0006787445163354278
+151,Fleur Delacour,Clemence Poesy,11291,Viktor Krum,Stanislav Yanevski,11290,3,"[1, 2]",is a friend of,9.4398392320727e-06
+152,Amos Diggory,Jeff Rawle,81022,Cedric Diggory,Robert Pattinson,11288,35,"[2, 2]",is a friend of,9.395058441441506e-05
+153,Gabrielle Delacour,Angelica Mandy,1090780,Cedric Diggory,Robert Pattinson,11288,6,"[1, 2]",is a friend of,1.1879857993335463e-05
+154,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",is in the family of,0.0007557825301773846
+155,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",is in the family of,3.7005131162004545e-05
+156,Cedric Diggory,Robert Pattinson,11288,Viktor Krum,Stanislav Yanevski,11290,1,"[2, 2]",is in the family of,0.00022205134155228734
+157,Fleur Delacour,Clemence Poesy,11291,Viktor Krum,Stanislav Yanevski,11290,3,"[1, 2]",is in the family of,4.5821784624422435e-06
+158,Amos Diggory,Jeff Rawle,81022,Cedric Diggory,Robert Pattinson,11288,35,"[2, 2]",is in the family of,1.6784641047706828e-05
+159,Gabrielle Delacour,Angelica Mandy,1090780,Fleur Delacour is selected as the Champion from Beauxbatons,Clemence Poesy,11291,10,"[1, 1]",is in the family of,2.4420549380010925e-05
+160,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",is the enemy of,0.2237788587808609
+161,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",is the enemy of,0.003784554312005639
+162,Albus Dumbledore,Michael Gambon,5658,Ron,Rupert Grint,10989,48,"[2, 2]",is the enemy of,0.000681803678162396
+163,Viktor Krum,Stanislav Yanevski,11290,Cedric Diggory,Robert Pattinson,11288,1,"[2, 2]",is the enemy of,4.6776731323916465e-05
+164,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",is the enemy of,0.00010091336298501119
+165,Fleur Delacour,Clemence Poesy,11291,Viktor Krum,Stanislav Yanevski,11290,3,"[1, 2]",is the enemy of,5.100245743960841e-06
+166,Amos Diggory,Jeff Rawle,81022,Ron,Rupert Grint,10989,37,"[2, 2]",is the enemy of,3.7294375943019986e-05
+167,Gabrielle Delacour,Angelica Mandy,1090780,Viktor Krum,Stanislav Yanevski,11290,7,"[1, 2]",is the enemy of,7.330430889851414e-06
+168,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",kisses,0.0010143151739612222
+169,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",kisses,0.002629900351166725
+170,Hermione Granger,Emma Watson,10990,Viktor,Stanislav Yanevski,11290,5,"[1, 2]",kisses,7.321027078432962e-05
+171,Viktor Krum,Stanislav Yanevski,11290,Hermione,Emma Watson,10990,5,"[2, 1]",kisses,0.009802639484405518
+172,Cedric Diggory,Robert Pattinson,11288,Ron,Rupert Grint,10989,2,"[2, 2]",kisses,1.4871328630761127e-06
+173,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",sleeps with,0.003652785439044237
+174,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",sleeps with,0.0004353000840637833
+175,Hermione Granger,Emma Watson,10990,Viktor,Stanislav Yanevski,11290,5,"[1, 2]",sleeps with,0.0064963968470692635
+176,Viktor Krum,Stanislav Yanevski,11290,Hermione,Emma Watson,10990,5,"[2, 1]",sleeps with,0.08519358187913895
+177,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",sleeps with,4.630605872080196e-06
+178,Padma Patil,Afshan Azad,234926,Parvati,Shefali Chowdhury,234925,0,"[1, 1]",sleeps with,0.0003468818322289735
+179,Hermione Granger,Emma Watson,10990,Viktor,Stanislav Yanevski,11290,5,"[1, 2]",goes on a date with,0.23051732778549194
+180,Viktor Krum,Stanislav Yanevski,11290,Hermione,Emma Watson,10990,5,"[2, 1]",goes on a date with,0.742298424243927
+181,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",goes on a date with,0.0001653544750297442
+182,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",has sex with,0.0151995699852705
+183,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",has sex with,0.0025165784172713757
+184,Hermione Granger,Emma Watson,10990,Viktor,Stanislav Yanevski,11290,5,"[1, 2]",has sex with,0.019209494814276695
+185,Viktor Krum,Stanislav Yanevski,11290,Hermione,Emma Watson,10990,5,"[2, 1]",has sex with,0.2923286557197571
+186,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",has sex with,0.00013170835154596716
+187,Padma Patil,Afshan Azad,234926,Parvati,Shefali Chowdhury,234925,0,"[1, 1]",has sex with,0.0037791032809764147
+188,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",marries,0.014824699610471725
+189,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",marries,0.03580765798687935
+190,Hermione Granger,Emma Watson,10990,Viktor,Stanislav Yanevski,11290,5,"[1, 2]",marries,0.000665284285787493
+191,Viktor Krum,Stanislav Yanevski,11290,Hermione,Emma Watson,10990,5,"[2, 1]",marries,0.003042927011847496
+192,Cedric Diggory,Robert Pattinson,11288,Ron,Rupert Grint,10989,2,"[2, 2]",marries,3.5682139696291415e-06
+193,Padma Patil,Afshan Azad,234926,Parvati,Shefali Chowdhury,234925,0,"[1, 1]",marries,0.0006675555487163365
+194,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",is in love with,0.01727093942463398
+195,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",is in love with,0.0022803430911153555
+196,Hermione Granger,Emma Watson,10990,Viktor,Stanislav Yanevski,11290,5,"[1, 2]",is in love with,7.454715523635969e-05
+197,Viktor Krum,Stanislav Yanevski,11290,Hermione,Emma Watson,10990,5,"[2, 1]",is in love with,0.12210413068532944
+198,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",is in love with,8.955447810876649e-06
+199,Padma Patil,Afshan Azad,234926,Parvati,Shefali Chowdhury,234925,0,"[1, 1]",is in love with,0.00048799050273373723
+200,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",is in couple with,0.06853651255369186
+201,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",is in couple with,0.02225462906062603
+202,Hermione Granger,Emma Watson,10990,Viktor,Stanislav Yanevski,11290,5,"[1, 2]",is in couple with,0.02108883112668991
+203,Viktor Krum,Stanislav Yanevski,11290,Hermione,Emma Watson,10990,5,"[2, 1]",is in couple with,0.2894226312637329
+204,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",is in couple with,8.963409345597029e-05
+205,Padma Patil,Afshan Azad,234926,Parvati,Shefali Chowdhury,234925,0,"[1, 1]",is in couple with,0.01798558048903942
+206,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",is the father of,0.03547864034771919
+207,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",is the father of,0.0014765928499400616
+208,Hermione Granger,Emma Watson,10990,Viktor,Stanislav Yanevski,11290,5,"[1, 2]",is the father of,0.04619067534804344
+209,Viktor Krum,Stanislav Yanevski,11290,Cedric,Robert Pattinson,11288,1,"[2, 2]",is the father of,8.93367723620031e-06
+210,Cedric Diggory,Robert Pattinson,11288,Professor Moody,Brendan Gleeson,2039,31,"[2, 2]",is the father of,9.27623659663368e-06
+211,Padma Patil,Afshan Azad,234926,Viktor,Stanislav Yanevski,11290,3,"[1, 2]",is the father of,0.0039680711925029755
+212,Parvati Patil,Shefali Chowdhury,234925,Viktor,Stanislav Yanevski,11290,3,"[1, 2]",is the father of,0.00534756388515234
+213,Harry Potter,Daniel Radcliffe,10980,Padma Patil,Afshan Azad,234926,1,"[2, 1]",is the mother of,0.017757510766386986
+214,Ron Weasley,Rupert Grint,10989,Padma Patil,Afshan Azad,234926,0,"[2, 1]",is the mother of,0.011560143902897835
+215,Hermione Granger,Emma Watson,10990,Viktor,Stanislav Yanevski,11290,5,"[1, 2]",is the mother of,0.0025023529306054115
+216,Viktor Krum,Stanislav Yanevski,11290,Hermione,Emma Watson,10990,5,"[2, 1]",is the mother of,0.025062652304768562
+217,Cedric Diggory,Robert Pattinson,11288,Padma Patil respectively; while Hermione,Afshan Azad,234926,2,"[2, 1]",is the mother of,2.812700358845177e-06
+218,Padma Patil,Afshan Azad,234926,Parvati,Shefali Chowdhury,234925,0,"[1, 1]",is the mother of,0.45548906922340393
+219,Parvati Patil,Shefali Chowdhury,234925,Padma,Afshan Azad,234926,0,"[1, 1]",is the mother of,0.004700532648712397
+220,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",is a friend of,0.0492921844124794
+221,Ron Weasley,Rupert Grint,10989,Padma Patil,Afshan Azad,234926,0,"[2, 1]",is a friend of,0.00041552798938937485
+222,Hermione Granger,Emma Watson,10990,Viktor,Stanislav Yanevski,11290,5,"[1, 2]",is a friend of,0.007822525687515736
+223,Viktor Krum,Stanislav Yanevski,11290,Hermione,Emma Watson,10990,5,"[2, 1]",is a friend of,0.0021144626662135124
+224,Cedric Diggory,Robert Pattinson,11288,Professor Moody,Brendan Gleeson,2039,31,"[2, 2]",is a friend of,3.879174619214609e-05
+225,Padma Patil,Afshan Azad,234926,Parvati,Shefali Chowdhury,234925,0,"[1, 1]",is a friend of,0.00043048083898611367
+226,Parvati Patil,Shefali Chowdhury,234925,Viktor,Stanislav Yanevski,11290,3,"[1, 2]",is a friend of,8.551946666557342e-05
+227,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",is in the family of,0.002112790709361434
+228,Ron Weasley,Rupert Grint,10989,Padma Patil,Afshan Azad,234926,0,"[2, 1]",is in the family of,0.00028127001132816076
+229,Hermione Granger,Emma Watson,10990,Viktor,Stanislav Yanevski,11290,5,"[1, 2]",is in the family of,0.0009301409590989351
+230,Viktor Krum,Stanislav Yanevski,11290,Hermione,Emma Watson,10990,5,"[2, 1]",is in the family of,1.8587164959171787e-05
+231,Padma Patil,Afshan Azad,234926,Parvati,Shefali Chowdhury,234925,0,"[1, 1]",is in the family of,0.017679734155535698
+232,Parvati Patil,Shefali Chowdhury,234925,Padma,Afshan Azad,234926,0,"[1, 1]",is in the family of,7.932252628961578e-05
+233,Hermione Granger,Emma Watson,10990,Viktor,Stanislav Yanevski,11290,5,"[1, 2]",is the enemy of,0.001276665716432035
+234,Padma Patil,Afshan Azad,234926,Parvati,Shefali Chowdhury,234925,0,"[1, 1]",is the enemy of,0.0012002600124105811
+235,Parvati Patil,Shefali Chowdhury,234925,Viktor,Stanislav Yanevski,11290,3,"[1, 2]",is the enemy of,4.840621477342211e-05
+236,Harry Potter,Daniel Radcliffe,10980,Neville Longbottom,Matthew Lewis,96841,0,"[2, 2]",kisses,0.00041342590702697635
+237,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",kisses,0.013880024664103985
+238,Hermione Granger,Emma Watson,10990,Viktor,Stanislav Yanevski,11290,5,"[1, 2]",kisses,0.0843910351395607
+239,Lord Voldemort,Ralph Fiennes,5469,Harry,Daniel Radcliffe,10980,26,"[2, 2]",kisses,9.0521086804074e-07
+240,Albus Dumbledore,Michael Gambon,5658,Harry,Daniel Radcliffe,10980,49,"[2, 2]",kisses,7.983667273947503e-07
+241,Sirius Black,Gary Oldman,64,Harry,Daniel Radcliffe,10980,31,"[2, 2]",kisses,5.754735866503324e-06
+242,Severus Snape,Alan Rickman,4566,Dumbledore,Michael Gambon,5658,6,"[2, 2]",kisses,6.32161827525124e-05
+243,Igor Karkaroff,Predrag Bjelac,12044,Severus Snape,Alan Rickman,4566,16,"[2, 2]",kisses,1.2275755580049008e-05
+244,Viktor Krum,Stanislav Yanevski,11290,Hermione,Emma Watson,10990,5,"[2, 1]",kisses,3.140596390949213e-06
+245,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",kisses,9.512403266853653e-06
+246,Fleur Delacour,Clemence Poesy,11291,Harry,Daniel Radcliffe,10980,7,"[1, 2]",kisses,2.167139609809965e-05
+247,Barty Crouch Junior,David Tennant,20049,Harry,Daniel Radcliffe,10980,18,"[2, 2]",kisses,2.2639151211478747e-05
+248,Cho Chang,Katie Leung,234933,Cedric,Robert Pattinson,11288,1,"[1, 2]",kisses,0.08628030866384506
+249,Neville Longbottom,Matthew Lewis,96841,Harry,Daniel Radcliffe,10980,0,"[2, 2]",kisses,2.136558759957552e-05
+250,Harry Potter,Daniel Radcliffe,10980,Fleur,Clemence Poesy,11291,7,"[2, 1]",sleeps with,2.142475568689406e-05
+251,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",sleeps with,0.004964819177985191
+252,Hermione Granger,Emma Watson,10990,Viktor,Stanislav Yanevski,11290,5,"[1, 2]",sleeps with,0.05353345349431038
+253,Albus Dumbledore,Michael Gambon,5658,Severus Snape,Alan Rickman,4566,6,"[2, 2]",sleeps with,1.427554963129296e-07
+254,Sirius Black,Gary Oldman,64,Harry has to save Ron,Daniel Radcliffe,10980,31,"[2, 2]",sleeps with,7.127650292204635e-07
+255,Igor Karkaroff,Predrag Bjelac,12044,Severus Snape,Alan Rickman,4566,16,"[2, 2]",sleeps with,2.1044639652245678e-05
+256,Viktor Krum,Stanislav Yanevski,11290,Hermione,Emma Watson,10990,5,"[2, 1]",sleeps with,2.7412314011598937e-05
+257,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",sleeps with,6.899400887050433e-06
+258,Barty Crouch Junior,David Tennant,20049,Harry,Daniel Radcliffe,10980,18,"[2, 2]",sleeps with,3.3291478302999167e-06
+259,Cho Chang,Katie Leung,234933,Cedric,Robert Pattinson,11288,1,"[1, 2]",sleeps with,0.017299814149737358
+260,Neville Longbottom,Matthew Lewis,96841,Harry,Daniel Radcliffe,10980,0,"[2, 2]",sleeps with,0.00014141348947305232
+261,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",goes on a date with,0.0012686402769759297
+262,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",goes on a date with,0.1103484183549881
+263,Hermione Granger,Emma Watson,10990,Viktor,Stanislav Yanevski,11290,5,"[1, 2]",goes on a date with,0.14302343130111694
+264,Lord Voldemort,Ralph Fiennes,5469,Harry,Daniel Radcliffe,10980,26,"[2, 2]",goes on a date with,3.3806027204263955e-05
+265,Albus Dumbledore,Michael Gambon,5658,Harry,Daniel Radcliffe,10980,49,"[2, 2]",goes on a date with,0.0002923708816524595
+266,Sirius Black,Gary Oldman,64,Harry,Daniel Radcliffe,10980,31,"[2, 2]",goes on a date with,8.058694220380858e-06
+267,Severus Snape,Alan Rickman,4566,Dumbledore,Michael Gambon,5658,6,"[2, 2]",goes on a date with,6.2062026700004935e-06
+268,Igor Karkaroff,Predrag Bjelac,12044,Severus Snape,Alan Rickman,4566,16,"[2, 2]",goes on a date with,0.0008167222258634865
+269,Viktor Krum,Stanislav Yanevski,11290,Hermione,Emma Watson,10990,5,"[2, 1]",goes on a date with,8.273671846836805e-05
+270,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",goes on a date with,0.00048078264808282256
+271,Fleur Delacour,Clemence Poesy,11291,Harry,Daniel Radcliffe,10980,7,"[1, 2]",goes on a date with,0.00012357723608147353
+272,Barty Crouch Junior,David Tennant,20049,Harry,Daniel Radcliffe,10980,18,"[2, 2]",goes on a date with,0.0007279763813130558
+273,Cho Chang,Katie Leung,234933,Cedric,Robert Pattinson,11288,1,"[1, 2]",goes on a date with,0.33413437008857727
+274,Neville Longbottom,Matthew Lewis,96841,Harry,Daniel Radcliffe,10980,0,"[2, 2]",goes on a date with,0.006265638861805201
+275,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",has sex with,0.00035282340832054615
+276,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",has sex with,0.09523860365152359
+277,Hermione Granger,Emma Watson,10990,Viktor,Stanislav Yanevski,11290,5,"[1, 2]",has sex with,0.1658368706703186
+278,Lord Voldemort,Ralph Fiennes,5469,Harry has to save Ron,Daniel Radcliffe,10980,26,"[2, 2]",has sex with,3.4119957490474917e-06
+279,Albus Dumbledore,Michael Gambon,5658,Harry,Daniel Radcliffe,10980,49,"[2, 2]",has sex with,1.400464384460065e-06
+280,Sirius Black,Gary Oldman,64,Harry,Daniel Radcliffe,10980,31,"[2, 2]",has sex with,6.819604095653631e-06
+281,Severus Snape,Alan Rickman,4566,Igor Karkaroff,Predrag Bjelac,12044,16,"[2, 2]",has sex with,9.914697329804767e-06
+282,Igor Karkaroff,Predrag Bjelac,12044,Severus Snape,Alan Rickman,4566,16,"[2, 2]",has sex with,0.0008748861728236079
+283,Viktor Krum,Stanislav Yanevski,11290,Hermione,Emma Watson,10990,5,"[2, 1]",has sex with,1.4388064300874248e-05
+284,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",has sex with,6.0812250012531877e-05
+285,Fleur Delacour,Clemence Poesy,11291,Harry,Daniel Radcliffe,10980,7,"[1, 2]",has sex with,3.9216498407768086e-05
+286,Barty Crouch Junior,David Tennant,20049,Harry,Daniel Radcliffe,10980,18,"[2, 2]",has sex with,2.976477480842732e-05
+287,Cho Chang,Katie Leung,234933,Cedric,Robert Pattinson,11288,1,"[1, 2]",has sex with,0.23469552397727966
+288,Neville Longbottom,Matthew Lewis,96841,Harry,Daniel Radcliffe,10980,0,"[2, 2]",has sex with,0.0011106290621683002
+289,Harry Potter,Daniel Radcliffe,10980,Neville Longbottom,Matthew Lewis,96841,0,"[2, 2]",marries,0.0005853484035469592
+290,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",marries,0.010709276422858238
+291,Hermione Granger,Emma Watson,10990,Viktor,Stanislav Yanevski,11290,5,"[1, 2]",marries,0.09588634967803955
+292,Lord Voldemort,Ralph Fiennes,5469,Dumbledore,Michael Gambon,5658,23,"[2, 2]",marries,1.0585465588519583e-06
+293,Albus Dumbledore,Michael Gambon,5658,Neville Longbottom,Matthew Lewis,96841,49,"[2, 2]",marries,7.344184638213846e-08
+294,Sirius Black,Gary Oldman,64,Neville Longbottom,Matthew Lewis,96841,31,"[2, 2]",marries,1.2389281209834735e-06
+295,Severus Snape,Alan Rickman,4566,Dumbledore,Michael Gambon,5658,6,"[2, 2]",marries,0.00017429630679544061
+296,Igor Karkaroff,Predrag Bjelac,12044,Dumbledore,Michael Gambon,5658,22,"[2, 2]",marries,8.37166044220794e-06
+297,Cedric Diggory,Robert Pattinson,11288,Neville Longbottom,Matthew Lewis,96841,3,"[2, 2]",marries,3.5859168292518007e-06
+298,Fleur Delacour,Clemence Poesy,11291,Harry,Daniel Radcliffe,10980,7,"[1, 2]",marries,5.266942935122643e-06
+299,Barty Crouch Junior,David Tennant,20049,Harry,Daniel Radcliffe,10980,18,"[2, 2]",marries,2.817531139953644e-06
+300,Cho Chang,Katie Leung,234933,Cedric,Robert Pattinson,11288,1,"[1, 2]",marries,0.084322489798069
+301,Neville Longbottom,Matthew Lewis,96841,Harry,Daniel Radcliffe,10980,0,"[2, 2]",marries,1.012600932881469e-06
+302,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",is in love with,0.0007668907637707889
+303,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",is in love with,0.05832412466406822
+304,Hermione Granger,Emma Watson,10990,Viktor,Stanislav Yanevski,11290,5,"[1, 2]",is in love with,0.0569547601044178
+305,Lord Voldemort,Ralph Fiennes,5469,Harry has to save Ron,Daniel Radcliffe,10980,26,"[2, 2]",is in love with,3.1607894470653264e-06
+306,Albus Dumbledore,Michael Gambon,5658,Harry,Daniel Radcliffe,10980,49,"[2, 2]",is in love with,2.3029409135233436e-07
+307,Sirius Black,Gary Oldman,64,Harry has to save Ron,Daniel Radcliffe,10980,31,"[2, 2]",is in love with,2.7805017452919856e-06
+308,Severus Snape,Alan Rickman,4566,Dumbledore,Michael Gambon,5658,6,"[2, 2]",is in love with,6.945270342839649e-06
+309,Igor Karkaroff,Predrag Bjelac,12044,Dumbledore,Michael Gambon,5658,22,"[2, 2]",is in love with,3.3713033644744428e-06
+310,Viktor Krum,Stanislav Yanevski,11290,Hermione,Emma Watson,10990,5,"[2, 1]",is in love with,7.15934147592634e-05
+311,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",is in love with,1.0336304512748029e-05
+312,Fleur Delacour,Clemence Poesy,11291,Harry,Daniel Radcliffe,10980,7,"[1, 2]",is in love with,1.0769502978291712e-06
+313,Barty Crouch Junior,David Tennant,20049,Harry,Daniel Radcliffe,10980,18,"[2, 2]",is in love with,6.189587293192744e-05
+314,Cho Chang,Katie Leung,234933,Cedric,Robert Pattinson,11288,1,"[1, 2]",is in love with,0.1350986510515213
+315,Neville Longbottom,Matthew Lewis,96841,Harry,Daniel Radcliffe,10980,0,"[2, 2]",is in love with,4.3193249439354986e-05
+316,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",is in couple with,0.0013448349200189114
+317,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",is in couple with,0.07767089456319809
+318,Hermione Granger,Emma Watson,10990,Viktor,Stanislav Yanevski,11290,5,"[1, 2]",is in couple with,0.1555609405040741
+319,Lord Voldemort,Ralph Fiennes,5469,Dumbledore,Michael Gambon,5658,23,"[2, 2]",is in couple with,1.543286634841934e-05
+320,Albus Dumbledore,Michael Gambon,5658,Harry,Daniel Radcliffe,10980,49,"[2, 2]",is in couple with,6.496405603684252e-06
+321,Sirius Black,Gary Oldman,64,Harry,Daniel Radcliffe,10980,31,"[2, 2]",is in couple with,1.42858516483102e-05
+322,Severus Snape,Alan Rickman,4566,Dumbledore,Michael Gambon,5658,6,"[2, 2]",is in couple with,7.650644693057984e-05
+323,Igor Karkaroff,Predrag Bjelac,12044,Severus Snape,Alan Rickman,4566,16,"[2, 2]",is in couple with,0.0009480174630880356
+324,Viktor Krum,Stanislav Yanevski,11290,Hermione,Emma Watson,10990,5,"[2, 1]",is in couple with,0.00027543664327822626
+325,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",is in couple with,0.00021079504222143441
+326,Fleur Delacour,Clemence Poesy,11291,Harry,Daniel Radcliffe,10980,7,"[1, 2]",is in couple with,1.6202873666770756e-05
+327,Barty Crouch Junior,David Tennant,20049,Harry,Daniel Radcliffe,10980,18,"[2, 2]",is in couple with,0.00044679525308310986
+328,Cho Chang,Katie Leung,234933,Cedric,Robert Pattinson,11288,1,"[1, 2]",is in couple with,0.19284629821777344
+329,Neville Longbottom,Matthew Lewis,96841,Harry,Daniel Radcliffe,10980,0,"[2, 2]",is in couple with,0.0008464643033221364
+330,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",is the father of,0.008215934969484806
+331,Hermione Granger,Emma Watson,10990,Viktor,Stanislav Yanevski,11290,5,"[1, 2]",is the father of,0.22264905273914337
+332,Severus Snape,Alan Rickman,4566,Igor Karkaroff,Predrag Bjelac,12044,16,"[2, 2]",is the father of,0.010159268975257874
+333,Viktor Krum,Stanislav Yanevski,11290,Igor Karkaroff,Predrag Bjelac,12044,23,"[2, 2]",is the father of,1.0905511771852616e-05
+334,Cedric Diggory,Robert Pattinson,11288,Neville Longbottom,Matthew Lewis,96841,3,"[2, 2]",is the father of,7.232451025629416e-05
+335,Cho Chang,Katie Leung,234933,Cedric,Robert Pattinson,11288,1,"[1, 2]",is the father of,0.42315247654914856
+336,Harry Potter,Daniel Radcliffe,10980,Fleur,Clemence Poesy,11291,7,"[2, 1]",is the mother of,0.009258048608899117
+337,Ron Weasley,Rupert Grint,10989,Fleur,Clemence Poesy,11291,6,"[2, 1]",is the mother of,0.004457854200154543
+338,Hermione Granger,Emma Watson,10990,Viktor,Stanislav Yanevski,11290,5,"[1, 2]",is the mother of,0.05901283398270607
+339,Sirius Black,Gary Oldman,64,Fleur,Clemence Poesy,11291,24,"[2, 1]",is the mother of,0.00011128594633191824
+340,Severus Snape,Alan Rickman,4566,Dumbledore,Michael Gambon,5658,6,"[2, 2]",is the mother of,1.3194963685236871e-05
+341,Cedric Diggory,Robert Pattinson,11288,Fleur's sister after Fleur,Clemence Poesy,11291,4,"[2, 1]",is the mother of,0.00013727211626246572
+342,Cho Chang,Katie Leung,234933,Cedric,Robert Pattinson,11288,1,"[1, 2]",is the mother of,9.67013111221604e-05
+343,Neville Longbottom,Matthew Lewis,96841,Fleur,Clemence Poesy,11291,7,"[2, 1]",is the mother of,4.382355655252468e-06
+344,Harry Potter,Daniel Radcliffe,10980,Neville Longbottom,Matthew Lewis,96841,0,"[2, 2]",is a friend of,0.003954112995415926
+345,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",is a friend of,0.006079285405576229
+346,Hermione Granger,Emma Watson,10990,Viktor,Stanislav Yanevski,11290,5,"[1, 2]",is a friend of,0.15280784666538239
+347,Lord Voldemort,Ralph Fiennes,5469,Igor Karkaroff,Predrag Bjelac,12044,1,"[2, 2]",is a friend of,5.437710206024349e-05
+348,Albus Dumbledore,Michael Gambon,5658,Igor Karkaroff,Predrag Bjelac,12044,22,"[2, 2]",is a friend of,7.481738430215046e-05
+349,Sirius Black,Gary Oldman,64,Harry has to save Ron,Daniel Radcliffe,10980,31,"[2, 2]",is a friend of,3.0639159376733005e-05
+350,Severus Snape,Alan Rickman,4566,Igor Karkaroff,Predrag Bjelac,12044,16,"[2, 2]",is a friend of,0.00043574627488851547
+351,Igor Karkaroff,Predrag Bjelac,12044,Severus Snape,Alan Rickman,4566,16,"[2, 2]",is a friend of,0.0005268294480629265
+352,Viktor Krum,Stanislav Yanevski,11290,Hermione,Emma Watson,10990,5,"[2, 1]",is a friend of,2.2689982870360836e-05
+353,Cedric Diggory,Robert Pattinson,11288,Neville Longbottom,Matthew Lewis,96841,3,"[2, 2]",is a friend of,7.96709573478438e-05
+354,Fleur Delacour,Clemence Poesy,11291,Neville Longbottom,Matthew Lewis,96841,7,"[1, 2]",is a friend of,4.964476829627529e-05
+355,Barty Crouch Junior,David Tennant,20049,Severus Snape,Alan Rickman,4566,25,"[2, 2]",is a friend of,1.2809920008294284e-05
+356,Cho Chang,Katie Leung,234933,Cedric,Robert Pattinson,11288,1,"[1, 2]",is a friend of,0.2517260015010834
+357,Neville Longbottom,Matthew Lewis,96841,Harry has to save Ron,Daniel Radcliffe,10980,0,"[2, 2]",is a friend of,6.7473092713044025e-06
+358,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",is in the family of,0.012156964279711246
+359,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",is in the family of,0.0012059749569743872
+360,Hermione Granger,Emma Watson,10990,Viktor,Stanislav Yanevski,11290,5,"[1, 2]",is in the family of,0.002256202744320035
+361,Sirius Black,Gary Oldman,64,Ron,Rupert Grint,10989,30,"[2, 2]",is in the family of,3.271520108683035e-05
+362,Viktor Krum,Stanislav Yanevski,11290,Hermione,Emma Watson,10990,5,"[2, 1]",is in the family of,0.00023137705284170806
+363,Cedric Diggory,Robert Pattinson,11288,Cho,Katie Leung,234933,1,"[2, 1]",is in the family of,0.0005029170424677432
+364,Fleur Delacour,Clemence Poesy,11291,her sister,Robert Wilfort,72313,5,"[1, 2]",is in the family of,0.00021712786110583693
+365,Cho Chang,Katie Leung,234933,Cedric,Robert Pattinson,11288,1,"[1, 2]",is in the family of,0.005288101267069578
+366,Harry Potter,Daniel Radcliffe,10980,Voldemort,Ralph Fiennes,5469,26,"[2, 2]",is the enemy of,0.0060158176347613335
+367,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",is the enemy of,0.0022091541904956102
+368,Hermione Granger,Emma Watson,10990,Viktor,Stanislav Yanevski,11290,5,"[1, 2]",is the enemy of,0.004225651267915964
+369,Lord Voldemort,Ralph Fiennes,5469,Igor Karkaroff,Predrag Bjelac,12044,1,"[2, 2]",is the enemy of,0.00015626718231942505
+370,Albus Dumbledore,Michael Gambon,5658,Igor Karkaroff,Predrag Bjelac,12044,22,"[2, 2]",is the enemy of,0.00022485015506390482
+371,Sirius Black,Gary Oldman,64,Voldemort,Ralph Fiennes,5469,5,"[2, 2]",is the enemy of,0.00017800561909098178
+372,Viktor Krum,Stanislav Yanevski,11290,Hermione,Emma Watson,10990,5,"[2, 1]",is the enemy of,6.994731847953517e-06
+373,Cedric Diggory,Robert Pattinson,11288,Cho,Katie Leung,234933,1,"[2, 1]",is the enemy of,1.2835830602853093e-05
+374,Fleur Delacour,Clemence Poesy,11291,Ron,Rupert Grint,10989,6,"[1, 2]",is the enemy of,8.671779141877778e-06
+375,Barty Crouch Junior,David Tennant,20049,Igor Karkaroff,Predrag Bjelac,12044,9,"[2, 2]",is the enemy of,0.0016280579147860408
+376,Cho Chang,Katie Leung,234933,Cedric,Robert Pattinson,11288,1,"[1, 2]",is the enemy of,0.0019132103770971298
+377,Neville Longbottom,Matthew Lewis,96841,Fleur,Clemence Poesy,11291,7,"[2, 1]",is the enemy of,1.3150996664990089e-06
+378,Harry Potter,Daniel Radcliffe,10980,Cedric,Robert Pattinson,11288,3,"[2, 2]",kisses,0.0011424206895753741
+379,Lord Voldemort,Ralph Fiennes,5469,Harry,Daniel Radcliffe,10980,26,"[2, 2]",kisses,4.773705586558208e-05
+380,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",kisses,0.00014972995268180966
+381,Harry Potter,Daniel Radcliffe,10980,Cedric,Robert Pattinson,11288,3,"[2, 2]",sleeps with,0.0020075440406799316
+382,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",sleeps with,0.0010630744509398937
+383,Harry Potter,Daniel Radcliffe,10980,Cedric,Robert Pattinson,11288,3,"[2, 2]",goes on a date with,0.04811009764671326
+384,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",goes on a date with,0.01717871055006981
+385,Harry Potter,Daniel Radcliffe,10980,Cedric,Robert Pattinson,11288,3,"[2, 2]",has sex with,0.024519847705960274
+386,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",has sex with,0.0032772603444755077
+387,Harry Potter,Daniel Radcliffe,10980,Cedric,Robert Pattinson,11288,3,"[2, 2]",marries,0.014827633276581764
+388,Lord Voldemort,Ralph Fiennes,5469,Harry,Daniel Radcliffe,10980,26,"[2, 2]",marries,0.0003355786029715091
+389,Peter Pettigrew,Timothy Spall,9191,Harry,Daniel Radcliffe,10980,32,"[2, 2]",marries,3.221827853394643e-07
+390,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",marries,0.00028600008226931095
+391,Harry Potter,Daniel Radcliffe,10980,Cedric,Robert Pattinson,11288,3,"[2, 2]",is in love with,0.02961285039782524
+392,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",is in love with,0.0022925008088350296
+393,Harry Potter,Daniel Radcliffe,10980,Cedric,Robert Pattinson,11288,3,"[2, 2]",is in couple with,0.20594578981399536
+394,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",is in couple with,0.028427235782146454
+395,Harry Potter,Daniel Radcliffe,10980,Cedric,Robert Pattinson,11288,3,"[2, 2]",is the father of,0.0650436282157898
+396,Lord Voldemort,Ralph Fiennes,5469,Pettigrew,Timothy Spall,9191,6,"[2, 2]",is the father of,0.0033444829750806093
+397,Peter Pettigrew,Timothy Spall,9191,Voldemort,Ralph Fiennes,5469,6,"[2, 2]",is the father of,0.00026160417473874986
+398,Cedric Diggory,Robert Pattinson,11288,Pettigrew,Timothy Spall,9191,29,"[2, 2]",is the father of,0.012009527534246445
+399,Harry Potter,Daniel Radcliffe,10980,Cedric,Robert Pattinson,11288,3,"[2, 2]",is the mother of,0.0006543207564391196
+400,Lord Voldemort,Ralph Fiennes,5469,Cedric,Robert Pattinson,11288,23,"[2, 2]",is the mother of,8.951314521254972e-05
+401,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",is the mother of,5.22038244525902e-05
+402,Harry Potter,Daniel Radcliffe,10980,Cedric,Robert Pattinson,11288,3,"[2, 2]",is a friend of,0.16952946782112122
+403,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",is a friend of,0.0011464962735772133
+404,Harry Potter,Daniel Radcliffe,10980,Cedric,Robert Pattinson,11288,3,"[2, 2]",is in the family of,0.007895841263234615
+405,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",is in the family of,9.689271246315911e-05
+406,Harry Potter,Daniel Radcliffe,10980,Voldemort,Ralph Fiennes,5469,26,"[2, 2]",is the enemy of,0.09788063168525696
+407,Lord Voldemort,Ralph Fiennes,5469,Pettigrew,Timothy Spall,9191,6,"[2, 2]",is the enemy of,0.004268270451575518
+408,Peter Pettigrew,Timothy Spall,9191,Voldemort,Ralph Fiennes,5469,6,"[2, 2]",is the enemy of,0.07283134758472443
+409,Cedric Diggory,Robert Pattinson,11288,Voldemort,Ralph Fiennes,5469,23,"[2, 2]",is the enemy of,0.03380030393600464
+410,Harry Potter,Daniel Radcliffe,10980,Moody,Brendan Gleeson,2039,34,"[2, 2]",kisses,0.007836055010557175
+411,Lord Voldemort,Ralph Fiennes,5469,Moody,Brendan Gleeson,2039,8,"[2, 2]",kisses,0.0004992980975657701
+412,Albus Dumbledore,Michael Gambon,5658,Moody,Brendan Gleeson,2039,15,"[2, 2]",kisses,0.0006659837090410292
+413,Severus Snape,Alan Rickman,4566,Dumbledore,Michael Gambon,5658,6,"[2, 2]",kisses,8.140571299009025e-05
+414,Minerva McGonagall,Maggie Smith,10978,Snape,Alan Rickman,4566,11,"[1, 2]",kisses,0.0006748071755282581
+415,Cedric Diggory,Robert Pattinson,11288,Moody,Brendan Gleeson,2039,31,"[2, 2]",kisses,0.0002955961390398443
+416,Barty Crouch Junior,David Tennant,20049,Moody,Brendan Gleeson,2039,16,"[2, 2]",kisses,4.175102003500797e-05
+417,Harry Potter,Daniel Radcliffe,10980,Moody,Brendan Gleeson,2039,34,"[2, 2]",sleeps with,0.040312767028808594
+418,Lord Voldemort,Ralph Fiennes,5469,Moody,Brendan Gleeson,2039,8,"[2, 2]",sleeps with,0.0019718767143785954
+419,Albus Dumbledore,Michael Gambon,5658,Moody,Brendan Gleeson,2039,15,"[2, 2]",sleeps with,0.0008776334580034018
+420,Minerva McGonagall,Maggie Smith,10978,Snape,Alan Rickman,4566,11,"[1, 2]",sleeps with,0.0005607620696537197
+421,Cedric Diggory,Robert Pattinson,11288,Harry is dragged by Moody,Daniel Radcliffe,10980,3,"[2, 2]",sleeps with,0.0007225794834084809
+422,Barty Crouch Junior,David Tennant,20049,Moody,Brendan Gleeson,2039,16,"[2, 2]",sleeps with,0.0005295004812069237
+423,Harry Potter,Daniel Radcliffe,10980,Moody,Brendan Gleeson,2039,34,"[2, 2]",goes on a date with,0.3406515419483185
+424,Lord Voldemort,Ralph Fiennes,5469,Moody,Brendan Gleeson,2039,8,"[2, 2]",goes on a date with,0.001917386776767671
+425,Albus Dumbledore,Michael Gambon,5658,Snape,Alan Rickman,4566,6,"[2, 2]",goes on a date with,0.0039843241684138775
+426,Severus Snape,Alan Rickman,4566,Dumbledore,Michael Gambon,5658,6,"[2, 2]",goes on a date with,0.0001403188070980832
+427,Minerva McGonagall,Maggie Smith,10978,Snape,Alan Rickman,4566,11,"[1, 2]",goes on a date with,0.020597897469997406
+428,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",goes on a date with,0.00405123783275485
+429,Barty Crouch Junior,David Tennant,20049,Moody,Brendan Gleeson,2039,16,"[2, 2]",goes on a date with,0.0003280216478742659
+430,Harry Potter,Daniel Radcliffe,10980,Moody,Brendan Gleeson,2039,34,"[2, 2]",has sex with,0.08281753957271576
+431,Lord Voldemort,Ralph Fiennes,5469,Moody,Brendan Gleeson,2039,8,"[2, 2]",has sex with,0.0017558560939505696
+432,Albus Dumbledore,Michael Gambon,5658,Snape,Alan Rickman,4566,6,"[2, 2]",has sex with,0.002463080221787095
+433,Minerva McGonagall,Maggie Smith,10978,Snape,Alan Rickman,4566,11,"[1, 2]",has sex with,0.007445661351084709
+434,Cedric Diggory,Robert Pattinson,11288,Moody,Brendan Gleeson,2039,31,"[2, 2]",has sex with,0.0011488331947475672
+435,Barty Crouch Junior,David Tennant,20049,Moody,Brendan Gleeson,2039,16,"[2, 2]",has sex with,0.0013747566845268011
+436,Harry Potter,Daniel Radcliffe,10980,Moody,Brendan Gleeson,2039,34,"[2, 2]",marries,0.006319117266684771
+437,Lord Voldemort,Ralph Fiennes,5469,Moody,Brendan Gleeson,2039,8,"[2, 2]",marries,0.0006463761092163622
+438,Albus Dumbledore,Michael Gambon,5658,Snape,Alan Rickman,4566,6,"[2, 2]",marries,0.0005751039716415107
+439,Severus Snape,Alan Rickman,4566,Minerva McGonagall,Maggie Smith,10978,11,"[2, 1]",marries,0.00030308961868286133
+440,Minerva McGonagall,Maggie Smith,10978,Snape,Alan Rickman,4566,11,"[1, 2]",marries,0.001577637973241508
+441,Cedric Diggory,Robert Pattinson,11288,Dumbledore,Michael Gambon,5658,46,"[2, 2]",marries,5.454924757941626e-05
+442,Barty Crouch Junior,David Tennant,20049,Dumbledore,Michael Gambon,5658,31,"[2, 2]",marries,1.467027141188737e-05
+443,Harry Potter,Daniel Radcliffe,10980,Moody,Brendan Gleeson,2039,34,"[2, 2]",is in love with,0.07733295857906342
+444,Lord Voldemort,Ralph Fiennes,5469,Moody,Brendan Gleeson,2039,8,"[2, 2]",is in love with,0.0018766975263133645
+445,Albus Dumbledore,Michael Gambon,5658,Moody,Brendan Gleeson,2039,15,"[2, 2]",is in love with,0.0017114790389314294
+446,Severus Snape,Alan Rickman,4566,Moody,Brendan Gleeson,2039,9,"[2, 2]",is in love with,4.427699423104059e-06
+447,Minerva McGonagall,Maggie Smith,10978,Snape,Alan Rickman,4566,11,"[1, 2]",is in love with,0.0005755386664532125
+448,Cedric Diggory,Robert Pattinson,11288,Moody,Brendan Gleeson,2039,31,"[2, 2]",is in love with,0.0014063192065805197
+449,Barty Crouch Junior,David Tennant,20049,Moody,Brendan Gleeson,2039,16,"[2, 2]",is in love with,0.00046742631820961833
+450,Harry Potter,Daniel Radcliffe,10980,Moody,Brendan Gleeson,2039,34,"[2, 2]",is in couple with,0.11348534375429153
+451,Lord Voldemort,Ralph Fiennes,5469,Moody,Brendan Gleeson,2039,8,"[2, 2]",is in couple with,0.002530377823859453
+452,Albus Dumbledore,Michael Gambon,5658,Snape,Alan Rickman,4566,6,"[2, 2]",is in couple with,0.005789600778371096
+453,Severus Snape,Alan Rickman,4566,Minerva McGonagall,Maggie Smith,10978,11,"[2, 1]",is in couple with,0.006174720358103514
+454,Minerva McGonagall,Maggie Smith,10978,Snape,Alan Rickman,4566,11,"[1, 2]",is in couple with,0.03266735002398491
+455,Cedric Diggory,Robert Pattinson,11288,Harry is dragged by Moody,Daniel Radcliffe,10980,3,"[2, 2]",is in couple with,0.001423183479346335
+456,Barty Crouch Junior,David Tennant,20049,Moody,Brendan Gleeson,2039,16,"[2, 2]",is in couple with,0.0011146612232550979
+457,Harry Potter,Daniel Radcliffe,10980,Moody,Brendan Gleeson,2039,34,"[2, 2]",is the father of,0.19163058698177338
+458,Lord Voldemort,Ralph Fiennes,5469,Moody,Brendan Gleeson,2039,8,"[2, 2]",is the father of,0.030278798192739487
+459,Albus Dumbledore,Michael Gambon,5658,Moody,Brendan Gleeson,2039,15,"[2, 2]",is the father of,0.01946660876274109
+460,Severus Snape,Alan Rickman,4566,Moody,Brendan Gleeson,2039,9,"[2, 2]",is the father of,0.0001689448399702087
+461,Minerva McGonagall,Maggie Smith,10978,Snape,Alan Rickman,4566,11,"[1, 2]",is the father of,0.0005214246921241283
+462,Cedric Diggory,Robert Pattinson,11288,Moody,Brendan Gleeson,2039,31,"[2, 2]",is the father of,0.03552961349487305
+463,Barty Crouch Junior,David Tennant,20049,Moody,Brendan Gleeson,2039,16,"[2, 2]",is the father of,0.04349388927221298
+464,Harry Potter,Daniel Radcliffe,10980,Moody,Brendan Gleeson,2039,34,"[2, 2]",is the mother of,0.05765285715460777
+465,Lord Voldemort,Ralph Fiennes,5469,Moody,Brendan Gleeson,2039,8,"[2, 2]",is the mother of,0.012137314304709435
+466,Albus Dumbledore,Michael Gambon,5658,Moody,Brendan Gleeson,2039,15,"[2, 2]",is the mother of,0.0047346968203783035
+467,Severus Snape,Alan Rickman,4566,Minerva McGonagall,Maggie Smith,10978,11,"[2, 1]",is the mother of,0.0013421451440081
+468,Minerva McGonagall,Maggie Smith,10978,Snape,Alan Rickman,4566,11,"[1, 2]",is the mother of,3.5949428820458706e-06
+469,Cedric Diggory,Robert Pattinson,11288,Moody,Brendan Gleeson,2039,31,"[2, 2]",is the mother of,0.015801990404725075
+470,Barty Crouch Junior,David Tennant,20049,Moody,Brendan Gleeson,2039,16,"[2, 2]",is the mother of,0.0025739511474967003
+471,Harry Potter,Daniel Radcliffe,10980,Moody,Brendan Gleeson,2039,34,"[2, 2]",is a friend of,0.17403027415275574
+472,Lord Voldemort,Ralph Fiennes,5469,Moody,Brendan Gleeson,2039,8,"[2, 2]",is a friend of,0.022416258230805397
+473,Albus Dumbledore,Michael Gambon,5658,Snape,Alan Rickman,4566,6,"[2, 2]",is a friend of,0.008163902908563614
+474,Severus Snape,Alan Rickman,4566,Minerva McGonagall,Maggie Smith,10978,11,"[2, 1]",is a friend of,0.0008989553898572922
+475,Minerva McGonagall,Maggie Smith,10978,Snape,Alan Rickman,4566,11,"[1, 2]",is a friend of,0.00877982098609209
+476,Cedric Diggory,Robert Pattinson,11288,Moody,Brendan Gleeson,2039,31,"[2, 2]",is a friend of,0.021143628284335136
+477,Barty Crouch Junior,David Tennant,20049,Moody,Brendan Gleeson,2039,16,"[2, 2]",is a friend of,0.0008389039430767298
+478,Harry Potter,Daniel Radcliffe,10980,Moody,Brendan Gleeson,2039,34,"[2, 2]",is in the family of,0.09311586618423462
+479,Lord Voldemort,Ralph Fiennes,5469,Moody,Brendan Gleeson,2039,8,"[2, 2]",is in the family of,0.0058914124965667725
+480,Albus Dumbledore,Michael Gambon,5658,Moody,Brendan Gleeson,2039,15,"[2, 2]",is in the family of,0.002143822843208909
+481,Severus Snape,Alan Rickman,4566,Dumbledore,Michael Gambon,5658,6,"[2, 2]",is in the family of,5.534383490157779e-06
+482,Minerva McGonagall,Maggie Smith,10978,Snape,Alan Rickman,4566,11,"[1, 2]",is in the family of,0.0009705330594442785
+483,Cedric Diggory,Robert Pattinson,11288,Moody,Brendan Gleeson,2039,31,"[2, 2]",is in the family of,0.004390615504235029
+484,Barty Crouch Junior,David Tennant,20049,Moody,Brendan Gleeson,2039,16,"[2, 2]",is in the family of,0.0012953957775607705
+485,Harry Potter,Daniel Radcliffe,10980,Moody,Brendan Gleeson,2039,34,"[2, 2]",is the enemy of,0.23453906178474426
+486,Lord Voldemort,Ralph Fiennes,5469,Moody,Brendan Gleeson,2039,8,"[2, 2]",is the enemy of,0.04964218661189079
+487,Albus Dumbledore,Michael Gambon,5658,Moody,Brendan Gleeson,2039,15,"[2, 2]",is the enemy of,0.023163150995969772
+488,Severus Snape,Alan Rickman,4566,Moody,Brendan Gleeson,2039,9,"[2, 2]",is the enemy of,0.0002502111019566655
+489,Minerva McGonagall,Maggie Smith,10978,Snape,Alan Rickman,4566,11,"[1, 2]",is the enemy of,0.0019259839318692684
+490,Cedric Diggory,Robert Pattinson,11288,Voldemort,Ralph Fiennes,5469,23,"[2, 2]",is the enemy of,0.2119603157043457
+491,Barty Crouch Junior,David Tennant,20049,Moody,Brendan Gleeson,2039,16,"[2, 2]",is the enemy of,0.04215544834733009
+492,Hermione Granger,Emma Watson,10990,"Harry, Ron",Rupert Grint,10989,2,"[1, 2]",kisses,0.0072325775399804115
+493,Lord Voldemort,Ralph Fiennes,5469,Harry,Daniel Radcliffe,10980,26,"[2, 2]",kisses,0.0002580239379312843
+494,Albus Dumbledore,Michael Gambon,5658,Harry,Daniel Radcliffe,10980,49,"[2, 2]",kisses,0.003621054347604513
+495,Ron Weasley,Rupert Grint,10989,Hermione,Emma Watson,10990,2,"[2, 1]",sleeps with,0.008202124387025833
+496,Hermione Granger,Emma Watson,10990,Ron,Rupert Grint,10989,2,"[1, 2]",sleeps with,0.003218509256839752
+497,Lord Voldemort,Ralph Fiennes,5469,Harry,Daniel Radcliffe,10980,26,"[2, 2]",sleeps with,0.003950230777263641
+498,Albus Dumbledore,Michael Gambon,5658,Harry,Daniel Radcliffe,10980,49,"[2, 2]",sleeps with,0.003182207467034459
+499,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",sleeps with,2.8123429729021154e-05
+500,Ron Weasley,Rupert Grint,10989,Hermione,Emma Watson,10990,2,"[2, 1]",goes on a date with,0.036851897835731506
+501,Hermione Granger,Emma Watson,10990,"Harry, Ron",Rupert Grint,10989,2,"[1, 2]",goes on a date with,0.015863850712776184
+502,Lord Voldemort,Ralph Fiennes,5469,Harry,Daniel Radcliffe,10980,26,"[2, 2]",goes on a date with,0.14588074386119843
+503,Albus Dumbledore,Michael Gambon,5658,Harry,Daniel Radcliffe,10980,49,"[2, 2]",goes on a date with,0.029009146615862846
+504,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",goes on a date with,0.0004667031462304294
+505,Ron Weasley,Rupert Grint,10989,Hermione,Emma Watson,10990,2,"[2, 1]",has sex with,0.013639582321047783
+506,Hermione Granger,Emma Watson,10990,Ron,Rupert Grint,10989,2,"[1, 2]",has sex with,0.014080840162932873
+507,Lord Voldemort,Ralph Fiennes,5469,Harry,Daniel Radcliffe,10980,26,"[2, 2]",has sex with,0.05265769734978676
+508,Albus Dumbledore,Michael Gambon,5658,Harry,Daniel Radcliffe,10980,49,"[2, 2]",has sex with,0.013971851207315922
+509,Cedric Diggory,Robert Pattinson,11288,Dumbledore,Michael Gambon,5658,46,"[2, 2]",has sex with,0.00020379746274556965
+510,Ron Weasley,Rupert Grint,10989,Hermione,Emma Watson,10990,2,"[2, 1]",marries,0.018092183396220207
+511,Hermione Granger,Emma Watson,10990,Ron,Rupert Grint,10989,2,"[1, 2]",marries,0.011778178624808788
+512,Lord Voldemort,Ralph Fiennes,5469,Harry,Daniel Radcliffe,10980,26,"[2, 2]",marries,0.00018633408762980253
+513,Albus Dumbledore,Michael Gambon,5658,Harry,Daniel Radcliffe,10980,49,"[2, 2]",marries,0.0010147909633815289
+514,Ron Weasley,Rupert Grint,10989,Hermione,Emma Watson,10990,2,"[2, 1]",is in love with,0.07102980464696884
+515,Hermione Granger,Emma Watson,10990,Ron,Rupert Grint,10989,2,"[1, 2]",is in love with,0.0030985772609710693
+516,Lord Voldemort,Ralph Fiennes,5469,Harry,Daniel Radcliffe,10980,26,"[2, 2]",is in love with,0.003451830940321088
+517,Albus Dumbledore,Michael Gambon,5658,Harry,Daniel Radcliffe,10980,49,"[2, 2]",is in love with,0.004001259803771973
+518,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",is in love with,7.667413592571393e-05
+519,Ron Weasley,Rupert Grint,10989,Hermione,Emma Watson,10990,2,"[2, 1]",is in couple with,0.15822426974773407
+520,Hermione Granger,Emma Watson,10990,"Harry, Ron",Rupert Grint,10989,2,"[1, 2]",is in couple with,0.03506234288215637
+521,Lord Voldemort,Ralph Fiennes,5469,Harry,Daniel Radcliffe,10980,26,"[2, 2]",is in couple with,0.0028426535427570343
+522,Albus Dumbledore,Michael Gambon,5658,Harry,Daniel Radcliffe,10980,49,"[2, 2]",is in couple with,0.006894368678331375
+523,Harry Potter,Daniel Radcliffe,10980,Dumbledore,Michael Gambon,5658,49,"[2, 2]",is the father of,0.02574446052312851
+524,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",is the father of,0.014950496144592762
+525,Hermione Granger,Emma Watson,10990,Ron,Rupert Grint,10989,2,"[1, 2]",is the father of,0.019987061619758606
+526,Lord Voldemort,Ralph Fiennes,5469,Cedric,Robert Pattinson,11288,23,"[2, 2]",is the father of,0.006174351088702679
+527,Albus Dumbledore,Michael Gambon,5658,Harry,Daniel Radcliffe,10980,49,"[2, 2]",is the father of,0.012096120975911617
+528,Cedric Diggory,Robert Pattinson,11288,Dumbledore,Michael Gambon,5658,46,"[2, 2]",is the father of,0.03306801617145538
+529,Harry Potter,Daniel Radcliffe,10980,Hermione,Emma Watson,10990,1,"[2, 1]",is the mother of,0.09148059785366058
+530,Ron Weasley,Rupert Grint,10989,Hermione,Emma Watson,10990,2,"[2, 1]",is the mother of,0.2706192135810852
+531,Hermione Granger,Emma Watson,10990,Ron,Rupert Grint,10989,2,"[1, 2]",is the mother of,0.0014246193459257483
+532,Lord Voldemort,Ralph Fiennes,5469,Cedric,Robert Pattinson,11288,23,"[2, 2]",is the mother of,0.002840070053935051
+533,Albus Dumbledore,Michael Gambon,5658,Hermione,Emma Watson,10990,50,"[2, 1]",is the mother of,0.00329207512550056
+534,Cedric Diggory,Robert Pattinson,11288,Dumbledore,Michael Gambon,5658,46,"[2, 2]",is the mother of,0.0006934466073289514
+535,Ron Weasley,Rupert Grint,10989,Hermione,Emma Watson,10990,2,"[2, 1]",is a friend of,0.026693224906921387
+536,Hermione Granger,Emma Watson,10990,Ron,Rupert Grint,10989,2,"[1, 2]",is a friend of,0.01116557139903307
+537,Lord Voldemort,Ralph Fiennes,5469,Harry,Daniel Radcliffe,10980,26,"[2, 2]",is a friend of,0.005796500947326422
+538,Albus Dumbledore,Michael Gambon,5658,Harry,Daniel Radcliffe,10980,49,"[2, 2]",is a friend of,0.024805106222629547
+539,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",is a friend of,0.0014202974271029234
+540,Ron Weasley,Rupert Grint,10989,Hermione,Emma Watson,10990,2,"[2, 1]",is in the family of,0.018639015033841133
+541,Hermione Granger,Emma Watson,10990,Ron,Rupert Grint,10989,2,"[1, 2]",is in the family of,0.004874559119343758
+542,Lord Voldemort,Ralph Fiennes,5469,Cedric,Robert Pattinson,11288,23,"[2, 2]",is in the family of,0.0015627065440639853
+543,Albus Dumbledore,Michael Gambon,5658,Harry,Daniel Radcliffe,10980,49,"[2, 2]",is in the family of,0.001418225932866335
+544,Cedric Diggory,Robert Pattinson,11288,Dumbledore,Michael Gambon,5658,46,"[2, 2]",is in the family of,0.0002442184486426413
+545,Harry Potter,Daniel Radcliffe,10980,Voldemort,Ralph Fiennes,5469,26,"[2, 2]",is the enemy of,0.14070652425289154
+546,Ron Weasley,Rupert Grint,10989,Voldemort,Ralph Fiennes,5469,25,"[2, 2]",is the enemy of,0.00041984289418905973
+547,Hermione Granger,Emma Watson,10990,Ron,Rupert Grint,10989,2,"[1, 2]",is the enemy of,0.0011384058743715286
+548,Lord Voldemort,Ralph Fiennes,5469,Harry,Daniel Radcliffe,10980,26,"[2, 2]",is the enemy of,0.0008559802663512528
+549,Albus Dumbledore,Michael Gambon,5658,Voldemort,Ralph Fiennes,5469,23,"[2, 2]",is the enemy of,0.3426632881164551
+550,Cedric Diggory,Robert Pattinson,11288,Voldemort,Ralph Fiennes,5469,23,"[2, 2]",is the enemy of,0.646350622177124
+551,James Potter,Adrian Rawlins,1643,List of Harry Potter cast members,Daniel Radcliffe,10980,31,"[2, 2]",kisses,1.2070480615022916e-08
+552,Lily Potter,Geraldine Somerville,10988,Harry Potter cast members,Daniel Radcliffe,10980,22,"[1, 2]",kisses,7.52678452897726e-09
+553,James Potter,Adrian Rawlins,1643,Harry Potter cast members,Daniel Radcliffe,10980,31,"[2, 2]",sleeps with,5.018891258146141e-08
+554,Lily Potter,Geraldine Somerville,10988,Harry Potter cast members,Daniel Radcliffe,10980,22,"[1, 2]",sleeps with,2.96247097963942e-08
+555,James Potter,Adrian Rawlins,1643,Harry Potter cast members,Daniel Radcliffe,10980,31,"[2, 2]",goes on a date with,6.69954602017242e-07
+556,Lily Potter,Geraldine Somerville,10988,Harry Potter cast members,Daniel Radcliffe,10980,22,"[1, 2]",goes on a date with,1.0947060502530803e-07
+557,James Potter,Adrian Rawlins,1643,Harry Potter cast members,Daniel Radcliffe,10980,31,"[2, 2]",has sex with,1.8449463823344558e-07
+558,Lily Potter,Geraldine Somerville,10988,Harry Potter cast members,Daniel Radcliffe,10980,22,"[1, 2]",has sex with,8.720890321001207e-08
+559,James Potter,Adrian Rawlins,1643,Harry Potter cast members,Daniel Radcliffe,10980,31,"[2, 2]",marries,4.742116477274294e-09
+560,Lily Potter,Geraldine Somerville,10988,Harry Potter cast members,Daniel Radcliffe,10980,22,"[1, 2]",marries,3.643541468534295e-09
+561,James Potter,Adrian Rawlins,1643,Harry Potter cast members,Daniel Radcliffe,10980,31,"[2, 2]",is in love with,2.2187704473708436e-07
+562,Lily Potter,Geraldine Somerville,10988,Harry Potter cast members,Daniel Radcliffe,10980,22,"[1, 2]",is in love with,1.4223785171907366e-07
+563,James Potter,Adrian Rawlins,1643,Harry Potter,Daniel Radcliffe,10980,31,"[2, 2]",is in couple with,3.2746342526479566e-07
+564,Lily Potter,Geraldine Somerville,10988,Harry Potter,Daniel Radcliffe,10980,22,"[1, 2]",is in couple with,4.6767604544584174e-07
+565,James Potter,Adrian Rawlins,1643,Harry Potter cast members,Daniel Radcliffe,10980,31,"[2, 2]",is the father of,8.657416117330285e-09
+566,Lily Potter,Geraldine Somerville,10988,Harry Potter,Daniel Radcliffe,10980,22,"[1, 2]",is the father of,5.960587401432349e-08
+567,James Potter,Adrian Rawlins,1643,Harry Potter cast members,Daniel Radcliffe,10980,31,"[2, 2]",is the mother of,6.7131309400281225e-09
+568,Lily Potter,Geraldine Somerville,10988,Harry Potter cast members,Daniel Radcliffe,10980,22,"[1, 2]",is the mother of,7.3338952688573045e-09
+569,James Potter,Adrian Rawlins,1643,Harry Potter cast members,Daniel Radcliffe,10980,31,"[2, 2]",is a friend of,8.327985412392991e-09
+570,Lily Potter,Geraldine Somerville,10988,Harry Potter cast members,Daniel Radcliffe,10980,22,"[1, 2]",is a friend of,3.7759453341834615e-09
+571,James Potter,Adrian Rawlins,1643,Harry Potter,Daniel Radcliffe,10980,31,"[2, 2]",is in the family of,3.5814125567412702e-06
+572,Lily Potter,Geraldine Somerville,10988,Harry Potter,Daniel Radcliffe,10980,22,"[1, 2]",is in the family of,1.346778162769624e-06
+573,James Potter,Adrian Rawlins,1643,List of Harry Potter cast members,Daniel Radcliffe,10980,31,"[2, 2]",is the enemy of,2.8057920431479033e-09
+574,Lily Potter,Geraldine Somerville,10988,Harry Potter cast members,Daniel Radcliffe,10980,22,"[1, 2]",is the enemy of,3.868409148566343e-09
+575,Lord Voldemort,Ralph Fiennes,5469,Daniel Radcliffe as Harry Potter,Alfred Enoch,234923,26,"[2, 2]",is the father of,3.4682454952417174e-07
+576,Lord Voldemort,Ralph Fiennes,5469,Harry Potter,Daniel Radcliffe,10980,26,"[2, 2]",is the mother of,4.471570491659804e-08
+577,Lord Voldemort,Ralph Fiennes,5469,Daniel Radcliffe as Harry Potter,Alfred Enoch,234923,26,"[2, 2]",is in the family of,3.2791445846669376e-05
+578,James Potter,Adrian Rawlins,1643,Lord Voldemort,Ralph Fiennes,5469,5,"[2, 2]",is in the family of,1.1951116221098346e-06
+579,Lily Potter,Geraldine Somerville,10988,Lord Voldemort,Ralph Fiennes,5469,4,"[1, 2]",is in the family of,3.5172392927051987e-06
+580,Harry Potter,Daniel Radcliffe,10980,Lord Voldemort,Ralph Fiennes,5469,26,"[2, 2]",is the enemy of,0.4272652566432953
+581,Lord Voldemort,Ralph Fiennes,5469,Harry Potter,Daniel Radcliffe,10980,26,"[2, 2]",is the enemy of,5.4970769269857556e-05
+582,James Potter,Adrian Rawlins,1643,Lord Voldemort,Ralph Fiennes,5469,5,"[2, 2]",is the enemy of,7.235176599351689e-05
+583,Lily Potter,Geraldine Somerville,10988,Lord Voldemort,Ralph Fiennes,5469,4,"[1, 2]",is the enemy of,4.8372232413385063e-05
+584,Harry Potter,Daniel Radcliffe,10980,Ron Weasley,Rupert Grint,10989,1,"[2, 2]",kisses,0.006162421312183142
+585,Harry Potter,Daniel Radcliffe,10980,Ron Weasley,Rupert Grint,10989,1,"[2, 2]",sleeps with,0.006168692838400602
+586,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",sleeps with,0.00043467868817970157
+587,Arthur Weasley,Mark Williams,20999,Ron Weasley,Rupert Grint,10989,29,"[2, 2]",sleeps with,4.2428351321177615e-07
+588,Fred Weasley,James Phelps,96851,Ron Weasley,Rupert Grint,10989,2,"[2, 2]",sleeps with,2.8812087293772493e-06
+589,George Weasley,Oliver Phelps,140368,Ron Weasley,Rupert Grint,10989,2,"[2, 2]",sleeps with,5.591040235231048e-07
+590,Ginny Weasley,Bonnie Wright,10991,Ron Weasley,Rupert Grint,10989,3,"[1, 2]",sleeps with,1.022981564346992e-06
+591,Harry Potter,Daniel Radcliffe,10980,Ron Weasley,Rupert Grint,10989,1,"[2, 2]",goes on a date with,0.1480148732662201
+592,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",goes on a date with,0.05110602453351021
+593,Arthur Weasley,Mark Williams,20999,Harry,Daniel Radcliffe,10980,30,"[2, 2]",goes on a date with,1.796670039766468e-05
+594,Fred Weasley,James Phelps,96851,Ron Weasley,Rupert Grint,10989,2,"[2, 2]",goes on a date with,9.400396083947271e-05
+595,George Weasley,Oliver Phelps,140368,Harry,Daniel Radcliffe,10980,3,"[2, 2]",goes on a date with,1.244479699380463e-05
+596,Ginny Weasley,Bonnie Wright,10991,Ron Weasley,Rupert Grint,10989,3,"[1, 2]",goes on a date with,1.3880052392778452e-05
+597,Harry Potter,Daniel Radcliffe,10980,Ron Weasley,Rupert Grint,10989,1,"[2, 2]",has sex with,0.09359104931354523
+598,Arthur Weasley,Mark Williams,20999,Ron Weasley,Rupert Grint,10989,29,"[2, 2]",has sex with,5.263305138214491e-05
+599,Fred Weasley,James Phelps,96851,Ron Weasley,Rupert Grint,10989,2,"[2, 2]",has sex with,0.00029473702306859195
+600,George Weasley,Oliver Phelps,140368,Ron Weasley,Rupert Grint,10989,2,"[2, 2]",has sex with,3.760423351195641e-05
+601,Ginny Weasley,Bonnie Wright,10991,Ron Weasley,Rupert Grint,10989,3,"[1, 2]",has sex with,0.00010152763570658863
+602,Harry Potter,Daniel Radcliffe,10980,Rupert Grint as Ron Weasley,Alfred Enoch,234923,0,"[2, 2]",marries,0.0012282606912776828
+603,Harry Potter,Daniel Radcliffe,10980,Ron Weasley,Rupert Grint,10989,1,"[2, 2]",is in love with,0.0055817714892327785
+604,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",is in love with,0.008419105783104897
+605,George Weasley,Oliver Phelps,140368,Harry,Daniel Radcliffe,10980,3,"[2, 2]",is in love with,3.28952614836453e-06
+606,Harry Potter,Daniel Radcliffe,10980,Ron Weasley,Rupert Grint,10989,1,"[2, 2]",is in couple with,0.047633618116378784
+607,Arthur Weasley,Mark Williams,20999,Harry,Daniel Radcliffe,10980,30,"[2, 2]",is in couple with,1.0453234608576167e-05
+608,Fred Weasley,James Phelps,96851,Ron Weasley,Rupert Grint,10989,2,"[2, 2]",is in couple with,0.00015293736942112446
+609,George Weasley,Oliver Phelps,140368,Harry,Daniel Radcliffe,10980,3,"[2, 2]",is in couple with,1.8297134374734014e-05
+610,Ginny Weasley,Bonnie Wright,10991,Ron Weasley,Rupert Grint,10989,3,"[1, 2]",is in couple with,1.098242591979215e-05
+611,Harry Potter,Daniel Radcliffe,10980,Ron Weasley,Rupert Grint,10989,1,"[2, 2]",is the father of,0.14127786457538605
+612,Arthur Weasley,Mark Williams,20999,Ron Weasley,Rupert Grint,10989,29,"[2, 2]",is the father of,0.0017441813834011555
+613,Fred Weasley,James Phelps,96851,Ron Weasley,Rupert Grint,10989,2,"[2, 2]",is the father of,0.0053579481318593025
+614,George Weasley,Oliver Phelps,140368,Ron Weasley,Rupert Grint,10989,2,"[2, 2]",is the father of,0.0007444227812811732
+615,Ginny Weasley,Bonnie Wright,10991,Ron Weasley,Rupert Grint,10989,3,"[1, 2]",is the father of,0.007160580717027187
+616,Harry Potter,Daniel Radcliffe,10980,Ron Weasley,Rupert Grint,10989,1,"[2, 2]",is the mother of,0.0008423905237577856
+617,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",is the mother of,0.00011880238889716566
+618,Arthur Weasley,Mark Williams,20999,Ron Weasley,Rupert Grint,10989,29,"[2, 2]",is the mother of,3.973513230448589e-06
+619,Fred Weasley,James Phelps,96851,Ron,Rupert Grint,10989,2,"[2, 2]",is the mother of,5.017072180635296e-05
+620,George Weasley,Oliver Phelps,140368,Ron Weasley,Rupert Grint,10989,2,"[2, 2]",is the mother of,2.8539598133647814e-06
+621,Ginny Weasley,Bonnie Wright,10991,Ron Weasley,Rupert Grint,10989,3,"[1, 2]",is the mother of,8.274682841147296e-07
+622,Harry Potter,Daniel Radcliffe,10980,Ron Weasley,Rupert Grint,10989,1,"[2, 2]",is a friend of,0.9189558625221252
+623,Arthur Weasley,Mark Williams,20999,Ron Weasley,Rupert Grint,10989,29,"[2, 2]",is a friend of,0.00041350454557687044
+624,Fred Weasley,James Phelps,96851,Ron Weasley,Rupert Grint,10989,2,"[2, 2]",is a friend of,0.006120929028838873
+625,George Weasley,Oliver Phelps,140368,Ron Weasley,Rupert Grint,10989,2,"[2, 2]",is a friend of,0.0003963033959735185
+626,Ginny Weasley,Bonnie Wright,10991,Ron Weasley,Rupert Grint,10989,3,"[1, 2]",is a friend of,6.005696195643395e-05
+627,Harry Potter,Daniel Radcliffe,10980,Ron Weasley,Rupert Grint,10989,1,"[2, 2]",is in the family of,0.30907881259918213
+628,Arthur Weasley,Mark Williams,20999,Ron Weasley,Rupert Grint,10989,29,"[2, 2]",is in the family of,3.9587117498740554e-05
+629,Fred Weasley,James Phelps,96851,Ron Weasley,Rupert Grint,10989,2,"[2, 2]",is in the family of,7.84460935392417e-05
+630,George Weasley,Oliver Phelps,140368,Ron Weasley,Rupert Grint,10989,2,"[2, 2]",is in the family of,2.534903251216747e-05
+631,Ginny Weasley,Bonnie Wright,10991,Ron Weasley,Rupert Grint,10989,3,"[1, 2]",is in the family of,2.939597106887959e-05
+632,Harry Potter,Daniel Radcliffe,10980,Ron Weasley,Rupert Grint,10989,1,"[2, 2]",is the enemy of,0.00015780565445311368
+633,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",is the enemy of,9.303352271672338e-05
+634,Arthur Weasley,Mark Williams,20999,Ron Weasley,Rupert Grint,10989,29,"[2, 2]",is the enemy of,9.428868906979915e-06
+635,Fred Weasley,James Phelps,96851,Ron Weasley,Rupert Grint,10989,2,"[2, 2]",is the enemy of,5.819727084599435e-05
+636,George Weasley,Oliver Phelps,140368,Ron Weasley,Rupert Grint,10989,2,"[2, 2]",is the enemy of,1.6414378478657454e-05
+637,Ginny Weasley,Bonnie Wright,10991,Ron Weasley,Rupert Grint,10989,3,"[1, 2]",is the enemy of,3.0484893613902386e-06
+638,Harry Potter,Daniel Radcliffe,10980,Hermione Granger,Emma Watson,10990,1,"[2, 1]",kisses,0.008169093169271946
+639,Harry Potter,Daniel Radcliffe,10980,Hermione Granger,Emma Watson,10990,1,"[2, 1]",sleeps with,0.03743206337094307
+640,Harry Potter,Daniel Radcliffe,10980,Hermione Granger,Emma Watson,10990,1,"[2, 1]",goes on a date with,0.2513003647327423
+641,Harry Potter,Daniel Radcliffe,10980,Hermione Granger,Emma Watson,10990,1,"[2, 1]",has sex with,0.15484151244163513
+642,Harry Potter,Daniel Radcliffe,10980,Hermione Granger,Emma Watson,10990,1,"[2, 1]",is in couple with,0.24326342344284058
+643,Hermione Granger,Emma Watson,10990,Harry,Daniel Radcliffe,10980,1,"[1, 2]",is the father of,0.041608136147260666
+644,Harry Potter,Daniel Radcliffe,10980,Hermione Granger,Emma Watson,10990,1,"[2, 1]",is a friend of,0.9340982437133789
+645,Harry Potter,Daniel Radcliffe,10980,Hermione Granger,Emma Watson,10990,1,"[2, 1]",is in the family of,0.17868661880493164
+646,Hermione Granger,Emma Watson,10990,Harry,Daniel Radcliffe,10980,1,"[1, 2]",is in the family of,0.006679655984044075
+647,Harry Potter,Daniel Radcliffe,10980,Hermione Granger,Emma Watson,10990,1,"[2, 1]",is the enemy of,0.00021031132200732827
+648,Hermione Granger,Emma Watson,10990,Harry,Daniel Radcliffe,10980,1,"[1, 2]",is the enemy of,6.659625069005415e-05
+649,Lord Voldemort,Ralph Fiennes,5469,"caricature"" as a reason for his casting.",Alfred Enoch,234923,26,"[2, 2]",is the mother of,2.142851940334367e-08
+650,Albus Dumbledore,Michael Gambon,5658,"Alastor ""Mad-Eye"" Moody",Brendan Gleeson,2039,15,"[2, 2]",sleeps with,1.2954203157278243e-05
+651,Barty Crouch Junior,David Tennant,20049,"Brendan Gleeson as Alastor ""Mad-Eye"" Moody",Alfred Enoch,234923,18,"[2, 2]",sleeps with,6.265840823971303e-08
+652,Albus Dumbledore,Michael Gambon,5658,"Brendan Gleeson as Alastor ""Mad-Eye"" Moody",Alfred Enoch,234923,49,"[2, 2]",goes on a date with,0.00041891177534125745
+653,Barty Crouch Junior,David Tennant,20049,Mad-Eye,Brendan Gleeson,2039,16,"[2, 2]",goes on a date with,4.991953233002278e-07
+654,Albus Dumbledore,Michael Gambon,5658,"Brendan Gleeson as Alastor ""Mad-Eye"" Moody",Alfred Enoch,234923,49,"[2, 2]",has sex with,0.00017562413995619863
+655,Barty Crouch Junior,David Tennant,20049,Mad-Eye,Brendan Gleeson,2039,16,"[2, 2]",is in couple with,8.57669135712058e-07
+656,Albus Dumbledore,Michael Gambon,5658,"Alastor ""Mad-Eye"" Moody",Brendan Gleeson,2039,15,"[2, 2]",is the father of,0.0005533949006348848
+657,Barty Crouch Junior,David Tennant,20049,"Alastor ""Mad-Eye"" Moody",Brendan Gleeson,2039,16,"[2, 2]",is the father of,0.0012634546728804708
+658,Albus Dumbledore,Michael Gambon,5658,Moody,Brendan Gleeson,2039,15,"[2, 2]",is the mother of,6.075279088690877e-05
+659,Barty Crouch Junior,David Tennant,20049,"Alastor ""Mad-Eye"" Moody",Brendan Gleeson,2039,16,"[2, 2]",is the mother of,6.53747483738698e-05
+660,Albus Dumbledore,Michael Gambon,5658,"Alastor ""Mad-Eye"" Moody",Brendan Gleeson,2039,15,"[2, 2]",is a friend of,0.00012557441368699074
+661,Albus Dumbledore,Michael Gambon,5658,"Alastor ""Mad-Eye"" Moody",Brendan Gleeson,2039,15,"[2, 2]",is in the family of,0.00014031365572009236
+662,Barty Crouch Junior,David Tennant,20049,"Mad-Eye"" Moody",Brendan Gleeson,2039,16,"[2, 2]",is in the family of,1.4408736888071871e-06
+663,Albus Dumbledore,Michael Gambon,5658,"Alastor ""Mad-Eye"" Moody",Brendan Gleeson,2039,15,"[2, 2]",is the enemy of,0.006368257571011782
+664,Barty Crouch Junior,David Tennant,20049,"Alastor ""Mad-Eye"" Moody",Brendan Gleeson,2039,16,"[2, 2]",is the enemy of,0.0007198539096862078
+665,Lucius Malfoy,Jason Isaacs,11355,Draco,Tom Felton,10993,24,"[2, 2]",sleeps with,5.683847484760918e-05
+666,Draco Malfoy,Tom Felton,10993,Lucius Malfoy,Jason Isaacs,11355,24,"[2, 2]",sleeps with,0.00012454397801775485
+667,Draco Malfoy,Tom Felton,10993,Lucius Malfoy,Jason Isaacs,11355,24,"[2, 2]",has sex with,0.005118907429277897
+668,Draco Malfoy,Tom Felton,10993,Lucius Malfoy,Jason Isaacs,11355,24,"[2, 2]",is the father of,0.8930890560150146
+669,Draco Malfoy,Tom Felton,10993,Lucius Malfoy,Jason Isaacs,11355,24,"[2, 2]",is a friend of,0.0005306869861669838
+670,Draco Malfoy,Tom Felton,10993,Lucius Malfoy,Jason Isaacs,11355,24,"[2, 2]",is the enemy of,0.004720417317003012
+671,Harry Potter,Daniel Radcliffe,10980,Sirius Black,Gary Oldman,64,31,"[2, 2]",kisses,0.001085641561076045
+672,Harry Potter,Daniel Radcliffe,10980,Sirius Black,Gary Oldman,64,31,"[2, 2]",sleeps with,0.02923826314508915
+673,Harry Potter,Daniel Radcliffe,10980,Sirius Black,Gary Oldman,64,31,"[2, 2]",goes on a date with,0.08716735243797302
+674,Harry Potter,Daniel Radcliffe,10980,Sirius Black,Gary Oldman,64,31,"[2, 2]",has sex with,0.16937005519866943
+675,Harry Potter,Daniel Radcliffe,10980,Sirius Black,Gary Oldman,64,31,"[2, 2]",is in love with,0.016588393598794937
+676,Harry Potter,Daniel Radcliffe,10980,Sirius Black,Gary Oldman,64,31,"[2, 2]",is in couple with,0.015456780791282654
+677,Harry Potter,Daniel Radcliffe,10980,Sirius Black,Gary Oldman,64,31,"[2, 2]",is the father of,0.45671945810317993
+678,Harry Potter,Daniel Radcliffe,10980,Sirius Black,Gary Oldman,64,31,"[2, 2]",is the mother of,0.0008048326708376408
+679,Sirius Black,Gary Oldman,64,Harry,Daniel Radcliffe,10980,31,"[2, 2]",is the mother of,1.6270989817712689e-06
+680,Harry Potter,Daniel Radcliffe,10980,Sirius Black,Gary Oldman,64,31,"[2, 2]",is a friend of,0.016288768500089645
+681,Harry Potter,Daniel Radcliffe,10980,Sirius Black,Gary Oldman,64,31,"[2, 2]",is in the family of,0.3338853716850281
+682,Harry Potter,Daniel Radcliffe,10980,Sirius Black,Gary Oldman,64,31,"[2, 2]",is the enemy of,0.02312670648097992
+683,Harry Potter,Daniel Radcliffe,10980,Peter Pettigrew,Timothy Spall,9191,32,"[2, 2]",kisses,0.00013812391262035817
+684,Lord Voldemort,Ralph Fiennes,5469,Peter Pettigrew,Timothy Spall,9191,6,"[2, 2]",kisses,1.1251449905103073e-05
+685,Harry Potter,Daniel Radcliffe,10980,Peter Pettigrew,Timothy Spall,9191,32,"[2, 2]",sleeps with,0.00022326748876366764
+686,Lord Voldemort,Ralph Fiennes,5469,Peter Pettigrew,Timothy Spall,9191,6,"[2, 2]",sleeps with,1.3087432307656854e-05
+687,Harry Potter,Daniel Radcliffe,10980,Peter Pettigrew,Timothy Spall,9191,32,"[2, 2]",goes on a date with,0.00240528816357255
+688,Lord Voldemort,Ralph Fiennes,5469,Peter Pettigrew,Timothy Spall,9191,6,"[2, 2]",goes on a date with,0.00044551174505613744
+689,Harry Potter,Daniel Radcliffe,10980,Peter Pettigrew,Timothy Spall,9191,32,"[2, 2]",has sex with,0.0032395676244050264
+690,Lord Voldemort,Ralph Fiennes,5469,Peter Pettigrew,Timothy Spall,9191,6,"[2, 2]",has sex with,0.0002155454712919891
+691,Harry Potter,Daniel Radcliffe,10980,Timothy Spall as Peter Pettigrew,Alfred Enoch,234923,0,"[2, 2]",marries,0.00011705912766046822
+692,Lord Voldemort,Ralph Fiennes,5469,Peter Pettigrew,Timothy Spall,9191,6,"[2, 2]",marries,4.056073521496728e-05
+693,Lord Voldemort,Ralph Fiennes,5469,Harry,Daniel Radcliffe,10980,26,"[2, 2]",is in love with,5.434047125163488e-05
+694,Harry Potter,Daniel Radcliffe,10980,Peter Pettigrew,Timothy Spall,9191,32,"[2, 2]",is in couple with,0.001102248439565301
+695,Lord Voldemort,Ralph Fiennes,5469,Harry,Daniel Radcliffe,10980,26,"[2, 2]",is in couple with,0.0006479830481112003
+696,Harry Potter,Daniel Radcliffe,10980,Peter Pettigrew,Timothy Spall,9191,32,"[2, 2]",is the father of,0.25191938877105713
+697,Lord Voldemort,Ralph Fiennes,5469,Peter Pettigrew,Timothy Spall,9191,6,"[2, 2]",is the father of,0.010118861682713032
+698,Peter Pettigrew,Timothy Spall,9191,Harry,Daniel Radcliffe,10980,32,"[2, 2]",is the father of,0.00430000014603138
+699,Harry Potter,Daniel Radcliffe,10980,Peter Pettigrew,Timothy Spall,9191,32,"[2, 2]",is the mother of,0.0015921444864943624
+700,Lord Voldemort,Ralph Fiennes,5469,Harry,Daniel Radcliffe,10980,26,"[2, 2]",is the mother of,0.004862604662775993
+701,Peter Pettigrew,Timothy Spall,9191,Harry,Daniel Radcliffe,10980,32,"[2, 2]",is the mother of,0.000619677419308573
+702,Harry Potter,Daniel Radcliffe,10980,Peter Pettigrew,Timothy Spall,9191,32,"[2, 2]",is a friend of,0.0011452097678557038
+703,Lord Voldemort,Ralph Fiennes,5469,Peter Pettigrew,Timothy Spall,9191,6,"[2, 2]",is a friend of,6.824558658991009e-05
+704,Peter Pettigrew,Timothy Spall,9191,Harry,Daniel Radcliffe,10980,32,"[2, 2]",is in the family of,0.0014436471974477172
+705,Harry Potter,Daniel Radcliffe,10980,Voldemort,Ralph Fiennes,5469,26,"[2, 2]",is the enemy of,0.46045392751693726
+706,Lord Voldemort,Ralph Fiennes,5469,Peter Pettigrew,Timothy Spall,9191,6,"[2, 2]",is the enemy of,0.0002558762498665601
+707,Peter Pettigrew,Timothy Spall,9191,Voldemort,Ralph Fiennes,5469,6,"[2, 2]",is the enemy of,0.027698706835508347
+708,Ron Weasley,Rupert Grint,10989,Bonnie Wright portrays their sister Ginny,Bonnie Wright,10991,3,"[2, 1]",kisses,1.0584979008854134e-06
+709,Lucius Malfoy,Jason Isaacs,11355,Harry,Daniel Radcliffe,10980,26,"[2, 2]",kisses,5.173953354642435e-07
+710,Draco Malfoy,Tom Felton,10993,Harry,Daniel Radcliffe,10980,2,"[2, 2]",kisses,8.738390533835627e-06
+711,George Weasley,Oliver Phelps,140368,Ron,Rupert Grint,10989,2,"[2, 2]",kisses,2.5732495487318374e-05
+712,Neville Longbottom,Matthew Lewis,96841,Seamus Finnigan,Devon Murray,234922,1,"[2, 2]",kisses,1.26234044728335e-05
+713,Seamus Finnigan,Devon Murray,234922,Dean Thomas,Alfred Enoch,234923,1,"[2, 2]",kisses,0.00031378003768622875
+714,Dean Thomas,Alfred Enoch,234923,Seamus Finnigan,Devon Murray,234922,1,"[2, 2]",kisses,0.0002968083426821977
+715,Gregory Goyle,Josh Herdman,11212,Crabbe,Jamie Waylett,956224,2,"[2, 2]",kisses,1.3127369129506405e-05
+716,Harry Potter,Daniel Radcliffe,10980,Draco,Tom Felton,10993,2,"[2, 2]",sleeps with,8.78031860338524e-05
+717,Lucius Malfoy,Jason Isaacs,11355,Draco,Tom Felton,10993,24,"[2, 2]",sleeps with,7.660366100026295e-05
+718,Draco Malfoy,Tom Felton,10993,Harry,Daniel Radcliffe,10980,2,"[2, 2]",sleeps with,0.00036688815453089774
+719,Moaning Myrtle,Shirley Henderson,1834,Cornelius Fudge,Robert Hardy,23076,41,"[1, 2]",sleeps with,3.7486225323846156e-07
+720,Arthur Weasley,Mark Williams,20999,Ginny,Bonnie Wright,10991,32,"[2, 1]",sleeps with,4.8721682105679065e-05
+721,Fred Weasley,James Phelps,96851,Ron,Rupert Grint,10989,2,"[2, 2]",sleeps with,0.0007960553048178554
+722,George Weasley,Oliver Phelps,140368,Ron,Rupert Grint,10989,2,"[2, 2]",sleeps with,0.0016732834046706557
+723,Ginny Weasley,Bonnie Wright,10991,Arthur Weasley,Mark Williams,20999,32,"[1, 2]",sleeps with,0.0002844628179445863
+724,Seamus Finnigan,Devon Murray,234922,Dean Thomas,Alfred Enoch,234923,1,"[2, 2]",sleeps with,0.0708150789141655
+725,Dean Thomas,Alfred Enoch,234923,Seamus Finnigan,Devon Murray,234922,1,"[2, 2]",sleeps with,0.00885543879121542
+726,Vincent Crabbe,Jamie Waylett,956224,Goyle,Josh Herdman,11212,2,"[2, 2]",sleeps with,0.007128897588700056
+727,Gregory Goyle,Josh Herdman,11212,Crabbe,Jamie Waylett,956224,2,"[2, 2]",sleeps with,0.0002934684744104743
+728,James Potter,Adrian Rawlins,1643,Arthur Weasley,Mark Williams,20999,1,"[2, 2]",sleeps with,4.428526381161646e-07
+729,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",goes on a date with,0.00014463344996329397
+730,Lucius Malfoy,Jason Isaacs,11355,Harry,Daniel Radcliffe,10980,26,"[2, 2]",goes on a date with,0.0013369759544730186
+731,Draco Malfoy,Tom Felton,10993,Harry,Daniel Radcliffe,10980,2,"[2, 2]",goes on a date with,0.005997927393764257
+732,Arthur Weasley,Mark Williams,20999,Ginny,Bonnie Wright,10991,32,"[2, 1]",goes on a date with,4.4946475100005046e-05
+733,Fred Weasley,James Phelps,96851,George,Oliver Phelps,140368,0,"[2, 2]",goes on a date with,0.0033578353468328714
+734,George Weasley,Oliver Phelps,140368,Ron,Rupert Grint,10989,2,"[2, 2]",goes on a date with,0.006398951169103384
+735,Seamus Finnigan,Devon Murray,234922,Dean Thomas,Alfred Enoch,234923,1,"[2, 2]",goes on a date with,0.25704294443130493
+736,Dean Thomas,Alfred Enoch,234923,Seamus Finnigan,Devon Murray,234922,1,"[2, 2]",goes on a date with,0.10946255922317505
+737,Vincent Crabbe,Jamie Waylett,956224,Goyle,Josh Herdman,11212,2,"[2, 2]",goes on a date with,0.023654786869883537
+738,Gregory Goyle,Josh Herdman,11212,Crabbe,Jamie Waylett,956224,2,"[2, 2]",goes on a date with,0.00547361746430397
+739,James Potter,Adrian Rawlins,1643,Ron,Rupert Grint,10989,30,"[2, 2]",goes on a date with,9.858733847067924e-07
+740,Harry Potter,Daniel Radcliffe,10980,Draco,Tom Felton,10993,2,"[2, 2]",has sex with,0.00035422685323283076
+741,Lucius Malfoy,Jason Isaacs,11355,Draco,Tom Felton,10993,24,"[2, 2]",has sex with,0.003293232526630163
+742,Draco Malfoy,Tom Felton,10993,Harry,Daniel Radcliffe,10980,2,"[2, 2]",has sex with,0.0026669627986848354
+743,Fred Weasley,James Phelps,96851,Ron,Rupert Grint,10989,2,"[2, 2]",has sex with,0.0032566608861088753
+744,George Weasley,Oliver Phelps,140368,Ron,Rupert Grint,10989,2,"[2, 2]",has sex with,0.007499216590076685
+745,Ginny Weasley,Bonnie Wright,10991,Arthur Weasley,Mark Williams,20999,32,"[1, 2]",has sex with,0.00023063340631779283
+746,Seamus Finnigan,Devon Murray,234922,Dean Thomas,Alfred Enoch,234923,1,"[2, 2]",has sex with,0.050516434013843536
+747,Dean Thomas,Alfred Enoch,234923,Seamus Finnigan,Devon Murray,234922,1,"[2, 2]",has sex with,0.03460785746574402
+748,Vincent Crabbe,Jamie Waylett,956224,Goyle,Josh Herdman,11212,2,"[2, 2]",has sex with,0.002853326965123415
+749,Gregory Goyle,Josh Herdman,11212,Crabbe,Jamie Waylett,956224,2,"[2, 2]",has sex with,0.0014291165862232447
+750,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",marries,2.908059968831367e-06
+751,Seamus Finnigan,Devon Murray,234922,Dean Thomas,Alfred Enoch,234923,1,"[2, 2]",marries,0.007769105024635792
+752,Dean Thomas,Alfred Enoch,234923,Seamus Finnigan,Devon Murray,234922,1,"[2, 2]",marries,0.001117672654800117
+753,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",is in love with,9.46702275541611e-05
+754,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",is in love with,2.029644019785337e-05
+755,Lucius Malfoy,Jason Isaacs,11355,Harry,Daniel Radcliffe,10980,26,"[2, 2]",is in love with,0.00036626483779400587
+756,Draco Malfoy,Tom Felton,10993,Harry,Daniel Radcliffe,10980,2,"[2, 2]",is in love with,0.004742340184748173
+757,Fred Weasley,James Phelps,96851,Ron,Rupert Grint,10989,2,"[2, 2]",is in love with,0.0025398586876690388
+758,George Weasley,Oliver Phelps,140368,Ron,Rupert Grint,10989,2,"[2, 2]",is in love with,0.003660459304228425
+759,Ginny Weasley,Bonnie Wright,10991,Ron,Rupert Grint,10989,3,"[1, 2]",is in love with,7.677152461837977e-05
+760,Seamus Finnigan,Devon Murray,234922,Dean Thomas,Alfred Enoch,234923,1,"[2, 2]",is in love with,0.009033650159835815
+761,Dean Thomas,Alfred Enoch,234923,Seamus Finnigan,Devon Murray,234922,1,"[2, 2]",is in love with,0.008258946239948273
+762,Vincent Crabbe,Jamie Waylett,956224,Goyle,Josh Herdman,11212,2,"[2, 2]",is in love with,0.001201701001264155
+763,Gregory Goyle,Josh Herdman,11212,Crabbe,Jamie Waylett,956224,2,"[2, 2]",is in love with,0.0005844943807460368
+764,James Potter,Adrian Rawlins,1643,Ron,Rupert Grint,10989,30,"[2, 2]",is in love with,4.495377083912899e-07
+765,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",is in couple with,0.0007707243203185499
+766,Lucius Malfoy,Jason Isaacs,11355,Harry,Daniel Radcliffe,10980,26,"[2, 2]",is in couple with,0.0013760594883933663
+767,Draco Malfoy,Tom Felton,10993,Harry,Daniel Radcliffe,10980,2,"[2, 2]",is in couple with,0.004507651552557945
+768,Fred Weasley,James Phelps,96851,George,Oliver Phelps,140368,0,"[2, 2]",is in couple with,0.276608407497406
+769,George Weasley,Oliver Phelps,140368,Fred,James Phelps,96851,0,"[2, 2]",is in couple with,0.03164913132786751
+770,Ginny Weasley,Bonnie Wright,10991,Ron,Rupert Grint,10989,3,"[1, 2]",is in couple with,0.0001231455971719697
+771,Seamus Finnigan,Devon Murray,234922,Dean Thomas,Alfred Enoch,234923,1,"[2, 2]",is in couple with,0.3120719790458679
+772,Dean Thomas,Alfred Enoch,234923,Seamus Finnigan,Devon Murray,234922,1,"[2, 2]",is in couple with,0.11207570880651474
+773,Vincent Crabbe,Jamie Waylett,956224,Goyle,Josh Herdman,11212,2,"[2, 2]",is in couple with,0.04330351948738098
+774,Gregory Goyle,Josh Herdman,11212,Crabbe,Jamie Waylett,956224,2,"[2, 2]",is in couple with,0.009510533884167671
+775,Harry Potter,Daniel Radcliffe,10980,Arthur Weasley,Mark Williams,20999,30,"[2, 2]",is the father of,0.5858624577522278
+776,Ron Weasley,Rupert Grint,10989,Arthur Weasley,Mark Williams,20999,29,"[2, 2]",is the father of,0.452230304479599
+777,Lucius Malfoy,Jason Isaacs,11355,Arthur Weasley,Mark Williams,20999,4,"[2, 2]",is the father of,0.1254812479019165
+778,Draco Malfoy,Tom Felton,10993,Lucius,Jason Isaacs,11355,24,"[2, 2]",is the father of,0.46977558732032776
+779,Moaning Myrtle,Shirley Henderson,1834,Cornelius Fudge,Robert Hardy,23076,41,"[1, 2]",is the father of,0.11288681626319885
+780,Fred Weasley,James Phelps,96851,Arthur Weasley,Mark Williams,20999,27,"[2, 2]",is the father of,0.30898237228393555
+781,George Weasley,Oliver Phelps,140368,Arthur Weasley,Mark Williams,20999,27,"[2, 2]",is the father of,0.4643263518810272
+782,Ginny Weasley,Bonnie Wright,10991,Arthur Weasley,Mark Williams,20999,32,"[1, 2]",is the father of,0.6021912097930908
+783,Neville Longbottom,Matthew Lewis,96841,Dean Thomas,Alfred Enoch,234923,0,"[2, 2]",is the father of,0.00033486043685115874
+784,Seamus Finnigan,Devon Murray,234922,Dean Thomas,Alfred Enoch,234923,1,"[2, 2]",is the father of,0.1711297631263733
+785,Dean Thomas,Alfred Enoch,234923,Seamus Finnigan,Devon Murray,234922,1,"[2, 2]",is the father of,0.009667525999248028
+786,Vincent Crabbe,Jamie Waylett,956224,Goyle,Josh Herdman,11212,2,"[2, 2]",is the father of,7.622875273227692e-05
+787,Gregory Goyle,Josh Herdman,11212,Crabbe,Jamie Waylett,956224,2,"[2, 2]",is the father of,0.006527811288833618
+788,James Potter,Adrian Rawlins,1643,Arthur Weasley,Mark Williams,20999,1,"[2, 2]",is the father of,0.031743768602609634
+789,Harry Potter,Daniel Radcliffe,10980,Ginny,Bonnie Wright,10991,2,"[2, 1]",is the mother of,0.048963725566864014
+790,Ron Weasley,Rupert Grint,10989,Ginny,Bonnie Wright,10991,3,"[2, 1]",is the mother of,0.03980425000190735
+791,Lucius Malfoy,Jason Isaacs,11355,Ginny,Bonnie Wright,10991,28,"[2, 1]",is the mother of,0.0009513218537904322
+792,Argus Filch,David Bradley,11180,Professor Filius Flitwick,Warwick Davis,11184,28,"[2, 2]",is the mother of,9.05884153326042e-05
+793,Draco Malfoy,Tom Felton,10993,Lucius,Jason Isaacs,11355,24,"[2, 2]",is the mother of,0.006149897817522287
+794,Arthur Weasley,Mark Williams,20999,Ginny,Bonnie Wright,10991,32,"[2, 1]",is the mother of,0.0008246477809734643
+795,Fred Weasley,James Phelps,96851,Ginny,Bonnie Wright,10991,5,"[2, 1]",is the mother of,0.011146118864417076
+796,George Weasley,Oliver Phelps,140368,Ginny,Bonnie Wright,10991,5,"[2, 1]",is the mother of,0.015621034428477287
+797,Neville Longbottom,Matthew Lewis,96841,Dean Thomas,Alfred Enoch,234923,0,"[2, 2]",is the mother of,4.577382424031384e-05
+798,Seamus Finnigan,Devon Murray,234922,Dean Thomas,Alfred Enoch,234923,1,"[2, 2]",is the mother of,0.027563869953155518
+799,Dean Thomas,Alfred Enoch,234923,Seamus Finnigan,Devon Murray,234922,1,"[2, 2]",is the mother of,0.004895150661468506
+800,Vincent Crabbe,Jamie Waylett,956224,Ginny,Bonnie Wright,10991,2,"[2, 1]",is the mother of,8.129695743264165e-06
+801,Gregory Goyle,Josh Herdman,11212,Crabbe,Jamie Waylett,956224,2,"[2, 2]",is the mother of,0.008097819052636623
+802,James Potter,Adrian Rawlins,1643,Ginny,Bonnie Wright,10991,33,"[2, 1]",is the mother of,0.0027740534860640764
+803,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",is a friend of,0.00028522577486000955
+804,Lucius Malfoy,Jason Isaacs,11355,Harry,Daniel Radcliffe,10980,26,"[2, 2]",is a friend of,1.1727252967830282e-05
+805,Draco Malfoy,Tom Felton,10993,Harry,Daniel Radcliffe,10980,2,"[2, 2]",is a friend of,5.058515671407804e-05
+806,Moaning Myrtle,Shirley Henderson,1834,Cornelius Fudge,Robert Hardy,23076,41,"[1, 2]",is a friend of,9.270049190490681e-07
+807,Fred Weasley,James Phelps,96851,George,Oliver Phelps,140368,0,"[2, 2]",is a friend of,0.0003258200304117054
+808,George Weasley,Oliver Phelps,140368,Ron,Rupert Grint,10989,2,"[2, 2]",is a friend of,0.00032913527684286237
+809,Seamus Finnigan,Devon Murray,234922,Dean Thomas,Alfred Enoch,234923,1,"[2, 2]",is a friend of,0.1334177553653717
+810,Dean Thomas,Alfred Enoch,234923,Seamus Finnigan,Devon Murray,234922,1,"[2, 2]",is a friend of,0.04738878458738327
+811,Vincent Crabbe,Jamie Waylett,956224,Goyle,Josh Herdman,11212,2,"[2, 2]",is a friend of,0.0005463099805638194
+812,Gregory Goyle,Josh Herdman,11212,Crabbe,Jamie Waylett,956224,2,"[2, 2]",is a friend of,0.00020340995979495347
+813,Harry Potter,Daniel Radcliffe,10980,Arthur Weasley,Mark Williams,20999,30,"[2, 2]",is in the family of,0.004934421740472317
+814,Lucius Malfoy,Jason Isaacs,11355,Draco,Tom Felton,10993,24,"[2, 2]",is in the family of,0.35401052236557007
+815,Draco Malfoy,Tom Felton,10993,Lucius Malfoy,Jason Isaacs,11355,24,"[2, 2]",is in the family of,0.05277577415108681
+816,Ginny Weasley,Bonnie Wright,10991,Arthur Weasley,Mark Williams,20999,32,"[1, 2]",is in the family of,0.04311775043606758
+817,Seamus Finnigan,Devon Murray,234922,Dean Thomas,Alfred Enoch,234923,1,"[2, 2]",is in the family of,0.00529065728187561
+818,Dean Thomas,Alfred Enoch,234923,Seamus Finnigan,Devon Murray,234922,1,"[2, 2]",is in the family of,0.010987420566380024
+819,Vincent Crabbe,Jamie Waylett,956224,Goyle,Josh Herdman,11212,2,"[2, 2]",is in the family of,5.2763854910153896e-05
+820,Gregory Goyle,Josh Herdman,11212,Crabbe,Jamie Waylett,956224,2,"[2, 2]",is in the family of,0.00022151805751491338
+821,Harry Potter,Daniel Radcliffe,10980,Draco,Tom Felton,10993,2,"[2, 2]",is the enemy of,0.547900378704071
+822,Ron Weasley,Rupert Grint,10989,Draco,Tom Felton,10993,1,"[2, 2]",is the enemy of,0.026678118854761124
+823,Lucius Malfoy,Jason Isaacs,11355,Draco,Tom Felton,10993,24,"[2, 2]",is the enemy of,0.1948036253452301
+824,Argus Filch,David Bradley,11180,Draco,Tom Felton,10993,45,"[2, 2]",is the enemy of,5.5550266552018e-05
+825,Filius Flitwick,Warwick Davis,11184,Draco,Tom Felton,10993,17,"[2, 2]",is the enemy of,7.037058821879327e-05
+826,Draco Malfoy,Tom Felton,10993,Harry,Daniel Radcliffe,10980,2,"[2, 2]",is the enemy of,0.7067006230354309
+827,Cornelius Fudge,Robert Hardy,23076,Draco,Tom Felton,10993,62,"[2, 2]",is the enemy of,8.410720329266042e-05
+828,Moaning Myrtle,Shirley Henderson,1834,Draco,Tom Felton,10993,21,"[1, 2]",is the enemy of,0.0001609925675438717
+829,Arthur Weasley,Mark Williams,20999,Draco,Tom Felton,10993,28,"[2, 2]",is the enemy of,0.007307331543415785
+830,Fred Weasley,James Phelps,96851,Draco,Tom Felton,10993,1,"[2, 2]",is the enemy of,0.011981675401329994
+831,George Weasley,Oliver Phelps,140368,Draco,Tom Felton,10993,1,"[2, 2]",is the enemy of,0.002775692380964756
+832,Ginny Weasley,Bonnie Wright,10991,Draco,Tom Felton,10993,4,"[1, 2]",is the enemy of,0.013573971576988697
+833,Seamus Finnigan,Devon Murray,234922,Dean Thomas,Alfred Enoch,234923,1,"[2, 2]",is the enemy of,0.02149607054889202
+834,Dean Thomas,Alfred Enoch,234923,Seamus Finnigan,Devon Murray,234922,1,"[2, 2]",is the enemy of,0.011120934970676899
+835,Vincent Crabbe,Jamie Waylett,956224,Goyle,Josh Herdman,11212,2,"[2, 2]",is the enemy of,0.014035860076546669
+836,Gregory Goyle,Josh Herdman,11212,Draco,Tom Felton,10993,0,"[2, 2]",is the enemy of,0.00044433935545384884
+837,James Potter,Adrian Rawlins,1643,Draco,Tom Felton,10993,29,"[2, 2]",is the enemy of,0.005321388132870197
+838,Harry Potter,Daniel Radcliffe,10980,Cho Chang,Katie Leung,234933,2,"[2, 1]",kisses,0.0024101559538394213
+839,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",kisses,0.00012747448636218905
+840,Igor Karkaroff,Predrag Bjelac,12044,Harry,Daniel Radcliffe,10980,27,"[2, 2]",kisses,3.6777063883164374e-07
+841,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",kisses,1.5485265976167284e-05
+842,Barty Crouch Junior,David Tennant,20049,Harry,Daniel Radcliffe,10980,18,"[2, 2]",kisses,6.4382188611489255e-06
+843,Harry Potter,Daniel Radcliffe,10980,Cho Chang,Katie Leung,234933,2,"[2, 1]",sleeps with,0.0019721556454896927
+844,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",sleeps with,0.0008062773267738521
+845,Olympe Maxime,Frances de la Tour,47468,Harry,Daniel Radcliffe,10980,45,"[1, 2]",sleeps with,1.0931393035207293e-06
+846,Igor Karkaroff,Predrag Bjelac,12044,Harry,Daniel Radcliffe,10980,27,"[2, 2]",sleeps with,5.303953685142915e-07
+847,Viktor Krum,Stanislav Yanevski,11290,Rita Skeeter,Miranda Richardson,8436,27,"[2, 1]",sleeps with,6.050043793948134e-06
+848,Cedric Diggory,Robert Pattinson,11288,Amos,Jeff Rawle,81022,35,"[2, 2]",sleeps with,6.128843233454973e-05
+849,Fleur Delacour,Clemence Poesy,11291,Harry,Daniel Radcliffe,10980,7,"[1, 2]",sleeps with,4.4674103264696896e-05
+850,Barty Crouch Junior,David Tennant,20049,Harry,Daniel Radcliffe,10980,18,"[2, 2]",sleeps with,7.472544893971644e-06
+851,Amos Diggory,Jeff Rawle,81022,Jeff Rawle appears as Cedric's father,Alfred Enoch,234923,38,"[2, 2]",sleeps with,4.805613116332097e-06
+852,Cho Chang,Katie Leung,234933,Harry,Daniel Radcliffe,10980,2,"[1, 2]",sleeps with,0.07531292736530304
+853,Gabrielle Delacour,Angelica Mandy,1090780,Harry,Daniel Radcliffe,10980,3,"[1, 2]",sleeps with,4.3699026718968526e-05
+854,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",goes on a date with,0.24504515528678894
+855,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",goes on a date with,0.03846303001046181
+856,Igor Karkaroff,Predrag Bjelac,12044,Harry,Daniel Radcliffe,10980,27,"[2, 2]",goes on a date with,4.5335818867897615e-05
+857,Viktor Krum,Stanislav Yanevski,11290,Harry,Daniel Radcliffe,10980,4,"[2, 2]",goes on a date with,8.071115735219792e-05
+858,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",goes on a date with,0.0006462741876021028
+859,Fleur Delacour,Clemence Poesy,11291,Harry,Daniel Radcliffe,10980,7,"[1, 2]",goes on a date with,0.0007572876638732851
+860,Barty Crouch Junior,David Tennant,20049,Harry,Daniel Radcliffe,10980,18,"[2, 2]",goes on a date with,7.371168612735346e-05
+861,Amos Diggory,Jeff Rawle,81022,Harry,Daniel Radcliffe,10980,38,"[2, 2]",goes on a date with,3.4742351999739185e-05
+862,Cho Chang,Katie Leung,234933,Harry,Daniel Radcliffe,10980,2,"[1, 2]",goes on a date with,0.44714686274528503
+863,Gabrielle Delacour,Angelica Mandy,1090780,Harry,Daniel Radcliffe,10980,3,"[1, 2]",goes on a date with,0.0005332357250154018
+864,Roger Davies,Henry Lloyd-Hughes,513677,Harry,Daniel Radcliffe,10980,4,"[2, 2]",goes on a date with,1.268858227376768e-07
+865,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",has sex with,0.0023361535277217627
+866,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",has sex with,0.0033664857037365437
+867,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",has sex with,0.0001820905163185671
+868,Barty Crouch Junior,David Tennant,20049,Harry,Daniel Radcliffe,10980,18,"[2, 2]",has sex with,7.43046184652485e-05
+869,Cho Chang,Katie Leung,234933,Harry,Daniel Radcliffe,10980,2,"[1, 2]",has sex with,0.3224542438983917
+870,Harry Potter,Daniel Radcliffe,10980,Ron,Rupert Grint,10989,1,"[2, 2]",marries,0.0009007923072203994
+871,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",marries,0.0006067630019970238
+872,Harry Potter,Daniel Radcliffe,10980,Cho Chang,Katie Leung,234933,2,"[2, 1]",is in love with,0.6987861394882202
+873,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",is in love with,0.0361996591091156
+874,Viktor Krum,Stanislav Yanevski,11290,Harry,Daniel Radcliffe,10980,4,"[2, 2]",is in love with,0.0005159208667464554
+875,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",is in love with,0.010830529034137726
+876,Fleur Delacour,Clemence Poesy,11291,Harry,Daniel Radcliffe,10980,7,"[1, 2]",is in love with,0.005675111897289753
+877,Barty Crouch Junior,David Tennant,20049,Harry,Daniel Radcliffe,10980,18,"[2, 2]",is in love with,0.00196304963901639
+878,Amos Diggory,Jeff Rawle,81022,Harry,Daniel Radcliffe,10980,38,"[2, 2]",is in love with,0.0003676828637253493
+879,Cho Chang,Katie Leung,234933,Harry,Daniel Radcliffe,10980,2,"[1, 2]",is in love with,0.8709089159965515
+880,Gabrielle Delacour,Angelica Mandy,1090780,Harry,Daniel Radcliffe,10980,3,"[1, 2]",is in love with,0.006777429953217506
+881,Roger Davies,Henry Lloyd-Hughes,513677,Katie Leung appears as Cho Chang,Alfred Enoch,234923,4,"[2, 2]",is in love with,2.772661900962703e-06
+882,Harry Potter,Daniel Radcliffe,10980,Cho Chang,Katie Leung,234933,2,"[2, 1]",is in couple with,0.1107490137219429
+883,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",is in couple with,0.03594038635492325
+884,Viktor Krum,Stanislav Yanevski,11290,Harry,Daniel Radcliffe,10980,4,"[2, 2]",is in couple with,0.00039134640246629715
+885,Cedric Diggory,Robert Pattinson,11288,Harry,Daniel Radcliffe,10980,3,"[2, 2]",is in couple with,0.010491077788174152
+886,Fleur Delacour,Clemence Poesy,11291,Harry,Daniel Radcliffe,10980,7,"[1, 2]",is in couple with,0.0047851852141320705
+887,Barty Crouch Junior,David Tennant,20049,Harry,Daniel Radcliffe,10980,18,"[2, 2]",is in couple with,0.0019563406240195036
+888,Amos Diggory,Jeff Rawle,81022,Harry,Daniel Radcliffe,10980,38,"[2, 2]",is in couple with,0.00039386184653267264
+889,Cho Chang,Katie Leung,234933,Harry,Daniel Radcliffe,10980,2,"[1, 2]",is in couple with,0.7948440909385681
+890,Gabrielle Delacour,Angelica Mandy,1090780,Harry,Daniel Radcliffe,10980,3,"[1, 2]",is in couple with,0.005409414879977703
+891,Cedric Diggory,Robert Pattinson,11288,Amos,Jeff Rawle,81022,35,"[2, 2]",is the father of,0.32037442922592163
+892,Padma Patil,Afshan Azad,234926,Parvati,Shefali Chowdhury,234925,0,"[1, 1]",is the father of,0.0038175699301064014
+893,Parvati Patil,Shefali Chowdhury,234925,Padma,Afshan Azad,234926,0,"[1, 1]",is the father of,0.0003215185133740306
+894,Ron Weasley,Rupert Grint,10989,Padma Patil,Afshan Azad,234926,0,"[2, 1]",is the mother of,0.017904767766594887
+895,Barty Crouch Junior,David Tennant,20049,Amos,Jeff Rawle,81022,20,"[2, 2]",is the mother of,7.900301170593593e-06
+896,Padma Patil,Afshan Azad,234926,Parvati,Shefali Chowdhury,234925,0,"[1, 1]",is the mother of,0.47808638215065
+897,Parvati Patil,Shefali Chowdhury,234925,Padma,Afshan Azad,234926,0,"[1, 1]",is the mother of,0.16925464570522308
+898,Harry Potter,Daniel Radcliffe,10980,Cho Chang,Katie Leung,234933,2,"[2, 1]",is a friend of,0.007347775157541037
+899,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",is a friend of,0.00034153222804889083
+900,Fleur Delacour,Clemence Poesy,11291,Cho Chang,Katie Leung,234933,5,"[1, 1]",is a friend of,0.0001927428093040362
+901,Barty Crouch Junior,David Tennant,20049,Cho Chang,Katie Leung,234933,16,"[2, 1]",is a friend of,1.273229941034515e-06
+902,Cho Chang,Katie Leung,234933,Harry,Daniel Radcliffe,10980,2,"[1, 2]",is a friend of,0.03698871284723282
+903,Gabrielle Delacour,Angelica Mandy,1090780,Cho Chang,Katie Leung,234933,5,"[1, 1]",is a friend of,0.00024975620908662677
+904,Harry Potter,Daniel Radcliffe,10980,Cedric Diggory,Robert Pattinson,11288,3,"[2, 2]",is in the family of,0.006692143157124519
+905,Cedric Diggory,Robert Pattinson,11288,father Amos,Jeff Rawle,81022,35,"[2, 2]",is in the family of,0.5205039381980896
+906,Amos Diggory,Jeff Rawle,81022,Jeff Rawle appears as Cedric's father,Alfred Enoch,234923,38,"[2, 2]",is in the family of,0.0018816804513335228
+907,Cho Chang,Katie Leung,234933,Harry,Daniel Radcliffe,10980,2,"[1, 2]",is in the family of,0.07385297864675522
+908,Padma Patil,Afshan Azad,234926,Parvati,Shefali Chowdhury,234925,0,"[1, 1]",is in the family of,0.09011708945035934
+909,Parvati Patil,Shefali Chowdhury,234925,Padma,Afshan Azad,234926,0,"[1, 1]",is in the family of,0.0007107267156243324
+910,Harry Potter,Daniel Radcliffe,10980,Cedric Diggory,Robert Pattinson,11288,3,"[2, 2]",is the enemy of,0.00030581222381442785
+911,Ron Weasley,Rupert Grint,10989,Harry,Daniel Radcliffe,10980,1,"[2, 2]",is the enemy of,0.00034195187618024647
+912,Rita Skeeter,Miranda Richardson,8436,Viktor Krum,Stanislav Yanevski,11290,27,"[1, 2]",is the enemy of,7.20092475603451e-06
+913,Olympe Maxime,Frances de la Tour,47468,Igor Karkaroff,Predrag Bjelac,12044,18,"[1, 2]",is the enemy of,1.4786816109335632e-06
+914,Viktor Krum,Stanislav Yanevski,11290,Rita Skeeter,Miranda Richardson,8436,27,"[2, 1]",is the enemy of,3.551941699697636e-05
+915,Cedric Diggory,Robert Pattinson,11288,Amos,Jeff Rawle,81022,35,"[2, 2]",is the enemy of,0.00010704030137276277
+916,Fleur Delacour,Clemence Poesy,11291,Harry,Daniel Radcliffe,10980,7,"[1, 2]",is the enemy of,3.975790150434477e-06
+917,Cho Chang,Katie Leung,234933,Harry,Daniel Radcliffe,10980,2,"[1, 2]",is the enemy of,0.011350635439157486
+918,Gabrielle Delacour,Angelica Mandy,1090780,Cho Chang,Katie Leung,234933,5,"[1, 1]",is the enemy of,4.644543423637515e-06

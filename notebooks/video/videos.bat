@@ -1,1 +1,0 @@
-youtube-dl --write-description --write-sub --write-auto-sub  "https://www.youtube.com/watch?v=xWDavG4FpM4"
