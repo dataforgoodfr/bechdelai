@@ -3,7 +3,7 @@ sys.path.append('/home/virgaux/dataforgood/bechdelai/bechdelai')
 import processing.extract_img
 import processing.load_data
 import data.youtube
-import model.clip
+import model.vision_model.clip
 
 
 #DOWNLOAD DATA
@@ -26,7 +26,7 @@ prompts= [
             'several girls discussing',
         ]
 
-clip_model = model.clip.CLIP(prompts)
+clip_model = model.vision_model.clip.CLIP(prompts)
 clip_model.predict(dataset)
 
 #DISPLAY DATA

@@ -38,6 +38,7 @@ class CLIP:
         else:
             for batch_im in dataset:
                 inference = self.predict_batch([i for i in batch_im.numpy()])
+                print(inference)
 
 
         # Convert to dataframe
