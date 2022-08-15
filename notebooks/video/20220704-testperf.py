@@ -1,38 +1,34 @@
 import sys
-import time
 sys.path.append('/home/virgaux/dataforgood/bechdelai/bechdelai')
 import processing.extract_img
-import processing.load_img
+import processing.load_data
+import data.youtube
+import model.clip
 
 
-def test_capture_original():
-    processing.extract_img.extract_frames_from_videos("video/longue_video.mp4", "monfilm", optim=False)
-
-def test_capture_optim():
-    processing.extract_img.extract_frames_from_videos("video/longue_video.mp4", "monfilm", optim=True)
-
-def test_load_dataset():
-    return processing.load_img.load_dataset("monfilm")
-
-def test_load_classic():
-    return processing.load_img.load_classique("monfilm")
-
-"""
-start_time = time.time()
-test_capture_original()
-test_load_classic()
-shutil.rmtree("monfilm")
-print("--- %s seconds ---" % (time.time() - start_time))
-"""
+#DOWNLOAD DATA
+#downloader = data.youtube.Extract_Video_YT("https://www.youtube.com/watch?v=W0vCddpZ3WI&list=RDGMEMECQexVIf8HjAQgdybEHXKwVMW0vCddpZ3WI&start_radio=1")
+#downloader.download_video()
 
 
-start_time = time.time()
-test_capture_optim()
-dataset = test_load_dataset()
-print("--- %s seconds ---" % (time.time() - start_time))
-
-#shutil.rmtree("monfilm")
+#EXTRACT DATA
+#extractor = processing.extract_img.Extract_One_Video("/home/virgaux/dataforgood/bechdelai/data/sample_video_yt/Benjamin Biolay - Miss Miss.mp4")
+#extractor.extract_info_from_videos()
 
 
-#Show images
-processing.load_img.show_img(dataset)
+#LOAD DATASET
+loader = processing.load_data.LoaderData("/home/virgaux/dataforgood/bechdelai/data/sample_video_yt/Benjamin Biolay - Miss Miss")
+dataset = loader.load_dataset()
+
+prompts= [
+            'two women speaking',
+            'group of ladies speaking',
+            'several girls discussing',
+        ]
+
+clip_model = model.clip.CLIP(prompts)
+clip_model.predict(dataset)
+
+#DISPLAY DATA
+#displayer = processing.load_data.Displayer(dataset)
+#displayer.show_img()
