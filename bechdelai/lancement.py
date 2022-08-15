@@ -1,5 +1,5 @@
 from data.stream import Extract_Video_Stream
-from model.face_detector import OpenCV_Detector, DeepRetina_Detector
+from bechdelai.model.vision_model.face_detector import OpenCV_Detector, DeepRetina_Detector
 
 
 detector = OpenCV_Detector()

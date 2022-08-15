@@ -99,6 +99,7 @@ class LoaderData:
             df.append(cv2.imread(dir + "/" + file))
         return df
 
+
 class Displayer:
     """
     Permet de mieux voir l'intérieur du Dataset
