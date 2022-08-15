@@ -68,7 +68,7 @@ class Bechdelizer:
         return list_gender, frames
 
 
-    def women_detection_deepface(self, video_path, time_rate=1, folder):
+    def women_detection_deepface(self, video_path, folder, time_rate=1):
         """From a video and given frame rate, this function will check the presence of women on
         some specific frames with DeepFace Model
         Parameters
@@ -140,7 +140,7 @@ if __name__ == '__main__':
     #Analysing if women are in a frame with DeepFace
     df, face_list = Bechdelizer.women_detection_deepface(video_path = Bechdelizer.video_path,
                                                          time_rate=2,    
-                                                         folder=Bechdelizer.video_path)^
+                                                         folder=Bechdelizer.video_path)
     #Analysing if women are in a frame with CLIP
     clip = CLIP()
     video = Video(Bechdelizer.frame_path)
