@@ -3,12 +3,14 @@ from PIL import Image
 from deepface import DeepFace
 
 class Frame:
-    def __init__(self,path = None,array = None):
+    def __init__(self,path = None,array = None,img = None):
 
         if path is not None:
             self.img = Image.open(path)
         elif array is not None:
             self.img = Image.fromarray(array)
+        elif img is not None:
+            self.img = img
         else:
             raise Exception("You have to provide one input")
 
@@ -54,7 +56,7 @@ class Frame:
         self.faces = detector.extract(img,self.faces)
         return self.faces
 
-    def detect_faces(self,detector,):
+    def detect_faces(self,detector):
         pass
 
     def show_faces(self,detector,scale_factor = 1.1,min_neighbors = 3):
