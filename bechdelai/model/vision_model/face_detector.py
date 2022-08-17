@@ -41,15 +41,21 @@ class OpenCV_Detector:
         self.scale_factor = scale_factor
         self.min_neighbors = min_neighbors
 
-    def deep_recognition(self, frame:np.array):
+    
+    def deeprecognition(self, frame:np.array, image=False):
 
-        # TODO add 1.3 and 5 as argument
         cascade = cv2.CascadeClassifier(os.path.join(cv2.data.haarcascades, self.face_cascade_path))
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        faces = cascade.detectMultiScale(gray, self.scale_factor, self.min_neighbors)
+        grey = np.array(gray, dtype='uint8')
+        faces = cascade.detectMultiScale(grey, self.scale_factor, self.min_neighbors)
 
-        if len(faces)>0:
+        if len(faces)>0 and image:
             for (x,y,w,h) in faces:
                 frame = cv2.rectangle(frame,(x,y),(x+w,y+h),(255,0,0),1)
+            return frame
 
-        return frame
+        elif len(faces)>0:
+            return faces
+        
+        else:
+            return []

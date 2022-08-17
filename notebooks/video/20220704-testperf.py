@@ -4,6 +4,8 @@ import processing.extract_img
 import processing.load_data
 import data.youtube
 import model.vision_model.clip
+import model.vision_model.face_detector
+import model.output_creator
 
 
 #DOWNLOAD DATA
@@ -20,6 +22,9 @@ import model.vision_model.clip
 loader = processing.load_data.LoaderData("/home/virgaux/dataforgood/bechdelai/data/sample_video_yt/Benjamin Biolay - Miss Miss")
 dataset = loader.load_dataset()
 
+
+"""
+#MODEL ACTION
 prompts= [
             'two women speaking',
             'group of ladies speaking',
@@ -28,6 +33,11 @@ prompts= [
 
 clip_model = model.vision_model.clip.CLIP(prompts)
 clip_model.predict(dataset)
+"""
+
+#FACE DETECTOR
+detector = model.vision_model.face_detector.OpenCV_Detector()
+detector.predict_dataset(dataset)
 
 #DISPLAY DATA
 #displayer = processing.load_data.Displayer(dataset)
