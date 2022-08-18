@@ -4,8 +4,10 @@ import processing.extract_img
 import processing.load_data
 import data.youtube
 import model.vision_model.clip
-import model.vision_model.face_detector
-import model.output_creator
+from bechdel_vision import BechdelVision
+from model.vision_model.face_detector import OpenCV_Detector, DeepRetina_Detector
+from model.vision_model.face_classifier import DeepFaceBech
+from model.output_creator.face_result import Result_Face_Creator
 
 
 #DOWNLOAD DATA
@@ -36,8 +38,8 @@ clip_model.predict(dataset)
 """
 
 #FACE DETECTOR
-detector = model.vision_model.face_detector.OpenCV_Detector()
-detector.predict_dataset(dataset)
+bechvision = BechdelVision(dataset, OpenCV_Detector(), DeepFaceBech(caracteristique=['age', 'gender', 'race', 'emotion']), mode = "medium")
+bechvision.predict_dataset()
 
 #DISPLAY DATA
 #displayer = processing.load_data.Displayer(dataset)

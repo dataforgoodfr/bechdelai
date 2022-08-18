@@ -1,5 +1,4 @@
 import os
-import numpy as np
 import json
 
 class Result_Face_Creator:
@@ -20,7 +19,15 @@ class Result_Face_Creator:
         self.output_dir_data = os.path.join(self.output_dir,"face_output","data")
         self.output_dir_viz = os.path.join(self.output_dir,"face_output","visualisation")
 
-    def write_minimal_batch_res(self, result:tuple, numero_batch:int, best=True):
+    def _write_dict(self, dico:dict, num_batch:int):
+        # Serializing json
+        json_object = json.dumps(dico, indent=4)
+        
+        # Writing to sample.json
+        with open(os.path.join(self.output_dir_data, str(num_batch) + ".json"), "w") as outfile:
+            outfile.write(json_object)
+
+    def write_minimal_batch_res(self, result:list, numero_batch:int):
         dict_batch = {}
         for num_im in range(len(result)):
 
@@ -36,12 +43,10 @@ class Result_Face_Creator:
                 }
                 perso+=1
 
-        # Serializing json
-        json_object = json.dumps(dict_batch, indent=4)
-        
-        # Writing to sample.json
-        with open(os.path.join(self.output_dir_data, str(numero_batch) + ".json"), "w") as outfile:
-            outfile.write(json_object)
+        self._write_dict(dict_batch, numero_batch)
+
+    
+
 
     def show_examples_pred(self):
         pass
