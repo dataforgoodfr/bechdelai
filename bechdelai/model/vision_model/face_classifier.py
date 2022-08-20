@@ -8,4 +8,3 @@ class DeepFaceBech:
 
     def make_pred(self, faces):
         return DeepFace.analyze(faces, actions = self.caracteristique, enforce_detection = self.force_pred)
-

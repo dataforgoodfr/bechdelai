@@ -1,13 +1,13 @@
 import sys
 sys.path.append('/home/virgaux/dataforgood/bechdelai/bechdelai')
-import processing.extract_img
-import processing.load_data
+
 import data.youtube
-import model.vision_model.clip
+from model.vision_model.clip import CLIP
+from utils.load_data import LoaderData
 from bechdel_vision import BechdelVision
 from model.vision_model.face_detector import OpenCV_Detector, DeepRetina_Detector
 from model.vision_model.face_classifier import DeepFaceBech
-from model.output_creator.face_result import Result_Face_Creator
+from model.vision_model.face_embedding import FaceEmbedding
 
 
 #DOWNLOAD DATA
@@ -18,12 +18,6 @@ from model.output_creator.face_result import Result_Face_Creator
 #EXTRACT DATA
 #extractor = processing.extract_img.Extract_One_Video("/home/virgaux/dataforgood/bechdelai/data/sample_video_yt/Benjamin Biolay - Miss Miss.mp4")
 #extractor.extract_info_from_videos()
-
-
-#LOAD DATASET
-loader = processing.load_data.LoaderData("/home/virgaux/dataforgood/bechdelai/data/sample_video_yt/Benjamin Biolay - Miss Miss")
-dataset = loader.load_dataset()
-
 
 """
 #MODEL ACTION
@@ -38,7 +32,12 @@ clip_model.predict(dataset)
 """
 
 #FACE DETECTOR
-bechvision = BechdelVision(dataset, OpenCV_Detector(), DeepFaceBech(caracteristique=['age', 'gender', 'race', 'emotion']), mode = "medium")
+bechvision = BechdelVision(LoaderData("/home/virgaux/dataforgood/bechdelai/data/sample_video_yt/Benjamin Biolay - Miss Miss"), 
+                            OpenCV_Detector(), 
+                            DeepFaceBech(caracteristique=['age', 'gender', 'race', 'emotion']),
+                            FaceEmbedding(),
+                            CLIP(['two women speaking','group of ladies speaking','several girls discussing',]),
+                            mode = "large")
 bechvision.predict_dataset()
 
 #DISPLAY DATA

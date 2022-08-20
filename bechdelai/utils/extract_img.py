@@ -8,8 +8,8 @@ from tqdm import trange
 
 class Extract_One_Video:
 
-    def __init__(self, video_path:str, frame_rate = 5, details=True) -> None:
-        self.frame_rate = frame_rate
+    def __init__(self, video_path:str, time_rate = 2, details=True) -> None:
+        self.time_rate = time_rate
         self.video_path = video_path
         self.outputs = os.path.join(self.video_path.replace('.mp4', ''))
         self.outputs_details = os.path.join("/".join(video_path.split("/")[:-1]), "details")
@@ -24,9 +24,13 @@ class Extract_One_Video:
     def _read_video_classic(self, treatment_fun):
         self._creat_archi()
         count = 0
+
         cap = cv2.VideoCapture(self.video_path) # capturing the video from the given path
-        frameRate = cap.get(self.frame_rate) # frame rate
         length = int(cap.get(cv2.CAP_PROP_FRAME_COUNT)) # Define the number of frames
+        fps = cap.get(cv2.CAP_PROP_FPS)
+        frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+        framerate = fps * self.time_rate
+        frame_processed = round(frame_count/framerate)
 
         for _ in trange(length, bar_format = "{desc}: {percentage:.3f}%|{bar}| {n_fmt}/{total_fmt} [{elapsed}<{remaining}"):
 
@@ -36,7 +40,7 @@ class Extract_One_Video:
             if (ret != True):
                 raise "Problem de lecture de fichier !!"
 
-            if self.frame_rate == 1 or (frameId % math.floor(frameRate) == 0):
+            if self.frame_rate == 1 or (frameId % math.floor(frame_processed) == 0):
                 treatment_fun(frame, os.path.join(self.outputs,str(count)))
 
             count +=1
