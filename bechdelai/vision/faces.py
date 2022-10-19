@@ -1,5 +1,6 @@
 
 import cv2
+import os
 import warnings
 import pandas as pd
 import numpy as np
@@ -11,25 +12,63 @@ from retinaface import RetinaFace
 from deepface import DeepFace
 from deepface.commons import functions
 
+FACE_CASCADE_PATH = "haarcascade_frontalface_default.xml"
+
 class FacesDetector:
-    def __init__(self):
-        pass
+    def __init__(self,backend = "retinaface"):
 
-    def detect(self,img:np.array,padding = 0):
+        assert backend in ["retinaface","opencv","hybrid"]
+        self.backend = backend
 
-        rois = RetinaFace.detect_faces(img)
-        if not isinstance(rois,dict):
-            return {},[]
+        # Prepare model for OpenCV backend
+        if self.backend in ["opencv","hybrid"]:
+            self.cascade = cv2.CascadeClassifier(os.path.join(cv2.data.haarcascades,FACE_CASCADE_PATH))
 
-        if padding == 0:
-            faces = RetinaFace.extract_faces(img,align = True)
-            faces = [Image.fromarray(x[:,:,[2,1,0]]) for x in faces]
-        else:
-            faces = self.get_rois(img,rois,padding = padding)
 
-        return rois,faces
+    def detect(self,img:np.array,padding = 0,scale_factor = 1.3,min_neighbors = 5,method = None):
 
-    def get_rois(self,img:np.array,rois,padding = 0):
+        if method is None:
+            method = self.backend
+
+        if method == "retinaface":
+
+            rois = RetinaFace.detect_faces(img)
+            if not isinstance(rois,dict):
+                return {},[]
+
+            if padding == 0:
+                faces = RetinaFace.extract_faces(img,align = True)
+                faces = [Image.fromarray(x[:,:,[2,1,0]]) for x in faces]
+            else:
+                faces = self._get_faces_from_rois(img,rois,padding = padding)
+
+            return rois,faces
+
+        elif method == "opencv":
+
+            gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+            rois = self.cascade.detectMultiScale(gray, scale_factor, min_neighbors)
+            rois = self._convert_rois_opencv_to_retinaface(rois)
+            faces = self._get_faces_from_rois(img,rois,padding = padding)
+            return rois,faces
+
+        elif method == "hybrid":
+
+            rois,faces = self.detect(img,padding,scale_factor = 1.1,min_neighbors = 3,method = "opencv")
+            if len(faces) > 0:
+                rois,faces = self.detect(img,padding,method = "retinaface")
+            return rois,faces
+            
+    def _convert_rois_opencv_to_retinaface(self,rois):
+        new_rois = {}
+        for i,(x1,y1,w,h) in enumerate(rois):
+            x2 = x1+w
+            y2 = y1+h
+            new_rois[f"face_{i}"] = {"facial_area":[x1,y1,x2,y2]}
+        return new_rois
+
+
+    def _get_faces_from_rois(self,img:np.array,rois,padding = 0):
 
         selected_rois = []
 

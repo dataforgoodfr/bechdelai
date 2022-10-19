@@ -13,7 +13,7 @@ from bechdelai.vision.faces import FacesDetector
 
 st.set_page_config(page_title="BechdelAI", page_icon="🎥", layout="wide", initial_sidebar_state="auto", menu_items=None)
 
-st.sidebar.image("demos/logo.png")
+st.sidebar.image("demos/logo2.png",use_column_width = True)
 st.sidebar.write("## Posters Analysis")
 
 
@@ -157,9 +157,25 @@ if uploaded_file is not None:
             ratio_count = f"{round(man_count/woman_count,1)}x 🧑"
 
 
+        metrics = {
+            "women_area":woman_area,
+            "men_area":man_area,
+            "n_women":woman_count,
+            "n_men":man_count,
+            "n_characters":len(faces),
+            "area_gap":woman_area/man_area,
+            "count_gap":woman_count/man_count,
+        }
+
+        metrics = pd.DataFrame(pd.Series(metrics),columns = [name]).T
+
         col1.metric("Women %",f"{round(woman_area * 100,2)}%",woman_delta)
         col2.metric("Men %",f"{round(man_area * 100,2)}%",man_delta)
         col3.metric("Number of women",f"{int(woman_count)}",f"Among {len(faces)} characters",delta_color="off")
         col4.metric("Number of men",f"{int(man_count)}",f"Among {len(faces)} characters",delta_color="off")
         col5.metric("Under-representation (by area)",ratio)
         col6.metric("Under-representation (by count)",ratio_count)
+
+        copy = st.button("Copy results")
+        if copy:
+            metrics.to_clipboard()

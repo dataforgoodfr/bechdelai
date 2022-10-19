@@ -144,6 +144,14 @@ def get_image_from_url(url):
     img = Image.open(BytesIO(response.content))
     return img
 
+def get_poster_image_from_url(url):
+
+    if not url.startswith("https"):
+        url = f'https://image.tmdb.org/t/p/original{url}'
+    
+    img = get_image_from_url(url)
+    return img
+
 
 def get_movie_details_from_imdb_id(imdb_id):
     url = f"https://api.themoviedb.org/3/find/{imdb_id}?api_key={API_KEY}&external_source=imdb_id"
@@ -162,6 +170,8 @@ def get_poster_image(movie_id,as_img = True,backdrop = False):
         return img
     else:
         return poster_path
+
+
 
 
 def discover_movies(**kwargs) -> dict:

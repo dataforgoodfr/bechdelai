@@ -10,7 +10,7 @@ class Img:
         if isinstance(img,str):
             self.img = Image.open(img)
         elif isinstance(img,np.ndarray):
-            self.img = Image.fromarray(array)
+            self.img = Image.fromarray(img)
         elif isinstance(img,Image.Image):
             self.img = img
         else:
@@ -63,22 +63,3 @@ class Img:
             return new_img.resize
         else:
             return self.img
-
-    def extract_faces(self,detector,scale_factor = 1.1,min_neighbors = 3):
-        img = self.array
-        self.faces = detector.predict(img,scale_factor,min_neighbors) 
-        self.faces = detector.extract(img,self.faces)
-        return self.faces
-
-    def detect_faces(self,detector):
-        pass
-
-    def show_faces(self,detector,scale_factor = 1.1,min_neighbors = 3):
-        detector.show(self.array,scale_factor = scale_factor,min_neighbors = min_neighbors)
-
-
-    def analyze(self,**kwargs):
-        """Analyse frame using DeepFace pretrained models
-        Works only if frame is already a face
-        """
-        return DeepFace.analyze(self.array,prog_bar = False,**kwargs)

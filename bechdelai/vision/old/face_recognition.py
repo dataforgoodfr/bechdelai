@@ -51,6 +51,7 @@ class FaceAnalyzer:
         self.clustering_model = DBSCAN(**kwargs)
         clusters = self.clustering_model.fit_predict(embeddings)
         embeddings["cluster"] = clusters
+        embeddings["cluster"] = embeddings["cluster"].astype(str)
         return embeddings,clusters
 
 
@@ -98,8 +99,8 @@ class FaceAnalyzer:
                 )
 
             # fig.update_layout(height=600, width=1000,, plot_bgcolor="#dfdfdf")
-            fig.show()
 
+        return fig
 
     def load_detector(self,name = "retinaface"):
         # https://github.com/serengil/deepface/issues/310

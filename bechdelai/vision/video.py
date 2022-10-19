@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 from tqdm.auto import tqdm
 import re 
@@ -11,16 +12,17 @@ from deepface.basemodels import VGGFace, OpenFace, Facenet, FbDeepFace
 from deepface.commons import functions
 # https://github.com/serengil/deepface/blob/master/tests/face-recognition-how.py
 
+# Custom imports
+# from .face_detection import FaceDetector
+from .img import Img
+from .faces import FacesDetector
+from ..utils.video import extract_frames_from_videos
 
 def natural_sort(l): 
     convert = lambda text: int(text) if text.isdigit() else text.lower()
     alphanum_key = lambda key: [convert(c) for c in re.split('([0-9]+)', key)]
     return sorted(l, key=alphanum_key)
 
-# Custom imports
-# from .face_detection import FaceDetector
-from .image import Image
-from ..utils.video import extract_frames_from_videos
 
 class Video:
     def __init__(self,frames = None,path = None,frame_rate = 5,max_seconds = None):
@@ -41,26 +43,21 @@ class Video:
         for i in tqdm(range(len(self.frames))):
             self.frames[i].resize(*args,**kwargs)
 
-    def extract_faces(self,detector = None,scale_factor = 1.3,min_neighbors = 5,face_size = (100,100),deepface_check = True,deepface_backend = "opencv"):
+    def extract_faces(self,detector = None,backend = "retinaface",face_size = (100,100),**kwargs):
 
         if detector is None:
-            detector = FaceDetector()
+            detector = FacesDetector(backend = backend)
 
         self.faces = []
         self.faces_metadata = []
 
         for i,frame in enumerate(tqdm(self.frames)):
-            faces = frame.extract_faces(detector,scale_factor = scale_factor,min_neighbors = min_neighbors)
+            rois,faces = detector.detect(frame.array,**kwargs)
             
             for j,face in enumerate(faces):
 
+                face = Img(face)
                 face.resize(size = face_size)
-
-                if deepface_check:
-                    try:
-                        DeepFace.detectFace(face.array,enforce_detection = True)
-                    except:
-                        continue
 
                 self.faces.append(face)
                 self.faces_metadata.append({"frame_id":i,"face_id":j})
@@ -111,7 +108,7 @@ class Video:
     def make_faces_embeddings(self):
 
         self.model = VGGFace.loadModel()
-        input_shape = model.layers[0].input_shape[0][1:3]
+        input_shape = self.model.layers[0].input_shape[0][1:3]
 
         faces_tensor = self.make_faces_tensor(input_shape = input_shape)
 

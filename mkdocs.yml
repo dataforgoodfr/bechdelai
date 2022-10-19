@@ -1,0 +1,67 @@
+site_name: 'beth'
+site_description: 'Open source chess AI framework'
+site_author: 'Théo Alves Da Costa'
+site_url: "https://theolvs.github.io/beth"
+edit_uri: ""
+theme:
+  # logo: assets/logo.png
+  # favicon: assets/favicon.png
+  name: 'material'
+  font:
+    text: Inter
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - navigation.sections
+markdown_extensions:
+  - admonition
+  - codehilite
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.arithmatex
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - toc:
+      permalink: true
+repo_name: 'beth'
+repo_url: 'https://github.com/theolvs/beth'
+
+extra_css:
+  - ./stylesheets/extra.css
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
+
+nav:
+  - Home: 
+    - Welcome: index.md
+    - Installation: home/installation.md
+    - Quickstart: home/quickstart.md
+    - Common questions: home/common-questions.md
+    - Changelog: home/releases.md
+  - Tutorials:
+    - Quickstart: tutorials/quickstart.md
+    - tutorials/notebook-test.ipynb
+  - API:
+    - Home: library/index.md
+    - Core:
+      - library/core/game.md
+      - library/core/board.md
+
+plugins:
+  - search
+  - mknotebooks:
+      execute: false
+      enable_default_jupyter_cell_styling: false
+      enable_default_pandas_dataframe_styling: true
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          rendering:
+            show_source: true
+      watch:
+        - "beth"
