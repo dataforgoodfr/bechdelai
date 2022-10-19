@@ -1,0 +1,64 @@
+site_name: 'BechdelAI'
+site_description: 'Automating the Bechdel test and its variants for feminine representation in movies with AI'
+site_author: 'Data For Good'
+site_url: "https://github.com/dataforgoodfr/bechdelai"
+edit_uri: ""
+theme:
+  logo: assets/logo2.png
+  # logo: assets/logo.png
+  # favicon: assets/favicon.png
+  name: 'material'
+  font:
+    text: Inter
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - navigation.sections
+markdown_extensions:
+  - admonition
+  - codehilite
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.arithmatex
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - toc:
+      permalink: true
+repo_name: 'bechdelai'
+repo_url: 'https://github.com/dataforgoodfr/bechdelai'
+
+extra_css:
+  - ./stylesheets/extra.css
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
+
+nav:
+  - Home: 
+    - Welcome: index.md
+    - Installation: home/installation.md
+    - Quickstart: home/quickstart.md
+    - Common questions: home/common-questions.md
+    - Changelog: home/releases.md
+  - Tutorials:
+    - Quickstart: tutorials/quickstart.md
+  - API:
+    - Home: library/index.md
+
+plugins:
+  - search
+  # - mknotebooks:
+  #     execute: false
+  #     enable_default_jupyter_cell_styling: false
+  #     enable_default_pandas_dataframe_styling: true
+  # - mkdocstrings:
+  #     default_handler: python
+  #     handlers:
+  #       python:
+  #         rendering:
+  #           show_source: true
+  #     watch:
+  #       - "beth"

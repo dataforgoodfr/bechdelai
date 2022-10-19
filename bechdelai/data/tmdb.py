@@ -1,11 +1,16 @@
 """Function to get data from TMDB API
 """
-from os import environ
-
+import urllib
+import requests
 import pandas as pd
+import os
+from PIL import Image
+from tqdm.auto import tqdm
+from os import environ
+import pandas as pd
+from io import BytesIO
 from dotenv import load_dotenv
-
-from bechdelai.data.scrap import get_json_from_url
+from .scrap import get_json_from_url
 
 
 class APIKeyNotSetInEnv(Exception):
@@ -224,3 +229,110 @@ def get_movies_from_ids(movie_ids: list) -> tuple:
     cast_df = pd.concat(cast_df)
 
     return movies_df, crew_df, cast_df
+
+def get_image_from_url(url):
+    response = requests.get(url)
+    img = Image.open(BytesIO(response.content))
+    return img
+
+def get_poster_image_from_url(url):
+
+    if not url.startswith("https"):
+        url = f'https://image.tmdb.org/t/p/original{url}'
+    
+    img = get_image_from_url(url)
+    return img
+
+
+def get_movie_details_from_imdb_id(imdb_id):
+    url = f"https://api.themoviedb.org/3/find/{imdb_id}?api_key={API_KEY}&external_source=imdb_id"
+    r = requests.get(url).json()
+    return get_movie_details_from_id(r["movie_results"][0]["id"])
+
+
+def get_poster_image(movie_id,as_img = True,backdrop = False):
+
+    details = get_movie_details_from_id(movie_id)
+    path = details["poster_path"] if backdrop == False else details["backdrop_path"]
+    poster_path = f'https://image.tmdb.org/t/p/original{path}'
+
+    if as_img:
+        img = get_image_from_url(poster_path)
+        return img
+    else:
+        return poster_path
+
+
+
+
+def discover_movies(**kwargs) -> dict:
+    """
+    Tutorial on discover API
+    - https://developers.themoviedb.org/3/discover/movie-discover
+    - https://www.themoviedb.org/talk/5f60b26c706b9f0039076517
+    - https://www.themoviedb.org/documentation/api/discover
+
+    Example Query String
+    primary_release_year=2020&with_original_language=hi|kn|ml|ta|te
+
+    """
+
+    query_string = urllib.parse.urlencode(kwargs)
+
+    url = f"https://api.themoviedb.org/3/discover/movie?api_key={API_KEY}&language=en-US&{query_string}"
+    r = requests.get(url).json()
+    return r
+
+
+def discover_all_movies(with_original_language = "fr",start_year = None,end_year = None,year = None,min_vote_count = 0,pages = 1000,sort_by = "popularity.desc"  ,**kwargs):
+
+    data = []
+
+    for i in tqdm(range(pages)):
+
+        query = {
+            "with_original_language":with_original_language,
+            "vote_count.gte":min_vote_count,
+            "page":i+1,
+            "sort_by":sort_by,
+            **kwargs
+        }
+
+        if year is not None: query["primary_release_year"] = year
+        if start_year is not None: query["primary_release_date.gte"] = start_year
+        if end_year is not None: query["primary_release_date.lte"] = end_year
+
+        r = discover_movies(**query)
+        if i == 0: 
+            print(f'{r["total_results"]} Results in total and {r["total_pages"]} pages')
+            print(query)
+
+        data.extend(r["results"])
+
+    data = pd.DataFrame(data)
+    return data
+
+
+def download_all_posters(movies,folder):
+    """
+    Input is dataframe from discover all movies function
+    """
+
+    if not os.path.exists(folder):
+        os.mkdir(folder)
+
+    # Save metadata as csv
+    movies.to_excel(os.path.join(folder,"MOVIES_METADATA.xlsx"))
+
+    for i in tqdm(range(len(movies))):
+        row = movies.iloc[i]
+        movie_id = row["id"]
+        path = row["poster_path"]
+        poster_path = f'https://image.tmdb.org/t/p/original{path}'
+        path = os.path.join(folder,f"{movie_id}.png")
+        if not os.path.exists(path):
+            try:
+                img = get_image_from_url(poster_path)
+                img.save(path)
+            except:
+                print(f"Skipped movie {i}")
