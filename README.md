@@ -1,7 +1,7 @@
 # BechdelAI
 Measurement and automation of the Bechdel test, female (under)representation and representation inequalities in cinema and audiovisual media
 
-![](docs/assets/cover.png)
+![](docs/assets/cover_bechdelai.png)
 
 > This repo is under active development, the documentation may not be up to date
 
