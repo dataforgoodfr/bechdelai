@@ -19,17 +19,20 @@
 }
 
 .md-header{
-    background-color:#151c36;
+    background-color:#acef9f;
+    color:black;
 }
 
 
 .md-footer{
-    background-color:#151c36;
+    background-color:#acef9f;
+    color:black;
 }
 
 
 .md-tabs{
-    background-color:#151c36;
+    background-color:#acef9f;
+    color:black;
 }
 
 .admonition > p{
@@ -50,7 +53,7 @@
 } */
 
 h2{
-    color:#e61f84;
+    color:#35c4d7;
     font-weight:700 !important;
 }
 

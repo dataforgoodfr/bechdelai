@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "bechdelai"
-version = "0.1.0"
+version = "0.0.0-alpha"
 description = "Automating the Bechdel test and its variants for feminine representation in movies with AI"
-authors = ["Théo Alves Da Costa <theo.alves.da.costa@gmail.com>"]
+authors = ["Data For Good <hellodataforgood@gmail.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
@@ -31,6 +31,12 @@ openpyxl = "^3.0.10"
 streamlit = "^1.9.2"
 
 [tool.poetry.dev-dependencies]
+pywin32 = { version = "225", markers = "sys_platform == 'win32'" }
+jupyter = "^1.0.0"
+mkdocs = "^1.2.1"
+mkdocs-material = "^7.1.10"
+mknotebooks = "^0.7.0"
+mkdocstrings = "^0.15.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
