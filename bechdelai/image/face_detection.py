@@ -84,14 +84,20 @@ class FacesDetector:
 
 
 
-    def show_faces_on_image(self,img,rois,width = 2,color = (255,0,0)):
+    def show_faces_on_image(self,img,rois,width = 2,color = (255,0,0),faces_data = None):
 
         new_img = np.copy(img)
 
+        if not isinstance(color,list):
+            color = [color]*len(rois)
+
+        if faces_data is not None:
+            color = [(255,0,0) if x == "Man" else (172, 239, 159) for x in faces_data["title"].tolist()]
+
         if rois is not None:
-            for _,values in rois.items():
+            for i,values in enumerate(list(rois.values())):
                 (x1,y1,x2,y2) = values["facial_area"]
-                cv2.rectangle(new_img,(x1,y1),(x2,y2),color,width)
+                cv2.rectangle(new_img,(x1,y1),(x2,y2),color[i],width)
 
         new_img = Image.fromarray(new_img)
         return new_img
@@ -122,11 +128,14 @@ class FacesDetector:
         img_224, region = functions.preprocess_face(img = face, target_size = (224, 224), grayscale = False, enforce_detection = False, detector_backend = "opencv", return_region = True)
         gender_prediction = model.predict(img_224)[0,:]
         woman_proba,man_proba = gender_prediction
-        if np.argmax(gender_prediction) == 0:
+        index_prediction = np.argmax(gender_prediction)
+        if index_prediction == 0:
             gender = "Woman"
-        elif np.argmax(gender_prediction) == 1:
+            proba = woman_proba
+        elif index_prediction == 1:
             gender = "Man"
-        data = {"gender":gender,"gender_proba_man":man_proba,"gender_proba_woman":woman_proba}
+            proba = man_proba
+        data = {"gender":gender,"gender_proba_man":man_proba,"gender_proba_woman":woman_proba,"index":index_prediction,"proba":proba}
         return data
 
     def analyze(self,face,enforce_detection = False,only_gender = True,progress_streamlit = None):
@@ -144,6 +153,7 @@ class FacesDetector:
 
             faces_data = pd.DataFrame(faces_data)
             faces_data["title"] = faces_data.apply(lambda x : ", ".join([x['gender']]),axis = 1)
+            faces_data["title_proba"] = faces_data.apply(lambda x : f'{x["title"]} ({x["proba"]:.2%})',axis = 1)
 
             return faces_data
 
@@ -173,7 +183,7 @@ class FacesDetector:
             return face_data
 
 
-    def analyze_gender_representation(self,img,padding = 0,progress_streamlit = None):
+    def predict(self,img,padding = 0,progress_streamlit = None):
 
         rois,faces = self.detect(img,padding = padding)
         if len(faces) == 0:
@@ -181,8 +191,12 @@ class FacesDetector:
         else:
             faces_data = self.analyze(faces,progress_streamlit = progress_streamlit)
             faces_data["percentage"] = faces_data["area"] / (img.shape[0]*img.shape[1])
-            representation = faces_data.groupby("gender")["percentage"].sum()
-            return faces,faces_data,rois,representation
+
+            results = faces_data.groupby("gender").agg({"area":"sum","percentage":"sum","title":"count"}).rename(columns = {"title":"count"})
+            results["ratio_area"] = results["area"].values / results["area"][::-1].values
+            results["ratio_count"] = results["count"].values / results["count"][::-1].values
+
+            return faces,faces_data,rois,results
 
         
 
