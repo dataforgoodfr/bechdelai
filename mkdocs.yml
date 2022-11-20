@@ -45,8 +45,14 @@ nav:
     - Changelog: home/releases.md
   - Tutorials:
     - Quickstart: tutorials/quickstart.md
-  - API:
+  - Library:
     - Home: library/index.md
+    - Data: 
+      - bechdeltest.com: library/data/bechdeltestcom.md
+      - TMDB: library/data/tmdb.md
+    - Image:
+      - Img: library/image/img.md
+      - Face Detection: library/image/face_detection.md
 
 plugins:
   - search
@@ -54,11 +60,10 @@ plugins:
   #     execute: false
   #     enable_default_jupyter_cell_styling: false
   #     enable_default_pandas_dataframe_styling: true
-  # - mkdocstrings:
-  #     default_handler: python
-  #     handlers:
-  #       python:
-  #         rendering:
-  #           show_source: true
-  #     watch:
-  #       - "beth"
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: true
+      watch:
+        - "bechdelai"

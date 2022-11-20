@@ -26,14 +26,18 @@ Measurement and automation of the Bechdel test, female (under)representation and
 - Project documentation is [here](https://dataforgood.slite.com/app/docs/~8IRrgyKYR) (French)
 
 
-
 ## Developers
 
 ```
-mkdocs serve ---- launch documentation locally
-poetry build
-poetry publish --
+mkdocs serve        ---- launch documentation locally
+poetry build        ---- build package locally
+poetry publish      ---- publish package on PyPi
 ```
+
+### Golden rules & best practices
+- Use type annotations as much as possible (see tutorial [here](https://towardsdatascience.com/type-annotations-in-python-d90990b172dc))
+- Use Google style docstrings (you can use Visual Studio Code extension)
+- Documentation of all functions and classes is done using mkdocstrings https://mkdocstrings.github.io/usage/
 
 
 ## Get movies from Allociné / TMDB (may be deprecated)
