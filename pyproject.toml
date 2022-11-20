@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bechdelai"
-version = "0.0.1-alpha"
+version = "0.0.1-alpha.2"
 description = "Automating the Bechdel test and its variants for feminine representation in movies with AI"
 authors = ["Data For Good <hellodataforgood@gmail.com>"]
 license = "MIT"
