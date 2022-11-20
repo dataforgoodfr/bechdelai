@@ -6,8 +6,6 @@ from ipywidgets import widgets, interact
 from transformers import CLIPProcessor, CLIPModel
 from scipy.special import softmax
 
-from .video import Video
-
 
 class CLIP:
     def __init__(self,prompts_dict = None):
@@ -31,7 +29,7 @@ class CLIP:
     def prompts_list(self):
         return self.prompts["prompt"].tolist()
 
-    def predict(self,images:list,probas = True) -> pd.DataFrame:
+    def predict(self,images:list) -> pd.DataFrame:
 
         # Convert Video object input as list of PIL Images
         # You can also use directly list of PIL images as input

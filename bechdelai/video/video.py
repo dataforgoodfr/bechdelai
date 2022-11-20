@@ -1,22 +1,19 @@
 import os
+import sys
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from tqdm.auto import tqdm
 import re 
 from ipywidgets import widgets, interact
-
-# Deep Face
-from deepface import DeepFace
-from deepface.basemodels import VGGFace, OpenFace, Facenet, FbDeepFace
-from deepface.commons import functions
-# https://github.com/serengil/deepface/blob/master/tests/face-recognition-how.py
+from collections import defaultdict
 
 # Custom imports
 # from .face_detection import FaceDetector
-from .img import Img
-from .faces import FacesDetector
-from ..utils.video import extract_frames_from_videos
+# from .faces import FacesDetector
+from ..image.img import Img
+from .frame_extraction import extract_frames_from_videos
+
 
 def natural_sort(l): 
     convert = lambda text: int(text) if text.isdigit() else text.lower()
@@ -38,47 +35,24 @@ class Video:
         else:
             self.frames = frames
 
+        self._annotations = defaultdict(dict)
+
+    def reset_annotations(self):
+        self._annotations = defaultdict(dict)
+
+    @property
+    def annotations(self):
+        return self._annotations
+
+    def annotate(self,d):
+        for k,v in d.items():
+            assert isinstance(v,dict)
+            self._annotations[k].update(v)
+
 
     def resize(self,*args,**kwargs):
         for i in tqdm(range(len(self.frames))):
-            self.frames[i].resize(*args,**kwargs)
-
-    def extract_faces(self,detector = None,backend = "retinaface",face_size = (100,100),**kwargs):
-
-        if detector is None:
-            detector = FacesDetector(backend = backend)
-
-        self.faces = []
-        self.faces_metadata = []
-
-        for i,frame in enumerate(tqdm(self.frames)):
-            rois,faces = detector.detect(frame.array,**kwargs)
-            
-            for j,face in enumerate(faces):
-
-                face = Img(face)
-                face.resize(size = face_size)
-
-                self.faces.append(face)
-                self.faces_metadata.append({"frame_id":i,"face_id":j})
-
-        self.faces_metadata = pd.DataFrame(self.faces_metadata)
-
-
-    def show_all_faces(self,columns = 10,figsize_row = (8,1)):
-
-        rows = (len(self.faces) // columns) + 1
-
-        for row in range(rows):
-            fig = plt.figure(figsize=figsize_row)
-            remaining_columns = len(self.faces) - (row * columns)
-            row_columns = columns if remaining_columns > columns else remaining_columns
-            for column in range(row_columns):
-                img = self.faces[row * columns + column].array
-                fig.add_subplot(1, columns, column+1)
-                plt.axis('off')
-                plt.imshow(img)
-            plt.show()
+            self.frames[i].resize(inplace = True,*args,**kwargs)
 
 
     def show_frames(self,columns = 6,figsize_row = (15,1)):
@@ -96,27 +70,7 @@ class Video:
                 plt.imshow(img)
             plt.show()
 
-
-    def make_faces_tensor(self,input_shape = (224,224),enforce_detection = False):
-        faces_array = []
-        for face in self.faces:
-            face_array = functions.preprocess_face(face.array,input_shape,enforce_detection = False)
-            faces_array.append(face_array)
-        faces_array = np.concatenate(faces_array,axis = 0)
-        return faces_array
-
-    def make_faces_embeddings(self):
-
-        self.model = VGGFace.loadModel()
-        input_shape = self.model.layers[0].input_shape[0][1:3]
-
-        faces_tensor = self.make_faces_tensor(input_shape = input_shape)
-
-        embeddings = self.model.predict(faces_tensor)
-        return embeddings
-
-
-    def replay(self,interval=0.5):
+    def replay(self,interval=0.5,with_annotations = True):
 
         # Prepare widgets
         play = widgets.Play(
@@ -135,6 +89,8 @@ class Video:
         # Visualize frames and widgets
         @interact(i=play)
         def show(i):
+            if with_annotations:
+                print(self.annotations[i])
             return self.frames[i]
 
         display(slider)
