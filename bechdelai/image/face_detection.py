@@ -183,7 +183,7 @@ class FacesDetector:
             color = [color]*len(rois)
 
         if genders is not None:
-            color = [(255,0,0) if x == "man" else (172, 239, 159) for x in genders]
+            color = [(255,0,0) if x == "man" else ((172, 239, 159) if x == "woman" else (30, 31, 28)) for x in genders]
 
         if rois is not None:
             for i,values in enumerate(list(rois.values())):

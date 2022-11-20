@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "bechdelai"
-version = "0.0.0-alpha"
+version = "0.0.1-alpha"
 description = "Automating the Bechdel test and its variants for feminine representation in movies with AI"
 authors = ["Data For Good <hellodataforgood@gmail.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = ">=3.8,<3.10"
+python = ">=3.8,<3.9.7 || >3.9.7,<3.10"
 jupyter = "^1.0.0"
 pandas = "^1.3.4"
 numpy = "^1.21.3"
@@ -39,6 +39,7 @@ mediapipe = "^0.9.0"
 pywin32 = { version = "225", markers = "sys_platform == 'win32'" }
 jupyter = "^1.0.0"
 mkdocs = "^1.4.1"
+streamlit = "1.13.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
