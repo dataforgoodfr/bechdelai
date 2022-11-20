@@ -177,7 +177,7 @@ def format_results_for_suggestion(search_res: dict) -> list:
     return format_res
 
 
-def get_movies_from_ids(movie_ids: list) -> tuple:
+def get_movies_from_ids(movie_ids: list,is_imdb_id:bool = False) -> tuple:
     """Returns TMDB API return for all movie ID
     set in the input
 
@@ -199,6 +199,10 @@ def get_movies_from_ids(movie_ids: list) -> tuple:
     cast_df = []
 
     for movie_id in movie_ids:
+
+        if is_imdb_id:
+            movie_id = get_id_from_imdb_id(movie_id)
+
         if movie_id is None:
             continue
 
@@ -245,9 +249,8 @@ def get_poster_image_from_url(url):
 
 
 def get_movie_details_from_imdb_id(imdb_id):
-    url = f"https://api.themoviedb.org/3/find/{imdb_id}?api_key={API_KEY}&external_source=imdb_id"
-    r = requests.get(url).json()
-    return get_movie_details_from_id(r["movie_results"][0]["id"])
+    tmdb_id = get_id_from_imdb_id(imdb_id)
+    return get_movie_details_from_id(tmdb_id)
 
 
 def get_poster_image(movie_id,as_img = True,backdrop = False):

@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+data/posters_bechdeltestcom
+
 # C extensions
 *.so
 
@@ -132,3 +134,4 @@ dmypy.json
 *.csv
 
 notebooks/poster_analysis/test
+notebooks/video/LES TUCHE 4 Bande Annonce Officielle (2021).mp4
