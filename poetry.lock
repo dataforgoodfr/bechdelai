@@ -43,6 +43,14 @@ test = ["coverage[toml] (>=4.5)", "hypothesis (>=4.0)", "pytest (>=7.0)", "pytes
 trio = ["trio (>=0.16,<0.22)"]
 
 [[package]]
+name = "appdirs"
+version = "1.4.4"
+description = "A small Python module for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "appnope"
 version = "0.1.3"
 description = "Disable App Nap on macOS >= 10.9"
@@ -1833,6 +1841,27 @@ python-versions = ">=3.6,<4"
 pyasn1 = ">=0.1.3"
 
 [[package]]
+name = "scenedetect"
+version = "0.6.1"
+description = "Video scene cut/shot detection program and Python library."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+appdirs = "*"
+Click = "*"
+numpy = "*"
+opencv-python = {version = "*", optional = true, markers = "extra == \"opencv\""}
+tqdm = "*"
+
+[package.extras]
+moviepy = ["moviepy"]
+opencv = ["opencv-python"]
+opencv-headless = ["opencv-python-headless"]
+pyav = ["av"]
+
+[[package]]
 name = "scikit-learn"
 version = "1.1.2"
 description = "A set of python modules for machine learning and data mining"
@@ -2480,7 +2509,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "flake8 
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<3.9.7 || >3.9.7,<3.10"
-content-hash = "cb93ce1d1b67ec4c0d8c0675cc946e353022be8d84ad62a6ae05c65832cb9c93"
+content-hash = "92511ae0c04a6d0a3a6a791c312d03b0d0e6d540bbb7367c40deffc380f770b9"
 
 [metadata.files]
 absl-py = []
@@ -2489,6 +2518,7 @@ altair = [
     {file = "altair-4.2.0.tar.gz", hash = "sha256:d87d9372e63b48cd96b2a6415f0cf9457f50162ab79dc7a31cd7e024dd840026"},
 ]
 anyio = []
+appdirs = []
 appnope = [
     {file = "appnope-0.1.3-py2.py3-none-any.whl", hash = "sha256:265a455292d0bd8a72453494fa24df5a11eb18373a60c7c0430889f22548605e"},
     {file = "appnope-0.1.3.tar.gz", hash = "sha256:02bd91c4de869fbb1e1c50aafc4098827a7a54ab2f39d9dcba6c9547ed920e24"},
@@ -2934,6 +2964,7 @@ retina-face = [
 ]
 rich = []
 rsa = []
+scenedetect = []
 scikit-learn = []
 scipy = []
 semver = [
