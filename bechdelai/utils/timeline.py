@@ -2,6 +2,10 @@ import pandas as pd
 import plotly.express as px
 
 
+def fn_create_sequence_id(x):
+    return (1 - (x == x.shift(1))).cumsum() - 1
+
+
 def fn_timeline(x):
 
     try:
@@ -24,11 +28,11 @@ def fn_timeline(x):
 
 
 
-def convert_to_timeline(df,description_col,time_between_frames = 1,show = True,xaxis_time = False):
+def convert_to_timeline(df,description_col,frame_col = "frame_id",sequence_col = "sequence_id",time_between_frames = 1,show = True,xaxis_time = True):
 
-    timeline = df.copy().sort_values("frame_id")
+    timeline = df.copy().sort_values(frame_col)
 
-    timeline = timeline.groupby([description_col,"sequence_id"]).agg({"frame_id":["min","max"]})["frame_id"].reset_index()
+    timeline = timeline.groupby([description_col,sequence_col]).agg({frame_col:["min","max"]})[frame_col].reset_index()
     timeline["max"] += 1
 
     if xaxis_time:
