@@ -1,5 +1,4 @@
 # BechdelAI
-## Test
 Measurement and automation of the Bechdel test, female (under)representation and representation inequalities in cinema and audiovisual media
 
 ![](docs/assets/cover_bechdelai.png)
