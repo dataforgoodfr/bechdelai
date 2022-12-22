@@ -12,7 +12,9 @@ from collections import defaultdict
 # from .face_detection import FaceDetector
 # from .faces import FacesDetector
 from ..image.img import Img
-from .frame_extraction import extract_frames_from_videos
+from ..image.utils import show_faces_on_image
+from .utils import extract_frames_from_video,show_frames
+from .utils import extract_frames_from_scenes
 
 
 def natural_sort(l): 
@@ -22,20 +24,29 @@ def natural_sort(l):
 
 
 class Video:
-    def __init__(self,frames = None,path = None,frame_rate = 5,max_seconds = None):
+    def __init__(self,frames = None,path = None,detect_scenes = False,fps = 5,max_seconds = None):
+        self._annotations = defaultdict(dict)
         
         if path is not None:
             if os.path.isdir(path):
                 paths = natural_sort(os.listdir(path))
                 self.frames = [Img(os.path.join(path,x)) for x in paths]
             else:
-                frames = extract_frames_from_videos(path,frame_rate = frame_rate,save = False,max_seconds = max_seconds)
+                if not detect_scenes:
+                    cap,frames = extract_frames_from_video(path,fps = fps,save = False,max_seconds = max_seconds,show_progress = True)
+                else:
+                    cap,frames,scenes = extract_frames_from_scenes(path,show_progress = True)
+                    self.scenes = scenes
+
+                self.cap = cap
                 self.frames = [Img(img = x) for x in frames]
+
+                if detect_scenes:
+                    self.annotate(scenes,"scene")
 
         else:
             self.frames = frames
 
-        self._annotations = defaultdict(dict)
 
     def reset_annotations(self):
         self._annotations = defaultdict(dict)
@@ -44,33 +55,38 @@ class Video:
     def annotations(self):
         return self._annotations
 
-    def annotate(self,d):
-        for k,v in d.items():
-            assert isinstance(v,dict)
-            self._annotations[k].update(v)
+    @property
+    def scenes_durations(self):
+        return [x.get_duration() for x in self.scenes]
+
+    def annotate(self,d,key = None):
+
+        if isinstance(d,dict):
+            for k,v in d.items():
+                assert isinstance(v,dict)
+                self._annotations[k].update(v)
+        elif isinstance(d,list):
+            assert len(d) == len(self.frames)
+            assert key is not None
+            for i,v in enumerate(d):
+                self._annotations[i].update({key:v})
+
 
 
     def resize(self,*args,**kwargs):
         for i in tqdm(range(len(self.frames))):
             self.frames[i].resize(inplace = True,*args,**kwargs)
 
+    def add_rois(self,rois_list,genders = None):
+        for i,rois in enumerate(rois_list):
+            if len(rois) > 0:
+                self.frames[i] = Img(show_faces_on_image(self.frames[i].array,rois))
 
-    def show_frames(self,columns = 6,figsize_row = (15,1)):
 
-        rows = (len(self.frames) // columns) + 1
+    def show_frames(self,columns = 6,figsize_row = (15,1),titles = None):
+        show_frames(self.frames,columns = columns,figsize_row = figsize_row,titles = titles)
 
-        for row in range(rows):
-            fig = plt.figure(figsize=figsize_row)
-            remaining_columns = len(self.frames) - (row * columns)
-            row_columns = columns if remaining_columns > columns else remaining_columns
-            for column in range(row_columns):
-                img = self.frames[row * columns + column].array
-                fig.add_subplot(1, columns, column+1)
-                plt.axis('off')
-                plt.imshow(img)
-            plt.show()
-
-    def replay(self,interval=0.5,with_annotations = True):
+    def replay(self,interval=0.5,with_annotations = True,with_rois = True):
 
         # Prepare widgets
         play = widgets.Play(
@@ -91,6 +107,8 @@ class Video:
         def show(i):
             if with_annotations:
                 print(self.annotations[i])
+            
             return self.frames[i]
+        
 
         display(slider)

@@ -16,6 +16,7 @@ class GenderDetector:
     def __init__(self):
 
         self.prompts = {"gender":["man","woman"]}
+        # Possible to add a prompt "background" to filter out wrong face detection
         self.model = CLIP(self.prompts)
 
 
@@ -36,16 +37,17 @@ class GenderDetector:
             probas["area_percentage_total"] = probas["area"] / area_img
 
         if faces_metadata is not None:
-            annotations = (
+            annotations_data = (
                 pd.concat([faces_metadata,probas],axis = 1)
                 .groupby(["frame_id","gender"])
                 ["face_id"]
                 .count()
                 .unstack("gender")
                 .fillna(0)
-                .to_dict(orient = "index")
+                # .to_dict(orient = "index")
             )
-            return probas,annotations
+            annotations_dict = annotations_data.to_dict(orient = "index")
+            return probas,annotations_data,annotations_dict
         else:
             return probas
 

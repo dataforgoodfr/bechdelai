@@ -134,8 +134,4 @@ dmypy.json
 *.csv
 
 notebooks/poster_analysis/test
-notebooks/video/LES TUCHE 4 Bande Annonce Officielle (2021).mp4
-notebooks/video/QUEST CE QUON A FAIT AU BON DIEU  Bande Annonce.mp4
-notebooks/video/SPIDER-MAN NO WAY HOME - Official Trailer (HD).mp4
-notebooks/video/Top Gun Maverick - Official Trailer (2022) - Paramount Pictures.mp4
-notebooks/video/UNCHARTED - Official Trailer (HD).mp4
+*.mp4
