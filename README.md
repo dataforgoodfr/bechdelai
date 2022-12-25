@@ -8,7 +8,7 @@ Measurement and automation of the Bechdel test, female (under)representation and
 ## Structure of the repo
 
 ```
-- bechdelai         ----- Python code as a library 
+- bechdelai         ----- Python code as a library
 - docs              ----- Documentation
 - data              ----- Reusable datasets
 - notebooks         ----- Experiments
@@ -33,6 +33,21 @@ mkdocs serve        ---- launch documentation locally
 poetry build        ---- build package locally
 poetry publish      ---- publish package on PyPi
 ```
+
+### Installing pre-commit
+
+To install `pre-commit`, you can use these command lines at the root of this repo:
+
+```bash
+pip install pre-commit
+pre-commit install
+```
+
+Then when you'll use `git commit` it will automatically run the following checks : [BechdelAI pre-commit hooks](pre-commit-hooks.md).
+
+**Important**: if a file is updated by one hook you need to add it again before reusing `git commit`.
+
+More details in the [`pre-commit` documentation](https://pre-commit.com/)
 
 ### Golden rules & best practices
 - Use type annotations as much as possible (see tutorial [here](https://towardsdatascience.com/type-annotations-in-python-d90990b172dc))
