@@ -6,7 +6,7 @@ import requests
 
 from bechdelai.data.dictionary import find_words_url
 from bechdelai.data.dictionary import get_definition_from_word_url
-from bechdelai.processing.dictionary import process_syn_dict
+from bechdelai.nlp.dictionary import process_syn_dict
 
 BASE_URL = "https://www.dictionary.com"
 LIST_URL = f"{BASE_URL}/list/{{letter}}/{{num}}"
