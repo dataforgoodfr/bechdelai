@@ -76,7 +76,7 @@ def extract_keyword(txt):
 
     vocab = list(
         map(
-            lambda x: (x.text, x.i + 1, x.i + 2, x.pos_),
+            lambda x: (x.text, x.i, x.i + 1, x.pos_),
             doc,
         )
     )
