@@ -7,42 +7,33 @@ from bechdelai.nlp.entities import remove_not_person_nouns_and_add_gender
 
 
 def srt_time_to_sec(srt_time: SubRipTime) -> int:
-    """_summary_
-
-    Parameters
-    ----------
-    srt_time : SubRipTime
-        _description_
-
-    Returns
-    -------
-    int
-        _description_
-    """
+    """Convert SubRipTime to seconds"""
     return int(srt_time.seconds + srt_time.minutes * 60 + srt_time.hours * 3600)
 
 
-def extract_person_references_in_srt(
-    srt_list: list, max_idx: int = None
-) -> pd.DataFrame:
-    """_summary_
+def extract_person_references_in_srt(srt_list: list) -> pd.DataFrame:
+    """Given a list of subtitles (srt file) extract entities that relies to a person
 
     Parameters
     ----------
     srt_list : list
-        _description_
-    max_idx : int, optional
-        _description_, by default None
+        List of srt object
 
     Returns
     -------
     pd.DataFrame
-        _description_
+        Dataframe with found entities in each srt text.
+        Format of returned dataframe :
+        - "srt_id": id of srt (ordered by time)
+        - "text": text of srt
+        - "start_sec": starting second in subtitle
+        - "end_sec": ending second in subtitle
+        - "ent": text entity found
+        - "start_idx": start index in string
+        - "end_idx": ending index in string
+        - "ent_type": entity type found
+        - "gender": if gender found then "man" or "woman" else "unknown"
     """
-
-    if max_idx is not None:
-        srt_list = srt_list[:max_idx]
-
     results = []
     srt_details = []
 

@@ -1,3 +1,4 @@
+import os
 from itertools import permutations
 from string import punctuation
 
@@ -9,8 +10,8 @@ from flair.models import SequenceTagger
 
 from bechdelai.nlp.dictionary import person_syn_dict
 
-
-with open("../../../data/nlp/stop_words_english.txt", "r", encoding="utf-8") as f:
+fpath = os.path.dirname(os.path.abspath(__file__))
+with open(f"{fpath}/src/stop_words_english.txt", "r", encoding="utf-8") as f:
     stopwords = set(f.read().split("\n"))
 
 
@@ -37,6 +38,42 @@ def merge_if_in(elements):
             delete_i.append(j)
 
     return [e for (i, e) in enumerate(elements) if i not in delete_i]
+
+
+def extract_person_entity(entity):
+    """Given an entity extracted from `extract_keyword`
+    only keep word corresponding to people
+
+    If NOUN then check if the word definition match a person
+    Else keep it as such
+    """
+    ent_ = {}
+
+    if entity[3] == "NOUN":
+        w = word_is_synonym_of_person(entity[0], person_syn_dict)
+        if w:
+            gender = person_syn_dict[w]["gender"]
+            ent_["entity"] = entity[0]
+            ent_["gender"] = gender
+
+    elif entity[3] == "PRON":
+        if entity[0].lower() in ["he", "him", "his", "himself"]:
+            ent_["entity"] = entity[0]
+            ent_["gender"] = "man"
+
+        elif entity[0].lower() in ["she", "her", "hers", "herself"]:
+            ent_["entity"] = entity[0]
+            ent_["gender"] = "woman"
+
+        else:
+            ent_["entity"] = entity[0]
+            ent_["gender"] = "unknown"
+
+    else:
+        ent_["entity"] = entity[0]
+        ent_["gender"] = "unknown"
+
+    return ent_
 
 
 def remove_not_person_nouns_and_add_gender(ent_list: list) -> list:
@@ -99,42 +136,6 @@ def word_is_synonym_of_person(txt, person_syn_dict):
             return s.lower()
 
     return False
-
-
-def extract_person_entity(entity):
-    """Given an entity extracted from `extract_keyword`
-    only keep word corresponding to people
-
-    If NOUN then check if the word definition match a person
-    Else keep it as such
-    """
-    ent_ = {}
-
-    if entity[3] == "NOUN":
-        w = word_is_synonym_of_person(entity[0], person_syn_dict)
-        if w:
-            gender = person_syn_dict[w]["gender"]
-            ent_["entity"] = entity[0]
-            ent_["gender"] = gender
-
-    elif entity[3] == "PRON":
-        if entity[0].lower() in ["he", "him", "his", "himself"]:
-            ent_["entity"] = entity[0]
-            ent_["gender"] = "man"
-
-        elif entity[0].lower() in ["she", "her", "hers", "herself"]:
-            ent_["entity"] = entity[0]
-            ent_["gender"] = "woman"
-
-        else:
-            ent_["entity"] = entity[0]
-            ent_["gender"] = "unknown"
-
-    else:
-        ent_["entity"] = entity[0]
-        ent_["gender"] = "unknown"
-
-    return ent_
 
 
 def match_one_entity_with_cast(
