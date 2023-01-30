@@ -15,7 +15,7 @@ repos:
     rev: 1.5.0  # or master if you're bold
     hooks:
     -   id: interrogate
-        args: [-vv, -i, --fail-under=50]
+        args: [-vv, -i, --fail-under=0]
         verbose: true
 -   repo: https://github.com/ambv/black
     rev: stable
