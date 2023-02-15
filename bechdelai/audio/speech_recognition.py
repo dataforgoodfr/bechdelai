@@ -18,13 +18,14 @@ class SpeechRecognition:
             chunk_length_s=30,
             stride_length_s=(5, 5),
             return_timestamps=True,
+            generate_kwargs={"max_length": 1000},
         )
 
     def transcribe(self, audio_path, language, task="transcribe"):
         """Transcribe audio file.
 
         Args:
-            audio_path (): Path to audio file
+            audio_path (str): Path to audio file
             language (str): target language
             task (str): transcribe for same language or translate to another language
 
