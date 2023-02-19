@@ -3,6 +3,7 @@
 import urllib
 import requests
 import pandas as pd
+import numpy as np
 import os
 from PIL import Image
 from tqdm.auto import tqdm
@@ -268,7 +269,7 @@ class TMDB:
         return cast, crew
 
 
-    def get_id_from_imdb_id(self,imdb_id) -> int:
+    def get_id_from_imdb_id(self,imdb_id) -> str:
         """Get TMDB API result for movie cast endpoint given an id
 
         Parameters
@@ -280,10 +281,9 @@ class TMDB:
 
         res = fetch_json_from_url(url)
         if len(res["movie_results"]) == 0:
-            return None
-
-        return res["movie_results"][0]["id"]
-
+            return np.NaN
+        else:
+            return str(res["movie_results"][0]["id"])
 
     def format_results_for_suggestion(self,search_res: dict) -> list:
         """Format search movie results for `show_movie_suggestions()`
@@ -358,12 +358,16 @@ class TMDB:
             cast["movie_id"] = movie_id
             crew["movie_id"] = movie_id
 
-            crew_df.append(crew)
             cast_df.append(cast)
+            crew_df.append(crew)
 
         movies_df = pd.DataFrame(metadata_df)
-        crew_df = pd.concat(crew_df,ignore_index = True,axis = 0)
         cast_df = pd.concat(cast_df,ignore_index = True,axis = 0)
+        crew_df = pd.concat(crew_df,ignore_index = True,axis = 0)
+
+        movies_df["id"] = movies_df["id"].astype(str)
+        cast_df["movie_id"] = cast_df["movie_id"].astype(str)
+        crew_df["movie_id"] = crew_df["movie_id"].astype(str)
 
         return movies_df, cast_df, crew_df
 
