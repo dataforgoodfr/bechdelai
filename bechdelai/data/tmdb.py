@@ -11,8 +11,8 @@ from os import environ
 from io import BytesIO
 from typing import Union,Optional,List,Dict,Tuple
 from dotenv import load_dotenv
+from IPython.display import display,HTML
 from .fetch import fetch_json_from_url,fetch_image_from_url
-
 
 class APIKeyNotSetInEnv(Exception):
     """Exception class for API key not set"""
@@ -73,7 +73,10 @@ class TMDB:
         return f"{API_URL}/search/movie?api_key={self.api_key}&query={query}"
 
     def url_image(self,path):
-        return f"{IMG_URL}{path}"
+        if path.startswith(IMG_URL):
+            return path
+        else:
+            return f"{IMG_URL}{path}"
 
     def url_movie_details_api(self,movie_id):
         return f"{API_URL}/movie/{movie_id}?api_key={self.api_key}"
@@ -93,6 +96,7 @@ class TMDB:
         return fetch_json_from_url(f"{API_URL}/{endpoint}")
 
 
+ 
     def fetch_data_from_pages(self,api_url: str, n_pages: int = None) -> List[Dict]:
         """
         Fetches data from multiple pages of a TMDB API response.
@@ -534,3 +538,39 @@ class TMDB:
     def get_person_images(self,person_id) -> dict:
         url = f"{API_URL}/person/{person_id}/images?api_key={self.api_key}"
         return fetch_json_from_url(url)
+
+    def show_images_on_notebook(self,list_of_paths,width = 250):
+
+        html = ""
+        for path in list_of_paths:
+            html += f"""<div style='width:{width}px;text-align:center;margin-left:20px;margin-bottom:30px;'><h5 style="font-size:9px;width:100%;word-wrap:break-word">{path}</h5><img style='width:100%' src='{self.url_image(path)}'/></div>"""
+        
+        div_html = f"<div style='display:flex;flex-wrap:wrap'>{html}</div>"
+
+        return display(HTML(div_html))
+
+
+
+
+    def download_image(self,paths):
+
+        if not isinstance(paths,list): paths = [paths]
+
+        imgs = []
+        for path in paths:
+            img = self.get_image_from_url(path)
+            img.save(path.split("/")[-1])
+            imgs.append(img)
+        print("... Images saved in current working directory")
+
+        if len(imgs) == 1:
+            return imgs[0]
+        else:
+            return imgs
+
+
+
+
+        
+        
+
