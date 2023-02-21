@@ -17,7 +17,7 @@ from deepface import DeepFace
 from deepface.commons import functions
 from deepface.detectors import FaceDetector
 import mediapipe as mp
-
+from .utils import show_all_faces
 from .img import Img
 
 FACE_CASCADE_PATH = "haarcascade_frontalface_default.xml"
@@ -174,15 +174,17 @@ class FacesDetector:
         
         return selected_rois
 
-
-
-
-    def show_faces_by_cluster(self,faces,clusters,**kwargs):
+    def show_faces_by_cluster(self, faces, clusters, titles=None, **kwargs):
 
         for i in range(np.max(clusters)+1):
             print(f"Cluster {i}")
             faces_i = np.array(faces)[list(np.where(clusters == i)[0])]
-            self.show_all_faces(faces_i,**kwargs)
+            if titles is not None:
+                titles_i = np.array(titles)[list(np.where(clusters == i)[0])]
+                show_all_faces(faces_i, titles=titles_i, **kwargs)
+            else:
+                show_all_faces(faces_i,  **kwargs)
+
 
 
 
