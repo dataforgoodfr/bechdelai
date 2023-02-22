@@ -7,7 +7,7 @@ from moviepy.video.io.ffmpeg_tools import ffmpeg_extract_subclip
 def cut_and_save(movie_path: str, start: float, end: float, target_name: str) -> None:
     """This function cuts a video from the start to the end time and saves it as target_name.
 
-    Args:
+    Parameters:
         movie_path (str): The path to the video file.
         start (float): The start time in seconds.
         end (float): The end time in seconds.
@@ -22,7 +22,7 @@ def cut_and_save(movie_path: str, start: float, end: float, target_name: str) ->
 def import_as_clip(path_to_video: str) -> mp.VideoFileClip:
     """Imports a video file as a VideoFileClip object.
     
-    Args:
+    Parameters:
         path_to_video (str): Path to a video file.
     
     Returns:
@@ -31,20 +31,30 @@ def import_as_clip(path_to_video: str) -> mp.VideoFileClip:
     return mp.VideoFileClip(path_to_video)
 
 
-# Splits a file into its individual parts using spleeter
-# Does not work above 700 seconds
-def separate_voice_and_music(file: str) -> None:  # Do not work above 700 seconds
-    os.system('spleeter separate -d 700.0 -o ../../../ -f "{instrument}/{filename}.{codec}" ' + file)
+def separate_voice_and_music(path_to_mixed_audio: str) -> None:
+    """Splits an audio file into its individual parts using spleeter
+
+    Does not work above 700 seconds or about 11 minutes.
+
+    Stores the results in separate folders, upstream of the project root.
+
+    Parameters:
+        path_to_mixed_audio (str): Path to an audio file (.wav)
+
+    Returns:
+        None
+    """
+    os.system('spleeter separate -d 700.0 -o ../../../ -f "{instrument}/{filename}.{codec}" ' + path_to_mixed_audio)
 
 
 def extract_audio_from_movie(file: str, extension: str = '.wav') -> None:
-    """Extract the audio from a movie and save it to a file.
+    """Extract the audio from a film and save it to a file.
     
-    The audio is saved in the same directory as the movie.
+    The audio is saved in the same directory as the film.
     
-    Args:
-        file (str): The name of the movie file to extract the audio from.
-        extension (str): The file extension of the audio file to save.
+    Parameters:
+        file (str): The name of the film file to extract the audio from.
+        extension (str): The file extension of the audio file to save (default is ".wav").
     """
     clip = import_as_clip(file)
     clip.audio.write_audiofile(file.split(sep='.')[0] + extension)
