@@ -35,6 +35,7 @@ moviepy = "^1.0.3"
 SpeechRecognition = "^3.8.1"
 inaSpeechSegmenter = "^0.7.3"
 llvmlite = "^0.39.1"
+setuptools = ">=62.3.2"
 
 [tool.poetry.dev-dependencies]
 
