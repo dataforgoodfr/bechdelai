@@ -8,12 +8,12 @@ class Transcriber(ABC):
     def __init__(self):
         self.r = sr.Recognizer()
 
-    def read(self, audio_file):
+    def read(self, audio_file, start_time=None, duration=None):
         with sr.AudioFile(audio_file) as source:
-            return self.r.record(source)
+            return self.r.record(source, duration=duration, offset=start_time)
 
     @abstractmethod
-    def speech_to_text(self, audio_file):
+    def speech_to_text(self, audio_file, start_time, duration, language):
         pass
 
 
@@ -23,10 +23,10 @@ class GoogleSpeechRecognition(Transcriber):
     def __init__(self):
         super().__init__()
 
-    def speech_to_text(self, audio_file):
-        audio = self.read(audio_file)
+    def speech_to_text(self, audio_file, start_time, duration, language):
+        audio = self.read(audio_file, start_time, duration)
         try:
-            return self.r.recognize_google(audio)
+            return self.r.recognize_google(audio, language)
         except sr.UnknownValueError:
             print("Google Speech Recognition could not understand audio")
         except sr.RequestError as e:

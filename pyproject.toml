@@ -36,6 +36,7 @@ SpeechRecognition = "^3.8.1"
 inaSpeechSegmenter = "^0.7.3"
 llvmlite = "^0.39.1"
 setuptools = ">=62.3.2"
+fleep = "1.0.1"
 
 [tool.poetry.dev-dependencies]
 
