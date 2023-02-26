@@ -37,6 +37,8 @@ inaSpeechSegmenter = "^0.7.3"
 llvmlite = "^0.39.1"
 setuptools = ">=62.3.2"
 fleep = "1.0.1"
+ffmpeg-python = "^0.2.0"
+openai-whisper = "^20230124"
 
 [tool.poetry.dev-dependencies]
 

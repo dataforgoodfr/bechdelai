@@ -1,7 +1,7 @@
 from pytube import YouTube
 
 
-def download_youtube_video(link: str, filename: str, caption_language: str) -> None:
+def download_youtube_video(link: str, filename: str, caption_language: str = "en") -> None:
     """Download a youtube video with captions given an id
 
     Parameters
@@ -26,13 +26,15 @@ def download_youtube_video(link: str, filename: str, caption_language: str) -> N
         print("Connection Error")
         return
 
+    filename = filename if filename.endswith(".mp4") else filename + ".mp4"
+
     try:
         (
             yt.streams.filter(progressive=True, file_extension="mp4")
             .order_by("resolution")
             .desc()
             .first()
-        ).download(filename=f"{filename}.mp4")
+        ).download(filename=filename)
 
     except Exception as e:
         print("Could not download the video!", e)
@@ -48,3 +50,10 @@ def download_youtube_video(link: str, filename: str, caption_language: str) -> N
     except Exception as e:
         print("Could not download the caption!", e)
     print("Task Completed!")
+
+
+def download_youtube_audio(link:str,filename:str = "audio.mp3") -> str:
+    yt = YouTube(link)
+    stream = yt.streams.filter(only_audio=True)[0]
+    stream.download(filename=filename)
+    return filename
