@@ -26,7 +26,7 @@ class GoogleSpeechRecognition(Transcriber):
     def speech_to_text(self, audio_file, start_time, duration, language):
         audio = self.read(audio_file, start_time, duration)
         try:
-            return self.r.recognize_google(audio, language)
+            return self.r.recognize_google(audio, language=language)  # It may be necessary to change the API key
         except sr.UnknownValueError:
             print("Google Speech Recognition could not understand audio")
         except sr.RequestError as e:

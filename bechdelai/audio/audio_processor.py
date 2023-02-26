@@ -33,4 +33,4 @@ class AudioProcessor:
 
     def export_to_csv(self, file_path: str):
         result = pd.concat([self.gendered_audio_seg, self.result['transcription']], axis=1)
-        result.to_csv(path_or_buf=file_path, sep=";", header=True, index=False)
+        result.to_csv(path_or_buf=file_path, sep=";", header=True, index=False, encoding="utf-8")
