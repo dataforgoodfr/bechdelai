@@ -42,7 +42,7 @@ llvmlite = "^0.39.1"
 setuptools = ">=62.3.2"
 
 [tool.poetry.dev-dependencies]
-pywin32 = { version = "225", markers = "sys_platform == 'win32'" }
+pywin32 = { version = "305", markers = "sys_platform == 'win32'" }
 jupyter = "^1.0.0"
 mkdocs = "^1.4.1"
 streamlit = "1.13.0"
