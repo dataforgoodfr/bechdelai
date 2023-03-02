@@ -1,34 +1,37 @@
-
-import os
 import math
-import cv2
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from tqdm.auto import tqdm
-from PIL import Image
+import os
+from typing import List, Union
 
-from scenedetect import detect, ContentDetector
-from scenedetect import SceneManager, open_video, ContentDetector
+import cv2
+import matplotlib.pyplot as plt
+import moviepy.editor
+import numpy as np
+import pandas as pd
+from PIL import Image
+from scenedetect import ContentDetector, SceneManager, detect, open_video
 from scenedetect.backends import VideoCaptureAdapter
+from tqdm.auto import tqdm
 
 
 def cv2_to_PIL(frame):
-    return Image.fromarray(frame[:,:,[2,1,0]])
+    return Image.fromarray(frame[:, :, [2, 1, 0]])
 
-def get_frame_from_cap(cap,frame_id):
+
+def get_frame_from_cap(cap, frame_id):
     cap.set(cv2.CAP_PROP_POS_FRAMES, frame_id)
     ret, frame = cap.read()
     frame = cv2_to_PIL(frame)
     return frame
 
+
 def _load_video_cv2(video_path):
     cap = cv2.VideoCapture(video_path)
     return cap
 
+
 def load_video(video):
     # Either a cv2 capture cap or a string for a file to open with opencv2
-    if not isinstance(video,str):
+    if not isinstance(video, str):
         cap = video
     else:
         path = video
@@ -38,7 +41,16 @@ def load_video(video):
     return cap
 
 
-def extract_frames_from_video(video,folder = ".",fps = 1,save = False,max_seconds = None,frame_start = 0,frame_end = None,show_progress = False):
+def extract_frames_from_video(
+    video,
+    folder=".",
+    fps=1,
+    save=False,
+    max_seconds=None,
+    frame_start=0,
+    frame_end=None,
+    show_progress=False,
+):
     """
     From https://www.analyticsvidhya.com/blog/2018/09/deep-learning-video-classification-python/?utm_campaign=News&utm_medium=Community&utm_source=DataCamp.com
 
@@ -46,11 +58,11 @@ def extract_frames_from_video(video,folder = ".",fps = 1,save = False,max_second
     - Add progressbar
     - Size how long it will take
     - Change the frame rate as variable
-    - Make it not mandatory to save as file but also in memory 
+    - Make it not mandatory to save as file but also in memory
 
     """
-    
-    # Prepare frames 
+
+    # Prepare frames
     frames = []
     count = 0
 
@@ -61,7 +73,7 @@ def extract_frames_from_video(video,folder = ".",fps = 1,save = False,max_second
         if not os.path.exists(folder):
             os.mkdir(folder)
 
-    # Get frames per second and frame rate 
+    # Get frames per second and frame rate
     real_fps = cap.get(cv2.CAP_PROP_FPS)
     frame_ratio = int(real_fps / fps)
     assert fps <= real_fps
@@ -74,18 +86,17 @@ def extract_frames_from_video(video,folder = ".",fps = 1,save = False,max_second
     cap.set(cv2.CAP_PROP_POS_FRAMES, frame_start)
     start_time = frame_start / real_fps
 
-    with tqdm(total = n_frames_final,display = show_progress) as pbar:
-        while(cap.isOpened()):
-
+    with tqdm(total=n_frames_final, display=show_progress) as pbar:
+        while cap.isOpened():
             # Get current frame
-            frame_id = cap.get(1) #current frame number
+            frame_id = cap.get(1)  # current frame number
             ret, frame = cap.read()
 
             # Calculate current time
             current_time = frame_id / real_fps
 
             # Stop if stream is finished (went through all the frames)
-            if (ret != True):
+            if ret != True:
                 print("Video is finished")
                 break
 
@@ -93,7 +104,7 @@ def extract_frames_from_video(video,folder = ".",fps = 1,save = False,max_second
             if max_seconds is not None:
                 if (current_time - start_time) > max_seconds:
                     print(f"Stopped after {max_seconds} seconds")
-                    break 
+                    break
 
             # Stop if above max frame id
             if frame_end is not None:
@@ -102,11 +113,10 @@ def extract_frames_from_video(video,folder = ".",fps = 1,save = False,max_second
 
             # Record frame at given frame rate
             if frame_id % math.floor(frame_ratio) == 0:
-
                 # Save image as file
                 if save:
-                    filename = os.path.join(folder,f"frame{count}.jpg")
-                    count +=1
+                    filename = os.path.join(folder, f"frame{count}.jpg")
+                    count += 1
                     cv2.imwrite(filename, frame)
 
                 # Or save image in memory as PIL image
@@ -115,15 +125,14 @@ def extract_frames_from_video(video,folder = ".",fps = 1,save = False,max_second
                     frames.append(frame_pil)
                 pbar.update(1)
     # cap.release()
-     
+
     if save:
         print("Done!")
     else:
-        return cap,frames
+        return cap, frames
 
 
-def show_frames(frames,columns = 6,figsize_row = (15,1),titles = None):
-
+def show_frames(frames, columns=6, figsize_row=(15, 1), titles=None):
     rows = (len(frames) // columns) + 1
 
     for row in range(rows):
@@ -135,24 +144,22 @@ def show_frames(frames,columns = 6,figsize_row = (15,1),titles = None):
                 img = frames[row * columns + column].array
             except:
                 img = np.array(frames[row * columns + column])
-            fig.add_subplot(1, columns, column+1)
-            plt.axis('off')
+            fig.add_subplot(1, columns, column + 1)
+            plt.axis("off")
             plt.imshow(img)
             if titles is not None:
                 plt.title(titles[row * columns + column])
         plt.show()
 
 
-
-def detect_scenes(cap,threshold = 27.0,show_progress = False):
-
+def detect_scenes(cap, threshold=27.0, show_progress=False):
     # Convert cv2 capture to video
     video = VideoCaptureAdapter(cap)
     scene_manager = SceneManager()
     scene_manager.add_detector(ContentDetector(threshold=threshold))
 
     # Detect all scenes in video from current position to end.
-    scene_manager.detect_scenes(video,show_progress=show_progress)
+    scene_manager.detect_scenes(video, show_progress=show_progress)
 
     # Detect all scenes
     scene_list = scene_manager.get_scene_list()
@@ -160,8 +167,7 @@ def detect_scenes(cap,threshold = 27.0,show_progress = False):
 
 
 class Scene:
-    def __init__(self,start,end = None):
-
+    def __init__(self, start, end=None):
         if end is None:
             self.start = start[0]
             self.end = start[1]
@@ -171,7 +177,7 @@ class Scene:
 
     @property
     def frames(self):
-        return self.start.get_frames(),self.end.get_frames()
+        return self.start.get_frames(), self.end.get_frames()
 
     @property
     def n_frames(self):
@@ -183,21 +189,22 @@ class Scene:
 
     def get_duration(self):
         return f"{self.duration:.2f}s"
-    
+
     @property
     def timecodes(self):
-        return self.start.get_timecode(),self.end.get_timecode()
-    
+        return self.start.get_timecode(), self.end.get_timecode()
+
     def __repr__(self):
         timecodes = self.timecodes
         return f"Scene({timecodes[0].replace('00:','')}->{timecodes[1].replace('00:','')},duration={self.duration:.2f},n={self.n_frames})"
 
 
-def extract_frames_from_scenes(video,threshold = 27.0,show_progress = False,method = "middle"):
+def extract_frames_from_scenes(
+    video, threshold=27.0, show_progress=False, method="middle"
+):
+    assert method in ["first", "last", "middle"]
 
-    assert method in ["first","last","middle"]
-
-    # Prepare frames 
+    # Prepare frames
     frames = []
     count = 0
 
@@ -205,20 +212,19 @@ def extract_frames_from_scenes(video,threshold = 27.0,show_progress = False,meth
     cap = load_video(video)
 
     # Detect scene list
-    scene_list = detect_scenes(cap,threshold = threshold,show_progress = show_progress)
+    scene_list = detect_scenes(cap, threshold=threshold, show_progress=show_progress)
     n_scenes = len(scene_list)
     print(f"Detected {n_scenes} scenes in the video")
 
     # Get middle image for each scene
     # Sometimes first and last images are still transitions
-    # TODO : 
+    # TODO :
     # - get more images from each scene
     # - get n images equireparties dans chaque scene
 
-    for i,scene in enumerate(tqdm(scene_list,display = show_progress)):
-
+    for i, scene in enumerate(tqdm(scene_list, display=show_progress)):
         # Get frame ids boundaries
-        frame_start,frame_end = scene[0].get_frames(),scene[1].get_frames()
+        frame_start, frame_end = scene[0].get_frames(), scene[1].get_frames()
 
         # Find frame_id to extract
         if method == "first":
@@ -229,13 +235,20 @@ def extract_frames_from_scenes(video,threshold = 27.0,show_progress = False,meth
             frame_to_select = frame_start + (frame_end - frame_start) // 2
 
         # Get frames in the sequence
-        frame = get_frame_from_cap(cap,frame_to_select)
+        frame = get_frame_from_cap(cap, frame_to_select)
         frames.append(frame)
 
     # Add duration for each scene
     scene_list = [Scene(scene) for scene in scene_list]
 
-    return cap,frames,scene_list
+    return cap, frames, scene_list
 
 
+MoviePyTimestamp = Union[float, List[float], str]
 
+
+def subclip_video(
+    fname: str, start_time: MoviePyTimestamp, end_time: MoviePyTimestamp
+) -> moviepy.editor.VideoFileClip:
+    clip = moviepy.editor.VideoFileClip(fname)
+    return clip.subclip(start_time, end_time)
