@@ -1,15 +1,29 @@
-import transcriber
-import gender_segmenter
-import dialogue_tagger
+from abc import ABC, abstractmethod
+
+from . import transcriber, gender_segmenter, dialogue_tagger
 
 
-def get_gender_segmentor():
-    return gender_segmenter.InaSpeechSegmentor()
+class Profiles(ABC):
+    @abstractmethod
+    def get_gender_segmentor(self):
+        raise "Gender Segmentor not implemented"
+
+    @abstractmethod
+    def get_dialogue_tagger(self):
+        raise "Dialogue tagger not implemented"
+
+    @abstractmethod
+    def get_transcriber(self):
+        raise "Transcriber not implemented"
 
 
-def get_dialogue_tagger():
-    return dialogue_tagger.RuleBasedTagger()
+class French(Profiles):
+    def get_gender_segmentor(self):
+        return gender_segmenter.InaSpeechSegmentor()
 
+    def get_dialogue_tagger(self):
+        return dialogue_tagger.RuleBasedTagger()
 
-def get_gender_transcriber():
-    return transcriber.GoogleSpeechRecognition()
+    def get_transcriber(self):
+        return transcriber.GoogleSpeechRecognition("fr-FR")
+

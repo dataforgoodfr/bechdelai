@@ -13,20 +13,20 @@ class Transcriber(ABC):
             return self.r.record(source, duration=duration, offset=start_time)
 
     @abstractmethod
-    def speech_to_text(self, audio_file, start_time, duration, language):
+    def speech_to_text(self, audio_file, start_time, duration):
         pass
 
 
 class GoogleSpeechRecognition(Transcriber):
     # Recognize speech using Google Speech Recognition
-    # Can be improved by adding language choice
-    def __init__(self):
+    def __init__(self, language):
         super().__init__()
+        self.language = language
 
-    def speech_to_text(self, audio_file, start_time, duration, language):
-        audio = self.read(audio_file, start_time, duration)
+    def speech_to_text(self, audio_file, start_time, duration):
+        audio = self.read(audio_file, start_time-1, duration+2)
         try:
-            return self.r.recognize_google(audio, language=language)  # It may be necessary to change the API key
+            return self.r.recognize_google(audio, language=self.language)  # It may be necessary to change the API key
         except sr.UnknownValueError:
             print("Google Speech Recognition could not understand audio")
         except sr.RequestError as e:

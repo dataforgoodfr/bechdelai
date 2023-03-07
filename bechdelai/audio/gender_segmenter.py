@@ -23,7 +23,6 @@ class InaSpeechSegmentor(GenderSegmentor):
         Returns:
             pd.DataFrame: Pandas' DataFrame with 3 columns (gender, start, end) and as many lines as needed.
         """
-
         segment = self.seg(audio_file)
         return pd.DataFrame(list(filter(lambda x: x[0] == 'male' or x[0] == 'female', segment)),
                             columns=['gender', 'start', 'end'])
