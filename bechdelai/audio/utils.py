@@ -31,23 +31,9 @@ def import_as_clip(path_to_video: str) -> mp.VideoFileClip:
     return mp.VideoFileClip(path_to_video)
 
 
-def separate_voice_and_music(path_to_mixed_audio: str) -> None:
-    """Splits an audio file into its individual parts using spleeter
-
-    Does not work above 700 seconds or about 11 minutes.
-
-    Stores the results in separate folders, upstream of the project root.
-
-    Parameters:
-        path_to_mixed_audio (str): Path to an audio file (.wav)
-
-    Returns:
-        None
-    """
-    os.system('spleeter separate -d 700.0 -o ../../../ -f "{instrument}/{filename}.{codec}" ' + path_to_mixed_audio)
 
 
-def extract_audio_from_movie(file: str, extension: str = '.wav') -> None:
+def extract_audio_from_video(file: str, extension: str = 'wav') -> None:
     """Extract the audio from a film and save it to a file.
     
     The audio is saved in the same directory as the film.
@@ -56,5 +42,6 @@ def extract_audio_from_movie(file: str, extension: str = '.wav') -> None:
         file (str): The name of the film file to extract the audio from.
         extension (str): The file extension of the audio file to save (default is ".wav").
     """
+    assert extension in ["wav","mp3"]
     clip = import_as_clip(file)
-    clip.audio.write_audiofile(file.split(sep='.')[0] + extension)
+    clip.audio.write_audiofile(f"{file.split(sep='.')[0]}.{extension}")
