@@ -42,15 +42,13 @@ llvmlite = "^0.39.1"
 setuptools = ">=62.3.2"
 openai = "^0.27.0"
 openai-whisper = "^20230307"
+gradio = "^3.20.1"
 
 [tool.poetry.dev-dependencies]
 pywin32 = { version = "305", markers = "sys_platform == 'win32'" }
 jupyter = "^1.0.0"
 mkdocs = "^1.4.1"
 streamlit = "1.13.0"
-
-[tool.poetry.group.dev.dependencies]
-jupyter-contrib-nbextensions = "^0.7.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
