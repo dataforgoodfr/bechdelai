@@ -5,14 +5,14 @@ import requests
 import pandas as pd
 import numpy as np
 import os
-from PIL import Image
+from PIL import Image,UnidentifiedImageError
 from tqdm.auto import tqdm
 from os import environ
 from io import BytesIO
 from typing import Union,Optional,List,Dict,Tuple
 from dotenv import load_dotenv
 from IPython.display import display,HTML
-from .fetch import fetch_json_from_url,fetch_image_from_url
+from .fetch import fetch_json_from_url,fetch_image_from_url,RequestException
 
 class APIKeyNotSetInEnv(Exception):
     """Exception class for API key not set"""
@@ -506,10 +506,16 @@ class TMDB:
             os.mkdir(folder)
 
         for movie_id in tqdm(movie_ids):
-            img = self.get_poster_image(movie_id)
-            path = os.path.join(folder,f"{movie_id}.png")
-            if not os.path.exists(path):
-                img.save(path)
+            try:
+                img = self.get_poster_image(movie_id)
+            except UnidentifiedImageError:
+                print("The poster of the movie with id =", movie_id, "cannot be downloaded (check poster path).")
+            except RequestException:
+                print("The poster of the movie with id =", movie_id, "cannot be downloaded (request error).")
+            else:
+                path = os.path.join(folder,f"{movie_id}.png")
+                if not os.path.exists(path):
+                    img.save(path)
 
 
 
