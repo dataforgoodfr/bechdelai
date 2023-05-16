@@ -13,6 +13,7 @@ from typing import Union,Optional,List,Dict,Tuple
 from dotenv import load_dotenv
 from IPython.display import display,HTML
 from .fetch import fetch_json_from_url,fetch_image_from_url,RequestException
+import warnings
 
 class APIKeyNotSetInEnv(Exception):
     """Exception class for API key not set"""
@@ -138,10 +139,10 @@ class TMDB:
 
             # Check for errors
             if response.status_code != 200:
-                raise Exception(f"Failed to fetch data. Status code: {response.status_code}. Error message: {response_json.get('status_message')}")
-
-            # Append results from the current page to the results list
-            results.extend(response_json.get('results'))
+                warnings.warn(f"Failed to fetch data. Status code: {response.status_code}. Error message: {response_json.get('status_message')}")
+            else:
+                # Append results from the current page to the results list
+                results.extend(response_json.get('results'))
 
         return results
 
