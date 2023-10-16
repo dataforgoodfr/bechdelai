@@ -4,6 +4,7 @@ Functions to get data from wikipedia
 import requests
 from bs4 import BeautifulSoup
 import re
+import pandas as pd
 import outputformat as ouf
 import wikipediaapi
 from bechdelai.data.scrap import get_json_from_url
@@ -254,7 +255,8 @@ def get_categories(query, lang="en"):
                 'prop': 'categories',
                 'titles': query,
                 'format':'json',
-                'redirects': 1
+                'redirects': 1,
+                'cllimit':'max'
             }
 
     R =  requests.get(url=URL, params=PARAMS)
@@ -294,3 +296,168 @@ def page_exists(request_dict):
             raise ValueError("This query does not correspond to a Wikipedia page.")
             return False
     return True
+
+def get_qid_from_query(query,language="en",verbose=False):
+    """
+    QID is the unique identifier of a data item on Wikidata, comprising the letter "Q" followed by one or more digits.
+    For a given query, find the list of QID that might correspond to it.
+
+    Parameters
+    ----------
+    query : str
+        query to research on wikidata
+    language : str
+        Language of Wikidata to research
+
+
+    Returns
+    -------
+    list
+        list of str containing the QID that may be related to the query
+
+    """
+    URL = "https://www.wikidata.org/w/api.php"
+    PARAMS = {
+                'action': 'wbsearchentities',
+                'search': query,
+                'format':'json',
+                'language':language
+    }
+
+    R = requests.get(url=URL, params=PARAMS)
+    data = R.json()
+
+    qid = []
+    for entity in data['search']:
+        if verbose:
+            print('{} ({}): {}'.format(entity['label'], entity['id'], entity['description']))
+        qid.append(entity['id'])
+    return qid
+
+def get_json_from_qid(qid):
+    """
+    Get Wikidata from entity QID
+
+    Parameters
+    ----------
+    qid : str
+        QID to get
+
+    Returns
+    -------
+    json
+        json with all wikidata related to QID
+
+    """
+    URL = "https://www.wikidata.org/w/api.php"
+    PARAMS = {
+                'action': 'wbgetentities',
+                'ids': qid,
+                'format':'json',
+                'sites':"enwiki"
+    }
+
+    R = requests.get(url=URL, params=PARAMS)
+    return R.json()
+
+def get_json_from_query(query):
+    """
+    Get Wikidata from entity chosen according to query.
+    Wikidata uses the the most probable QID, but in some cases, it may not be the precise entity we are looking for.
+    To have mor control over the entity retrieved, use get_json_from_qid()
+
+    Parameters
+    ----------
+    query : str
+        query to get related wikidata
+
+    Returns
+    -------
+    json
+        json with all wikidata related to query
+
+    """
+    URL = "https://www.wikidata.org/w/api.php"
+    PARAMS = {
+                'action': 'wbgetentities',
+                'titles': query,
+                'format':'json',
+                'sites':"enwiki"
+    }
+
+    R = requests.get(url=URL, params=PARAMS)
+    return R.json()
+
+def get_label_of_entity(qid,language="en"):
+    """
+    Get the label that corresponds to the qid. This allows for human readable data.
+
+    Parameters
+    ----------
+    qid : str
+        unique identifier of an entity or property
+
+    Returns
+    -------
+    str
+        the corresponding label
+
+    """
+    URL = "https://www.wikidata.org/w/api.php"
+    PARAMS = {
+                'action': 'wbgetentities',
+                'ids': qid,
+                'format':'json',
+                'sites':"enwiki",
+                'props':'labels',
+                'languages':language
+    }
+    R = requests.get(url=URL, params=PARAMS)
+    try:
+        label =  R.json()['entities'][qid]['labels'][language]['value']
+    except KeyError:
+        print("Error. QID not found.")
+        label = None
+    return label
+
+
+def dataframe_from_json(json, properties,language="en"):
+    """
+    Transform raw json in human-readable dataframe
+
+    Parameters
+    ----------
+    json : str
+        json corresponding to wikidata. Can be retrieved using functions get_json_from_qid() or get_json_from_query()
+    properties : list
+        list of properties to extract from json. The list should use the wikidata identifiers (starts with a P followed by numbers)
+
+    Returns
+    -------
+    DataFrame
+        pandas DataFrame with the properties and their extracted values
+
+    """
+
+    df = pd.DataFrame(columns = ['property','value'])
+    json_key = list(json['entities'].keys())
+    claims = json['entities'][json_key[0]]['claims']
+
+    for prop in properties:
+        key = get_label_of_entity(prop,language=language)
+        values_list = []
+
+        try:
+            values_json = claims[prop]
+        except KeyError:
+            print('The property {} was not found in the given json'.format(prop))
+            continue
+
+        for dataval in values_json: # a property can contain multiple values
+            val = dataval['mainsnak']['datavalue']['value']
+            if type(val)==dict: # if its a dict, the value is represented by the id.
+                val_id = val['id']
+                val = get_label_of_entity(val_id,language=language)
+            values_list.append(val)
+        df = df.append({'property':key,'value':values_list},ignore_index=True)
+    return df
